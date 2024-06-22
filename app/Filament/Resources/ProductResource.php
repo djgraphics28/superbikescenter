@@ -96,7 +96,7 @@ class ProductResource extends Resource
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('price')
-                    ->money()
+                    ->money('php')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('category.name')
                     ->numeric()
