@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Resources\BrandResource;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,7 @@ class BrandController extends Controller
     {
         $brands = Brand::all();
 
-        return response()->json($brands);
+        return response()->json(BrandResource::collection($brands));
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Resources\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return response()->json($categories);
+        return response()->json(CategoryResource::collection($categories));
     }
 
     /**
