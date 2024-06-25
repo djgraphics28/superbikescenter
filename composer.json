@@ -25,12 +25,14 @@
     "pboivin/filament-peek": "^2.2",
     "romanzipp/laravel-seo": "^2.6",
     "sinnbeck/markdom": "^2.0",
+    "spatie/laravel-login-link": "^1.2",
     "yajra/laravel-address": "^11.0",
     "z3d0x/filament-logger": "^0.7.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.9",
     "fakerphp/faker": "^1.9.1",
+    "knuckleswtf/scribe": "^4.37",
     "laravel/pint": "^1.0",
     "laravel/sail": "^1.18",
     "mockery/mockery": "^1.4.4",

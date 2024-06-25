@@ -20,7 +20,7 @@ class InquiryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Inquiry resource in storage.
      */
     public function store(Request $request)
     {
@@ -38,9 +38,13 @@ class InquiryController extends Controller
 
         $product = Product::find($validatedData['product_id']);
 
+        if(!$product) {
+            return response()->json(['message' => 'Product Not Found!'], 404);
+        }
+
         // Prepare the data to be used for the email
         $data = [
-            'motorcycle' => $product->name,
+            'motorcycle' => $product->name ?? null,
             'model' => $product->model,
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
@@ -61,27 +65,27 @@ class InquiryController extends Controller
         return response()->json(['message' => 'Inquiry submitted successfully and response email sent.']);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+    // /**
+    //  * Display the specified resource.
+    //  */
+    // public function show(string $id)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  */
+    // public function update(Request $request, string $id)
+    // {
+    //     //
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    // /**
+    //  * Remove the specified resource from storage.
+    //  */
+    // public function destroy(string $id)
+    // {
+    //     //
+    // }
 }
