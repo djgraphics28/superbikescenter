@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('inquiries', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('product_id');
             $table->string('name');
             $table->string('email');
             $table->string('contact_number');
