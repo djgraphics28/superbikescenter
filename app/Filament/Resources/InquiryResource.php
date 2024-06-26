@@ -68,7 +68,14 @@ class InquiryResource extends Resource
                 Forms\Components\RichEditor::make('message')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('status')
+                Forms\Components\Select::make('status')
+                    ->label('Status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'approved' => 'Ppproved',
+                        'in-progress' => 'In-Progress',
+                        'rejected' => 'Rejected',
+                    ])
                     ->required(),
                 Forms\Components\DatePicker::make('approved_date'),
             ]);
