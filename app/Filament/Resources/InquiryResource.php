@@ -72,7 +72,7 @@ class InquiryResource extends Resource
                     ->label('Status')
                     ->options([
                         'pending' => 'Pending',
-                        'approved' => 'Ppproved',
+                        'approved' => 'Approved',
                         'in-progress' => 'In-Progress',
                         'rejected' => 'Rejected',
                     ])
