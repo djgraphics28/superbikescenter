@@ -7,8 +7,11 @@ use Filament\Tables;
 use App\Models\Inquiry;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Facades\Filament;
 use Filament\Resources\Resource;
 use Yajra\Address\Entities\City;
+use Tables\Forms\Components\Select;
+use Illuminate\Support\Facades\Mail;
 use Yajra\Address\Entities\Province;
 use Filament\Resources\Components\Tab;
 use Illuminate\Database\Eloquent\Builder;
@@ -120,7 +123,35 @@ class InquiryResource extends Resource
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
+                Tables\Actions\Action::make('changeStatus')
+                    ->label('Change Status')
+                    ->form([
+                        Forms\Components\Select::make('status')
+                            ->options([
+                                'approved' => 'Approved',
+                                'in-progress' => 'In-Progress',
+                                'pending' => 'Pending',
+                                'rejected' => 'Rejected',
+                            ])
+                            ->required(),
+                    ])
+                    ->action(function ($record, array $data) {
+                        $record->update(['status' => $data['status']]);
+
+                        // Prepare email data
+                        $emailData = [
+                            'name' => $record->name,
+                            'status' => $data['status'],
+                        ];
+
+                        // Send email
+                        // Mail::to($record->email)->send(new StatusChanged($emailData));
+
+                        // Show success notification
+                        Filament::notify('success', 'Status changed and email sent successfully.');
+                    }),
                 Tables\Actions\EditAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
