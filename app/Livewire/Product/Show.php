@@ -172,6 +172,7 @@ class Show extends Component
 
          // Prepare the data to be used for the inquiry
          $dataInsert = [
+            'product_id' => $product->id,
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'message' => $validatedData['message'],
