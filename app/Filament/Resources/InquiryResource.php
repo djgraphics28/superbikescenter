@@ -148,7 +148,7 @@ class InquiryResource extends Resource
                         // Mail::to($record->email)->send(new StatusChanged($emailData));
 
                         // Show success notification
-                        Filament::notify('success', 'Status changed and email sent successfully.');
+                        // Filament::notify('success', 'Status changed and email sent successfully.');
                     }),
                 Tables\Actions\EditAction::make(),
 
