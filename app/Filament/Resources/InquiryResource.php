@@ -2,17 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\InquiryResource\Pages;
-use App\Filament\Resources\InquiryResource\RelationManagers;
-use App\Models\Inquiry;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Inquiry;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Resources\Resource;
+use Yajra\Address\Entities\City;
+use Yajra\Address\Entities\Province;
 use Filament\Resources\Components\Tab;
+use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\InquiryResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\InquiryResource\RelationManagers;
 
 class InquiryResource extends Resource
 {
@@ -35,11 +37,31 @@ class InquiryResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Select::make('province_id')
-                    ->relationship('province', 'name')
-                    ->required(),
+                    ->label('Province')
+                    ->options(Province::all()->pluck('name', 'province_id'))
+                    ->reactive() // Makes it reactive to changes
+                    ->required()
+                    ->afterStateUpdated(function ($state, callable $set) {
+                        $set('city_id', null); // Reset the city selection when the province changes
+                    }),
+
                 Forms\Components\Select::make('city_id')
-                    ->relationship('city', 'name')
+                    ->label('City')
+                    ->options(function (callable $get) {
+                        $provinceId = $get('province_id');
+                        if (!$provinceId) {
+                            return [];
+                        }
+                        return City::where('province_id', $provinceId)->pluck('name', 'city_id');
+                    })
+                    ->reactive()
                     ->required(),
+                // Forms\Components\Select::make('province_id')
+                //     ->relationship('province', 'name')
+                //     ->required(),
+                // Forms\Components\Select::make('city_id')
+                //     ->relationship('city', 'name')
+                //     ->required(),
                 Forms\Components\TextInput::make('barangay')
                     ->required()
                     ->maxLength(255),
