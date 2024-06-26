@@ -40,9 +40,6 @@ class InquiryResource extends Resource
                 Forms\Components\Select::make('city_id')
                     ->relationship('city', 'name')
                     ->required(),
-                Forms\Components\Select::make('city_id')
-                    ->relationship('city', 'name')
-                    ->required(),
                 Forms\Components\TextInput::make('barangay')
                     ->required()
                     ->maxLength(255),
