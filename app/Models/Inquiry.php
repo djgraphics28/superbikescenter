@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Yajra\Address\Entities\City;
+use Yajra\Address\Entities\Barangay;
 use Yajra\Address\Entities\Province;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -33,5 +34,15 @@ class Inquiry extends Model
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class, 'city_id', 'city_id');
+    }
+
+     /**
+     * Get the barangay that owns the Inquiry
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function barangay(): BelongsTo
+    {
+        return $this->belongsTo(Barangay::class, 'barangay_id', 'barangay_id');
     }
 }

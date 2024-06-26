@@ -34,15 +34,15 @@ class InquiryResource extends Resource
                 Forms\Components\TextInput::make('contact_number')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('province_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('city_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('barangay')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\Select::make('province_id')
+                    ->relationship('province', 'name')
+                    ->required(),
+                Forms\Components\Select::make('city_id')
+                    ->relationship('city', 'name')
+                    ->required(),
+                Forms\Components\Select::make('barangay')
+                    ->relationship('barangay', 'name')
+                    ->required(),
                 Forms\Components\Textarea::make('message')
                     ->required()
                     ->columnSpanFull(),
@@ -68,7 +68,7 @@ class InquiryResource extends Resource
                 Tables\Columns\TextColumn::make('city.name')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('barangay')
+                Tables\Columns\TextColumn::make('barangay.name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('approved_date')
