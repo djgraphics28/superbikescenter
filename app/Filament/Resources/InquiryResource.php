@@ -97,6 +97,9 @@ class InquiryResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('contact_number')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('product.name')
+                    ->numeric()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('province.name')
                     ->numeric()
                     ->sortable(),
