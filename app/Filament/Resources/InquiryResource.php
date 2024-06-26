@@ -68,6 +68,10 @@ class InquiryResource extends Resource
                 Forms\Components\TextInput::make('barangay')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\Select::make('product_id')
+                        ->relationship('product', 'name')
+                        ->columnSpanFull()
+                        ->required(),
                 Forms\Components\RichEditor::make('message')
                     ->required()
                     ->columnSpanFull(),
@@ -78,8 +82,7 @@ class InquiryResource extends Resource
                         'approved' => 'Approved',
                         'in-progress' => 'In-Progress',
                         'rejected' => 'Rejected',
-                    ])
-                    ->required(),
+                    ]),
                 // Forms\Components\DatePicker::make('approved_date'),
             ]);
     }

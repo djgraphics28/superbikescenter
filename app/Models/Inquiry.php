@@ -17,6 +17,16 @@ class Inquiry extends Model
     protected $guarded = [];
 
     /**
+     * Get the product that owns the Inquiry
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class, 'product_id', 'id');
+    }
+
+    /**
      * Get the province that owns the Inquiry
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
