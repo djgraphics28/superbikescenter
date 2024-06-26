@@ -35,14 +35,4 @@ class Inquiry extends Model
     {
         return $this->belongsTo(City::class, 'city_id', 'city_id');
     }
-
-     /**
-     * Get the barangay that owns the Inquiry
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function barangay(): BelongsTo
-    {
-        return $this->belongsTo(Barangay::class, 'barangay', 'id');
-    }
 }
