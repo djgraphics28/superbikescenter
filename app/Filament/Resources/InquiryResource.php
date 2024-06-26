@@ -43,7 +43,7 @@ class InquiryResource extends Resource
                 Forms\Components\TextInput::make('barangay')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('message')
+                Forms\Components\RichEditor::make('message')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('status')
