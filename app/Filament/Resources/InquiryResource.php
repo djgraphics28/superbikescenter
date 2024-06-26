@@ -77,7 +77,7 @@ class InquiryResource extends Resource
                         'rejected' => 'Rejected',
                     ])
                     ->required(),
-                Forms\Components\DatePicker::make('approved_date'),
+                // Forms\Components\DatePicker::make('approved_date'),
             ]);
     }
 
