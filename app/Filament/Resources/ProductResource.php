@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ProductResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProductResource\RelationManagers;
+use Filament\Forms\Set;
+use Illuminate\Support\Str;
 
 class ProductResource extends Resource
 {
@@ -33,7 +35,13 @@ class ProductResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('name')
                     ->required()
-                    ->columnSpanFull()
+                    ->maxLength(255)
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (Set $set, $state) {
+                        $set('slug', Str::slug($state));
+                    }),
+                Forms\Components\TextInput::make('slug')
+                    ->readOnly()
                     ->maxLength(255),
                 Forms\Components\RichEditor::make('description')
                     ->required()

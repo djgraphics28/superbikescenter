@@ -24,4 +24,9 @@ class ProductVariation extends Model
     {
         return $this->hasMany(ProductStock::class);
     }
+
+    public function getImageUrlAttribute()
+    {
+        return config('app.url').'/storage/'.$this->image;
+    }
 }

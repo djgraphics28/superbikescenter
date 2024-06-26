@@ -13,6 +13,6 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
 /**
  * Home > [Post]
  */
-Breadcrumbs::for('post', function (BreadcrumbTrail $trail, $post) {
-    $trail->parent('home')->push($post->title, route('post.show', $post));
+Breadcrumbs::for('product', function (BreadcrumbTrail $trail, $product) {
+    $trail->parent('home')->push($product->name, route('product.show', $product));
 });

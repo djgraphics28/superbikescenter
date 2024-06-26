@@ -38,4 +38,19 @@ class Product extends Model
     {
         return $this->hasMany(ProductVariation::class);
     }
+
+    public function getImageUrlAttribute()
+    {
+        return config('app.url').'/storage/'.$this->image;
+    }
+
+     /**
+     * Retrieve the product URL.
+     *
+     * @return string
+     */
+    public function getUrlAttribute()
+    {
+        return route('product.show', $this);
+    }
 }
