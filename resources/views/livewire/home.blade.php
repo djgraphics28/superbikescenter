@@ -5,12 +5,15 @@
         <!-- Filters section -->
         <div class="mb-3">
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
-                <div wire:ignore>
-                    <h3 class="text-lg font-bold mb-2">Price Range</h3>
-                    <div id="slider" class="mb-4"></div>
-                    <input wire:model.live="minPrice" type="hidden" id="min_price" name="min_price">
-                    <input wire:model.live="maxPrice" type="hidden" id="max_price" name="max_price">
-                    <span id="minMaxValue"></span>
+                <div>
+                    <div wire:ignore>
+                        <h3 class="text-lg font-bold mb-2">Price Range</h3>
+                        <div id="slider" class="mb-4"></div>
+                        <input wire:model.live="minPrice" type="hidden" id="min_price" name="min_price">
+                        <input wire:model.live="maxPrice" type="hidden" id="max_price" name="max_price">
+                    </div>
+                    <span>Php {{ $minPrice }} - Php {{ $maxPrice }}</span>
+
                 </div>
 
                 <div>
@@ -56,7 +59,8 @@
                         </div>
 
                         <h3 class="text-lg text-gray-700 group-hover:text-primary-500">{{ $product->name }}</h3>
-                        <h3 class="text-lg text-gray-700 group-hover:text-primary-500">Regular Price: Php {{ number_format($product->price, 2) }}</h3>
+                        <h3 class="text-lg text-gray-700 group-hover:text-primary-500">Regular Price: Php
+                            {{ number_format($product->price, 2) }}</h3>
                         <div class="inline-flex items-center px-3 py-1 bg-red-500 text-white rounded-1/2">
                             <span class="text-xs font-semibold mr-2">Installment Price</span>
                             <h3 class="text-lg text-white group-hover:text-white">Php

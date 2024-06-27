@@ -19,8 +19,8 @@ class Home extends Component
     public $selectedCategory;
 
 
-    public $minPrice;
-    public $maxPrice;
+    public $minPrice = 0;
+    public $maxPrice = 300000;
 
     protected $listeners = ['priceRangeUpdated'];
 
