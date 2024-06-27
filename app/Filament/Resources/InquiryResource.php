@@ -14,6 +14,7 @@ use Tables\Forms\Components\Select;
 use Illuminate\Support\Facades\Mail;
 use Yajra\Address\Entities\Barangay;
 use Yajra\Address\Entities\Province;
+use App\Mail\InquiryApprovedResponse;
 use Filament\Resources\Components\Tab;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\InquiryResource\Pages;
@@ -26,7 +27,7 @@ class InquiryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-ticket';
 
-     /**
+    /**
      * Get the navigation badge for the resource.
      */
     public static function getNavigationBadge(): ?string
@@ -112,6 +113,7 @@ class InquiryResource extends Resource
                 Tables\Columns\TextColumn::make('contact_number')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('product.name')
+                    ->label('Inquired Motorcycle')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('province.name')
@@ -162,10 +164,15 @@ class InquiryResource extends Resource
                         $emailData = [
                             'name' => $record->name,
                             'status' => $data['status'],
+                            'link' => config('app.url').'/customer/register',
                         ];
 
-                        // Send email
-                        // Mail::to($record->email)->send(new StatusChanged($emailData));
+                        if ($data['status'] == "approved") {
+                            // Send email
+                            Mail::to($record->email)->send(new InquiryApprovedResponse($emailData));
+                        }
+
+
 
                         // Show success notification
                         // Filament::notify('success', 'Status changed and email sent successfully.');

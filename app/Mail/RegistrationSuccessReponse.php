@@ -9,9 +9,10 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class InquiryApprovedResponse extends Mailable
+class RegistrationSuccessResponse extends Mailable
 {
     use Queueable, SerializesModels;
+
     public $data;
 
     /**
@@ -28,7 +29,7 @@ class InquiryApprovedResponse extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Inquiry Approved Response',
+            subject: 'Registration Success Response',
         );
     }
 
@@ -38,7 +39,7 @@ class InquiryApprovedResponse extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mail.inquiry-approved-response',
+            markdown: 'mail.registration-success-response',
         );
     }
 
