@@ -43,8 +43,13 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <h3>Price Details</h3>
-                        <p>{{ $product->price }}</p>
+                        <h3 class="text-lg text-gray-700 group-hover:text-primary-500">Regular Price: Php
+                            {{ number_format($product->price, 2) }}</h3>
+                        <div class="inline-flex items-center px-3 py-1 bg-red-500 text-white rounded-1/2">
+                            <span class="text-xs font-semibold mr-2">Installment Price</span>
+                            <h3 class="text-lg text-white group-hover:text-white">Php
+                                {{ number_format($product->price / 36, 2) }}</h3>
+                        </div>
                     </div>
                     <div class="mt-4">
                         <button @click="showForm = true" class="px-4 py-2 bg-blue-500 text-white rounded">
@@ -87,37 +92,48 @@
                                 @enderror
                             </div>
                             <div class="mb-4">
-                              <label for="province" class="block text-gray-700 text-sm font-bold mb-2">Province</label>
-                              <select wire:model.live="province" id="province" name="province" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                  <option value="">Select Province</option>
-                                  @foreach($provinces as $province)
-                                      <option value="{{ $province->province_id }}">{{ $province->name }}</option>
-                                  @endforeach
-                              </select>
-                              @error('province') <span class="text-red-500">{{ $message }}</span> @enderror
-                          </div>
+                                <label for="province"
+                                    class="block text-gray-700 text-sm font-bold mb-2">Province</label>
+                                <select wire:model.live="province" id="province" name="province"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    <option value="">Select Province</option>
+                                    @foreach ($provinces as $province)
+                                        <option value="{{ $province->province_id }}">{{ $province->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('province')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-                          <div class="mb-4">
-                              <label for="city" class="block text-gray-700 text-sm font-bold mb-2">City</label>
-                              <select wire:model.live="city" id="city" name="city" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                  <option value="">Select City</option>
-                                  @foreach($cities as $city)
-                                      <option value="{{ $city->city_id }}">{{ $city->name }}</option>
-                                  @endforeach
-                              </select>
-                              @error('city') <span class="text-red-500">{{ $message }}</span> @enderror
-                          </div>
+                            <div class="mb-4">
+                                <label for="city" class="block text-gray-700 text-sm font-bold mb-2">City</label>
+                                <select wire:model.live="city" id="city" name="city"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    <option value="">Select City</option>
+                                    @foreach ($cities as $city)
+                                        <option value="{{ $city->city_id }}">{{ $city->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('city')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-                          <div class="mb-4">
-                              <label for="barangay" class="block text-gray-700 text-sm font-bold mb-2">Barangay</label>
-                              <select wire:model="barangay" id="barangay" name="barangay" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                  <option value="">Select Barangay</option>
-                                  @foreach($barangays as $barangay)
-                                      <option value="{{ $barangay->id }}">{{ $barangay->name }}</option>
-                                  @endforeach
-                              </select>
-                              @error('barangay') <span class="text-red-500">{{ $message }}</span> @enderror
-                          </div>
+                            <div class="mb-4">
+                                <label for="barangay"
+                                    class="block text-gray-700 text-sm font-bold mb-2">Barangay</label>
+                                <select wire:model="barangay" id="barangay" name="barangay"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    <option value="">Select Barangay</option>
+                                    @foreach ($barangays as $barangay)
+                                        <option value="{{ $barangay->id }}">{{ $barangay->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('barangay')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
+                            </div>
                             <div class="mb-4">
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
                                     Message
