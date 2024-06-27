@@ -4,25 +4,21 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
-use App\Models\Inquiry;
+use App\Models\Customer;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Filament\Facades\Filament;
 use Filament\Resources\Resource;
-use Yajra\Address\Entities\City;
-use Tables\Forms\Components\Select;
-use Illuminate\Support\Facades\Mail;
 use Yajra\Address\Entities\Barangay;
+use Yajra\Address\Entities\City;
 use Yajra\Address\Entities\Province;
-use Filament\Resources\Components\Tab;
 use Illuminate\Database\Eloquent\Builder;
-use App\Filament\Resources\InquiryResource\Pages;
+use App\Filament\Resources\CustomerResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\InquiryResource\RelationManagers;
+use App\Filament\Resources\CustomerResource\RelationManagers;
 
-class InquiryResource extends Resource
+class CustomerResource extends Resource
 {
-    protected static ?string $model = Inquiry::class;
+    protected static ?string $model = Customer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -30,16 +26,38 @@ class InquiryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('first_name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('middle_name')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('last_name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('sufix_name')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('username')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('password')
+                    ->password()
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('contact_number')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\DatePicker::make('birth_date')
+                    ->required(),
+                Forms\Components\TextInput::make('gender')
+                    ->required(),
+                Forms\Components\TextInput::make('marital_status')
+                    ->required(),
+                Forms\Components\Toggle::make('is_active')
+                    ->required(),
                 Forms\Components\Select::make('province_id')
                     ->label('Province')
                     ->options(Province::all()->pluck('name', 'province_id'))
@@ -48,7 +66,6 @@ class InquiryResource extends Resource
                     ->afterStateUpdated(function ($state, callable $set) {
                         $set('city_id', null); // Reset the city selection when the province changes
                     }),
-
                 Forms\Components\Select::make('city_id')
                     ->label('City')
                     ->options(function (callable $get) {
@@ -74,22 +91,18 @@ class InquiryResource extends Resource
                     })
                     ->reactive()
                     ->required(),
-                Forms\Components\Select::make('product_id')
-                    ->relationship('product', 'name')
-                    ->columnSpanFull()
-                    ->required(),
-                Forms\Components\RichEditor::make('message')
+                // Forms\Components\Select::make('province_id')
+                //     ->relationship('province', 'name'),
+                // Forms\Components\Select::make('city_id')
+                //     ->relationship('city', 'name'),
+                // Forms\Components\Select::make('barangay_id')
+                //     ->relationship('barangay', 'name'),
+                Forms\Components\Textarea::make('address1')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Select::make('status')
-                    ->label('Status')
-                    ->options([
-                        'pending' => 'Pending',
-                        'approved' => 'Approved',
-                        'in-progress' => 'In-Progress',
-                        'rejected' => 'Rejected',
-                    ]),
-                // Forms\Components\DatePicker::make('approved_date'),
+                Forms\Components\Textarea::make('address2')
+                    ->columnSpanFull(),
+                // Forms\Components\DateTimePicker::make('email_verified_at'),
             ]);
     }
 
@@ -97,26 +110,35 @@ class InquiryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('first_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('middle_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('last_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('sufix_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('username')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('contact_number')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('product.name')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('province.name')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('city.name')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('barangay')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('status'),
-                Tables\Columns\TextColumn::make('approved_date')
+                Tables\Columns\TextColumn::make('birth_date')
                     ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('gender'),
+                Tables\Columns\TextColumn::make('marital_status'),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
+                Tables\Columns\TextColumn::make('province.name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('city.name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('barangay.name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email_verified_at')
+                    ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -135,35 +157,8 @@ class InquiryResource extends Resource
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
-                Tables\Actions\Action::make('changeStatus')
-                    ->label('Change Status')
-                    ->form([
-                        Forms\Components\Select::make('status')
-                            ->options([
-                                'approved' => 'Approved',
-                                'in-progress' => 'In-Progress',
-                                'pending' => 'Pending',
-                                'rejected' => 'Rejected',
-                            ])
-                            ->required(),
-                    ])
-                    ->action(function ($record, array $data) {
-                        $record->update(['status' => $data['status']]);
-
-                        // Prepare email data
-                        $emailData = [
-                            'name' => $record->name,
-                            'status' => $data['status'],
-                        ];
-
-                        // Send email
-                        // Mail::to($record->email)->send(new StatusChanged($emailData));
-
-                        // Show success notification
-                        // Filament::notify('success', 'Status changed and email sent successfully.');
-                    }),
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -184,9 +179,10 @@ class InquiryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListInquiries::route('/'),
-            'create' => Pages\CreateInquiry::route('/create'),
-            'edit' => Pages\EditInquiry::route('/{record}/edit'),
+            'index' => Pages\ListCustomers::route('/'),
+            'create' => Pages\CreateCustomer::route('/create'),
+            'view' => Pages\ViewCustomer::route('/{record}'),
+            'edit' => Pages\EditCustomer::route('/{record}/edit'),
         ];
     }
 
