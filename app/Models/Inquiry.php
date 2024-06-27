@@ -54,6 +54,6 @@ class Inquiry extends Model
      */
     public function barangay(): BelongsTo
     {
-        return $this->belongsTo(Barangay::class, 'barangay', 'id');
+        return $this->belongsTo(Barangay::class, 'barangay_id', 'id');
     }
 }

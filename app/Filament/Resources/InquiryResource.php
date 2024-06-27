@@ -120,7 +120,7 @@ class InquiryResource extends Resource
                 Tables\Columns\TextColumn::make('city.name')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('barangay')
+                Tables\Columns\TextColumn::make('barangay.name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('approved_date')
