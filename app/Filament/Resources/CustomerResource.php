@@ -59,11 +59,20 @@ class CustomerResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('birth_date')
+                    ->native(false)
                     ->required(),
-                Forms\Components\TextInput::make('gender')
-                    ->required(),
-                Forms\Components\TextInput::make('marital_status')
-                    ->required(),
+                Forms\Components\Select::make('gender')
+                    ->options([
+                        'Male' => 'Male',
+                        'Female' => 'Female',
+                    ]),
+                Forms\Components\Select::make('marital_status')
+                    ->options([
+                        'Single' => 'Single',
+                        'Married' => 'Married',
+                        'Divorced' => 'Divorced',
+                        'Widowed' => 'Widowed',
+                    ]),
                 Forms\Components\Toggle::make('is_active')
                     ->required(),
                 Forms\Components\Select::make('province_id')
