@@ -5,6 +5,7 @@ namespace App\Filament\Resources\InquiryResource\Pages;
 use Filament\Actions;
 use App\Models\Product;
 use App\Mail\InquiryResponse;
+use App\Jobs\InquiryResponseJob;
 use Illuminate\Support\Facades\Mail;
 use Filament\Resources\Pages\CreateRecord;
 use App\Filament\Resources\InquiryResource;
@@ -12,14 +13,6 @@ use App\Filament\Resources\InquiryResource;
 class CreateInquiry extends CreateRecord
 {
     protected static string $resource = InquiryResource::class;
-
-    // protected function afterCreate(): void
-    // {
-    //     parent::afterCreate();
-
-    //     // Send the email with the form data
-    //     Mail::to($this->record->email)->send(new InquiryResponse($this->record->toArray()));
-    // }
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
@@ -29,8 +22,8 @@ class CreateInquiry extends CreateRecord
 
         $dataArray['motorcycle'] = $product->name;
         $dataArray['model'] = $product->model;
-        // Send the email with the form data
-        Mail::to($data['email'])->send(new InquiryResponse($dataArray));
+        // Send the response email to job
+        InquiryResponseJob::dispatch($dataArray);
 
         return $data;
     }

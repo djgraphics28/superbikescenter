@@ -16,6 +16,7 @@ use Yajra\Address\Entities\Barangay;
 use Yajra\Address\Entities\Province;
 use App\Mail\InquiryApprovedResponse;
 use Filament\Resources\Components\Tab;
+use App\Jobs\InquiryApprovedResponseJob;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\InquiryResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -162,14 +163,17 @@ class InquiryResource extends Resource
 
                         // Prepare email data
                         $emailData = [
+                            'email' => $record->email,
                             'name' => $record->name,
                             'status' => $data['status'],
-                            'link' => config('app.url').'/customer/register',
+                            'link' => config('app.url') . '/customer/register',
                         ];
 
                         if ($data['status'] == "approved") {
                             // Send email
-                            Mail::to($record->email)->send(new InquiryApprovedResponse($emailData));
+                            InquiryApprovedResponseJob::dispatch($emailData);
+                        } else if($data['status'] == "rejected") {
+
                         }
 
 

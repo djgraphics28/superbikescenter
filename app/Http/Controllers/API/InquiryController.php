@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Jobs\InquiryResponseJob;
 use App\Models\Inquiry;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -59,7 +60,7 @@ class InquiryController extends Controller
         Inquiry::create($validatedData);
 
         // Send the response email
-        Mail::to($validatedData['email'])->send(new InquiryResponse($data));
+        InquiryResponseJob::dispatch($data);
 
         // Return a success response
         return response()->json(['message' => 'Inquiry submitted successfully and response email sent.']);
