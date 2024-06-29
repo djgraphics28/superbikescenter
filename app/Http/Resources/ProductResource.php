@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\ProductVariationResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
@@ -24,7 +25,7 @@ class ProductResource extends JsonResource
             'category_id' => $this->category->name,
             'brand_id' => $this->brand->name,
             'model' => $this->model,
-            'variations' => $this->variations
+            'variations' => ProductVariationResource::collection($this->variations)
             // 'year' => $this->year,
             // 'engine_type' => $this->engine_type,
             // 'displacement' => $this->displacement,
