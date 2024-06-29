@@ -55,7 +55,7 @@ class ProductController extends Controller
     //  */
     public function show(string $slug)
     {
-        $product = Product::whereSlug($slug)->firstOrFail();
+        $product = Product::with('variations')->whereSlug($slug)->firstOrFail();
 
         return response()->json(new ProductResource($product));
     }
