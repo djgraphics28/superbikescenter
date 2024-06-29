@@ -24,6 +24,7 @@ class ProductResource extends JsonResource
             'category_id' => $this->category->name,
             'brand_id' => $this->brand->name,
             'model' => $this->model,
+            'variations' => $this->variations
             // 'year' => $this->year,
             // 'engine_type' => $this->engine_type,
             // 'displacement' => $this->displacement,
