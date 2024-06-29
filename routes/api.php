@@ -17,6 +17,7 @@ Route::post('/customer/register', [AuthController::class, 'register']);
 
 // public routes
 Route::get('/products', [ProductController::class, 'index'])->name('products');
+Route::get('/product/{slug', [ProductController::class, 'show'])->name('show.product');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::get('/brands', [BrandController::class, 'index'])->name('brands');
 
