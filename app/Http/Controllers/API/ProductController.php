@@ -35,12 +35,21 @@ class ProductController extends Controller
             $query->where('price', '<=', $request->input('max_price'));
         }
 
-        // Get the filtered products
-        $products = $query->get();
+        // Filter by name if provided
+        if ($request->has('name')) {
+            $query->where('name', 'like', '%' . $request->input('name') . '%');
+        }
 
-        // Return the response
-        return response()->json(ProductResource::collection($products));
+        // Set the number of items per page
+        $perPage = $request->input('per_page', 10); // Default to 10 items per page if not provided
+
+        // Get the filtered products with pagination
+        $products = $query->paginate($perPage);
+
+        // Return the paginated response
+        return response()->json(ProductResource::collection($products)->response()->getData(true));
     }
+
 
     // /**
     //  * Store a newly created resource in storage.

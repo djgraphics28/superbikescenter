@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>SuperBikesCentral Documentation</title>
+    <title>SuperBikesCenter Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -92,14 +92,29 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-customer-login">
+                                <a href="#endpoints-POSTapi-customer-login">POST api/customer/login</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-customer-register">
+                                <a href="#endpoints-POSTapi-customer-register">POST api/customer/register</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-products">
                                 <a href="#endpoints-GETapi-products">Display a listing of the Product resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-product--slug-">
+                                <a href="#endpoints-GETapi-product--slug-">GET api/product/{slug}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-categories">
                                 <a href="#endpoints-GETapi-categories">Display a listing of the Categories resource.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-brands">
                                 <a href="#endpoints-GETapi-brands">Display a listing of the Brand resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-provinces">
+                                <a href="#endpoints-GETapi-provinces">GET api/provinces</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-cities--provinceId-">
+                                <a href="#endpoints-GETapi-cities--provinceId-">GET api/cities/{provinceId}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-inquiries">
                                 <a href="#endpoints-POSTapi-inquiries">Store a newly created Inquiry resource in storage.</a>
@@ -115,7 +130,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 25, 2024</li>
+        <li>Last updated: July 6, 2024</li>
     </ul>
 </div>
 
@@ -183,7 +198,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6IlV4WlFpb0hKcHJJY2YwTUY4VHEwVHc9PSIsInZhbHVlIjoiOUprNE12cHF4YkRreXFTaTU2NDA0eWp0YVZKMG0rR0xZRGpSZGVMUUo4eEZyU3F4MkduWnJIVDdRUVNrOVdTYmthaGdiTkJjWHExbnpINTF2VUM4USs5TExTbWNmOHdQb2pmdHBGbC81TWh6c2pDVksvZDdocnlPOUFkRVFMcGsiLCJtYWMiOiI5YWM2NzhhNzFlZjJiYTE3NDIxN2FhMThmMjZlNjNmZDQwYzY4MmIzODZlM2E0NDk3NWJmNDMwZTExNTM4MTJjIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IkNZQVlkaHUySENSWUVKUk5EZGlvSmc9PSIsInZhbHVlIjoiN0R1aWY5OHdLZEEzZFMvZS9GQjBwT1k2cFhyUE53am4xWWFqQm01L0tKQ0RFdW8rUDlBRU5TdWlkNDhYdmQrbmwxWERSbFdSTFdqTHRVUW81bmxJclc2TnRhWWNpWUJsUG5nbVdmTTlkd2NBL2RzN0FDY3BkL1k5MlFYekFEUUUiLCJtYWMiOiI1NGIyNGRjMWUxZmY2OTQzOTlkNWJkMjA2MTg1NzlkZGEzNjhjODBhNDY2Y2ZiNjQ4ZTRiMTA2ZTIwZTMxMmRjIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IjRDejQwYlBkNWdVbkt0SXkrdEtjRFE9PSIsInZhbHVlIjoiNmJjeGZOT2VKRFNqY3crVUYwVjB6aVM2ZklqYjlBcmJqRVRXMndBajBvWnJMTHBHZitCVUxBZThRZ0o3U05uekM5TlNPOElPYTVuaVNYOFo4R1owdVRFT09NWkgvSWlvM0tBYTVnK0wzQzNjR29uVXhCMXhtRCt6L29ueGk5bGgiLCJtYWMiOiJlOTg0NTI4OGViNGE1MTJjNzE5MGZmYjg5NWY0NjZlNmNmNTc3ZDFmNDEwNGYxMGUwMGU2YzlmYjhmMWJmZDhkIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImZkNGY5dENHcFQxWUNzcE5JZTliVmc9PSIsInZhbHVlIjoiNExnNkgvUG5HVVp6ZGRhdTg1ZHFsZ0JQcW15QXVzci8rcmwxeDN2MVhnOWtDQnJnckV6cGZLRG1EY05lS3NHMHRmVnNpcTE1anpSNkUxeUYzODZqd0JBNGh1bEtsSTFJWWFzVTR2empld1lwQzlweitMRFBrdXllNXl1dUYvaVoiLCJtYWMiOiI5Yjg2OWQ3ZTViYWUxZTZjYTQ1NjdkNWRmOWE5M2Y3NTY3ZTkzNThjZWNhYzNiMzAzYzdkZGVhYjA3YWZkYWY3IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -308,7 +323,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6Im1YOUY1YXhEbVhOM01NeGtZYnJDK3c9PSIsInZhbHVlIjoiZVRlUEN1TkNEOXIzZ1VHaFFJRUlkT1lWeEhlRWY1NlpiV1lLQkhCL05vMmJDNW9qZUw2eXVGM2xYVlA2c0VvcGVpeFpGNjM1R00vUUFZRGtJTXU3Y0pXWG9jT2N5QUhkWDNQbjhPN1dwMVBmQ3NMWHZjWTg4dDd1bFp1Y1dxQkwiLCJtYWMiOiI0ZTNkYmMwNjE0OGY5ZTM5OGE4ZmQzMzcyODYzYmQwMGExYzAwMjc4YWQ2ZTYyNmU2ZDM4OGMwNDAwZTEyYzVjIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IjZsQkR4N3R3elJpT3RGUkpaSVNnWUE9PSIsInZhbHVlIjoiYy91WWtBcmE5MXNFYk5CSzFxZzgvUXpYUlVpL20zM2QwL0tSKzBWQmxRUC8xTktNU0diV282NXpDM3NiZFRwNHZuWmIxSG5nTmVxdTlQbk5JUEQ0bEtxeTVFRUpuVnpkWDdsRVVleEVsNDFWMnA5V3NtMU9oa0hjVmJuYzBMNDQiLCJtYWMiOiIxOTM1ODkxNDNmNWFmOGRmN2EzZmRiMzQ4MTVkZWY1ZjcxODg2MmViOGIzNjAwMGRlOWY3ZDY5NmNmODJiNjI1IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6Imo2M2xSaGFQMUZ4ZmZFajBXNWNjVVE9PSIsInZhbHVlIjoiS2dzT1ZaZ201YVRoQWNwdlFsU0w3b0pKdjg2anVnK0NSZ2NYYmJ6aDFvMXZoM1Q1UEtpYlZVQldkT0h5cHY1UkpSZFV4N3ZtbGJCcXFOaGFQVXpGQXY2T09RdDI3MURDTnNXUjRxVmpaemtxbm4yak83QWpNZGdkcGpxT2tzVE8iLCJtYWMiOiJhNmZmYjJhN2U5OThmY2VkODZmZDQ1MjM2ODIwYmRkZTVjMmM1MjI3YWFhNTkzOGY3MzRlYzU3YjVkMTc5OTVjIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkNZa0JNMkk4T0pYTnRFS1ZwSTJSbmc9PSIsInZhbHVlIjoic2RZUzNmODJvRyt4RWI4QVc4c1k1TkFYWk9vSlVOVk9SaWFrN2FBemV0ZXg5Q2NYalZjQU8ycS8vcGUvSzkxM2N1V2FTd3VZdWNYU1pGeEs5Y1h5enIrc2kvaXRNZnlOdjlvT1Nod3BKY2ZNZXo0VzJwQ3J1b1I0VDB5V0FqR1MiLCJtYWMiOiJiZWE5NDMwYjBhOWYzOTZhYjI5NmMyMTFiZjI5OGQzMDM5MGRkNTEwNThlMjE2MmZhZTEyMDI5ZDg0ZDA3ZGQ5IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -400,14 +415,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/provinces/esse" \
+    --get "https://superbikescentral.online/api/address/provinces/quos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/provinces/esse"
+    "https://superbikescentral.online/api/address/provinces/quos"
 );
 
 const headers = {
@@ -433,7 +448,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6Ii95RjB5RmtxWXJJclhRS0p4QzFvTXc9PSIsInZhbHVlIjoid3kvMWJkTjhiRjA2RU5xMjVsa0tKU3VjUitCMFRWT3BlU0h3cGV1WDJsUlpyRVZDWjBETVVsdGZWUGJTOHJ4MSt3N0RGZExCdmxia1dMNFNCeWpJcFBrR2JQYlkzOWwwWEtpUU5CVFNoRXZSZEFEYjdhOThDS2ptUHFZS296ZjAiLCJtYWMiOiJlZWQ1NTc4MTIzYTZhYjUyNzQ5Y2E0ZWE4Y2M4ZTc5MjdiYzZmNmM1NDU3NjUyYmQ2NmFmMWM4ZmYxYzM3MDUyIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IlF4dk8rU3RacWVXMmljcmdmd3REekE9PSIsInZhbHVlIjoiL2pVUDQxWXB3ajluNTNuUHlOTmlNVFAzQkdqWE5IUk0raWZ1WmJTZ1VicGd3bU9jbldoamRPQXVNNTc1Vzk4OVBsYU56QUdZZUlzZGQyMTN0dThHWWtmVlFEUW5VZUlzNkJWUkw3NzN2dmw1dzJrRVhWamdSdFhsOWo5QTNHYVkiLCJtYWMiOiI5MzJiYmUyNDFiMzM3ZGM3MjBmMDdjMWZjOTc5MjU2MWEzMTNiZWY3ZjYwYTFmMDgwMTQyN2Q1ZGYyNGNlZmZiIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IkY4bXYzZEFReVVSV2QybjI3azArMnc9PSIsInZhbHVlIjoiUzI0VVQ5K0lwWFNzbTY1VzlkcGRmVVNDb1BEZTVDWU1DUnJxMVVFZmxXWVZkMm5LNkt2aG9nUDBBU0M1WTVZdTlDbmRmVmwyd2s3ZkNXVFJ6RTNZTmZLZi9kWDhyY0phUkJmMFJVcTRvYkcySW9ENXVLVkRFTW5XMFUwaUUvOWMiLCJtYWMiOiI3MjI5MGYwMWJiM2YzMGJlMDk5MDAyODIyMzQwMmZlMDc4MjdkYmRhYmQ0NTYwMjY2MzYzMDg2ZDFiMzY2OTI4IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InMxTmZ3YUtMSUVtMnVKNzJsNWxLRkE9PSIsInZhbHVlIjoiRno2cGZoRVBBK3NnRU5iWHZyem45RjRlRFBZZEpuU0Z6YkpsU0g3OWVJenVkU1VOQWZ3RHErdHBGbDlPR1c0ZW1EYk1CbmlTR3VNVVpyanFuQ1dhTG1ObUtSUXR6K0ErZWJUZmZEZS9kTHdqb3l4b3gyMkU4WTFHMXFLWkp0VkkiLCJtYWMiOiI4NjQzMmE2OGUyOTkwN2Q5Y2YwNmU2NTY3NjIxNWFkODZmMWMwNzlkOGU4ODNkYWJiYjg1YzA0YWMyOTFlNDlhIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -517,10 +532,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="regionId"                data-endpoint="GETapi-address-provinces--regionId-"
-               value="esse"
+               value="quos"
                data-component="url">
     <br>
-<p>Example: <code>esse</code></p>
+<p>Example: <code>quos</code></p>
             </div>
                     </form>
 
@@ -537,14 +552,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/cities/velit" \
+    --get "https://superbikescentral.online/api/address/cities/nesciunt" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/cities/velit"
+    "https://superbikescentral.online/api/address/cities/nesciunt"
 );
 
 const headers = {
@@ -570,7 +585,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6InNWVDlmOWMvZWd6UXBrRytDNExNMkE9PSIsInZhbHVlIjoia3NaOEVyRkRoSlM4U08wR2xhZXNHVDR0RGRSVnQ5enVzMEViMHpxNDQ4ZEQwTlNNR3Z1ZUt1c25CVXpRaVczeUZaclpHUUxRdmlCWStORFpxWVJIVC8zWWpMR2NONDJWRnptZkp0OXV3V2RJVTFGMHExMlExMklFUFh4U29JSXkiLCJtYWMiOiJmNDFkNjg5N2E4NzVhMWZkNDc5NTEyNmNiNDEyYzAwYzNiM2Y3Nzc0ZDE0NGJlNGY1MTBmZDhlYjBiZDYzMzY0IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IlgreUFFYW9DOGQyNDRCbTdNN0c3eEE9PSIsInZhbHVlIjoiNDQ1VkVjMktXRzNhWTFkVzJRZ0ZKcTByVjNxbHNjZmE1N28vUVZuVnY1Ym1jUkJYdWhSUU4xbTMwTmJxbCtObjBlS25Sd3VLQkVXTGozWWZVOEo0ZmE1bVRKQUswOStYWkpaeTI0NGJtZVZ6clVOYThIQllIRlFuajNTcDZVVWciLCJtYWMiOiIyODBjNjFhYWVmYzJmZDBiZjVkODUxNDRiMDI2ZGUzMDY4ZjYxYTkxZmQwYTIzZGZkZjAxZGI2NzZkNGJhYWM1IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IlM5bjdHZUNjOEY0eUtueHR5VC9uYXc9PSIsInZhbHVlIjoicjJsdVRsZ1o4Y1h4NWRQQnVRQ2ttUkNzWHB4Yy94VlJnZStGYjd4Rjc1KzBQT2J0aXYwUVpraHVUaDVqREwxd05qQ2RldEJpcDR5QVdjekE2cmRyVmUycWl4SExoUjdadTByU3J1MUM5NjhFRjJyUmU4TG15TU13OUg0bXhDZE0iLCJtYWMiOiI2ODk4NTgwYmMyODhiYjI5Yzc2ODNiNmFiNmUwZGIxOTI3MmUwN2VjZDRiOWIyMjdiYWIzZjRiYTkzMDVmMDk4IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InRSaFMzRGFVSlhkYVgyYWJFZGNSTlE9PSIsInZhbHVlIjoiNjdQc2VwL3Zlb1BXM0lMK2FscDU4bW51azVYazhTdEFrUE4yTnNLNjArdXhhOHM3N3BCdE82Q0l1TE9Qb2plYVM5eXV3cGFYdWJXM1JrNmhPVHcyeHQ5TUxtMmNJMVNWNFNIQ0cvazFlN3REblBZZ3pqY1UydCtVd2JVSGdFUHEiLCJtYWMiOiJlYTk0MWJiNGIwOTJjNDAwZDM5MjhjNzM4MDU0YjBlZjVmYjY4Y2MwOTllZDYwZWZmZGQyYmQ2OGJkYWEyYmY1IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -654,10 +669,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="provinceId"                data-endpoint="GETapi-address-cities--provinceId-"
-               value="velit"
+               value="nesciunt"
                data-component="url">
     <br>
-<p>Example: <code>velit</code></p>
+<p>Example: <code>nesciunt</code></p>
             </div>
                     </form>
 
@@ -674,14 +689,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/cities/et/deleniti" \
+    --get "https://superbikescentral.online/api/address/cities/odio/ad" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/cities/et/deleniti"
+    "https://superbikescentral.online/api/address/cities/odio/ad"
 );
 
 const headers = {
@@ -707,7 +722,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6InVOdVZyanlvbjFTeVlZNEp0TnI1REE9PSIsInZhbHVlIjoiUS9xbGlGQlk2ZnNKSGRCQW02Z0JHQ3N4N3BJU1BuSHZoTXRDTWJJM1QvUU5jSEErSkdJbVRKVTdHVmQ0NmFucFZqMjdVRFYrWC9TM1owblkvSEhZN1BvejhXSjBlWG9KOGliSWt0aXdWaTRDajd2eWsvemRMU2EyOWJCd3RsUDkiLCJtYWMiOiI5YWRkNTNlN2QwMTk4ZmViMjNjNWQ2Mjk2MGU1Yjk4MDYwNWRjMjBiOTg3OGE1MTg4OGVjZGQ0OGJlN2U0NmY1IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IlNKUDVBSG1RMnVpZ3UrWUlxeFpxYXc9PSIsInZhbHVlIjoicmVkYzNldXBrMldCSTJQaFBneW5taldqcGRkZTJkRVRUUThpMUhaK2RvdE8wK0lvaEEwbmNHWG5FVkMxamNEc3V1ek5sZjhwSklhU0g5YXJFOUQ5RzBHRzBXTlplYzhKc0FzTHVTTUNRblIrZFlnTFNQdXZ1NXdYWjFrUmxHMGUiLCJtYWMiOiIzODA5Y2E5MzVkZTUwMGUwMDhkZGZmZGZhZDk4YzFjYThiYTMwNTc1NjI3MDdiMGNjYzJkNzJiOWUxNzc3ZTU1IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IjArMmdOME8xa1lQYjd2Ymp4Y1JUNGc9PSIsInZhbHVlIjoiK0VEQk9MeFlSVmtWNGdsd2hFLzFWVnB1akc4aHh5YVA0Tng4bHJMa3JqKzJRbW9RWi9ySUg3MVVkZDFTMnlmdU5HR1lhMDh0WWRUMWdoRml1VnBrVCtUZ00rQmFPakVyMU5rWU9sU05jaU9VUW9wNXBMdFB1N1pVSDlZUjN3WGsiLCJtYWMiOiJhMTI0MmMyM2RlYzgwN2E5Y2JkZmYzNGZhOWMxNGQ2OTU4MTg3NDJlMGM3NWEwODkzMDY3OTYwYWE4ODE4ZDI3IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IldrSUZ5elBpZHFOckF3c0s4d0p5dXc9PSIsInZhbHVlIjoiUnRVb1hLWnBPdlJoUjJ0YzRYRnQwSFdRUjZCTVhtVkM2V1l6c2RtQWk2bnQxTDdvYTJ2alVOY2xJcUNZb1drT0UzMjFhNDliVzVXZUlwb05BdjFUTGhQcmZxZ0lxUUN6T1lDSlhoV2taU0x3UzdwckpRd0FZQWYySFdSVW9CQmsiLCJtYWMiOiJlNDMyMTMzNWQxMzQwNzdhODU4ZWUwZDYzN2FiNmU5YTdhYWUxNTg4MmUwMzZlNzRlM2Q4N2ZkM2MxNGNlMzlhIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -791,10 +806,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="regionId"                data-endpoint="GETapi-address-cities--regionId---provinceId-"
-               value="et"
+               value="odio"
                data-component="url">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>odio</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>provinceId</code></b>&nbsp;&nbsp;
@@ -802,10 +817,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="provinceId"                data-endpoint="GETapi-address-cities--regionId---provinceId-"
-               value="deleniti"
+               value="ad"
                data-component="url">
     <br>
-<p>Example: <code>deleniti</code></p>
+<p>Example: <code>ad</code></p>
             </div>
                     </form>
 
@@ -822,14 +837,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/barangays/sed" \
+    --get "https://superbikescentral.online/api/address/barangays/minus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/barangays/sed"
+    "https://superbikescentral.online/api/address/barangays/minus"
 );
 
 const headers = {
@@ -855,7 +870,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6IjhxeHk4bVNwRVJ1Ti9aVUQ5aVlCeFE9PSIsInZhbHVlIjoiVm9yQ2M0K0lmMTBPSC9SU2huSm5KZ3kxQk5UcmZGTzZlcUNhV1FuanpQMHpwOHlVREhGbkFGNk9kdC9ONGY5eXZYcndJbEtZRko5eWlvSHRvaUt2dVZ1WHZxSXRsNHJGZ0NqRVdOSkdtSnd6blVuOS9pZnMzK1NpWmw5VmI3dHUiLCJtYWMiOiI5ZTVhMGIzZWMwNGQxODFiMTJiNGIyNDk1YTQzOTBjYmZjZTQ2ZmZiYTdhMGZkOTFkMzMyNDRiMDM0MDVmOTA0IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6Ik9EaVkvb2E1T1VibVdydCtuN05nVnc9PSIsInZhbHVlIjoiLzgvNDA2bWFMUWdqWjRJUUN4U1RJSmJwWldPbnJHdVBKQ2g0clFFQ1lVamFOcHl3V1RFNTdCSkN3YnlJNFZzL0psMkhsYURsRElWQTB4V2syN0QxRDQ4aHpYUEJSSHlSa3B3T1ZJMVNnc0g3bm12aGs5MGt2SndMOXRzY3k0Q20iLCJtYWMiOiJkMGRhZWRkNGRmY2ZjNmY2ODY2MGEzODUyNmQ3YzMzYjE5ODcwNDYzN2ViYzA0YTg2YjkzZGIxZDAyMGE1YjM4IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6ImZYakFRb3VQSVl6UjZaZkNWMnBHWUE9PSIsInZhbHVlIjoiZkJFbEozOVlEM3V5WGtlU2hrdHlsa0xTMDV4enQvRHpqVjloUTVtM0FmaVVBSEVQbGpjNWtoTTZsVWdxWlRoUm1pNWRlSWwvK3BmdjRmSFRTM2NhYS9VUFR4OVdYQVRSY3ZHQjdWSzRuNk5GbDJrOVFqK0N6TjBqSzBCdVV0b3UiLCJtYWMiOiI2ZjZjYWU3ZjdkNTEyN2I5NTc5ZWYxMDk2MmIzOGY5MTdkY2FmOWIyODJkOTRlODFjOTI5NjNmODI1NTMwNzRkIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImZTV3I2UHNJbE5nZG5LNjRVK1BnMVE9PSIsInZhbHVlIjoidVdYSndPN1ZXdzFYelRYZnAxY2JzWDRvSXg4T2l1L25QQ0ZVdVo0cXlETXZ1Unk1K25tSENidGJKTFRjdlFCZUpibnVJQ2JHelB4WlR4K1FFMkd4MmdkOGNxeCtPRGsybFUrUHQ3YWlHOFJKUTdtamZ5NGh0QXlkYW9qZ3Nkd28iLCJtYWMiOiJkZWFkNDRhNjUyYjk1ODg3MzgwZDNmYzliMGFhOTEwMjAyNDJmYTUyNzMwYzQ2YjQ1MGEwOGFmNDE2ODFlY2M2IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -939,10 +954,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="cityId"                data-endpoint="GETapi-address-barangays--cityId-"
-               value="sed"
+               value="minus"
                data-component="url">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>minus</code></p>
             </div>
                     </form>
 
@@ -1070,6 +1085,476 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="endpoints-POSTapi-customer-login">POST api/customer/login</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-customer-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://superbikescentral.online/api/customer/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"justice49@example.org\",
+    \"password\": \"aperiam\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/customer/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "justice49@example.org",
+    "password": "aperiam"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-customer-login">
+</span>
+<span id="execution-results-POSTapi-customer-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-customer-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-customer-login"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-customer-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-customer-login">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-customer-login" data-method="POST"
+      data-path="api/customer/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-customer-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-customer-login"
+                    onclick="tryItOut('POSTapi-customer-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-customer-login"
+                    onclick="cancelTryOut('POSTapi-customer-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-customer-login"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/customer/login</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-customer-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-customer-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-customer-login"
+               value="justice49@example.org"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>justice49@example.org</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-customer-login"
+               value="aperiam"
+               data-component="body">
+    <br>
+<p>Example: <code>aperiam</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-customer-register">POST api/customer/register</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-customer-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://superbikescentral.online/api/customer/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"first_name\": \"vi\",
+    \"middle_name\": \"ijydoqhccwzjysdqcyf\",
+    \"last_name\": \"aeogxtyrupyghlbknsfwp\",
+    \"sufix_name\": \"xkdniraiexuwvlbeeguicfu\",
+    \"username\": \"rytff\",
+    \"email\": \"dannie06@example.com\",
+    \"password\": \"W{}0#nybv{J;f\",
+    \"contact_number\": \"lnkxoch\",
+    \"birth_date\": \"2024-07-06T13:51:02\",
+    \"gender\": \"Female\",
+    \"marital_status\": \"Widowed\",
+    \"province_id\": \"necessitatibus\",
+    \"city_id\": \"quia\",
+    \"barangay_id\": \"aut\",
+    \"address1\": \"et\",
+    \"address2\": \"ducimus\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/customer/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first_name": "vi",
+    "middle_name": "ijydoqhccwzjysdqcyf",
+    "last_name": "aeogxtyrupyghlbknsfwp",
+    "sufix_name": "xkdniraiexuwvlbeeguicfu",
+    "username": "rytff",
+    "email": "dannie06@example.com",
+    "password": "W{}0#nybv{J;f",
+    "contact_number": "lnkxoch",
+    "birth_date": "2024-07-06T13:51:02",
+    "gender": "Female",
+    "marital_status": "Widowed",
+    "province_id": "necessitatibus",
+    "city_id": "quia",
+    "barangay_id": "aut",
+    "address1": "et",
+    "address2": "ducimus"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-customer-register">
+</span>
+<span id="execution-results-POSTapi-customer-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-customer-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-customer-register"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-customer-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-customer-register">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-customer-register" data-method="POST"
+      data-path="api/customer/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-customer-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-customer-register"
+                    onclick="tryItOut('POSTapi-customer-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-customer-register"
+                    onclick="cancelTryOut('POSTapi-customer-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-customer-register"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/customer/register</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-customer-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-customer-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="first_name"                data-endpoint="POSTapi-customer-register"
+               value="vi"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>vi</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>middle_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="middle_name"                data-endpoint="POSTapi-customer-register"
+               value="ijydoqhccwzjysdqcyf"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>ijydoqhccwzjysdqcyf</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="last_name"                data-endpoint="POSTapi-customer-register"
+               value="aeogxtyrupyghlbknsfwp"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>aeogxtyrupyghlbknsfwp</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sufix_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="sufix_name"                data-endpoint="POSTapi-customer-register"
+               value="xkdniraiexuwvlbeeguicfu"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>xkdniraiexuwvlbeeguicfu</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>username</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="username"                data-endpoint="POSTapi-customer-register"
+               value="rytff"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>rytff</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-customer-register"
+               value="dannie06@example.com"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>dannie06@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-customer-register"
+               value="W{}0#nybv{J;f"
+               data-component="body">
+    <br>
+<p>Must be at least 8 characters. Example: <code>W{}0#nybv{J;f</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>contact_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="contact_number"                data-endpoint="POSTapi-customer-register"
+               value="lnkxoch"
+               data-component="body">
+    <br>
+<p>Must not be greater than 20 characters. Example: <code>lnkxoch</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="birth_date"                data-endpoint="POSTapi-customer-register"
+               value="2024-07-06T13:51:02"
+               data-component="body">
+    <br>
+<p>Must be a valid date. Example: <code>2024-07-06T13:51:02</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>gender</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="gender"                data-endpoint="POSTapi-customer-register"
+               value="Female"
+               data-component="body">
+    <br>
+<p>Example: <code>Female</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>Male</code></li> <li><code>Female</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>marital_status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="marital_status"                data-endpoint="POSTapi-customer-register"
+               value="Widowed"
+               data-component="body">
+    <br>
+<p>Example: <code>Widowed</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>Single</code></li> <li><code>Married</code></li> <li><code>Widowed</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>province_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="province_id"                data-endpoint="POSTapi-customer-register"
+               value="necessitatibus"
+               data-component="body">
+    <br>
+<p>Example: <code>necessitatibus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city_id"                data-endpoint="POSTapi-customer-register"
+               value="quia"
+               data-component="body">
+    <br>
+<p>Example: <code>quia</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>barangay_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="barangay_id"                data-endpoint="POSTapi-customer-register"
+               value="aut"
+               data-component="body">
+    <br>
+<p>Example: <code>aut</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address1</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="address1"                data-endpoint="POSTapi-customer-register"
+               value="et"
+               data-component="body">
+    <br>
+<p>Example: <code>et</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address2</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="address2"                data-endpoint="POSTapi-customer-register"
+               value="ducimus"
+               data-component="body">
+    <br>
+<p>Example: <code>ducimus</code></p>
+        </div>
+        </form>
+
                     <h2 id="endpoints-GETapi-products">Display a listing of the Product resource.</h2>
 
 <p>
@@ -1118,18 +1603,54 @@ content-type: application/json
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
-<code class="language-json" style="max-height: 300px;">[
-    {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;HONDA CLICK 125 V3&quot;,
-        &quot;description&quot;: &quot;&lt;p&gt;asda asdad&lt;/p&gt;&quot;,
-        &quot;image&quot;: &quot;https://superbikescentral.online/storage/01J0T5GZRMCSNTWCTAJ0SCG8F6.jpg&quot;,
-        &quot;price&quot;: 87000,
-        &quot;category_id&quot;: &quot;Scooter&quot;,
-        &quot;brand_id&quot;: &quot;Honda&quot;,
-        &quot;model&quot;: &quot;click 125 v3&quot;
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;HONDA CLICK 125i V3&quot;,
+            &quot;slug&quot;: null,
+            &quot;description&quot;: &quot;&lt;p&gt;adsada asda asdada&lt;/p&gt;&quot;,
+            &quot;image&quot;: &quot;https://superbikescentral.online/storage/01J102FRN24AMN08QFEJW8DG59.jpg&quot;,
+            &quot;price&quot;: 87000,
+            &quot;category_id&quot;: &quot;Scooter&quot;,
+            &quot;brand_id&quot;: &quot;Honda&quot;,
+            &quot;model&quot;: &quot;click 125 v3&quot;,
+            &quot;variations&quot;: []
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;https://superbikescentral.online/api/products?page=1&quot;,
+        &quot;last&quot;: &quot;https://superbikescentral.online/api/products?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;https://superbikescentral.online/api/products?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;https://superbikescentral.online/api/products&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;to&quot;: 1,
+        &quot;total&quot;: 1
     }
-]</code>
+}</code>
  </pre>
     </span>
 <span id="execution-results-GETapi-products" hidden>
@@ -1203,6 +1724,142 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="endpoints-GETapi-product--slug-">GET api/product/{slug}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-product--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://superbikescentral.online/api/product/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/product/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-product--slug-">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Server Error&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-product--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-product--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-product--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-product--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-product--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-product--slug-" data-method="GET"
+      data-path="api/product/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-product--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-product--slug-"
+                    onclick="tryItOut('GETapi-product--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-product--slug-"
+                    onclick="cancelTryOut('GETapi-product--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-product--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/product/{slug}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-product--slug-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-product--slug-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="slug"                data-endpoint="GETapi-product--slug-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The slug of the product. Example: <code>1</code></p>
+            </div>
+                    </form>
+
                     <h2 id="endpoints-GETapi-categories">Display a listing of the Categories resource.</h2>
 
 <p>
@@ -1255,7 +1912,7 @@ access-control-allow-origin: *
     {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Scooter&quot;,
-        &quot;image&quot;: &quot;https://superbikescentral.online/storage/01J0T578P8JSF0PB50A00TJ7NK.png&quot;
+        &quot;image&quot;: &quot;https://superbikescentral.online/storage/&quot;
     }
 ]</code>
  </pre>
@@ -1459,6 +2116,872 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="endpoints-GETapi-provinces">GET api/provinces</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-provinces">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://superbikescentral.online/api/provinces" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/provinces"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provinces">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;code&quot;: &quot;012800000&quot;,
+        &quot;name&quot;: &quot;Ilocos Norte&quot;,
+        &quot;region_id&quot;: &quot;01&quot;,
+        &quot;province_id&quot;: &quot;0128&quot;
+    },
+    {
+        &quot;id&quot;: 2,
+        &quot;code&quot;: &quot;012900000&quot;,
+        &quot;name&quot;: &quot;Ilocos Sur&quot;,
+        &quot;region_id&quot;: &quot;01&quot;,
+        &quot;province_id&quot;: &quot;0129&quot;
+    },
+    {
+        &quot;id&quot;: 3,
+        &quot;code&quot;: &quot;013300000&quot;,
+        &quot;name&quot;: &quot;La Union&quot;,
+        &quot;region_id&quot;: &quot;01&quot;,
+        &quot;province_id&quot;: &quot;0133&quot;
+    },
+    {
+        &quot;id&quot;: 4,
+        &quot;code&quot;: &quot;015500000&quot;,
+        &quot;name&quot;: &quot;Pangasinan&quot;,
+        &quot;region_id&quot;: &quot;01&quot;,
+        &quot;province_id&quot;: &quot;0155&quot;
+    },
+    {
+        &quot;id&quot;: 5,
+        &quot;code&quot;: &quot;020900000&quot;,
+        &quot;name&quot;: &quot;Batanes&quot;,
+        &quot;region_id&quot;: &quot;02&quot;,
+        &quot;province_id&quot;: &quot;0209&quot;
+    },
+    {
+        &quot;id&quot;: 6,
+        &quot;code&quot;: &quot;021500000&quot;,
+        &quot;name&quot;: &quot;Cagayan&quot;,
+        &quot;region_id&quot;: &quot;02&quot;,
+        &quot;province_id&quot;: &quot;0215&quot;
+    },
+    {
+        &quot;id&quot;: 7,
+        &quot;code&quot;: &quot;023100000&quot;,
+        &quot;name&quot;: &quot;Isabela&quot;,
+        &quot;region_id&quot;: &quot;02&quot;,
+        &quot;province_id&quot;: &quot;0231&quot;
+    },
+    {
+        &quot;id&quot;: 8,
+        &quot;code&quot;: &quot;025000000&quot;,
+        &quot;name&quot;: &quot;Nueva Vizcaya&quot;,
+        &quot;region_id&quot;: &quot;02&quot;,
+        &quot;province_id&quot;: &quot;0250&quot;
+    },
+    {
+        &quot;id&quot;: 9,
+        &quot;code&quot;: &quot;025700000&quot;,
+        &quot;name&quot;: &quot;Quirino&quot;,
+        &quot;region_id&quot;: &quot;02&quot;,
+        &quot;province_id&quot;: &quot;0257&quot;
+    },
+    {
+        &quot;id&quot;: 10,
+        &quot;code&quot;: &quot;030800000&quot;,
+        &quot;name&quot;: &quot;Bataan&quot;,
+        &quot;region_id&quot;: &quot;03&quot;,
+        &quot;province_id&quot;: &quot;0308&quot;
+    },
+    {
+        &quot;id&quot;: 11,
+        &quot;code&quot;: &quot;031400000&quot;,
+        &quot;name&quot;: &quot;Bulacan&quot;,
+        &quot;region_id&quot;: &quot;03&quot;,
+        &quot;province_id&quot;: &quot;0314&quot;
+    },
+    {
+        &quot;id&quot;: 12,
+        &quot;code&quot;: &quot;034900000&quot;,
+        &quot;name&quot;: &quot;Nueva Ecija&quot;,
+        &quot;region_id&quot;: &quot;03&quot;,
+        &quot;province_id&quot;: &quot;0349&quot;
+    },
+    {
+        &quot;id&quot;: 13,
+        &quot;code&quot;: &quot;035400000&quot;,
+        &quot;name&quot;: &quot;Pampanga&quot;,
+        &quot;region_id&quot;: &quot;03&quot;,
+        &quot;province_id&quot;: &quot;0354&quot;
+    },
+    {
+        &quot;id&quot;: 14,
+        &quot;code&quot;: &quot;036900000&quot;,
+        &quot;name&quot;: &quot;Tarlac&quot;,
+        &quot;region_id&quot;: &quot;03&quot;,
+        &quot;province_id&quot;: &quot;0369&quot;
+    },
+    {
+        &quot;id&quot;: 15,
+        &quot;code&quot;: &quot;037100000&quot;,
+        &quot;name&quot;: &quot;Zambales&quot;,
+        &quot;region_id&quot;: &quot;03&quot;,
+        &quot;province_id&quot;: &quot;0371&quot;
+    },
+    {
+        &quot;id&quot;: 16,
+        &quot;code&quot;: &quot;037700000&quot;,
+        &quot;name&quot;: &quot;Aurora&quot;,
+        &quot;region_id&quot;: &quot;03&quot;,
+        &quot;province_id&quot;: &quot;0377&quot;
+    },
+    {
+        &quot;id&quot;: 17,
+        &quot;code&quot;: &quot;041000000&quot;,
+        &quot;name&quot;: &quot;Batangas&quot;,
+        &quot;region_id&quot;: &quot;04&quot;,
+        &quot;province_id&quot;: &quot;0410&quot;
+    },
+    {
+        &quot;id&quot;: 18,
+        &quot;code&quot;: &quot;042100000&quot;,
+        &quot;name&quot;: &quot;Cavite&quot;,
+        &quot;region_id&quot;: &quot;04&quot;,
+        &quot;province_id&quot;: &quot;0421&quot;
+    },
+    {
+        &quot;id&quot;: 19,
+        &quot;code&quot;: &quot;043400000&quot;,
+        &quot;name&quot;: &quot;Laguna&quot;,
+        &quot;region_id&quot;: &quot;04&quot;,
+        &quot;province_id&quot;: &quot;0434&quot;
+    },
+    {
+        &quot;id&quot;: 20,
+        &quot;code&quot;: &quot;045600000&quot;,
+        &quot;name&quot;: &quot;Quezon&quot;,
+        &quot;region_id&quot;: &quot;04&quot;,
+        &quot;province_id&quot;: &quot;0456&quot;
+    },
+    {
+        &quot;id&quot;: 21,
+        &quot;code&quot;: &quot;045800000&quot;,
+        &quot;name&quot;: &quot;Rizal&quot;,
+        &quot;region_id&quot;: &quot;04&quot;,
+        &quot;province_id&quot;: &quot;0458&quot;
+    },
+    {
+        &quot;id&quot;: 22,
+        &quot;code&quot;: &quot;174000000&quot;,
+        &quot;name&quot;: &quot;Marinduque&quot;,
+        &quot;region_id&quot;: &quot;17&quot;,
+        &quot;province_id&quot;: &quot;1740&quot;
+    },
+    {
+        &quot;id&quot;: 23,
+        &quot;code&quot;: &quot;175100000&quot;,
+        &quot;name&quot;: &quot;Occidental Mindoro&quot;,
+        &quot;region_id&quot;: &quot;17&quot;,
+        &quot;province_id&quot;: &quot;1751&quot;
+    },
+    {
+        &quot;id&quot;: 24,
+        &quot;code&quot;: &quot;175200000&quot;,
+        &quot;name&quot;: &quot;Oriental Mindoro&quot;,
+        &quot;region_id&quot;: &quot;17&quot;,
+        &quot;province_id&quot;: &quot;1752&quot;
+    },
+    {
+        &quot;id&quot;: 25,
+        &quot;code&quot;: &quot;175300000&quot;,
+        &quot;name&quot;: &quot;Palawan&quot;,
+        &quot;region_id&quot;: &quot;17&quot;,
+        &quot;province_id&quot;: &quot;1753&quot;
+    },
+    {
+        &quot;id&quot;: 26,
+        &quot;code&quot;: &quot;175900000&quot;,
+        &quot;name&quot;: &quot;Romblon&quot;,
+        &quot;region_id&quot;: &quot;17&quot;,
+        &quot;province_id&quot;: &quot;1759&quot;
+    },
+    {
+        &quot;id&quot;: 27,
+        &quot;code&quot;: &quot;050500000&quot;,
+        &quot;name&quot;: &quot;Albay&quot;,
+        &quot;region_id&quot;: &quot;05&quot;,
+        &quot;province_id&quot;: &quot;0505&quot;
+    },
+    {
+        &quot;id&quot;: 28,
+        &quot;code&quot;: &quot;051600000&quot;,
+        &quot;name&quot;: &quot;Camarines Norte&quot;,
+        &quot;region_id&quot;: &quot;05&quot;,
+        &quot;province_id&quot;: &quot;0516&quot;
+    },
+    {
+        &quot;id&quot;: 29,
+        &quot;code&quot;: &quot;051700000&quot;,
+        &quot;name&quot;: &quot;Camarines Sur&quot;,
+        &quot;region_id&quot;: &quot;05&quot;,
+        &quot;province_id&quot;: &quot;0517&quot;
+    },
+    {
+        &quot;id&quot;: 30,
+        &quot;code&quot;: &quot;052000000&quot;,
+        &quot;name&quot;: &quot;Catanduanes&quot;,
+        &quot;region_id&quot;: &quot;05&quot;,
+        &quot;province_id&quot;: &quot;0520&quot;
+    },
+    {
+        &quot;id&quot;: 31,
+        &quot;code&quot;: &quot;054100000&quot;,
+        &quot;name&quot;: &quot;Masbate&quot;,
+        &quot;region_id&quot;: &quot;05&quot;,
+        &quot;province_id&quot;: &quot;0541&quot;
+    },
+    {
+        &quot;id&quot;: 32,
+        &quot;code&quot;: &quot;056200000&quot;,
+        &quot;name&quot;: &quot;Sorsogon&quot;,
+        &quot;region_id&quot;: &quot;05&quot;,
+        &quot;province_id&quot;: &quot;0562&quot;
+    },
+    {
+        &quot;id&quot;: 33,
+        &quot;code&quot;: &quot;060400000&quot;,
+        &quot;name&quot;: &quot;Aklan&quot;,
+        &quot;region_id&quot;: &quot;06&quot;,
+        &quot;province_id&quot;: &quot;0604&quot;
+    },
+    {
+        &quot;id&quot;: 34,
+        &quot;code&quot;: &quot;060600000&quot;,
+        &quot;name&quot;: &quot;Antique&quot;,
+        &quot;region_id&quot;: &quot;06&quot;,
+        &quot;province_id&quot;: &quot;0606&quot;
+    },
+    {
+        &quot;id&quot;: 35,
+        &quot;code&quot;: &quot;061900000&quot;,
+        &quot;name&quot;: &quot;Capiz&quot;,
+        &quot;region_id&quot;: &quot;06&quot;,
+        &quot;province_id&quot;: &quot;0619&quot;
+    },
+    {
+        &quot;id&quot;: 36,
+        &quot;code&quot;: &quot;063000000&quot;,
+        &quot;name&quot;: &quot;Iloilo&quot;,
+        &quot;region_id&quot;: &quot;06&quot;,
+        &quot;province_id&quot;: &quot;0630&quot;
+    },
+    {
+        &quot;id&quot;: 37,
+        &quot;code&quot;: &quot;064500000&quot;,
+        &quot;name&quot;: &quot;Negros Occidental&quot;,
+        &quot;region_id&quot;: &quot;06&quot;,
+        &quot;province_id&quot;: &quot;0645&quot;
+    },
+    {
+        &quot;id&quot;: 38,
+        &quot;code&quot;: &quot;067900000&quot;,
+        &quot;name&quot;: &quot;Guimaras&quot;,
+        &quot;region_id&quot;: &quot;06&quot;,
+        &quot;province_id&quot;: &quot;0679&quot;
+    },
+    {
+        &quot;id&quot;: 39,
+        &quot;code&quot;: &quot;071200000&quot;,
+        &quot;name&quot;: &quot;Bohol&quot;,
+        &quot;region_id&quot;: &quot;07&quot;,
+        &quot;province_id&quot;: &quot;0712&quot;
+    },
+    {
+        &quot;id&quot;: 40,
+        &quot;code&quot;: &quot;072200000&quot;,
+        &quot;name&quot;: &quot;Cebu&quot;,
+        &quot;region_id&quot;: &quot;07&quot;,
+        &quot;province_id&quot;: &quot;0722&quot;
+    },
+    {
+        &quot;id&quot;: 41,
+        &quot;code&quot;: &quot;074600000&quot;,
+        &quot;name&quot;: &quot;Negros Oriental&quot;,
+        &quot;region_id&quot;: &quot;07&quot;,
+        &quot;province_id&quot;: &quot;0746&quot;
+    },
+    {
+        &quot;id&quot;: 42,
+        &quot;code&quot;: &quot;076100000&quot;,
+        &quot;name&quot;: &quot;Siquijor&quot;,
+        &quot;region_id&quot;: &quot;07&quot;,
+        &quot;province_id&quot;: &quot;0761&quot;
+    },
+    {
+        &quot;id&quot;: 43,
+        &quot;code&quot;: &quot;082600000&quot;,
+        &quot;name&quot;: &quot;Eastern Samar&quot;,
+        &quot;region_id&quot;: &quot;08&quot;,
+        &quot;province_id&quot;: &quot;0826&quot;
+    },
+    {
+        &quot;id&quot;: 44,
+        &quot;code&quot;: &quot;083700000&quot;,
+        &quot;name&quot;: &quot;Leyte&quot;,
+        &quot;region_id&quot;: &quot;08&quot;,
+        &quot;province_id&quot;: &quot;0837&quot;
+    },
+    {
+        &quot;id&quot;: 45,
+        &quot;code&quot;: &quot;084800000&quot;,
+        &quot;name&quot;: &quot;Northern Samar&quot;,
+        &quot;region_id&quot;: &quot;08&quot;,
+        &quot;province_id&quot;: &quot;0848&quot;
+    },
+    {
+        &quot;id&quot;: 46,
+        &quot;code&quot;: &quot;086000000&quot;,
+        &quot;name&quot;: &quot;Samar&quot;,
+        &quot;region_id&quot;: &quot;08&quot;,
+        &quot;province_id&quot;: &quot;0860&quot;
+    },
+    {
+        &quot;id&quot;: 47,
+        &quot;code&quot;: &quot;086400000&quot;,
+        &quot;name&quot;: &quot;Southern Leyte&quot;,
+        &quot;region_id&quot;: &quot;08&quot;,
+        &quot;province_id&quot;: &quot;0864&quot;
+    },
+    {
+        &quot;id&quot;: 48,
+        &quot;code&quot;: &quot;087800000&quot;,
+        &quot;name&quot;: &quot;Biliran&quot;,
+        &quot;region_id&quot;: &quot;08&quot;,
+        &quot;province_id&quot;: &quot;0878&quot;
+    },
+    {
+        &quot;id&quot;: 49,
+        &quot;code&quot;: &quot;097200000&quot;,
+        &quot;name&quot;: &quot;Zamboanga del Norte&quot;,
+        &quot;region_id&quot;: &quot;09&quot;,
+        &quot;province_id&quot;: &quot;0972&quot;
+    },
+    {
+        &quot;id&quot;: 50,
+        &quot;code&quot;: &quot;097300000&quot;,
+        &quot;name&quot;: &quot;Zamboanga del Sur&quot;,
+        &quot;region_id&quot;: &quot;09&quot;,
+        &quot;province_id&quot;: &quot;0973&quot;
+    },
+    {
+        &quot;id&quot;: 51,
+        &quot;code&quot;: &quot;098300000&quot;,
+        &quot;name&quot;: &quot;Zamboanga Sibugay&quot;,
+        &quot;region_id&quot;: &quot;09&quot;,
+        &quot;province_id&quot;: &quot;0983&quot;
+    },
+    {
+        &quot;id&quot;: 52,
+        &quot;code&quot;: &quot;099700000&quot;,
+        &quot;name&quot;: &quot;City of Isabela (Not a Province)&quot;,
+        &quot;region_id&quot;: &quot;09&quot;,
+        &quot;province_id&quot;: &quot;0997&quot;
+    },
+    {
+        &quot;id&quot;: 53,
+        &quot;code&quot;: &quot;101300000&quot;,
+        &quot;name&quot;: &quot;Bukidnon&quot;,
+        &quot;region_id&quot;: &quot;10&quot;,
+        &quot;province_id&quot;: &quot;1013&quot;
+    },
+    {
+        &quot;id&quot;: 54,
+        &quot;code&quot;: &quot;101800000&quot;,
+        &quot;name&quot;: &quot;Camiguin&quot;,
+        &quot;region_id&quot;: &quot;10&quot;,
+        &quot;province_id&quot;: &quot;1018&quot;
+    },
+    {
+        &quot;id&quot;: 55,
+        &quot;code&quot;: &quot;103500000&quot;,
+        &quot;name&quot;: &quot;Lanao del Norte&quot;,
+        &quot;region_id&quot;: &quot;10&quot;,
+        &quot;province_id&quot;: &quot;1035&quot;
+    },
+    {
+        &quot;id&quot;: 56,
+        &quot;code&quot;: &quot;104200000&quot;,
+        &quot;name&quot;: &quot;Misamis Occidental&quot;,
+        &quot;region_id&quot;: &quot;10&quot;,
+        &quot;province_id&quot;: &quot;1042&quot;
+    },
+    {
+        &quot;id&quot;: 57,
+        &quot;code&quot;: &quot;104300000&quot;,
+        &quot;name&quot;: &quot;Misamis Oriental&quot;,
+        &quot;region_id&quot;: &quot;10&quot;,
+        &quot;province_id&quot;: &quot;1043&quot;
+    },
+    {
+        &quot;id&quot;: 58,
+        &quot;code&quot;: &quot;112300000&quot;,
+        &quot;name&quot;: &quot;Davao del Norte&quot;,
+        &quot;region_id&quot;: &quot;11&quot;,
+        &quot;province_id&quot;: &quot;1123&quot;
+    },
+    {
+        &quot;id&quot;: 59,
+        &quot;code&quot;: &quot;112400000&quot;,
+        &quot;name&quot;: &quot;Davao del Sur&quot;,
+        &quot;region_id&quot;: &quot;11&quot;,
+        &quot;province_id&quot;: &quot;1124&quot;
+    },
+    {
+        &quot;id&quot;: 60,
+        &quot;code&quot;: &quot;112500000&quot;,
+        &quot;name&quot;: &quot;Davao Oriental&quot;,
+        &quot;region_id&quot;: &quot;11&quot;,
+        &quot;province_id&quot;: &quot;1125&quot;
+    },
+    {
+        &quot;id&quot;: 61,
+        &quot;code&quot;: &quot;118200000&quot;,
+        &quot;name&quot;: &quot;Davao de Oro&quot;,
+        &quot;region_id&quot;: &quot;11&quot;,
+        &quot;province_id&quot;: &quot;1182&quot;
+    },
+    {
+        &quot;id&quot;: 62,
+        &quot;code&quot;: &quot;118600000&quot;,
+        &quot;name&quot;: &quot;Davao Occidental&quot;,
+        &quot;region_id&quot;: &quot;11&quot;,
+        &quot;province_id&quot;: &quot;1186&quot;
+    },
+    {
+        &quot;id&quot;: 63,
+        &quot;code&quot;: &quot;124700000&quot;,
+        &quot;name&quot;: &quot;Cotabato&quot;,
+        &quot;region_id&quot;: &quot;12&quot;,
+        &quot;province_id&quot;: &quot;1247&quot;
+    },
+    {
+        &quot;id&quot;: 64,
+        &quot;code&quot;: &quot;126300000&quot;,
+        &quot;name&quot;: &quot;South Cotabato&quot;,
+        &quot;region_id&quot;: &quot;12&quot;,
+        &quot;province_id&quot;: &quot;1263&quot;
+    },
+    {
+        &quot;id&quot;: 65,
+        &quot;code&quot;: &quot;126500000&quot;,
+        &quot;name&quot;: &quot;Sultan Kudarat&quot;,
+        &quot;region_id&quot;: &quot;12&quot;,
+        &quot;province_id&quot;: &quot;1265&quot;
+    },
+    {
+        &quot;id&quot;: 66,
+        &quot;code&quot;: &quot;128000000&quot;,
+        &quot;name&quot;: &quot;Sarangani&quot;,
+        &quot;region_id&quot;: &quot;12&quot;,
+        &quot;province_id&quot;: &quot;1280&quot;
+    },
+    {
+        &quot;id&quot;: 67,
+        &quot;code&quot;: &quot;129800000&quot;,
+        &quot;name&quot;: &quot;City of Cotabato (Not a Province)&quot;,
+        &quot;region_id&quot;: &quot;12&quot;,
+        &quot;province_id&quot;: &quot;1298&quot;
+    },
+    {
+        &quot;id&quot;: 68,
+        &quot;code&quot;: &quot;133900000&quot;,
+        &quot;name&quot;: &quot;NCR, City of Manila, First District (Not a Province)&quot;,
+        &quot;region_id&quot;: &quot;13&quot;,
+        &quot;province_id&quot;: &quot;1339&quot;
+    },
+    {
+        &quot;id&quot;: 69,
+        &quot;code&quot;: &quot;137400000&quot;,
+        &quot;name&quot;: &quot;NCR, Second District (Not a Province)&quot;,
+        &quot;region_id&quot;: &quot;13&quot;,
+        &quot;province_id&quot;: &quot;1374&quot;
+    },
+    {
+        &quot;id&quot;: 70,
+        &quot;code&quot;: &quot;137500000&quot;,
+        &quot;name&quot;: &quot;NCR, Third District (Not a Province)&quot;,
+        &quot;region_id&quot;: &quot;13&quot;,
+        &quot;province_id&quot;: &quot;1375&quot;
+    },
+    {
+        &quot;id&quot;: 71,
+        &quot;code&quot;: &quot;137600000&quot;,
+        &quot;name&quot;: &quot;NCR, Fourth District (Not a Province)&quot;,
+        &quot;region_id&quot;: &quot;13&quot;,
+        &quot;province_id&quot;: &quot;1376&quot;
+    },
+    {
+        &quot;id&quot;: 72,
+        &quot;code&quot;: &quot;140100000&quot;,
+        &quot;name&quot;: &quot;Abra&quot;,
+        &quot;region_id&quot;: &quot;14&quot;,
+        &quot;province_id&quot;: &quot;1401&quot;
+    },
+    {
+        &quot;id&quot;: 73,
+        &quot;code&quot;: &quot;141100000&quot;,
+        &quot;name&quot;: &quot;Benguet&quot;,
+        &quot;region_id&quot;: &quot;14&quot;,
+        &quot;province_id&quot;: &quot;1411&quot;
+    },
+    {
+        &quot;id&quot;: 74,
+        &quot;code&quot;: &quot;142700000&quot;,
+        &quot;name&quot;: &quot;Ifugao&quot;,
+        &quot;region_id&quot;: &quot;14&quot;,
+        &quot;province_id&quot;: &quot;1427&quot;
+    },
+    {
+        &quot;id&quot;: 75,
+        &quot;code&quot;: &quot;143200000&quot;,
+        &quot;name&quot;: &quot;Kalinga&quot;,
+        &quot;region_id&quot;: &quot;14&quot;,
+        &quot;province_id&quot;: &quot;1432&quot;
+    },
+    {
+        &quot;id&quot;: 76,
+        &quot;code&quot;: &quot;144400000&quot;,
+        &quot;name&quot;: &quot;Mountain Province&quot;,
+        &quot;region_id&quot;: &quot;14&quot;,
+        &quot;province_id&quot;: &quot;1444&quot;
+    },
+    {
+        &quot;id&quot;: 77,
+        &quot;code&quot;: &quot;148100000&quot;,
+        &quot;name&quot;: &quot;Apayao&quot;,
+        &quot;region_id&quot;: &quot;14&quot;,
+        &quot;province_id&quot;: &quot;1481&quot;
+    },
+    {
+        &quot;id&quot;: 78,
+        &quot;code&quot;: &quot;150700000&quot;,
+        &quot;name&quot;: &quot;Basilan&quot;,
+        &quot;region_id&quot;: &quot;15&quot;,
+        &quot;province_id&quot;: &quot;1507&quot;
+    },
+    {
+        &quot;id&quot;: 79,
+        &quot;code&quot;: &quot;153600000&quot;,
+        &quot;name&quot;: &quot;Lanao del Sur&quot;,
+        &quot;region_id&quot;: &quot;15&quot;,
+        &quot;province_id&quot;: &quot;1536&quot;
+    },
+    {
+        &quot;id&quot;: 80,
+        &quot;code&quot;: &quot;153800000&quot;,
+        &quot;name&quot;: &quot;Maguindanao&quot;,
+        &quot;region_id&quot;: &quot;15&quot;,
+        &quot;province_id&quot;: &quot;1538&quot;
+    },
+    {
+        &quot;id&quot;: 81,
+        &quot;code&quot;: &quot;156600000&quot;,
+        &quot;name&quot;: &quot;Sulu&quot;,
+        &quot;region_id&quot;: &quot;15&quot;,
+        &quot;province_id&quot;: &quot;1566&quot;
+    },
+    {
+        &quot;id&quot;: 82,
+        &quot;code&quot;: &quot;157000000&quot;,
+        &quot;name&quot;: &quot;Tawi-Tawi&quot;,
+        &quot;region_id&quot;: &quot;15&quot;,
+        &quot;province_id&quot;: &quot;1570&quot;
+    },
+    {
+        &quot;id&quot;: 83,
+        &quot;code&quot;: &quot;160200000&quot;,
+        &quot;name&quot;: &quot;Agusan del Norte&quot;,
+        &quot;region_id&quot;: &quot;16&quot;,
+        &quot;province_id&quot;: &quot;1602&quot;
+    },
+    {
+        &quot;id&quot;: 84,
+        &quot;code&quot;: &quot;160300000&quot;,
+        &quot;name&quot;: &quot;Agusan del Sur&quot;,
+        &quot;region_id&quot;: &quot;16&quot;,
+        &quot;province_id&quot;: &quot;1603&quot;
+    },
+    {
+        &quot;id&quot;: 85,
+        &quot;code&quot;: &quot;166700000&quot;,
+        &quot;name&quot;: &quot;Surigao del Norte&quot;,
+        &quot;region_id&quot;: &quot;16&quot;,
+        &quot;province_id&quot;: &quot;1667&quot;
+    },
+    {
+        &quot;id&quot;: 86,
+        &quot;code&quot;: &quot;166800000&quot;,
+        &quot;name&quot;: &quot;Surigao del Sur&quot;,
+        &quot;region_id&quot;: &quot;16&quot;,
+        &quot;province_id&quot;: &quot;1668&quot;
+    },
+    {
+        &quot;id&quot;: 87,
+        &quot;code&quot;: &quot;168500000&quot;,
+        &quot;name&quot;: &quot;Dinagat Islands&quot;,
+        &quot;region_id&quot;: &quot;16&quot;,
+        &quot;province_id&quot;: &quot;1685&quot;
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provinces" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provinces"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provinces"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provinces" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provinces">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provinces" data-method="GET"
+      data-path="api/provinces"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provinces', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provinces"
+                    onclick="tryItOut('GETapi-provinces');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provinces"
+                    onclick="cancelTryOut('GETapi-provinces');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provinces"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provinces</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provinces"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provinces"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-cities--provinceId-">GET api/cities/{provinceId}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-cities--provinceId-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://superbikescentral.online/api/cities/dolore" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/cities/dolore"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-cities--provinceId-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">[]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-cities--provinceId-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-cities--provinceId-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-cities--provinceId-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-cities--provinceId-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-cities--provinceId-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-cities--provinceId-" data-method="GET"
+      data-path="api/cities/{provinceId}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-cities--provinceId-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-cities--provinceId-"
+                    onclick="tryItOut('GETapi-cities--provinceId-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-cities--provinceId-"
+                    onclick="cancelTryOut('GETapi-cities--provinceId-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-cities--provinceId-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/cities/{provinceId}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-cities--provinceId-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-cities--provinceId-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>provinceId</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provinceId"                data-endpoint="GETapi-cities--provinceId-"
+               value="dolore"
+               data-component="url">
+    <br>
+<p>Example: <code>dolore</code></p>
+            </div>
+                    </form>
+
                     <h2 id="endpoints-POSTapi-inquiries">Store a newly created Inquiry resource in storage.</h2>
 
 <p>
@@ -1476,14 +2999,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"product_id\": 4,
-    \"name\": \"hsspanhenftoozx\",
-    \"email\": \"mjohnson@example.net\",
-    \"message\": \"quidem\",
-    \"contact_number\": \"ghajgg\",
-    \"province_id\": 2,
-    \"city_id\": 18,
-    \"barangay\": \"jnjyzsubdpo\"
+    \"product_id\": 18,
+    \"name\": \"cpmbajrinvyzcrlboh\",
+    \"email\": \"dianna.oconnell@example.org\",
+    \"message\": \"doloribus\",
+    \"contact_number\": \"kiysiqy\",
+    \"province_id\": 20,
+    \"city_id\": 19,
+    \"barangay\": \"rsvecphfd\"
 }"
 </code></pre></div>
 
@@ -1499,14 +3022,14 @@ const headers = {
 };
 
 let body = {
-    "product_id": 4,
-    "name": "hsspanhenftoozx",
-    "email": "mjohnson@example.net",
-    "message": "quidem",
-    "contact_number": "ghajgg",
-    "province_id": 2,
-    "city_id": 18,
-    "barangay": "jnjyzsubdpo"
+    "product_id": 18,
+    "name": "cpmbajrinvyzcrlboh",
+    "email": "dianna.oconnell@example.org",
+    "message": "doloribus",
+    "contact_number": "kiysiqy",
+    "province_id": 20,
+    "city_id": 19,
+    "barangay": "rsvecphfd"
 };
 
 fetch(url, {
@@ -1595,10 +3118,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="product_id"                data-endpoint="POSTapi-inquiries"
-               value="4"
+               value="18"
                data-component="body">
     <br>
-<p>Example: <code>4</code></p>
+<p>Example: <code>18</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -1606,10 +3129,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-inquiries"
-               value="hsspanhenftoozx"
+               value="cpmbajrinvyzcrlboh"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>hsspanhenftoozx</code></p>
+<p>Must not be greater than 255 characters. Example: <code>cpmbajrinvyzcrlboh</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1617,10 +3140,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-inquiries"
-               value="mjohnson@example.net"
+               value="dianna.oconnell@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>mjohnson@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>dianna.oconnell@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
@@ -1628,10 +3151,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="message"                data-endpoint="POSTapi-inquiries"
-               value="quidem"
+               value="doloribus"
                data-component="body">
     <br>
-<p>Example: <code>quidem</code></p>
+<p>Example: <code>doloribus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>contact_number</code></b>&nbsp;&nbsp;
@@ -1639,10 +3162,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="contact_number"                data-endpoint="POSTapi-inquiries"
-               value="ghajgg"
+               value="kiysiqy"
                data-component="body">
     <br>
-<p>Must not be greater than 15 characters. Example: <code>ghajgg</code></p>
+<p>Must not be greater than 15 characters. Example: <code>kiysiqy</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>province_id</code></b>&nbsp;&nbsp;
@@ -1650,10 +3173,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="province_id"                data-endpoint="POSTapi-inquiries"
-               value="2"
+               value="20"
                data-component="body">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -1661,10 +3184,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="city_id"                data-endpoint="POSTapi-inquiries"
-               value="18"
+               value="19"
                data-component="body">
     <br>
-<p>Example: <code>18</code></p>
+<p>Example: <code>19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>barangay</code></b>&nbsp;&nbsp;
@@ -1672,10 +3195,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="barangay"                data-endpoint="POSTapi-inquiries"
-               value="jnjyzsubdpo"
+               value="rsvecphfd"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>jnjyzsubdpo</code></p>
+<p>Must not be greater than 255 characters. Example: <code>rsvecphfd</code></p>
         </div>
         </form>
 

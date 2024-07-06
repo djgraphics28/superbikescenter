@@ -32,7 +32,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlV4WlFpb0hKcHJJY2YwTUY4VHEwVHc9PSIsInZhbHVlIjoiOUprNE12cHF4YkRreXFTaTU2NDA0eWp0YVZKMG0rR0xZRGpSZGVMUUo4eEZyU3F4MkduWnJIVDdRUVNrOVdTYmthaGdiTkJjWHExbnpINTF2VUM4USs5TExTbWNmOHdQb2pmdHBGbC81TWh6c2pDVksvZDdocnlPOUFkRVFMcGsiLCJtYWMiOiI5YWM2NzhhNzFlZjJiYTE3NDIxN2FhMThmMjZlNjNmZDQwYzY4MmIzODZlM2E0NDk3NWJmNDMwZTExNTM4MTJjIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IkNZQVlkaHUySENSWUVKUk5EZGlvSmc9PSIsInZhbHVlIjoiN0R1aWY5OHdLZEEzZFMvZS9GQjBwT1k2cFhyUE53am4xWWFqQm01L0tKQ0RFdW8rUDlBRU5TdWlkNDhYdmQrbmwxWERSbFdSTFdqTHRVUW81bmxJclc2TnRhWWNpWUJsUG5nbVdmTTlkd2NBL2RzN0FDY3BkL1k5MlFYekFEUUUiLCJtYWMiOiI1NGIyNGRjMWUxZmY2OTQzOTlkNWJkMjA2MTg1NzlkZGEzNjhjODBhNDY2Y2ZiNjQ4ZTRiMTA2ZTIwZTMxMmRjIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjRDejQwYlBkNWdVbkt0SXkrdEtjRFE9PSIsInZhbHVlIjoiNmJjeGZOT2VKRFNqY3crVUYwVjB6aVM2ZklqYjlBcmJqRVRXMndBajBvWnJMTHBHZitCVUxBZThRZ0o3U05uekM5TlNPOElPYTVuaVNYOFo4R1owdVRFT09NWkgvSWlvM0tBYTVnK0wzQzNjR29uVXhCMXhtRCt6L29ueGk5bGgiLCJtYWMiOiJlOTg0NTI4OGViNGE1MTJjNzE5MGZmYjg5NWY0NjZlNmNmNTc3ZDFmNDEwNGYxMGUwMGU2YzlmYjhmMWJmZDhkIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImZkNGY5dENHcFQxWUNzcE5JZTliVmc9PSIsInZhbHVlIjoiNExnNkgvUG5HVVp6ZGRhdTg1ZHFsZ0JQcW15QXVzci8rcmwxeDN2MVhnOWtDQnJnckV6cGZLRG1EY05lS3NHMHRmVnNpcTE1anpSNkUxeUYzODZqd0JBNGh1bEtsSTFJWWFzVTR2empld1lwQzlweitMRFBrdXllNXl1dUYvaVoiLCJtYWMiOiI5Yjg2OWQ3ZTViYWUxZTZjYTQ1NjdkNWRmOWE5M2Y3NTY3ZTkzNThjZWNhYzNiMzAzYzdkZGVhYjA3YWZkYWY3IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -72,7 +72,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6Im1YOUY1YXhEbVhOM01NeGtZYnJDK3c9PSIsInZhbHVlIjoiZVRlUEN1TkNEOXIzZ1VHaFFJRUlkT1lWeEhlRWY1NlpiV1lLQkhCL05vMmJDNW9qZUw2eXVGM2xYVlA2c0VvcGVpeFpGNjM1R00vUUFZRGtJTXU3Y0pXWG9jT2N5QUhkWDNQbjhPN1dwMVBmQ3NMWHZjWTg4dDd1bFp1Y1dxQkwiLCJtYWMiOiI0ZTNkYmMwNjE0OGY5ZTM5OGE4ZmQzMzcyODYzYmQwMGExYzAwMjc4YWQ2ZTYyNmU2ZDM4OGMwNDAwZTEyYzVjIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IjZsQkR4N3R3elJpT3RGUkpaSVNnWUE9PSIsInZhbHVlIjoiYy91WWtBcmE5MXNFYk5CSzFxZzgvUXpYUlVpL20zM2QwL0tSKzBWQmxRUC8xTktNU0diV282NXpDM3NiZFRwNHZuWmIxSG5nTmVxdTlQbk5JUEQ0bEtxeTVFRUpuVnpkWDdsRVVleEVsNDFWMnA5V3NtMU9oa0hjVmJuYzBMNDQiLCJtYWMiOiIxOTM1ODkxNDNmNWFmOGRmN2EzZmRiMzQ4MTVkZWY1ZjcxODg2MmViOGIzNjAwMGRlOWY3ZDY5NmNmODJiNjI1IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6Imo2M2xSaGFQMUZ4ZmZFajBXNWNjVVE9PSIsInZhbHVlIjoiS2dzT1ZaZ201YVRoQWNwdlFsU0w3b0pKdjg2anVnK0NSZ2NYYmJ6aDFvMXZoM1Q1UEtpYlZVQldkT0h5cHY1UkpSZFV4N3ZtbGJCcXFOaGFQVXpGQXY2T09RdDI3MURDTnNXUjRxVmpaemtxbm4yak83QWpNZGdkcGpxT2tzVE8iLCJtYWMiOiJhNmZmYjJhN2U5OThmY2VkODZmZDQ1MjM2ODIwYmRkZTVjMmM1MjI3YWFhNTkzOGY3MzRlYzU3YjVkMTc5OTVjIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkNZa0JNMkk4T0pYTnRFS1ZwSTJSbmc9PSIsInZhbHVlIjoic2RZUzNmODJvRyt4RWI4QVc4c1k1TkFYWk9vSlVOVk9SaWFrN2FBemV0ZXg5Q2NYalZjQU8ycS8vcGUvSzkxM2N1V2FTd3VZdWNYU1pGeEs5Y1h5enIrc2kvaXRNZnlOdjlvT1Nod3BKY2ZNZXo0VzJwQ3J1b1I0VDB5V0FqR1MiLCJtYWMiOiJiZWE5NDMwYjBhOWYzOTZhYjI5NmMyMTFiZjI5OGQzMDM5MGRkNTEwNThlMjE2MmZhZTEyMDI5ZDg0ZDA3ZGQ5IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -102,13 +102,13 @@ endpoints:
         name: regionId
         description: ''
         required: true
-        example: esse
+        example: quos
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      regionId: esse
+      regionId: quos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -122,7 +122,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ii95RjB5RmtxWXJJclhRS0p4QzFvTXc9PSIsInZhbHVlIjoid3kvMWJkTjhiRjA2RU5xMjVsa0tKU3VjUitCMFRWT3BlU0h3cGV1WDJsUlpyRVZDWjBETVVsdGZWUGJTOHJ4MSt3N0RGZExCdmxia1dMNFNCeWpJcFBrR2JQYlkzOWwwWEtpUU5CVFNoRXZSZEFEYjdhOThDS2ptUHFZS296ZjAiLCJtYWMiOiJlZWQ1NTc4MTIzYTZhYjUyNzQ5Y2E0ZWE4Y2M4ZTc5MjdiYzZmNmM1NDU3NjUyYmQ2NmFmMWM4ZmYxYzM3MDUyIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IlF4dk8rU3RacWVXMmljcmdmd3REekE9PSIsInZhbHVlIjoiL2pVUDQxWXB3ajluNTNuUHlOTmlNVFAzQkdqWE5IUk0raWZ1WmJTZ1VicGd3bU9jbldoamRPQXVNNTc1Vzk4OVBsYU56QUdZZUlzZGQyMTN0dThHWWtmVlFEUW5VZUlzNkJWUkw3NzN2dmw1dzJrRVhWamdSdFhsOWo5QTNHYVkiLCJtYWMiOiI5MzJiYmUyNDFiMzM3ZGM3MjBmMDdjMWZjOTc5MjU2MWEzMTNiZWY3ZjYwYTFmMDgwMTQyN2Q1ZGYyNGNlZmZiIiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkY4bXYzZEFReVVSV2QybjI3azArMnc9PSIsInZhbHVlIjoiUzI0VVQ5K0lwWFNzbTY1VzlkcGRmVVNDb1BEZTVDWU1DUnJxMVVFZmxXWVZkMm5LNkt2aG9nUDBBU0M1WTVZdTlDbmRmVmwyd2s3ZkNXVFJ6RTNZTmZLZi9kWDhyY0phUkJmMFJVcTRvYkcySW9ENXVLVkRFTW5XMFUwaUUvOWMiLCJtYWMiOiI3MjI5MGYwMWJiM2YzMGJlMDk5MDAyODIyMzQwMmZlMDc4MjdkYmRhYmQ0NTYwMjY2MzYzMDg2ZDFiMzY2OTI4IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InMxTmZ3YUtMSUVtMnVKNzJsNWxLRkE9PSIsInZhbHVlIjoiRno2cGZoRVBBK3NnRU5iWHZyem45RjRlRFBZZEpuU0Z6YkpsU0g3OWVJenVkU1VOQWZ3RHErdHBGbDlPR1c0ZW1EYk1CbmlTR3VNVVpyanFuQ1dhTG1ObUtSUXR6K0ErZWJUZmZEZS9kTHdqb3l4b3gyMkU4WTFHMXFLWkp0VkkiLCJtYWMiOiI4NjQzMmE2OGUyOTkwN2Q5Y2YwNmU2NTY3NjIxNWFkODZmMWMwNzlkOGU4ODNkYWJiYjg1YzA0YWMyOTFlNDlhIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -152,13 +152,13 @@ endpoints:
         name: provinceId
         description: ''
         required: true
-        example: velit
+        example: nesciunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      provinceId: velit
+      provinceId: nesciunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -172,7 +172,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6InNWVDlmOWMvZWd6UXBrRytDNExNMkE9PSIsInZhbHVlIjoia3NaOEVyRkRoSlM4U08wR2xhZXNHVDR0RGRSVnQ5enVzMEViMHpxNDQ4ZEQwTlNNR3Z1ZUt1c25CVXpRaVczeUZaclpHUUxRdmlCWStORFpxWVJIVC8zWWpMR2NONDJWRnptZkp0OXV3V2RJVTFGMHExMlExMklFUFh4U29JSXkiLCJtYWMiOiJmNDFkNjg5N2E4NzVhMWZkNDc5NTEyNmNiNDEyYzAwYzNiM2Y3Nzc0ZDE0NGJlNGY1MTBmZDhlYjBiZDYzMzY0IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IlgreUFFYW9DOGQyNDRCbTdNN0c3eEE9PSIsInZhbHVlIjoiNDQ1VkVjMktXRzNhWTFkVzJRZ0ZKcTByVjNxbHNjZmE1N28vUVZuVnY1Ym1jUkJYdWhSUU4xbTMwTmJxbCtObjBlS25Sd3VLQkVXTGozWWZVOEo0ZmE1bVRKQUswOStYWkpaeTI0NGJtZVZ6clVOYThIQllIRlFuajNTcDZVVWciLCJtYWMiOiIyODBjNjFhYWVmYzJmZDBiZjVkODUxNDRiMDI2ZGUzMDY4ZjYxYTkxZmQwYTIzZGZkZjAxZGI2NzZkNGJhYWM1IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlM5bjdHZUNjOEY0eUtueHR5VC9uYXc9PSIsInZhbHVlIjoicjJsdVRsZ1o4Y1h4NWRQQnVRQ2ttUkNzWHB4Yy94VlJnZStGYjd4Rjc1KzBQT2J0aXYwUVpraHVUaDVqREwxd05qQ2RldEJpcDR5QVdjekE2cmRyVmUycWl4SExoUjdadTByU3J1MUM5NjhFRjJyUmU4TG15TU13OUg0bXhDZE0iLCJtYWMiOiI2ODk4NTgwYmMyODhiYjI5Yzc2ODNiNmFiNmUwZGIxOTI3MmUwN2VjZDRiOWIyMjdiYWIzZjRiYTkzMDVmMDk4IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InRSaFMzRGFVSlhkYVgyYWJFZGNSTlE9PSIsInZhbHVlIjoiNjdQc2VwL3Zlb1BXM0lMK2FscDU4bW51azVYazhTdEFrUE4yTnNLNjArdXhhOHM3N3BCdE82Q0l1TE9Qb2plYVM5eXV3cGFYdWJXM1JrNmhPVHcyeHQ5TUxtMmNJMVNWNFNIQ0cvazFlN3REblBZZ3pqY1UydCtVd2JVSGdFUHEiLCJtYWMiOiJlYTk0MWJiNGIwOTJjNDAwZDM5MjhjNzM4MDU0YjBlZjVmYjY4Y2MwOTllZDYwZWZmZGQyYmQ2OGJkYWEyYmY1IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -202,7 +202,7 @@ endpoints:
         name: regionId
         description: ''
         required: true
-        example: et
+        example: odio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,14 +211,14 @@ endpoints:
         name: provinceId
         description: ''
         required: true
-        example: deleniti
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      regionId: et
-      provinceId: deleniti
+      regionId: odio
+      provinceId: ad
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -232,7 +232,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6InVOdVZyanlvbjFTeVlZNEp0TnI1REE9PSIsInZhbHVlIjoiUS9xbGlGQlk2ZnNKSGRCQW02Z0JHQ3N4N3BJU1BuSHZoTXRDTWJJM1QvUU5jSEErSkdJbVRKVTdHVmQ0NmFucFZqMjdVRFYrWC9TM1owblkvSEhZN1BvejhXSjBlWG9KOGliSWt0aXdWaTRDajd2eWsvemRMU2EyOWJCd3RsUDkiLCJtYWMiOiI5YWRkNTNlN2QwMTk4ZmViMjNjNWQ2Mjk2MGU1Yjk4MDYwNWRjMjBiOTg3OGE1MTg4OGVjZGQ0OGJlN2U0NmY1IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6IlNKUDVBSG1RMnVpZ3UrWUlxeFpxYXc9PSIsInZhbHVlIjoicmVkYzNldXBrMldCSTJQaFBneW5taldqcGRkZTJkRVRUUThpMUhaK2RvdE8wK0lvaEEwbmNHWG5FVkMxamNEc3V1ek5sZjhwSklhU0g5YXJFOUQ5RzBHRzBXTlplYzhKc0FzTHVTTUNRblIrZFlnTFNQdXZ1NXdYWjFrUmxHMGUiLCJtYWMiOiIzODA5Y2E5MzVkZTUwMGUwMDhkZGZmZGZhZDk4YzFjYThiYTMwNTc1NjI3MDdiMGNjYzJkNzJiOWUxNzc3ZTU1IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjArMmdOME8xa1lQYjd2Ymp4Y1JUNGc9PSIsInZhbHVlIjoiK0VEQk9MeFlSVmtWNGdsd2hFLzFWVnB1akc4aHh5YVA0Tng4bHJMa3JqKzJRbW9RWi9ySUg3MVVkZDFTMnlmdU5HR1lhMDh0WWRUMWdoRml1VnBrVCtUZ00rQmFPakVyMU5rWU9sU05jaU9VUW9wNXBMdFB1N1pVSDlZUjN3WGsiLCJtYWMiOiJhMTI0MmMyM2RlYzgwN2E5Y2JkZmYzNGZhOWMxNGQ2OTU4MTg3NDJlMGM3NWEwODkzMDY3OTYwYWE4ODE4ZDI3IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IldrSUZ5elBpZHFOckF3c0s4d0p5dXc9PSIsInZhbHVlIjoiUnRVb1hLWnBPdlJoUjJ0YzRYRnQwSFdRUjZCTVhtVkM2V1l6c2RtQWk2bnQxTDdvYTJ2alVOY2xJcUNZb1drT0UzMjFhNDliVzVXZUlwb05BdjFUTGhQcmZxZ0lxUUN6T1lDSlhoV2taU0x3UzdwckpRd0FZQWYySFdSVW9CQmsiLCJtYWMiOiJlNDMyMTMzNWQxMzQwNzdhODU4ZWUwZDYzN2FiNmU5YTdhYWUxNTg4MmUwMzZlNzRlM2Q4N2ZkM2MxNGNlMzlhIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -262,13 +262,13 @@ endpoints:
         name: cityId
         description: ''
         required: true
-        example: sed
+        example: minus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      cityId: sed
+      cityId: minus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -282,7 +282,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjhxeHk4bVNwRVJ1Ti9aVUQ5aVlCeFE9PSIsInZhbHVlIjoiVm9yQ2M0K0lmMTBPSC9SU2huSm5KZ3kxQk5UcmZGTzZlcUNhV1FuanpQMHpwOHlVREhGbkFGNk9kdC9ONGY5eXZYcndJbEtZRko5eWlvSHRvaUt2dVZ1WHZxSXRsNHJGZ0NqRVdOSkdtSnd6blVuOS9pZnMzK1NpWmw5VmI3dHUiLCJtYWMiOiI5ZTVhMGIzZWMwNGQxODFiMTJiNGIyNDk1YTQzOTBjYmZjZTQ2ZmZiYTdhMGZkOTFkMzMyNDRiMDM0MDVmOTA0IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescentral_session=eyJpdiI6Ik9EaVkvb2E1T1VibVdydCtuN05nVnc9PSIsInZhbHVlIjoiLzgvNDA2bWFMUWdqWjRJUUN4U1RJSmJwWldPbnJHdVBKQ2g0clFFQ1lVamFOcHl3V1RFNTdCSkN3YnlJNFZzL0psMkhsYURsRElWQTB4V2syN0QxRDQ4aHpYUEJSSHlSa3B3T1ZJMVNnc0g3bm12aGs5MGt2SndMOXRzY3k0Q20iLCJtYWMiOiJkMGRhZWRkNGRmY2ZjNmY2ODY2MGEzODUyNmQ3YzMzYjE5ODcwNDYzN2ViYzA0YTg2YjkzZGIxZDAyMGE1YjM4IiwidGFnIjoiIn0%3D; expires=Tue, 25 Jun 2024 16:41:37 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImZYakFRb3VQSVl6UjZaZkNWMnBHWUE9PSIsInZhbHVlIjoiZkJFbEozOVlEM3V5WGtlU2hrdHlsa0xTMDV4enQvRHpqVjloUTVtM0FmaVVBSEVQbGpjNWtoTTZsVWdxWlRoUm1pNWRlSWwvK3BmdjRmSFRTM2NhYS9VUFR4OVdYQVRSY3ZHQjdWSzRuNk5GbDJrOVFqK0N6TjBqSzBCdVV0b3UiLCJtYWMiOiI2ZjZjYWU3ZjdkNTEyN2I5NTc5ZWYxMDk2MmIzOGY5MTdkY2FmOWIyODJkOTRlODFjOTI5NjNmODI1NTMwNzRkIiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImZTV3I2UHNJbE5nZG5LNjRVK1BnMVE9PSIsInZhbHVlIjoidVdYSndPN1ZXdzFYelRYZnAxY2JzWDRvSXg4T2l1L25QQ0ZVdVo0cXlETXZ1Unk1K25tSENidGJKTFRjdlFCZUpibnVJQ2JHelB4WlR4K1FFMkd4MmdkOGNxeCtPRGsybFUrUHQ3YWlHOFJKUTdtamZ5NGh0QXlkYW9qZ3Nkd28iLCJtYWMiOiJkZWFkNDRhNjUyYjk1ODg3MzgwZDNmYzliMGFhOTEwMjAyNDJmYTUyNzMwYzQ2YjQ1MGEwOGFmNDE2ODFlY2M2IiwidGFnIjoiIn0%3D; expires=Sat, 06 Jul 2024 15:51:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -332,6 +332,251 @@ endpoints:
     custom: []
   -
     httpMethods:
+      - POST
+    uri: api/customer/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: justice49@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: aperiam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      email: justice49@example.org
+      password: aperiam
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/customer/register
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: vi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      middle_name:
+        name: middle_name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: ijydoqhccwzjysdqcyf
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      last_name:
+        name: last_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: aeogxtyrupyghlbknsfwp
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      sufix_name:
+        name: sufix_name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: xkdniraiexuwvlbeeguicfu
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      username:
+        name: username
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: rytff
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: dannie06@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: 'Must be at least 8 characters.'
+        required: true
+        example: 'W{}0#nybv{J;f'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      contact_number:
+        name: contact_number
+        description: 'Must not be greater than 20 characters.'
+        required: true
+        example: lnkxoch
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      birth_date:
+        name: birth_date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2024-07-06T13:51:02'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gender:
+        name: gender
+        description: ''
+        required: true
+        example: Female
+        type: string
+        enumValues:
+          - Male
+          - Female
+        exampleWasSpecified: false
+        custom: []
+      marital_status:
+        name: marital_status
+        description: ''
+        required: true
+        example: Widowed
+        type: string
+        enumValues:
+          - Single
+          - Married
+          - Widowed
+        exampleWasSpecified: false
+        custom: []
+      province_id:
+        name: province_id
+        description: ''
+        required: true
+        example: necessitatibus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      city_id:
+        name: city_id
+        description: ''
+        required: true
+        example: quia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      barangay_id:
+        name: barangay_id
+        description: ''
+        required: true
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      address1:
+        name: address1
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      address2:
+        name: address2
+        description: ''
+        required: false
+        example: ducimus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      first_name: vi
+      middle_name: ijydoqhccwzjysdqcyf
+      last_name: aeogxtyrupyghlbknsfwp
+      sufix_name: xkdniraiexuwvlbeeguicfu
+      username: rytff
+      email: dannie06@example.com
+      password: 'W{}0#nybv{J;f'
+      contact_number: lnkxoch
+      birth_date: '2024-07-06T13:51:02'
+      gender: Female
+      marital_status: Widowed
+      province_id: necessitatibus
+      city_id: quia
+      barangay_id: aut
+      address1: et
+      address2: ducimus
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - GET
     uri: api/products
     metadata:
@@ -356,7 +601,59 @@ endpoints:
     responses:
       -
         status: 200
-        content: '[{"id":1,"name":"HONDA CLICK 125 V3","description":"<p>asda asdad<\/p>","image":"https:\/\/superbikescentral.online\/storage\/01J0T5GZRMCSNTWCTAJ0SCG8F6.jpg","price":87000,"category_id":"Scooter","brand_id":"Honda","model":"click 125 v3"}]'
+        content: '{"data":[{"id":1,"name":"HONDA CLICK 125i V3","slug":null,"description":"<p>adsada asda asdada<\/p>","image":"https:\/\/superbikescentral.online\/storage\/01J102FRN24AMN08QFEJW8DG59.jpg","price":87000,"category_id":"Scooter","brand_id":"Honda","model":"click 125 v3","variations":[]}],"links":{"first":"https:\/\/superbikescentral.online\/api\/products?page=1","last":"https:\/\/superbikescentral.online\/api\/products?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/superbikescentral.online\/api\/products?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"https:\/\/superbikescentral.online\/api\/products","per_page":10,"to":1,"total":1}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/product/{slug}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      slug: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Server Error"
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -395,7 +692,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '[{"id":1,"name":"Scooter","image":"https:\/\/superbikescentral.online\/storage\/01J0T578P8JSF0PB50A00TJ7NK.png"}]'
+        content: '[{"id":1,"name":"Scooter","image":"https:\/\/superbikescentral.online\/storage\/"}]'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -449,6 +746,94 @@ endpoints:
     custom: []
   -
     httpMethods:
+      - GET
+    uri: api/provinces
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"id":1,"code":"012800000","name":"Ilocos Norte","region_id":"01","province_id":"0128"},{"id":2,"code":"012900000","name":"Ilocos Sur","region_id":"01","province_id":"0129"},{"id":3,"code":"013300000","name":"La Union","region_id":"01","province_id":"0133"},{"id":4,"code":"015500000","name":"Pangasinan","region_id":"01","province_id":"0155"},{"id":5,"code":"020900000","name":"Batanes","region_id":"02","province_id":"0209"},{"id":6,"code":"021500000","name":"Cagayan","region_id":"02","province_id":"0215"},{"id":7,"code":"023100000","name":"Isabela","region_id":"02","province_id":"0231"},{"id":8,"code":"025000000","name":"Nueva Vizcaya","region_id":"02","province_id":"0250"},{"id":9,"code":"025700000","name":"Quirino","region_id":"02","province_id":"0257"},{"id":10,"code":"030800000","name":"Bataan","region_id":"03","province_id":"0308"},{"id":11,"code":"031400000","name":"Bulacan","region_id":"03","province_id":"0314"},{"id":12,"code":"034900000","name":"Nueva Ecija","region_id":"03","province_id":"0349"},{"id":13,"code":"035400000","name":"Pampanga","region_id":"03","province_id":"0354"},{"id":14,"code":"036900000","name":"Tarlac","region_id":"03","province_id":"0369"},{"id":15,"code":"037100000","name":"Zambales","region_id":"03","province_id":"0371"},{"id":16,"code":"037700000","name":"Aurora","region_id":"03","province_id":"0377"},{"id":17,"code":"041000000","name":"Batangas","region_id":"04","province_id":"0410"},{"id":18,"code":"042100000","name":"Cavite","region_id":"04","province_id":"0421"},{"id":19,"code":"043400000","name":"Laguna","region_id":"04","province_id":"0434"},{"id":20,"code":"045600000","name":"Quezon","region_id":"04","province_id":"0456"},{"id":21,"code":"045800000","name":"Rizal","region_id":"04","province_id":"0458"},{"id":22,"code":"174000000","name":"Marinduque","region_id":"17","province_id":"1740"},{"id":23,"code":"175100000","name":"Occidental Mindoro","region_id":"17","province_id":"1751"},{"id":24,"code":"175200000","name":"Oriental Mindoro","region_id":"17","province_id":"1752"},{"id":25,"code":"175300000","name":"Palawan","region_id":"17","province_id":"1753"},{"id":26,"code":"175900000","name":"Romblon","region_id":"17","province_id":"1759"},{"id":27,"code":"050500000","name":"Albay","region_id":"05","province_id":"0505"},{"id":28,"code":"051600000","name":"Camarines Norte","region_id":"05","province_id":"0516"},{"id":29,"code":"051700000","name":"Camarines Sur","region_id":"05","province_id":"0517"},{"id":30,"code":"052000000","name":"Catanduanes","region_id":"05","province_id":"0520"},{"id":31,"code":"054100000","name":"Masbate","region_id":"05","province_id":"0541"},{"id":32,"code":"056200000","name":"Sorsogon","region_id":"05","province_id":"0562"},{"id":33,"code":"060400000","name":"Aklan","region_id":"06","province_id":"0604"},{"id":34,"code":"060600000","name":"Antique","region_id":"06","province_id":"0606"},{"id":35,"code":"061900000","name":"Capiz","region_id":"06","province_id":"0619"},{"id":36,"code":"063000000","name":"Iloilo","region_id":"06","province_id":"0630"},{"id":37,"code":"064500000","name":"Negros Occidental","region_id":"06","province_id":"0645"},{"id":38,"code":"067900000","name":"Guimaras","region_id":"06","province_id":"0679"},{"id":39,"code":"071200000","name":"Bohol","region_id":"07","province_id":"0712"},{"id":40,"code":"072200000","name":"Cebu","region_id":"07","province_id":"0722"},{"id":41,"code":"074600000","name":"Negros Oriental","region_id":"07","province_id":"0746"},{"id":42,"code":"076100000","name":"Siquijor","region_id":"07","province_id":"0761"},{"id":43,"code":"082600000","name":"Eastern Samar","region_id":"08","province_id":"0826"},{"id":44,"code":"083700000","name":"Leyte","region_id":"08","province_id":"0837"},{"id":45,"code":"084800000","name":"Northern Samar","region_id":"08","province_id":"0848"},{"id":46,"code":"086000000","name":"Samar","region_id":"08","province_id":"0860"},{"id":47,"code":"086400000","name":"Southern Leyte","region_id":"08","province_id":"0864"},{"id":48,"code":"087800000","name":"Biliran","region_id":"08","province_id":"0878"},{"id":49,"code":"097200000","name":"Zamboanga del Norte","region_id":"09","province_id":"0972"},{"id":50,"code":"097300000","name":"Zamboanga del Sur","region_id":"09","province_id":"0973"},{"id":51,"code":"098300000","name":"Zamboanga Sibugay","region_id":"09","province_id":"0983"},{"id":52,"code":"099700000","name":"City of Isabela (Not a Province)","region_id":"09","province_id":"0997"},{"id":53,"code":"101300000","name":"Bukidnon","region_id":"10","province_id":"1013"},{"id":54,"code":"101800000","name":"Camiguin","region_id":"10","province_id":"1018"},{"id":55,"code":"103500000","name":"Lanao del Norte","region_id":"10","province_id":"1035"},{"id":56,"code":"104200000","name":"Misamis Occidental","region_id":"10","province_id":"1042"},{"id":57,"code":"104300000","name":"Misamis Oriental","region_id":"10","province_id":"1043"},{"id":58,"code":"112300000","name":"Davao del Norte","region_id":"11","province_id":"1123"},{"id":59,"code":"112400000","name":"Davao del Sur","region_id":"11","province_id":"1124"},{"id":60,"code":"112500000","name":"Davao Oriental","region_id":"11","province_id":"1125"},{"id":61,"code":"118200000","name":"Davao de Oro","region_id":"11","province_id":"1182"},{"id":62,"code":"118600000","name":"Davao Occidental","region_id":"11","province_id":"1186"},{"id":63,"code":"124700000","name":"Cotabato","region_id":"12","province_id":"1247"},{"id":64,"code":"126300000","name":"South Cotabato","region_id":"12","province_id":"1263"},{"id":65,"code":"126500000","name":"Sultan Kudarat","region_id":"12","province_id":"1265"},{"id":66,"code":"128000000","name":"Sarangani","region_id":"12","province_id":"1280"},{"id":67,"code":"129800000","name":"City of Cotabato (Not a Province)","region_id":"12","province_id":"1298"},{"id":68,"code":"133900000","name":"NCR, City of Manila, First District (Not a Province)","region_id":"13","province_id":"1339"},{"id":69,"code":"137400000","name":"NCR, Second District (Not a Province)","region_id":"13","province_id":"1374"},{"id":70,"code":"137500000","name":"NCR, Third District (Not a Province)","region_id":"13","province_id":"1375"},{"id":71,"code":"137600000","name":"NCR, Fourth District (Not a Province)","region_id":"13","province_id":"1376"},{"id":72,"code":"140100000","name":"Abra","region_id":"14","province_id":"1401"},{"id":73,"code":"141100000","name":"Benguet","region_id":"14","province_id":"1411"},{"id":74,"code":"142700000","name":"Ifugao","region_id":"14","province_id":"1427"},{"id":75,"code":"143200000","name":"Kalinga","region_id":"14","province_id":"1432"},{"id":76,"code":"144400000","name":"Mountain Province","region_id":"14","province_id":"1444"},{"id":77,"code":"148100000","name":"Apayao","region_id":"14","province_id":"1481"},{"id":78,"code":"150700000","name":"Basilan","region_id":"15","province_id":"1507"},{"id":79,"code":"153600000","name":"Lanao del Sur","region_id":"15","province_id":"1536"},{"id":80,"code":"153800000","name":"Maguindanao","region_id":"15","province_id":"1538"},{"id":81,"code":"156600000","name":"Sulu","region_id":"15","province_id":"1566"},{"id":82,"code":"157000000","name":"Tawi-Tawi","region_id":"15","province_id":"1570"},{"id":83,"code":"160200000","name":"Agusan del Norte","region_id":"16","province_id":"1602"},{"id":84,"code":"160300000","name":"Agusan del Sur","region_id":"16","province_id":"1603"},{"id":85,"code":"166700000","name":"Surigao del Norte","region_id":"16","province_id":"1667"},{"id":86,"code":"166800000","name":"Surigao del Sur","region_id":"16","province_id":"1668"},{"id":87,"code":"168500000","name":"Dinagat Islands","region_id":"16","province_id":"1685"}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/cities/{provinceId}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      provinceId:
+        name: provinceId
+        description: ''
+        required: true
+        example: dolore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      provinceId: dolore
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '[]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - POST
     uri: api/inquiries
     metadata:
@@ -472,7 +857,7 @@ endpoints:
         name: product_id
         description: ''
         required: true
-        example: 4
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -481,7 +866,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: hsspanhenftoozx
+        example: cpmbajrinvyzcrlboh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -490,7 +875,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: mjohnson@example.net
+        example: dianna.oconnell@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -499,7 +884,7 @@ endpoints:
         name: message
         description: ''
         required: true
-        example: quidem
+        example: doloribus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -508,7 +893,7 @@ endpoints:
         name: contact_number
         description: 'Must not be greater than 15 characters.'
         required: false
-        example: ghajgg
+        example: kiysiqy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -517,7 +902,7 @@ endpoints:
         name: province_id
         description: ''
         required: false
-        example: 2
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -526,7 +911,7 @@ endpoints:
         name: city_id
         description: ''
         required: false
-        example: 18
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -535,20 +920,20 @@ endpoints:
         name: barangay
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: jnjyzsubdpo
+        example: rsvecphfd
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      product_id: 4
-      name: hsspanhenftoozx
-      email: mjohnson@example.net
-      message: quidem
-      contact_number: ghajgg
-      province_id: 2
-      city_id: 18
-      barangay: jnjyzsubdpo
+      product_id: 18
+      name: cpmbajrinvyzcrlboh
+      email: dianna.oconnell@example.org
+      message: doloribus
+      contact_number: kiysiqy
+      province_id: 20
+      city_id: 19
+      barangay: rsvecphfd
     fileParameters: []
     responses: []
     responseFields: []
