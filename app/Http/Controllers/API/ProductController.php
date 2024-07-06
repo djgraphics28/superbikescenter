@@ -11,6 +11,12 @@ class ProductController extends Controller
 {
     /**
      * Display a listing of the Product resource.
+     * @urlParam name string search name.
+     * @urlParam brand integer The Brand of the product Example: 1
+     * @urlParam category integer The Category of the product Example: 1
+     * @urlParam min_price string The Minimum Price of the product Example: 15000
+     * @urlParam max_price string The Maximum  Price of the product Example: 300000
+     * @urlParam per_page integer The Page Rows  of the product Example: 10
      */
     public function index(Request $request)
     {

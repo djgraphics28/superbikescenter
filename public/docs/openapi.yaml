@@ -78,7 +78,7 @@ paths:
         in: path
         name: regionId
         description: ''
-        example: quos
+        example: error
         required: true
         schema:
           type: string
@@ -109,7 +109,7 @@ paths:
         in: path
         name: provinceId
         description: ''
-        example: nesciunt
+        example: at
         required: true
         schema:
           type: string
@@ -140,7 +140,7 @@ paths:
         in: path
         name: regionId
         description: ''
-        example: odio
+        example: ut
         required: true
         schema:
           type: string
@@ -148,7 +148,7 @@ paths:
         in: path
         name: provinceId
         description: ''
-        example: ad
+        example: est
         required: true
         schema:
           type: string
@@ -179,7 +179,7 @@ paths:
         in: path
         name: cityId
         description: ''
-        example: minus
+        example: nostrum
         required: true
         schema:
           type: string
@@ -224,11 +224,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: justice49@example.org
+                  example: stiedemann.stuart@example.org
                 password:
                   type: string
                   description: ''
-                  example: aperiam
+                  example: recusandae
               required:
                 - email
                 - password
@@ -252,50 +252,50 @@ paths:
                 first_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vi
+                  example: dgumcg
                 middle_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ijydoqhccwzjysdqcyf
+                  example: jzwhpfszuqp
                 last_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: aeogxtyrupyghlbknsfwp
+                  example: ylepumsocjmfz
                 sufix_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xkdniraiexuwvlbeeguicfu
+                  example: zacnffldcpetvhqj
                 username:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rytff
+                  example: nnbjytusnwdzrwkpoxttrfmn
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: dannie06@example.com
+                  example: bauch.theron@example.org
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: 'W{}0#nybv{J;f'
+                  example: 'nb#B<yR?!e('
                 contact_number:
                   type: string
                   description: 'Must not be greater than 20 characters.'
-                  example: lnkxoch
+                  example: pxcuzgssjsycrdwmuti
                 birth_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-07-06T13:51:02'
+                  example: '2024-07-06T13:59:43'
                 gender:
                   type: string
                   description: ''
-                  example: Female
+                  example: Male
                   enum:
                     - Male
                     - Female
                 marital_status:
                   type: string
                   description: ''
-                  example: Widowed
+                  example: Married
                   enum:
                     - Single
                     - Married
@@ -303,23 +303,23 @@ paths:
                 province_id:
                   type: string
                   description: ''
-                  example: necessitatibus
+                  example: et
                 city_id:
                   type: string
                   description: ''
-                  example: quia
+                  example: nulla
                 barangay_id:
                   type: string
                   description: ''
-                  example: aut
+                  example: et
                 address1:
                   type: string
                   description: ''
-                  example: et
+                  example: sit
                 address2:
                   type: string
                   description: ''
-                  example: ducimus
+                  example: nesciunt
               required:
                 - first_name
                 - last_name
@@ -504,6 +504,91 @@ paths:
       tags:
         - Endpoints
       security: []
+    parameters:
+      -
+        in: path
+        name: name
+        description: 'Optional parameter. search name.'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: quia
+      -
+        in: path
+        name: brand
+        description: 'Optional parameter. The Brand of the product'
+        required: true
+        schema:
+          type: integer
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: 1
+      -
+        in: path
+        name: category
+        description: 'Optional parameter. The Category of the product'
+        required: true
+        schema:
+          type: integer
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: 1
+      -
+        in: path
+        name: min_price
+        description: 'Optional parameter. The Minimum Price of the product'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: '15000'
+      -
+        in: path
+        name: max_price
+        description: 'Optional parameter. The Maximum  Price of the product'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: '300000'
+      -
+        in: path
+        name: per_page
+        description: 'Optional parameter. The Page Rows  of the product'
+        required: true
+        schema:
+          type: integer
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: 10
   '/api/product/{slug}':
     get:
       summary: ''
@@ -1146,7 +1231,7 @@ paths:
         in: path
         name: provinceId
         description: ''
-        example: dolore
+        example: quod
         required: true
         schema:
           type: string
@@ -1169,35 +1254,35 @@ paths:
                 product_id:
                   type: integer
                   description: ''
-                  example: 18
+                  example: 20
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: cpmbajrinvyzcrlboh
+                  example: kttpu
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: dianna.oconnell@example.org
+                  example: michael.pollich@example.net
                 message:
                   type: string
                   description: ''
-                  example: doloribus
+                  example: ipsum
                 contact_number:
                   type: string
                   description: 'Must not be greater than 15 characters.'
-                  example: kiysiqy
+                  example: vecqcgrslyohi
                 province_id:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 9
                 city_id:
                   type: integer
                   description: ''
-                  example: 19
+                  example: 8
                 barangay:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rsvecphfd
+                  example: oeewlwwdtfhbf
               required:
                 - product_id
                 - name
