@@ -24,6 +24,7 @@
     "livewire/livewire": "^3.3",
     "pboivin/filament-peek": "^2.2",
     "romanzipp/laravel-seo": "^2.6",
+    "silber/page-cache": "^1.1",
     "sinnbeck/markdom": "^2.0",
     "spatie/laravel-login-link": "^1.2",
     "yajra/laravel-address": "^11.0",
