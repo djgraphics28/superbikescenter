@@ -1,4 +1,4 @@
-#!/bin/bash
+******bash #!/bin/bash
 
 # Define the path to your Laravel application
 APP_PATH="/domains/superbikescentral.online/public_html"
