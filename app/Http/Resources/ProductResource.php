@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\ProductVariationResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
@@ -17,12 +18,14 @@ class ProductResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'slug' => $this->slug,
             'description' => $this->description,
             'image' => $this->image ? config('app.url') . '/storage/' . $this->image : config('app.url') . '/storage/' . '',
             'price' => $this->price,
             'category_id' => $this->category->name,
             'brand_id' => $this->brand->name,
             'model' => $this->model,
+            'variations' => ProductVariationResource::collection($this->variations)
             // 'year' => $this->year,
             // 'engine_type' => $this->engine_type,
             // 'displacement' => $this->displacement,

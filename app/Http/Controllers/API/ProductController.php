@@ -11,6 +11,12 @@ class ProductController extends Controller
 {
     /**
      * Display a listing of the Product resource.
+     * @urlParam name string search name.
+     * @urlParam brand integer The Brand of the product Example: 1
+     * @urlParam category integer The Category of the product Example: 1
+     * @urlParam min_price string The Minimum Price of the product Example: 15000
+     * @urlParam max_price string The Maximum  Price of the product Example: 300000
+     * @urlParam per_page integer The Page Rows  of the product Example: 10
      */
     public function index(Request $request)
     {
@@ -35,12 +41,21 @@ class ProductController extends Controller
             $query->where('price', '<=', $request->input('max_price'));
         }
 
-        // Get the filtered products
-        $products = $query->get();
+        // Filter by name if provided
+        if ($request->has('name')) {
+            $query->where('name', 'like', '%' . $request->input('name') . '%');
+        }
 
-        // Return the response
-        return response()->json(ProductResource::collection($products));
+        // Set the number of items per page
+        $perPage = $request->input('per_page', 10); // Default to 10 items per page if not provided
+
+        // Get the filtered products with pagination
+        $products = $query->paginate($perPage);
+
+        // Return the paginated response
+        return response()->json(ProductResource::collection($products)->response()->getData(true));
     }
+
 
     // /**
     //  * Store a newly created resource in storage.
@@ -53,10 +68,12 @@ class ProductController extends Controller
     // /**
     //  * Display the specified resource.
     //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
+    public function show(string $slug)
+    {
+        $product = Product::with('variations')->whereSlug($slug)->firstOrFail();
+
+        return response()->json(new ProductResource($product));
+    }
 
     // /**
     //  * Update the specified resource in storage.
