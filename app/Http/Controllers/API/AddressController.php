@@ -24,7 +24,7 @@ class AddressController extends Controller
         return response()->json($cities);
     }
 
-    public function getDistricts($cityId)
+    public function getBarangays($cityId)
     {
         $barangays = Barangay::where('city_id', $cityId)->get();
 
