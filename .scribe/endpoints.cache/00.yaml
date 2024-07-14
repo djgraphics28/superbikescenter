@@ -34,7 +34,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IngwT2YxakhtWXRLcGxiRE51UDh2akE9PSIsInZhbHVlIjoibE1TRkhUU0RGUTdzNnhOa3BZL3RIb1I1THBKRzZjZnlJSER0eDFyYkg1MHErV1RrR29sQ2wzRWlSVWpxbEJscDcrYVVwakd6QXZFKys5VkRzVThyenhXaUNnT2luV21pZzBJN0dyaC9CSURkcWxZRWFHN0Q0Z1NIajkyQ3YweVkiLCJtYWMiOiI0MGFjOWNlZjcxYzEzZmQ2M2MxM2M3ZmRhNjdjMWRiMDE2NTkwMTU0NDYwYjM2YWFkYjdiMzA4M2Q2YTU4ZmY4IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Ikd3SVJTYnQzSW9SbENaZXVWN1RZdnc9PSIsInZhbHVlIjoiazQ1a0dnaEtYTnpva0NHa1hWd0RqSDUvTSs1Nmlmc1VERENWaXRtUHFwc3dTVlJaZWRCekM1dzRpYVBUMmhLai9KVXhLb28ybit4VlVwM0ZxcXBMVVM5VTBwRzFISTJrb29NWkZuTFNrV2tHWG5CUWpjTUhuWHR3SmkvMXRVcXciLCJtYWMiOiJiMGQ5NjBiYTY1YTVjNDcwNzM4NzA1NzRkODMxMjYxZDA4ZDQxNzljMWUyZmIxZmQ2YzQ3YzRmMjU1NGQ2MzVlIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkkzRnNscnk5aTJpY3V2NWVZNDFST3c9PSIsInZhbHVlIjoiUXAwN1Vock5JK21ITkR3Ui8zSzBJdjlBVkl2MUlhL2Y3TzkyREt0UHpFRUVDakF1R0V6NW1sZklpejJVQmVOdnBVaW1iTkV5b3pwMFhrRkEySkI4d0cxa0E4OVV1YkhlQVpsM2w0WlBlenB6L2VseEJqcktJQXBKeVBHVGFsZGciLCJtYWMiOiIwYWQ0MTNkZDA0OTY4ZmZhMTVjZTc4YjlhMjdiMTdjNmU5YTcxZWFlODBlZmVlMjkwNjQxYTU3Y2I1OGEyNzc0IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IktnWEphSGZLQ2g5d3FTQ1dJMjRWZHc9PSIsInZhbHVlIjoiZk45OFo4REZMOVFnVHU5ZW1TOFBHNWlzV2tyZ01jWFF5ZmN1aWRLU09rM1hBMC9Ndzk4T0sxVktkMGQrRXBwaHp1VC9hbWxuMHRBQ0Y4Z285NGJ0QUJUNDhjbWlXRU00TkNPTEFKRmZCUDBpNmpLbXgrcmtHZERKYVFLRG1hN1YiLCJtYWMiOiJjYzJjM2U5OWFiOTQyYTY1YjIyNTVkMWI2OGU0ZTNmZDgyMzAxMzM0N2NlZjNhNGUzMjFjMmUwNDhlMTVmZGIxIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -74,7 +74,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImQ0YkZwdXJUL1BWaVpxSFVhR2h1TEE9PSIsInZhbHVlIjoiTlZlQ0hxbXAyNDdPdFRTYWZsNTBNQnVHQWdELy9kMVhLTU5BeW9LVVR2Y0wxZm5IUXpraUJQcUhIRWp6cWZ3QmR6MUZWVVhtU0RjMko5RzZmWkpHMnl1S3FFWk9WUDlpRmdrYlorL0dvdUtnZ0xIcWphYjVZSjY0aFczMFh2emEiLCJtYWMiOiIxNGIyY2E5MzRhODg3NWRhNjUyNzI4NTA2YjhhMTZjZjQ3YjE1OTVkZjRjOWRiYzA5NGMzMTVkMmY2MGNjM2FjIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IjdpV0tFOUwvd0Y3WnFKeEVyWWs2NEE9PSIsInZhbHVlIjoicVkzVlVrODhYSENnaDBua091VHU3UDdLQ2pjbkcxRE93bWVwQ25mUG53YkcrTG16a29JQnpkTW02L1dQWGd1QjE1dThMem9YOFlUMDFCa3pEZzBzRlEvUEM3TEYwSU1UbnMzR2YwRVlzUVE3ekZqTHZCYTJPVVp3emdaQnZUQ3QiLCJtYWMiOiJjZGE2ZjkzMjJlN2ZkN2VkM2RlNmZjYWI5NWYwZWUzZTM1NTQwYzhkOTVkZWJhZjMyMTU0NzAxOGFkZWE1ZTc2IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjVoeUkrVG1MNXNHc1JsaHcyUkRseVE9PSIsInZhbHVlIjoiSTZjSkprbHhidi9vODJXcnV1TnRNai8zbEp5RUliRjJnZ093T3BwaTRxNlVaK1lhWnNhOEg0QVNxYTgzcXp0WkI2VkZiWmJPd1BUaThLekpCT3FNL0I1RC85UXh1NFY5V09NUkJveWxDbHlaMytFQnJtaG1GZ05pQ1U1bXVUL0siLCJtYWMiOiI3Y2EyYTczNzk4OTYwY2ZiOTVmZGZkNzVkNTM0Mzk1OTdmZGFhMDQ1MmUwOTRmMzhiYTQ2ZmU5NjdhNGE4Yjk4IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Imh6UFJuSTJHQ2YrSitxUllRdkhzR1E9PSIsInZhbHVlIjoiSi9NMTY3bTNIZlJEazJUZ0FQSWNuQnpLMUcrSWx5aFB4ZGFZdHppdGpkdC9aa1Q2WTJQdjBQY3RoZ09OVHh0ZGdaSlZ5eVphZUlHcHVMT3poQUsyWU1Sa09FR29tYnNsZ00rK2hMdmdxU25HWXo0b0FnYnpLdnYzWHdYMXUxL2siLCJtYWMiOiIwNDRmZWM4ZjIzZGZiYWI0NTk2NDMxZjkzOGVlMDk3YzNjZmE1ZGYwZmNkZGM3MTNiNmNkMzMyNmUzNjdkY2IxIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -104,13 +104,13 @@ endpoints:
         name: regionId
         description: ''
         required: true
-        example: aliquid
+        example: voluptate
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      regionId: aliquid
+      regionId: voluptate
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -124,7 +124,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImRzRjh0NmtzcEh5UVBBN0ZKWkN1bXc9PSIsInZhbHVlIjoiMUl5MzNiQUxjaWxJN0tKVUFIUCtRYTNEbTU0ZXpOblJRNkkyUE04aU03LzN3L0Vkem5uSWJLdWNCVkJLMnZFU09yVFdjTDg2a2pFeDBscUFyR3g2eTFQVTBWNUx5SGM1Q1hLTlBjRmdCWU5admVxczVoajlDaEhpSHQ3dERINWoiLCJtYWMiOiJmZmZmNmFmZjBmNzkwODRkZTY4ODNmNzhhMTY1NmEzNGEzYTg4OGI4NTJmNGJhZGY5YWRhOTFhYTgwYzM3OGRlIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkhQMVByRTVrbC9ZTEhRYitwNk52bWc9PSIsInZhbHVlIjoiK2FyV09lS2FZMkNRUThZeUhNUXQ2VkNwck9GN2lMVmpGU05aTGZIcHAvSkhWYUVIaGE1T1FzODhjK21POW5BOUdvT0s1eHNRaHR2SkhuSXNXbGI0ZWRIZHlCc21zS2xwRjJLNURqZ0FFRENVYVRiVG1ObFJTR1BsOFNQUDVCaDAiLCJtYWMiOiIxYTcwNTY1YmQxMjUyYmFlOTQ3ZTgyOTY4OTBjNWYwZmM2YTc1NTdlMWZhZTViOWExZmEyZDRkZWQ3M2U3ZTY0IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkZiRkpMLzJsRUF5eml0cGtlRDNuQlE9PSIsInZhbHVlIjoidUxiOTk0b3pKWjkrUnBCZXhhU2VIVFVYVXQ5YnB4NnB6STlzU2xUZENPSXNIam1FUmN1WmNPU2tqb2laMStZMVlWWURPdlY2NUpVQWhLalBUd2hIN3hTNDJlb2h5S093UGVCcUY3Q3pDaEU5YjlTVytHWm5rRmhrTzJRMk1MRGMiLCJtYWMiOiI2NzdiZTdiMzJmY2E1MTA4NGE4YmFhYTc3NzA2YzFlYzcxMTVmYTBkNWU3OTUxOWQxYjBiYTg1OGY4NmE0MDFlIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IlB1SDFDZGF2bkVWSXVvRFA4UVlTS1E9PSIsInZhbHVlIjoiVlA3NEtoTzJUb0Q3SG9YbHNoUUJ1K015SW4wT3Z0b2YwdkliTWRveERNN3JqelBORVFoV2oxMVFpMG82RXdSM2lKQWxkbWowVUpJV1lBU0w1OVN5T2YvS1ZCMnRIT28zV0VpRDRPN1M4cWdMMVlmZEpUcUtPUzR3c2V0U1Q5T3AiLCJtYWMiOiIzMjMwMmQ4NjQ2MWVmNjc3MjJkYjk0Zjc3ZjI2NTFlYjM3YjQ2NDRmNGYxZmRlOWJlODA4MDIxZjE2YjQ1YjMyIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -154,13 +154,13 @@ endpoints:
         name: provinceId
         description: ''
         required: true
-        example: aut
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      provinceId: aut
+      provinceId: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -174,7 +174,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkVFYnBtckpBSDJwVnlTTytCK1Fpa0E9PSIsInZhbHVlIjoiejcvbERHbjRUOVFxNXdkOEhIc3k3MUcxOXV3WFhJSWI2UzRrQkxGTnk2Q0UyZVhZc1YzTGhaamgzdkFGQ1F6SmpQZVRkc3BHVnBBdU5Bd2JRR2dMT1VLYUhlTmVNdEt1NE5lOEtQMGpremF3Q1c1aW9ZUU5mWmQvM3EyQWw5Wi8iLCJtYWMiOiIwMTc2MzlkMTJlYjA3YTI5ZTNiYjNhYWIwYzgwNWE2NjkxZGVjOTM5YThjYTNiMDhjNTQzOWU5NDBhOTFjNjNlIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkdvM21DV3pKWGl2TzRXTGlobEpyakE9PSIsInZhbHVlIjoiaFJuN1hBMUF6dGVZUjdBTll0UXZ1ZXQyYk90VVNhQlpHSDJSWExtT3dYN1NIWEJDUEZsa3hWb3NTdjBKQkh1NkN4dWJvZGdTNkN5eWxpME1iM3psbm9VQ3g4YU1iVmV4c3FRUzBFRURubWxlV1dNZkVhekZkOHVHV25iNllwTHkiLCJtYWMiOiJjMjc1ZDRmMDkxMzFiOTBjNGJiOTVmMWYxYzM3NzRkMDgwOWNkMjU3MzE1ZWY4NTAxODU4ODAyMDVmZjRhN2M2IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ik5XYVBEbzI4dS9FRHp2Tmw0bC9LOFE9PSIsInZhbHVlIjoiNi83NWZjUGVITEpscEJzVVF6VU56VzNWazVOdUViMjZkRjgzTGNhanN6aDh3MU4yWWhXTitkdW1NRlMxTE4wempNcGZ2ekdiNEI5UGhOODZHTlQ3MVFsRWoyVm9hWHRQUlVLaXN2cVlxbHVkVi9Xdkd1N3FPYVR5dHdKQVJFNnMiLCJtYWMiOiJlNTE0ODQxNGIxZDI2YzRkMTJjMDJjZGRmYjUyYzhmMDdmZDM5ZDVlZDRhNTY0OGE1ZTNhNjI0MDA1MGNhODEyIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImJ4U1JlZHNSdlFEaU9QWGlZc2xUR0E9PSIsInZhbHVlIjoid285QkpqU1hPdE9VQk1jalVsQldhODRsT2o1NG50R1ZyaFV3U3QvNysxV1BaZW4rZDJSM1VvbkJKUmIva01rRFAzYUEyUjgxNjI0R1RSWHNLR0tZVXBJcVlERVU5ZUI1VWFIcmM0dGd0eU5vSGdTM0NSbUJyZmRGL0dqVzUwc0MiLCJtYWMiOiJhN2RjNTcyNGQ3OTFjN2MyNTQ1OGU1NTM2Zjg1MWUwMzVlOTBiMWQyYjlmNTE3ZmE3NWU0OWU4MTkzNTYzYjgwIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -204,7 +204,7 @@ endpoints:
         name: regionId
         description: ''
         required: true
-        example: aliquid
+        example: doloremque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,14 +213,14 @@ endpoints:
         name: provinceId
         description: ''
         required: true
-        example: nostrum
+        example: facilis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      regionId: aliquid
-      provinceId: nostrum
+      regionId: doloremque
+      provinceId: facilis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -234,7 +234,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6InpKNmtzcHBqb2lVS295WitaYkxNdVE9PSIsInZhbHVlIjoiM3lsWHVUU1I4elNKL3FBS3o4RDloTHF5Q3ZUcTAzaWxKeFgvMVJkQnNJbG1YNzVONzBiZVFlUlRDL0p3VE41emY2eEZpakJSQTU3Z2pDOHExYS84eDV2RElFMnNVV3V2aTdTSmFLVERhNlFZSnNHQ1Z6K1dwZlFJeWxpd2NiYnUiLCJtYWMiOiI5ODE2YmY3NzRkM2RjZDZjOWNkYjE3MTBkYzE1MjA2ZmI1MjY4NGY5MjM3Mjk1YTkyZjcxN2RkMjYzMDk1ZmM2IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InMySVpEdUZJSWdvcDVuNmUxSDgrMUE9PSIsInZhbHVlIjoiU2ZJN1JDVmJidDF4ZmRzdzF5ZWtDSHhhTU9vTEt3UXRubzJMdUNWVTREc2VTK2tVYzUxK0F4SlpTSnZNUFlsTVV6M0lLMFNLUEMybUVNVERzRXE0TC95N2NmUm1WZGNZL004bU4rY0Q1NXJUMlVuUFhkekZQUlU5R0NLZ0VNRmYiLCJtYWMiOiI4OTE3N2IwZjY4YjM4NmJkODcwM2ViYmRlYzlkYTdlYTAwZWZjMzdmYzdiYjAzNzgzMGE4OGJhNmZlNzVkZDM4IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjU1MFhMWVVsZWlzSnpJZHJNSVZHMVE9PSIsInZhbHVlIjoiUjZDUnNRYktzQlB0Sjlhd3BNaENjdW53aXFteTFPSittYkdjMVdUekpCb3lJbGdxbUJSQVRnREh1YXVtWHlvM0t6OGh1RFZLcEt5aE9FQmc3azNqR3YwZjMrZkdOMitDTW1MWjRCYVB3NzFKQXFxQ2V5Uk1uU3FmQ05VdXdXalAiLCJtYWMiOiI3NjUzY2M2NDY0Yjg4MDNlOWQ3OThiMmE4ZmU0YjRhODg0ZDU1OGY0MzhlY2ZmMTViMDY0YmM4ZTZiOWU0NzkxIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkZIL21mM0NWT1JjWnQyZFB4enFFQXc9PSIsInZhbHVlIjoibHlkclZsMUxLb2NsRVBHRVlib0tIckpzNGFGNEJvVjAxRkVLeE43eHVFRDVzbE5RZEpPdHBpQnVIcDU2RVZlVlA3cklVeUYrNTM0RDJ4TTgySytvQWRRYU9OTGZGY0hycTN2Sjl5YkJvZFNMeEZLTit1UHljTGRBZEd6R0JHLysiLCJtYWMiOiJjZWE4OTIwMzc3NDIwNWNkMjEwNjBkZDQzZDk5YmVjZGI1MzUzZjA4NDRhODdmNTA5YWU4YjJmODY4NWExM2Y2IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -264,13 +264,13 @@ endpoints:
         name: cityId
         description: ''
         required: true
-        example: quia
+        example: repudiandae
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      cityId: quia
+      cityId: repudiandae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -284,7 +284,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ikd2alhHUGtsam9iZjErYmZYOGxOTnc9PSIsInZhbHVlIjoiTkwwbDBIZ0s3KzZjYXBCOW54R3ZTYmVGQTlsdENNeHBuRU41YUZRSWxnOW5nTnJTbk53cXFMN2tGSitsMWgvUGVxbmVybjBkeGwvNEVkdmRoS2d5R3lsSkltVndicEVOdVVyQWlvYXRGS0gzZnR3Zzl2ZVpnU1c4ZkxOMGdnS2IiLCJtYWMiOiIyY2JiYmRhY2Q3OWI3NWYzZjJiNjA1MjY0MzY4ZjRhOWU2NjY4ZTc0MTRmMDJhZDQ1YjVkY2VlNGU0ODE4NzNlIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InMrblU5ZGFpYndUTC9LaDhxNnZCd1E9PSIsInZhbHVlIjoiQlUvNENkMFBod1Q5aHVBVit1a1pnSXY5UTRPVjZrbUxtT0k4c0R3aGc0QjdzUk5QandZdzZrb0g3eDRwTTVWZFBrb095VkpPZnQ4STVXb3lzbkVRL1FrZ0JzY21seE1IV2RIck9OaUcrZlNSWkZUeWxQbzVzeHMxQ09YZTVkdVYiLCJtYWMiOiIzMDI4MjYzYWRmOTQ2MGVkYmQ4OTc0YTdkMjc1NjJjMjkzYzdjNzE4YTQ4ZGM0ZjIwNTY3OTk1YmIzMzY3ZTdhIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:35:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkZQcjZyM2xvbVJpaDIwc1piWisvMkE9PSIsInZhbHVlIjoiZnRRaG9zUHB3UVhDQlJzTU1yeG1ZZkdidGJ2cDNoWE1xZCtJMHcrcEZqZXp1ZFcxNHpGc1hZMG5ReFhhYURUdTRlY1lOSTNIL1plTTZueUpOSjdzNXc1UWNQRk5kSDFraWdBN25sbFJUb1M4Z05JSTlWa1dpUWptYW9GQjRRbmUiLCJtYWMiOiI3MmEwMWUzNTVhZTI4ZmE5MDMyZjQ4NDAyMjE3YmQ4NDc3Zjk2YTllNmJmOGE0MTgzMzhiZTRkZmVkODE2NjY3IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImYwbXRvbXhlZ2lQTThzYlN3QWVMS1E9PSIsInZhbHVlIjoiVGo1MXZiYWpEci8vb21xc3R0MmIzUkhOaUI0d21sZzljNlZqMnJSR2JyL0lUdE44RDROdVp5V3NGN2FLYWQvdWhhZTlIeWdGSndKK0d3YW9Rck9uMmVFS3g3YUkwc0lHcURnTUtCeDRrWHBmb3hsUGNJZkpQckZnVERqTW44WHAiLCJtYWMiOiJhOTc3ZmM3OWJkNzVhMGM3NDNmMmJhYmMwOTVmMzJjMDQ1NDk4ODYyY2E5MjE1OTNjMGVhNDlhZTg4ODQ2YmU2IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -357,7 +357,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: fleta55@example.com
+        example: vickie19@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -366,14 +366,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: repellendus
+        example: earum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: fleta55@example.com
-      password: repellendus
+      email: vickie19@example.com
+      password: earum
     fileParameters: []
     responses: []
     responseFields: []
@@ -407,7 +407,7 @@ endpoints:
         name: first_name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: tizukcfzwpor
+        example: obaqnjhlprytcjbabiu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -416,7 +416,7 @@ endpoints:
         name: middle_name
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: funblzsbfvvfwyhzuaubyk
+        example: qzqssmgcqv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -425,7 +425,7 @@ endpoints:
         name: last_name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: teiboudncyo
+        example: dlscutatgfwhxjpxc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -434,7 +434,7 @@ endpoints:
         name: sufix_name
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: fdqrfxnvbuqynjcfbagru
+        example: efzmlmqek
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -443,7 +443,7 @@ endpoints:
         name: username
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: hoifnqkzwptjmgwjfuepgzbym
+        example: izjnt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -452,7 +452,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: ckling@example.com
+        example: xheller@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -461,7 +461,7 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: psROA9
+        example: '<Z#:Vc]EbiKY<f~9'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -470,7 +470,7 @@ endpoints:
         name: contact_number
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: gfuwtcg
+        example: zvxboc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -479,7 +479,7 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-07-14T10:35:27'
+        example: '2024-07-14T10:39:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -511,7 +511,7 @@ endpoints:
         name: province_id
         description: ''
         required: true
-        example: et
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -520,7 +520,7 @@ endpoints:
         name: city_id
         description: ''
         required: true
-        example: labore
+        example: illum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -529,7 +529,7 @@ endpoints:
         name: barangay_id
         description: ''
         required: true
-        example: velit
+        example: suscipit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -538,7 +538,7 @@ endpoints:
         name: address1
         description: ''
         required: true
-        example: suscipit
+        example: corrupti
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -547,28 +547,28 @@ endpoints:
         name: address2
         description: ''
         required: false
-        example: dolorem
+        example: aliquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first_name: tizukcfzwpor
-      middle_name: funblzsbfvvfwyhzuaubyk
-      last_name: teiboudncyo
-      sufix_name: fdqrfxnvbuqynjcfbagru
-      username: hoifnqkzwptjmgwjfuepgzbym
-      email: ckling@example.com
-      password: psROA9
-      contact_number: gfuwtcg
-      birth_date: '2024-07-14T10:35:27'
+      first_name: obaqnjhlprytcjbabiu
+      middle_name: qzqssmgcqv
+      last_name: dlscutatgfwhxjpxc
+      sufix_name: efzmlmqek
+      username: izjnt
+      email: xheller@example.net
+      password: '<Z#:Vc]EbiKY<f~9'
+      contact_number: zvxboc
+      birth_date: '2024-07-14T10:39:29'
       gender: Male
       marital_status: Single
-      province_id: et
-      city_id: labore
-      barangay_id: velit
-      address1: suscipit
-      address2: dolorem
+      province_id: voluptatem
+      city_id: illum
+      barangay_id: suscipit
+      address1: corrupti
+      address2: aliquam
     fileParameters: []
     responses: []
     responseFields: []
@@ -598,7 +598,7 @@ endpoints:
         name: name
         description: 'search name.'
         required: false
-        example: adipisci
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -649,7 +649,7 @@ endpoints:
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      name: adipisci
+      name: ad
       brand: 1
       category: 1
       min_price: '15000'
@@ -697,13 +697,13 @@ endpoints:
         name: slug
         description: 'The slug of the product.'
         required: true
-        example: 10
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      slug: 10
+      slug: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -866,13 +866,13 @@ endpoints:
         name: provinceId
         description: ''
         required: true
-        example: est
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      provinceId: est
+      provinceId: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -897,7 +897,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/brangays/{cityId}'
+    uri: 'api/barangays/{cityId}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -915,13 +915,13 @@ endpoints:
         name: cityId
         description: ''
         required: true
-        example: similique
+        example: officiis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      cityId: similique
+      cityId: officiis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -968,7 +968,7 @@ endpoints:
         name: product_id
         description: ''
         required: true
-        example: 6
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -977,7 +977,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: cox
+        example: xnchxmeuwhg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -986,7 +986,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: rjohns@example.org
+        example: modesto82@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -995,7 +995,7 @@ endpoints:
         name: message
         description: ''
         required: true
-        example: est
+        example: nesciunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1004,7 +1004,7 @@ endpoints:
         name: contact_number
         description: 'Must not be greater than 15 characters.'
         required: false
-        example: ormsybyzpuscjnj
+        example: pzc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1013,7 +1013,7 @@ endpoints:
         name: province_id
         description: ''
         required: false
-        example: 5
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1022,7 +1022,7 @@ endpoints:
         name: city_id
         description: ''
         required: false
-        example: 2
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1031,20 +1031,20 @@ endpoints:
         name: barangay
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: jyzdvdg
+        example: hglfpjkvslxowmcjx
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      product_id: 6
-      name: cox
-      email: rjohns@example.org
-      message: est
-      contact_number: ormsybyzpuscjnj
-      province_id: 5
-      city_id: 2
-      barangay: jyzdvdg
+      product_id: 12
+      name: xnchxmeuwhg
+      email: modesto82@example.org
+      message: nesciunt
+      contact_number: pzc
+      province_id: 2
+      city_id: 3
+      barangay: hglfpjkvslxowmcjx
     fileParameters: []
     responses: []
     responseFields: []
