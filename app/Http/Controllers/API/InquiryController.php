@@ -32,8 +32,8 @@ class InquiryController extends Controller
             'email' => 'required|email|max:255',
             'message' => 'required|string',
             'contact_number' => 'nullable|string|max:15',
-            'province_id' => 'nullable|string|exists:provinces,id',
-            'city_id' => 'nullable|string|exists:cities,id',
+            'province_id' => 'nullable|string',
+            'city_id' => 'nullable|string',
             'barangay' => 'nullable|string|max:255',
         ]);
 
