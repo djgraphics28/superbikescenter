@@ -24,7 +24,7 @@ Route::get('/brands', [BrandController::class, 'index'])->name('brands');
 
 Route::get('/provinces', [AddressController::class, 'getProvinces']);
 Route::get('/cities/{provinceId}', [AddressController::class, 'getCities']);
-Route::get('/brangays/{cityId}', [AddressController::class, 'getBarangays']);
+Route::get('/barangays/{cityId}', [AddressController::class, 'getBarangays']);
 
 //Inquiries
 Route::post('/inquiries', [InquiryController::class, 'store'])->name('submit.inquiry');
