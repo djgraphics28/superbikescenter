@@ -1,5 +1,5 @@
 <div x-data="{ selectedVariation: '{{ $product->image_url }}', selectedVariationId: null, showForm: false }">
-    <div class="hidden bg-black md:block bg-opacity-90">
+    <div class="hidden  text-gray md:block bg-opacity-90">
         <x-container>
             {{ Breadcrumbs::render('product', $product) }}
         </x-container>
