@@ -87,12 +87,14 @@
                         <h2 class="motorcycle-card__content-title">{{ $product->name }}</h2>
                     </div>
                     <p class="flex mt-6 text-[32px] leading-[38px] text-blue-800 font-extrabold">
-                        {{ number_format($product->price, 2) }}</p>
-                    <div class="motorcycle-card__btn-container mx-auto "><button type="button"
-                            class="custom-btn w-full py-[8px] rounded-full bg-red-900 rounded mx-auto "><span
-                                class="flex-1 text-white text-[14px] leading-[12px] font-bold px-6"
-                                href="{{ $product->url }}" wire:navigate>View More</span>
-                        </button></div>
+                        Php {{ number_format($product->price, 2) }}</p>
+                    <div class="motorcycle-card__btn-container mx-auto ">
+                        <div class="inline-flex items-center px-3 py-1 bg-red-500 text-white rounded-1/2">
+                            <span class="text-xs font-semibold mr-2">Installment Price</span>
+                            <h3 class="text-lg text-white group-hover:text-white">Php
+                                {{ number_format($product->price / 36, 2) }}</h3>
+                        </div>
+                    </div>
                     <div class="relative w-full h-[250px] my-3 overflow-hidden " href="{{ $product->url }} "
                         wire:navigate><img src="{{ $product->image_url }}" alt="motorcycle model"
                             class="transition-transform duration-700 ease-in-out group-hover:scale-105"></div>
@@ -103,34 +105,6 @@
                                     href="{{ $product->url }}" wire:navigate>View More</span>
                             </button></div>
                     </div>
-                </div>
-
-
-
-
-                <div>
-                    <a class="*:transition group" href="{{ $product->url }}" wire:navigate>
-                        <div class="w-full h-48 mb-2 overflow-hidden border rounded-lg group-hover:brightness-90">
-                            @if ($product->image_url)
-                                <img class="object-cover w-full h-full" src="{{ $product->image_url }}"
-                                    alt="{{ $product->name }}">
-                            @else
-                                <div class="flex items-center justify-center w-full h-full text-gray-400 bg-gray-200">
-                                    Product Image
-                                </div>
-                            @endif
-                        </div>
-
-                        <h3 class="text-lg text-gray-700 group-hover:text-primary-500">{{ $product->name }}</h3>
-                        <h3 class="text-lg text-gray-700 group-hover:text-primary-500">Regular Price: Php
-                            {{ number_format($product->price, 2) }}</h3>
-                        <div class="inline-flex items-center px-3 py-1 bg-red-500 text-white rounded-1/2">
-                            <span class="text-xs font-semibold mr-2">Installment Price</span>
-                            <h3 class="text-lg text-white group-hover:text-white">Php
-                                {{ number_format($product->price / 36, 2) }}</h3>
-                        </div>
-
-                    </a>
                 </div>
             @empty
                 <p>No Motors found</p>
@@ -174,8 +148,8 @@
                         </button></div>
                 </div>
                 <div class="relative mt-16 h-80 lg:mt-8"><img class=""
-                        src="https://ndic.gov.ng/wp-content/uploads/2022/07/mobile-app-mockup.png"
-                        alt="App screenshot"></div>
+                        src="https://ndic.gov.ng/wp-content/uploads/2022/07/mobile-app-mockup.png" alt="App screenshot">
+                </div>
             </div>
         </div>
     </div>
@@ -192,7 +166,8 @@
                     class="col-span-3 max-h-24 w-full object-contain lg:col-span-1"
                     src="https://motorlandia.com.ph/wp-content/uploads/2022/10/Kawasaki.png" alt="Tuple"><img
                     class="col-span-3 max-h-24 w-full object-contain sm:col-start-2 lg:col-span-1"
-                    src="https://motorlandia.com.ph/wp-content/uploads/2022/10/Yamaha.png" alt="SavvyCal"></div>
+                    src="https://motorlandia.com.ph/wp-content/uploads/2022/10/Yamaha.png" alt="SavvyCal">
+            </div>
         </div>
     </div>
 </div>
