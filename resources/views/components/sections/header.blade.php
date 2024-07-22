@@ -47,8 +47,16 @@
 
             {{-- Login and Register links --}}
             <div class="hidden lg:flex items-center space-x-4">
-                <a href="#" class="text-blue-900 no-underline hover:underline font-bold">Login</a>
-                <a href="#" class="text-blue-900 no-underline hover:underline font-bold">Register</a>
+                @auth
+                    <a href="#" wire:navigate class="text-blue-900 no-underline hover:underline font-bold">Profile</a>
+                    <a href="{{ route('logout') }}" wire:navigate class="text-blue-900 no-underline hover:underline font-bold">Logout</a>
+                @else
+                    <a href="{{ route('login') }}" wire:navigate
+                        class="text-blue-900 no-underline hover:underline font-bold">Login</a>
+                    <a href="{{ route('register') }}" wire:navigate
+                        class="text-blue-900 no-underline hover:underline font-bold">Register</a>
+
+                @endauth
             </div>
         </div>
     </x-container>
@@ -67,11 +75,12 @@
                         class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">Motorcycles</a>
                 </li>
                 <li class="mr-3">
-                    <a href="#" wire:navigate
-                        class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">About</a>
+                    <a href="{{ route('about.index') }}" wire:navigate
+                        class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">About
+                        Us</a>
                 </li>
                 <li class="mr-3">
-                    <a href="#" wire:navigate
+                    <a href="{{ route('contact.index') }}" wire:navigate
                         class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">Contact</a>
                 </li>
             </ul>

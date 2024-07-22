@@ -100,6 +100,7 @@ class AdminPanelProvider extends PanelProvider
                     return Blade::render('@env(\'local\') <x-login-link label="Login as admin"/>@endenv');
                 }
             )
+            ->authGuard('admin')
             ->authMiddleware([
                 Authenticate::class,
             ]);
