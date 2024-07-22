@@ -1,24 +1,22 @@
-<div>
-    <x-container>
-        <div class="min-h-screen flex justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl w-full space-y-8">
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-6">About Us</h2>
-                    <p class="text-gray-700 text-lg mb-4">
-                        Welcome to our website! We are dedicated to providing the best service and products to our
-                        customers.
-                    </p>
-                    <p class="text-gray-700 text-lg mb-4">
-                        Our company was founded with the vision of offering high-quality products at competitive prices.
-                        We strive to meet the needs of our customers by constantly improving and expanding our product
-                        range.
-                    </p>
-                    <p class="text-gray-700 text-lg mb-4">
-                        We believe in the value of excellent customer service and aim to build lasting relationships
-                        with our customers. Thank you for choosing us!
-                    </p>
-                </div>
-            </div>
+<div class="flex flex-col items-center justify-center py-24 bg-gray-100">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl">
+        <div class="flex flex-col space-y-4">
+            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">About Us</h1>
+            <p class="text-lg leading-loose text-gray-600">We are a passionate team of motorcycle enthusiasts dedicated
+                to providing the best possible experience for Filipino riders.</p>
+            <p class="text-lg leading-loose text-gray-600">As a leading motorcycle dealer in the Philippines, we offer a
+                wide selection of top-brand motorcycles, from exhilarating sports bikes to reliable commuter models.</p>
+            <ul class="list-disc pl-4 space-y-2">
+                <li class="text-base leading-loose text-gray-600">Expert sales staff to guide you.</li>
+                <li class="text-base leading-loose text-gray-600">Certified service department technicians.</li>
+                <li class="text-base leading-loose text-gray-600">Genuine and aftermarket parts &amp; accessories.</li>
+                <li class="text-base leading-loose text-gray-600">Regularly organized events &amp; rides.</li>
+            </ul>
         </div>
-    </x-container>
+        <div class="relative"><img src="https://i.ytimg.com/vi/nQqj5n1Fa-s/maxresdefault.jpg"
+                alt="Dealership Hero Image" class="h-full w-full object-cover m-12 rounded-lg shadow-md"></div>
+    </section>
+    <p class="text-base leading-loose text-center text-gray-600 mt-32 max-w-5xl">Whether you're a seasoned rider or just
+        starting out, we invite you to visit our dealership and experience the difference. We're confident you'll find
+        the perfect motorcycle and the support you need to make your riding dreams a reality.</p>
 </div>

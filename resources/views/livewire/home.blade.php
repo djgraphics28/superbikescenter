@@ -1,6 +1,7 @@
 <div>
+    
     <x-hero title="" />
-    <div class="bg-primary-blue-100 py-12 sm:py-24">
+    <div class="bg-gray-100 py-12 sm:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
@@ -31,14 +32,14 @@
         </div>
     </div>
 
-    <x-container class="">
+    <div class="py-12 max-w-screen-xl mx-auto">
         <!-- Filters section -->
         <div class="">
-            <div class="">
+            <div class="pb-12">
                 <h1 class="text-5xl font-extrabold">Featured</h1>
                 <p>Explore motorcycles you might like</p>
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
                     <div>
                         <div wire:ignore>
@@ -73,7 +74,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Product listing section -->
@@ -82,24 +83,23 @@
         <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
             @forelse ($products as $product)
-                <div class="motorcycle-card rounded group bg-white shadow-md p-6">
+                <div class="motorcycle-card rounded-md group bg-white shadow-lg p-8">
                     <div class="motorcycle-card__content">
-                        <h2 class="motorcycle-card__content-title">{{ $product->name }}</h2>
+                        <h2 class="font-semibold mb-6 text-xl">{{ $product->name }}</h2>
                     </div>
-                    <p class="flex mt-6 text-[32px] leading-[38px] text-blue-800 font-extrabold">
-                        Php {{ number_format($product->price, 2) }}</p>
+                    <p class="flex text-[32px] leading-[24px] text-blue-800 font-extrabold">
+                        &#8369;{{ number_format($product->price, 2) }}</p>
                     <div class="motorcycle-card__btn-container mx-auto ">
-                        <div class="inline-flex items-center px-3 py-1 bg-red-500 text-white rounded-1/2">
-                            <span class="text-xs font-semibold mr-2">Installment Price</span>
-                            <h3 class="text-lg text-white group-hover:text-white">Php
-                                {{ number_format($product->price / 36, 2) }}</h3>
+                        <div class="inline-flex items-center px-3 py-1  rounded-xl text-gray-600 rounded-1/2">
+                            <span class="text-md">&#8369; {{ number_format($product->price / 36, 2) }} / month</span>
+                            </h3>
                         </div>
                     </div>
-                    <div class="relative w-full h-[250px] my-3 overflow-hidden " href="{{ $product->url }} "
+                    <div class="relative w-full h-[300px] my-3 overflow-hidden " href="{{ $product->url }} "
                         wire:navigate><img src="{{ $product->image_url }}" alt="motorcycle model"
                             class="transition-transform duration-700 ease-in-out group-hover:scale-105"></div>
                     <div class="relative flex mx-auto w-full">
-                        <div class="motorcycle-card__btn-container mx-auto "><button type="button"
+                        <div class="motorcycle-card__btn-container w-full mx-auto "><button type="button"
                                 class="custom-btn w-full py-[8px] rounded-full bg-blue-900  mx-auto "><span
                                     class="flex-1 text-white text-[14px] leading-[12px] font-bold px-6"
                                     href="{{ $product->url }}" wire:navigate>View More</span>
@@ -111,12 +111,17 @@
             @endforelse
         </div>
 
-        @if ($products->hasPages())
+        {{-- @if ($products->hasPages())
             <div class="pt-6 mt-6 border-t">
                 {{ $products->links() }}
             </div>
-        @endif
-    </x-container>
+        @endif --}}
+        <div href="{{ route('motorcycles.index') }}" wire:navigate class="mt-16 flex items-center justify-center gap-x-6 lg:justify-start"><button type="button"
+            class="custom-btn w-1/4 mx-auto py-[16px] rounded-full bg-gray-300"><span
+                class="flex-1 text-gray text-[14px] leading-[17px] font-bold">View All Motorcycles</span>
+
+        </button></div>
+    </div>
 
     <div class="bg-primary-blue-100 mt-12">
         <div class="mx-auto max-w-7xl py-12 sm:px-6 sm:py-12 lg:px-8">
