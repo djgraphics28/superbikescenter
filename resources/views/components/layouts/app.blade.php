@@ -6,7 +6,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css" rel="stylesheet">
-
+    <script src="https://cdn.tailwindcss.com"></script>
     @stack('head')
 
     @livewireStyles
