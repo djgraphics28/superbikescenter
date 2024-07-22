@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,26 +21,42 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        if (Auth::guard('customers')->attempt($credentials)) {
-            $instructor = Auth::guard('customers')->user();
-            $token = $instructor->createToken('authToken')->plainTextToken;
-
-            return response()->json([
-                'access_token' => $token,
-                'token_type' => 'Bearer',
-                'role' => 'customer',
-            ]);
+        if (Auth::attempt($credentials)) {
+            // Authentication passed, return success response
+            return response()->json(['message' => 'Login successful'], 200);
+        } else {
+            // Authentication failed, return error response
+            return response()->json(['message' => 'Invalid credentials'], 401);
         }
-
-        return response()->json(['message' => 'Invalid credentials'], 401);
     }
 
     public function register(CustomerRegisterRequest $request)
     {
         $data = $request->validated();
-        $data['password'] = Hash::make($data['password']);
+        // $data['password'] = Hash::make($data['password']);
 
-        $customer = Customer::create($data);
+        $user = User::create([
+            'name' => $data['first_name'] . ' ' . $data['last_name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        $customer = Customer::create([
+            'user_id' => $user->id,
+            'first_name' => $data['first_name'],
+            'middle_name' => $data['middle_name'],
+            'last_name' => $data['last_name'],
+            'sufix_name' => $data['sufix_name'],
+            'contact_number' => $data['contact_number'],
+            'birth_date' => $data['birth_date'],
+            'gender' => $data['gender'],
+            'marital_status' => $data['marital_status'],
+            'province_id' => $data['province_id'],
+            'city_id' => $data['city_id'],
+            'barangay_id' => $data['barangay_id'],
+            'address1' => $data['address1'],
+            'address2' => $data['address2'],
+        ]);
 
         return response()->json([
             'message' => 'Customer registered successfully',

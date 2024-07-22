@@ -76,8 +76,13 @@ class Customer extends Authenticatable
         return $this->belongsTo(Barangay::class, 'barangay_id', 'id');
     }
 
-    public function getFilamentUserName(): string
+    /**
+     * Get the user that owns the Customer
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(): BelongsTo
     {
-        return $this->name; // Assuming `name` is a field in your `Customer` model
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

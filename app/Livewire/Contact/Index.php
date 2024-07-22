@@ -3,7 +3,9 @@
 namespace App\Livewire\Contact;
 
 use Livewire\Component;
+use App\Mail\ContactUsEmail;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactUsAutoResponderEmail;
 
 class Index extends Component
 {
@@ -19,14 +21,18 @@ class Index extends Component
 
     public function submit()
     {
-        $this->validate();
+        $validated = $this->validate([
+            'email' => 'required|email',
+            'name' => 'nullable',
+            'message' => 'required',
+        ]);
 
         // Send email
-        Mail::send([], [], function ($message) {
-            $message->to('your-email@example.com')
-                    ->subject('Contact Us Message')
-                    ->setBody('Name: ' . $this->name . '<br>Email: ' . $this->email . '<br>Message: ' . $this->message, 'text/html');
-        });
+        Mail::to('no-reply@superbikescentral.online')->send(new ContactUsEmail($validated));
+
+        Mail::to($validated['email'])->send(new ContactUsAutoResponderEmail($validated));
+
+        sleep(3);
 
         session()->flash('success', 'Your message has been sent successfully.');
 
