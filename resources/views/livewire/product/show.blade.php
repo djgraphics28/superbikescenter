@@ -6,17 +6,6 @@
     </div>
 
     <article>
-        {{-- <x-hero :title="$product->name">
-            @slot('afterTitle')
-                <div class="inline-flex items-center text-xs cursor-help"
-                    x-tooltip.raw="{{ $product->created_at->format('F j, Y') }}">
-                    <x-heroicon-o-calendar class="w-3 h-3 mr-1" />
-                    <time datetime="{{ $product->created_at->format('Y-m-d H:i:s') }}">
-                        {{ $product->created_at->diffForHumans() }}
-                    </time>
-                </div>
-            @endslot
-        </x-hero> --}}
         <x-container class="mt-9">
             <div class="flex flex-col md:flex-row">
                 <div class="prose md:w-1/2">
