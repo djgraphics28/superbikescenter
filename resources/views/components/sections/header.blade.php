@@ -48,15 +48,19 @@
             {{-- Login and Register links --}}
             <div class="hidden lg:flex items-center space-x-4">
                 @auth
-                    <a href="#" wire:navigate class="text-blue-900 no-underline hover:underline font-bold">Profile</a>
-                    <a href="{{ route('logout') }}" wire:navigate class="text-blue-900 no-underline hover:underline font-bold">Logout</a>
-                @else
+                    <a href="{{ route('profile') }}" wire:navigate
+                        class="text-blue-900 no-underline hover:underline font-bold">Hi, {{ Auth::user()->name ?? '' }}</a>
+                    <a href="{{ route('logout') }}" wire:navigate
+                        class="text-blue-900 no-underline hover:underline font-bold">Logout</a>
+                @endauth
+
+                @guest
                     <a href="{{ route('login') }}" wire:navigate
                         class="text-blue-900 no-underline hover:underline font-bold">Login</a>
                     <a href="{{ route('register') }}" wire:navigate
                         class="text-blue-900 no-underline hover:underline font-bold">Register</a>
+                @endguest
 
-                @endauth
             </div>
         </div>
     </x-container>
