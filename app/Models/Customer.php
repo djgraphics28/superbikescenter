@@ -14,11 +14,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Customer extends Authenticatable implements MustVerifyEmail
+class Customer extends Authenticatable
 {
     use HasFactory, SoftDeletes, HasApiTokens, Notifiable;
 
     protected $guarded = [];
+
+    protected $table = 'customers';
+    protected $guard = 'customer';
 
      /**
      * The attributes that should be hidden for serialization.
@@ -71,5 +74,10 @@ class Customer extends Authenticatable implements MustVerifyEmail
     public function barangay(): BelongsTo
     {
         return $this->belongsTo(Barangay::class, 'barangay_id', 'id');
+    }
+
+    public function getFilamentUserName(): string
+    {
+        return $this->name; // Assuming `name` is a field in your `Customer` model
     }
 }
