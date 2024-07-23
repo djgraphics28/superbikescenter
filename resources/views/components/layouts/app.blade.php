@@ -9,6 +9,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
+   <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     @stack('head')
 
     @livewireStyles
