@@ -21,7 +21,7 @@
     <div class="flex flex-1 justify-end"><button type="button"
             class="-m-3 p-3 focus-visible:outline-offset-[-4px]"><span class="sr-only">Dismiss</span>x</button></div>
 </div>
-<header class="text-white bg-white shadow">
+<header class="text-white bg-white shadow" x-data="{ isOpen: false }">
     {{-- Top Navbar with Search --}}
     <x-container>
         <div class="w-full mx-auto flex flex-wrap items-center justify-between py-2 border-x-amber-50">
@@ -36,7 +36,7 @@
             {{-- Include your SearchBar Blade component or HTML here --}}
 
             <div class="block lg:hidden pr-4">
-                <button id="nav-toggle"
+                <button @click="isOpen = !isOpen"
                     class="flex items-center p-1 text-white hover:text-gray-300 focus:outline-none focus:shadow-outline">
                     <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <title>Menu</title>
@@ -66,28 +66,27 @@
     </x-container>
 
     {{-- Second Navbar with Navigation Links --}}
-    <div class="w-full bg-blue-900 mx-auto flex flex-wrap items-center justify-center py-2">
-        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-blue text-black p-4 lg:p-0 z-20"
-            id="nav-content">
-            <ul class="list-reset lg:flex justify-center flex-1 items-center">
-                <li class="mr-3">
-                    <a href="{{ route('home') }}" wire:navigate
-                        class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">Home</a>
-                </li>
-                <li class="mr-3">
-                    <a href="{{ route('motorcycles.index') }}" wire:navigate
-                        class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">Motorcycles</a>
-                </li>
-                <li class="mr-3">
-                    <a href="{{ route('about.index') }}" wire:navigate
-                        class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">About
-                        Us</a>
-                </li>
-                <li class="mr-3">
-                    <a href="{{ route('contact.index') }}" wire:navigate
-                        class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">Contact</a>
-                </li>
-            </ul>
-        </div>
+    <div :class="isOpen ? 'block' : 'hidden'"
+        class="w-full bg-blue-900 mx-auto lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 bg-blue text-black p-4 lg:p-0 z-20"
+        id="nav-content">
+        <ul class="list-reset lg:flex justify-center flex-1 items-center">
+            <li class="mr-3">
+                <a href="{{ route('home') }}" wire:navigate
+                    class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">Home</a>
+            </li>
+            <li class="mr-3">
+                <a href="{{ route('motorcycles.index') }}" wire:navigate
+                    class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">Motorcycles</a>
+            </li>
+            <li class="mr-3">
+                <a href="{{ route('about.index') }}" wire:navigate
+                    class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">About
+                    Us</a>
+            </li>
+            <li class="mr-3">
+                <a href="{{ route('contact.index') }}" wire:navigate
+                    class="inline-block py-2 px-4 text-white no-underline hover:text-gray-300 hover:text-underline font-bold">Contact</a>
+            </li>
+        </ul>
     </div>
 </header>
