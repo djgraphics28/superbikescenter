@@ -267,8 +267,8 @@
                             @enderror
                         </div>
                         <div class="mb-4">
-                            <button {{ $loading ? 'disabled' : '' }} type="submit" class="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer">
-                                <span wire:loading.remove>Submit Inquiry</span>
+                            <button {{ $loading ? 'disabled' : '' }} type="submit" class="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer w-full">
+                                <span wire:loading.remove wire:target="submitInquiry">Submit Inquiry</span>
                                 <span wire:loading wire:target="submitInquiry">Loading...</span>
                             </button>
                         </div>

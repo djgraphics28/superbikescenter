@@ -38,8 +38,10 @@
                     </div>
                     <div class="flex items-center justify-between">
                         <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Send Message
+                            class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <span wire:loading.remove wire:target="submit">Send Message</span>
+                            <span wire:loading wire:target="submit">Loading...</span>
+
                         </button>
                     </div>
                 </form>
