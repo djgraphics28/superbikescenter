@@ -23,7 +23,9 @@ class CreateInquiry extends CreateRecord
         $dataArray['motorcycle'] = $product->name;
         $dataArray['model'] = $product->model;
         // Send the response email to job
-        InquiryResponseJob::dispatch($dataArray);
+        // InquiryResponseJob::dispatch($dataArray);
+
+        Mail::to($dataArray['email'])->send(new InquiryResponse($dataArray));
 
         return $data;
     }

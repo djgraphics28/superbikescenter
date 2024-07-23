@@ -6,26 +6,26 @@
            Superbikes
         </h1>
         <p class="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm">
-            Encontre as novidades para pedalar com segurança, velocidade, e com bom preço.
+           Lorem Ipsum
         </p>
         <div>
-            <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Show now
-            </button>
+            <a wire:navigate href="{{ route('application') }}" class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                APPLY NOW!
+            </a>
         </div>
 
         <div class="flex justify-start items-start flex-wrap w-full mt-20 gap-16">
             <div>
                 <p class="text-4xl font-palanquin font-bold text-yellow-50">200</p>
-                <p class="leading-7 font-montserrat text-slate-gray">Vendas</p>
+                <p class="leading-7 font-montserrat text-slate-gray">Vendors</p>
             </div>
             <div>
                 <p class="text-4xl font-palanquin font-bold text-yellow-50">1500</p>
-                <p class="leading-7 font-montserrat text-slate-gray">Clientes</p>
+                <p class="leading-7 font-montserrat text-slate-gray">Clients</p>
             </div>
             <div>
                 <p class="text-4xl font-palanquin font-bold text-yellow-50">50</p>
-                <p class="leading-7 font-montserrat text-slate-gray">Modelos</p>
+                <p class="leading-7 font-montserrat text-slate-gray">Models</p>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
         <!-- Content within the div -->
         <h2 class="text-white text-4xl font-bold">Welcome to Our Bike Shop</h2>
         <p class="text-white text-lg">Explore our latest collection of bikes.</p>
-        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">Shop Now</a>
+        <a wire:navigate href="{{ route('motorcycles.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">View Motors</a>
     </div>
     </div>
 
