@@ -15,7 +15,7 @@ class Index extends Component
 
         $this->profile = User::with('customer_details')->find(Auth::user()->id); // Replace with actual model and logic
 
-        dd($this->profile);
+        // dd($this->profile);
     }
     public function render()
     {
