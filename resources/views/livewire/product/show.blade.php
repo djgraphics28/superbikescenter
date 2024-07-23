@@ -181,6 +181,14 @@
                     <div class="mb-4">
                         <h2 class="text-xl font-bold">Inquiry Form</h2>
                     </div>
+
+                    <!-- Success message -->
+                    <div x-data="{ show: @entangle('showSuccessMessage') }" x-show.transition.out.duration.1000ms="show"
+                        class="bg-green-200 text-green-800 rounded p-3 mt-3">
+                        Inquiry Submitted Successfully!
+                        <button @click="show = false" class="float-right">&times;</button>
+                    </div>
+
                     <form wire:submit.prevent="submitInquiry">
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
@@ -259,17 +267,13 @@
                             @enderror
                         </div>
                         <div class="mb-4">
-                            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer">
-                                Submit Inquiry
+                            <button {{ $loading ? 'disabled' : '' }} type="submit" class="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer">
+                                <span wire:loading.remove>Submit Inquiry</span>
+                                <span wire:loading wire:target="submitInquiry">Loading...</span>
                             </button>
                         </div>
                     </form>
-                    <!-- Success message -->
-                    <div x-data="{ show: @entangle('showSuccessMessage') }" x-show.transition.out.duration.1000ms="show"
-                        class="bg-green-200 text-green-800 rounded p-3 mt-3">
-                        {{ session('success') }}
-                        <button @click="show = false" class="float-right">&times;</button>
-                    </div>
+
                 </div>
             </div>
         </div>
