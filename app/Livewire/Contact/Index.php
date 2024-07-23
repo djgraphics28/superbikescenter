@@ -4,6 +4,7 @@ namespace App\Livewire\Contact;
 
 use Livewire\Component;
 use App\Mail\ContactUsEmail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactUsAutoResponderEmail;
 
@@ -42,5 +43,11 @@ class Index extends Component
     public function render()
     {
         return view('livewire.contact.index');
+    }
+
+    public function mount()
+    {
+        $this->name = Auth::user()->name ?? '';
+        $this->email = Auth::user()->email ?? '';
     }
 }

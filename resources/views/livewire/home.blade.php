@@ -1,5 +1,5 @@
 <div>
-    
+
     <x-hero title="" />
     <div class="bg-gray-100 py-12 sm:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -111,11 +111,7 @@
             @endforelse
         </div>
 
-        {{-- @if ($products->hasPages())
-            <div class="pt-6 mt-6 border-t">
-                {{ $products->links() }}
-            </div>
-        @endif --}}
+
         <div href="{{ route('motorcycles.index') }}" wire:navigate class="mt-16 flex items-center justify-center gap-x-6 lg:justify-start"><button type="button"
             class="custom-btn w-1/4 mx-auto py-[16px] rounded-full bg-gray-300"><span
                 class="flex-1 text-gray text-[14px] leading-[17px] font-bold">View All Motorcycles</span>

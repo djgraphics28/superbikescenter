@@ -171,7 +171,8 @@ class InquiryResource extends Resource
 
                         if ($data['status'] == "approved") {
                             // Send email
-                            InquiryApprovedResponseJob::dispatch($emailData);
+                            // InquiryApprovedResponseJob::dispatch($emailData);
+                            Mail::to($emailData['email'])->send(new InquiryApprovedResponse($emailData));
                         } else if($data['status'] == "rejected") {
 
                         }

@@ -22,7 +22,7 @@ class CustomerResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
-     /**
+    /**
      * Get the navigation badge for the resource.
      */
     public static function getNavigationBadge(): ?string
@@ -44,17 +44,17 @@ class CustomerResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('sufix_name')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('username')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->required()
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('username')
+                //     ->required()
+                //     ->maxLength(255),
+                // Forms\Components\TextInput::make('user.email')
+                //     ->email()
+                //     ->required()
+                //     ->maxLength(255),
+                // Forms\Components\TextInput::make('password')
+                //     ->password()
+                //     ->required()
+                //     ->maxLength(255),
                 Forms\Components\TextInput::make('contact_number')
                     ->required()
                     ->maxLength(255),
@@ -108,12 +108,6 @@ class CustomerResource extends Resource
                     })
                     ->reactive()
                     ->required(),
-                // Forms\Components\Select::make('province_id')
-                //     ->relationship('province', 'name'),
-                // Forms\Components\Select::make('city_id')
-                //     ->relationship('city', 'name'),
-                // Forms\Components\Select::make('barangay_id')
-                //     ->relationship('barangay', 'name'),
                 Forms\Components\Textarea::make('address1')
                     ->required()
                     ->columnSpanFull(),
@@ -135,9 +129,10 @@ class CustomerResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('sufix_name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('username')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('email')
+                // Tables\Columns\TextColumn::make('username')
+                //     ->searchable(),
+                Tables\Columns\TextColumn::make('user.email')
+                    ->label('Email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('contact_number')
                     ->searchable(),
