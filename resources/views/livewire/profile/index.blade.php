@@ -6,18 +6,21 @@
     .tab-content.active {
         display: block;
     }
+
+    .active-tab {
+        background-color: #2b6cb0; /* Your active tab background color */
+    }
 </style>
-<div class="flex">
+<div x-data="{ activeTab: 'profile' }" class="flex">
     <!-- Sidebar -->
     <div class="w-64 bg-gray-800 text-white min-h-screen">
         <div class="p-4">
-            {{-- <h2 class="text-xl font-semibold">Menu</h2> --}}
             <ul class="mt-4 space-y-2">
-                <li><a href="#dashboard" class="block p-2 hover:bg-gray-600 rounded">Dashboard</a></li>
-                <li><a href="#profile" class="block p-2 hover:bg-gray-600 rounded">Profile</a></li>
-                <li><a href="#application-status" class="block p-2 hover:bg-gray-600 rounded">Application Status</a></li>
-                <li><a href="#payment-histories" class="block p-2 hover:bg-gray-600 rounded">Payment Histories</a></li>
-                <li><a href="#change-password" class="block p-2 hover:bg-gray-600 rounded">Change Password</a></li>
+                <li><a @click="activeTab = 'dashboard'" :class="{ 'active-tab': activeTab === 'dashboard' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Dashboard</a></li>
+                <li><a @click="activeTab = 'profile'" :class="{ 'active-tab': activeTab === 'profile' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Profile</a></li>
+                <li><a @click="activeTab = 'application-status'" :class="{ 'active-tab': activeTab === 'application-status' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Application Status</a></li>
+                <li><a @click="activeTab = 'payment-histories'" :class="{ 'active-tab': activeTab === 'payment-histories' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Payment Histories</a></li>
+                <li><a @click="activeTab = 'change-password'" :class="{ 'active-tab': activeTab === 'change-password' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Change Password</a></li>
             </ul>
         </div>
     </div>
@@ -25,7 +28,7 @@
     <!-- Main Content -->
     <div class="flex-1 min-h-screen bg-gray-100 p-6">
         <!-- Dashboard Section -->
-        <div id="dashboard" class="hidden">
+        <div id="dashboard" x-show="activeTab === 'dashboard'">
             <div class="bg-white shadow-md rounded-lg p-6">
                 <h2 class="text-2xl font-semibold text-gray-800">Dashboard</h2>
                 <p class="mt-4 text-gray-600">Welcome to the Dashboard. Here you can see an overview of your application
@@ -34,7 +37,8 @@
         </div>
 
         <!-- Profile Section -->
-        <div id="profile">
+        <div id="profile" x-show="activeTab === 'profile'">
+            <!-- Content for Profile -->
             <div class="bg-white shadow-md rounded-lg p-6">
                 <h2 class="text-2xl font-semibold text-gray-800">Profile Information</h2>
                 <div class="grid grid-cols-4 gap-8 md:grid-cols-4">
@@ -97,26 +101,138 @@
         </div>
 
         <!-- Application Status Section -->
-        <div id="application-status" class="hidden">
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h2 class="text-2xl font-semibold text-gray-800">Application Status</h2>
-                <p class="mt-4 text-gray-600">Here you can check the status of your application and view any updates.
-                </p>
+        <div id="application-status" x-show="activeTab === 'application-status'">
+            <div class="bg-white shadow-md rounded-lg p-6 relative">
+                <!-- Loan Details -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Loan Details</h2>
+                    <!-- Replace with actual loan details and data -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Loan Amount</label>
+                            <p class="mt-1 text-sm text-gray-900">$10,000</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Interest Rate</label>
+                            <p class="mt-1 text-sm text-gray-900">5%</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Term</label>
+                            <p class="mt-1 text-sm text-gray-900">24 months</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Monthly Payment</label>
+                            <p class="mt-1 text-sm text-gray-900">$450</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Loan Progress Tracking -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Loan Progress</h2>
+        
+                    <!-- Status Steps with Descriptions (Vertical Layout) -->
+                    <div class="flex flex-col space-y-4">
+                        <!-- Step: Review -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white">
+                                <span class="text-lg font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Review</h3>
+                                <p class="text-sm text-gray-600">Your application is being reviewed by our team.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Step: In Progress -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-300 text-gray-400 opacity-50">
+                                <span class="text-lg font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-400">In Progress</h3>
+                                <p class="text-sm text-gray-400">Your application is currently in progress.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Step: Approve -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-300 text-gray-400 opacity-50">
+                                <span class="text-lg font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-400">Approve</h3>
+                                <p class="text-sm text-gray-400">Your application has been approved.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Step: Release -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-300 text-gray-400 opacity-50">
+                                <span class="text-lg font-bold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-400">Release</h3>
+                                <p class="text-sm text-gray-400">Funds have been released to your account.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+               
             </div>
         </div>
 
         <!-- Payment Histories Section -->
-        <div id="payment-histories" class="hidden">
+        <div id="payment-histories" x-show="activeTab === 'payment-histories'">
             <div class="bg-white shadow-md rounded-lg p-6">
-                <h2 class="text-2xl font-semibold text-gray-800">Payment Histories</h2>
-                <p class="mt-4 text-gray-600">Here you can check the status of your payment histories and view any
-                    updates.
-                </p>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Payment Histories</h2>
+        
+                <!-- Example payment histories (replace with dynamic data) -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-gray-100 rounded-lg overflow-hidden">
+                        <thead class="bg-gray-200 text-gray-700">
+                            <tr>
+                                <th class="py-2 px-4 text-left">Payment Date</th>
+                                <th class="py-2 px-4 text-left">Amount Paid</th>
+                                <th class="py-2 px-4 text-left">Payment Method</th>
+                                <th class="py-2 px-4 text-left">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-600">
+                            <!-- Replace this with a loop over payment history data -->
+                            <tr class="bg-white border-b">
+                                <td class="py-2 px-4">July 15, 2024</td>
+                                <td class="py-2 px-4">$500.00</td>
+                                <td class="py-2 px-4">Credit Card</td>
+                                <td class="py-2 px-4">
+                                    <span class="px-2 py-1 text-xs text-white bg-green-500 rounded-full">Paid</span>
+                                </td>
+                            </tr>
+                            <tr class="bg-gray-50 border-b">
+                                <td class="py-2 px-4">June 30, 2024</td>
+                                <td class="py-2 px-4">$300.00</td>
+                                <td class="py-2 px-4">Bank Transfer</td>
+                                <td class="py-2 px-4">
+                                    <span class="px-2 py-1 text-xs text-white bg-green-500 rounded-full">Paid</span>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <td class="py-2 px-4">June 15, 2024</td>
+                                <td class="py-2 px-4">$200.00</td>
+                                <td class="py-2 px-4">PayPal</td>
+                                <td class="py-2 px-4">
+                                    <span class="px-2 py-1 text-xs text-white bg-green-500 rounded-full">Paid</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
         <!-- Change Password Section -->
-        <div id="change-password" class="hidden">
+        <div id="change-password" x-show="activeTab === 'change-password'">
             <div class="bg-white shadow-md rounded-lg p-6">
                 <h2 class="text-2xl font-semibold text-gray-800">Change Password</h2>
                 <form action="#" method="POST" class="space-y-4">
@@ -145,16 +261,3 @@
         </div>
     </div>
 </div>
-
-<!-- Optional JavaScript to toggle visibility -->
-<script>
-    document.querySelectorAll('ul li a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelectorAll('.main-content > div').forEach(section => {
-                section.classList.add('hidden');
-            });
-            document.querySelector(this.getAttribute('href')).classList.remove('hidden');
-        });
-    });
-</script>

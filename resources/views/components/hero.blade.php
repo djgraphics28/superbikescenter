@@ -11,7 +11,7 @@
             {{ $afterTitle }}
         </div>
     @endif
-
+    <x-carousel />
     {{-- Include the Hero component content --}}
     <div class=" mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 ">
         <div class="lg:col-span-3">
