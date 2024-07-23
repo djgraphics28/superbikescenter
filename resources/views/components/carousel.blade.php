@@ -6,20 +6,50 @@
            Superbikes
         </h1>
         <p class="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm">
-            Encontre as novidades para pedalar com segurança, velocidade, e com bom preço.
+           Lorem Ipsum
         </p>
         <div>
+<<<<<<< HEAD
+            <a wire:navigate href="{{ route('application') }}" class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                APPLY NOW!
+            </a>
+        </div>
+
+        <div class="flex justify-start items-start flex-wrap w-full mt-20 gap-16">
+            <div>
+                <p class="text-4xl font-palanquin font-bold text-yellow-50">200</p>
+                <p class="leading-7 font-montserrat text-slate-gray">Vendors</p>
+            </div>
+            <div>
+                <p class="text-4xl font-palanquin font-bold text-yellow-50">1500</p>
+                <p class="leading-7 font-montserrat text-slate-gray">Clients</p>
+            </div>
+            <div>
+                <p class="text-4xl font-palanquin font-bold text-yellow-50">50</p>
+                <p class="leading-7 font-montserrat text-slate-gray">Models</p>
+            </div>
+=======
             <button href="{{ route('motorcycles.index') }}" wire:navigate  class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 See all motorcycles
             </button>
         </div>
 
         <div class="flex justify-start items-start flex-wrap w-full mt-20 gap-16">
+>>>>>>> origin/master
         </div>
     </div>
     <div class="relative flex-1 flex justify-center items-center bg-gray-800 max-xl:py-40 bg-primary bg-cover bg-center"
         style="background-image: url('{{ asset('https://ic.maxabout.us/bikes/yamaha/2022-yamaha-aerox-155/2022-Yamaha-Aerox-155-13.jpg') }}');">
     <!-- Content inside the background image div -->
+<<<<<<< HEAD
+    <div>
+        <!-- Content within the div -->
+        <h2 class="text-white text-4xl font-bold">Welcome to Our Bike Shop</h2>
+        <p class="text-white text-lg">Explore our latest collection of bikes.</p>
+        <a wire:navigate href="{{ route('motorcycles.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">View Motors</a>
+    </div>
+=======
+>>>>>>> origin/master
     </div>
 
 </section>
