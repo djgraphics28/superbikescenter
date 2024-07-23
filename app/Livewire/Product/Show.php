@@ -36,6 +36,8 @@ class Show extends Component
     public $city;
     public $barangay;
     public $message;
+    public $loading = false;
+
 
     /**
      * Whether to show the success message.
@@ -140,6 +142,7 @@ class Show extends Component
      */
     public function submitInquiry()
     {
+        $this->loading = true;
         // Validate form fields
         $validatedData = $this->validate([
             'name' => 'required|string',
@@ -154,6 +157,7 @@ class Show extends Component
         $product = Product::find($this->product->id);
 
         if (!$product) {
+            $this->loading = false;
             return response()->json(['message' => 'Product Not Found!'], 404);
         }
 
@@ -179,7 +183,7 @@ class Show extends Component
             'contact_number' => $validatedData['contact_number'] ?? null,
             'province_id' => $validatedData['province'] ?? null,
             'city_id' => $validatedData['city'] ?? null,
-            'barangay' => $validatedData['barangay'] ?? null,
+            'barangay_id' => $validatedData['barangay'] ?? null,
         ];
 
         // Save the inquiry to the database
@@ -192,11 +196,15 @@ class Show extends Component
         // Optionally, you can add feedback to the user
         $this->showSuccessMessage = true;
 
+        $this->loading = false;
+
         // Clear form fields after submission
         $this->reset(['name', 'email', 'contact_number', 'province', 'city', 'barangay', 'message']);
 
         // Automatically hide success message after 5 seconds
         $this->dispatch('hide-success-message', ['delay' => 2000]);
+
+
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Application;
 
+use App\Models\Product;
 use Livewire\Component;
 
 class Index extends Component
@@ -9,7 +10,8 @@ class Index extends Component
     public $name;
     public $email;
     public $phone;
-    public $motorcycle_model;
+    public $product;
+    public $products = [];
     public $loan_amount;
     public $terms;
 
@@ -17,8 +19,8 @@ class Index extends Component
         'name' => 'required|string|max:255',
         'email' => 'required|email|max:255',
         'phone' => 'required|numeric',
-        'motorcycle_model' => 'required|string|max:255',
-        'loan_amount' => 'required|numeric|min:1000',
+        'product' => 'required|string|max:255',
+        // 'loan_amount' => 'required|numeric|min:1000',
         'terms' => 'accepted',
     ];
 
@@ -41,5 +43,17 @@ class Index extends Component
     {
         $this->name = auth()->user()->name;
         $this->email = auth()->user()->email;
+
+        $this->products = Product::all();
+    }
+
+    /**
+     * Reset cities and barangays when province changes.
+     */
+    public function updatedProduct($value)
+    {
+        $motor = Product::find($value);
+
+        $this->loan_amount = $motor->price;
     }
 }

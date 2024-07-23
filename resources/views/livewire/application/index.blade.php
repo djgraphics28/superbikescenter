@@ -39,19 +39,99 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="motorcycle_model" class="block text-gray-700">Motorcycle Model</label>
-                        <input type="text" id="motorcycle_model" wire:model="motorcycle_model"
+                        <label for="source_of_income" class="block text-gray-700">Source of Income</label>
+                        <select wire:model.live="source_of_income" id="source_of_income"
+                            class="mt-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Select Source of Income</option>
+                            <option value="business">Business</option>
+                            <option value="salary">Salary</option>
+                            <option value="pension">Pension</option>
+                        </select>
+                        @error('source_of_income')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="work" class="block text-gray-700">What is your work?</label>
+                        <input type="text" id="work" wire:model="work"
                             class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
-                        @error('motorcycle_model')
+                        @error('work')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="years_of_exp_in_company" class="block text-gray-700">Years experience in the
+                            company</label>
+                        <input type="text" id="years_of_exp_in_company" wire:model="years_of_exp_in_company"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+                        @error('years_of_exp_in_company')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="monthly_salary" class="block text-gray-700">What is your monthly salary?</label>
+                        <input type="text" id="monthly_salary" wire:model="monthly_salary"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+                        @error('monthly_salary')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="months_to_pay" class="block text-gray-700">How Many Months to Pay?</label>
+                        <select wire:model.live="months_to_pay" id="months_to_pay"
+                            class="mt-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Select How Many Months</option>
+                            <option value="6">6 Months</option>
+                            <option value="12">12 Months</option>
+                            <option value="24">24 Months</option>
+                            <option value="36">36 Months</option>
+                        </select>
+                        @error('months_to_pay')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="down_payment" class="block text-gray-700">Down Payment</label>
+                        <input type="text" id="down_payment" wire:model="down_payment"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+                        @error('down_payment')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="product" class="block text-gray-700">Motorcycle</label>
+                        <select wire:model.live="product" id="product"
+                            class="mt-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Select Motorcycle</option>
+                            @foreach ($products as $item)
+                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('product')
                             <span class="text-red-600 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="mb-4">
                         <label for="loan_amount" class="block text-gray-700">Loan Amount</label>
-                        <input type="number" id="loan_amount" wire:model="loan_amount"
+                        <input readonly type="number" id="loan_amount" wire:model="loan_amount"
                             class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
                         @error('loan_amount')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="monthly_amort" class="block text-gray-700">Monthly Amortization</label>
+                        <input readonly type="number" id="monthly_amort" wire:model="monthly_amort"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+                        @error('monthly_amort')
                             <span class="text-red-600 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
