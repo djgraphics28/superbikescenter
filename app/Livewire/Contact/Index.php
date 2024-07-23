@@ -24,7 +24,7 @@ class Index extends Component
     {
         $validated = $this->validate([
             'email' => 'required|email',
-            'name' => 'nullable',
+            'name' => 'required',
             'message' => 'required',
         ]);
 

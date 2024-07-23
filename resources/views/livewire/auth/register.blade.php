@@ -1,6 +1,6 @@
 <div>
     <div class="min-h-screen flex justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-xl w-full space-y-8">
+        <div class="max-w-3xl w-full space-y-8">
             <div class="bg-white shadow-md rounded-lg p-6">
                 <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-6">Register</h2>
 
@@ -175,10 +175,21 @@
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="flex items-center justify-between">
+                    <div class="mb-4">
+                        <label for="terms" class="inline-flex items-center">
+                            <input type="checkbox" id="terms" wire:model="terms"
+                                class="form-checkbox text-blue-600">
+                            <span class="ml-2 text-gray-700">I agree to the terms and conditions</span>
+                        </label>
+                        @error('terms')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="flex items-center justify-between mt-6">
                         <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Submit rRgistration
+                            class="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <span wire:loading.remove wire:target="register">Submit Registration</span>
+                            <span wire:loading wire:target="register">Loading...</span>
                         </button>
                     </div>
                 </form>
