@@ -17,6 +17,13 @@
                 viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
                 <circle cx="1" cy="1" r="1"></circle>
             </svg>ANG MOTORCYCLE SHOP NG BAYAN – SULIT KA DITO!</p>
+
+        <div class="flex flex-1 justify-end">
+            <a wire:navigate type="button" href="{{ route('application') }}"
+                class="inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-5 py-2 text-white font-semibold shadow-lg hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 transition-all duration-300">
+                APPLY NOW!
+            </a>
+        </div>
     </div>
     <div class="flex flex-1 justify-end"><button type="button"
             class="-m-3 p-3 focus-visible:outline-offset-[-4px]"><span class="sr-only">Dismiss</span>x</button></div>
@@ -37,7 +44,7 @@
 
             <div class="block lg:hidden pr-4">
                 <button @click="isOpen = !isOpen"
-                    class="flex items-center p-1 text-white hover:text-gray-300 focus:outline-none focus:shadow-outline">
+                    class="flex items-center p-1 text-gray-300 hover:text-gray-300 focus:outline-none focus:shadow-outline">
                     <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <title>Menu</title>
                         <path d="M0 3h20v2H0zM0 7h20v2H0zM0 11h20v2H0z" />
@@ -48,6 +55,7 @@
             {{-- Login and Register links --}}
             <div class="hidden lg:flex items-center space-x-4">
                 @auth
+                    <button>APPLY NOW!</button>
                     <a href="{{ route('profile') }}" wire:navigate
                         class="text-blue-900 no-underline hover:underline font-bold">Hi, {{ Auth::user()->name ?? '' }}</a>
                     <a href="{{ route('logout') }}" wire:navigate

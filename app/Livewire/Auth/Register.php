@@ -87,6 +87,8 @@ class Register extends Component
             'address2' => $validated['address2'],
         ]);
 
+        $user->sendEmailVerificationNotification();
+
         Auth::login($user);
 
         session()->flash('success', 'Registration successful. Welcome!');
