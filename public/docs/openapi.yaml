@@ -7,6 +7,919 @@ servers:
   -
     url: 'https://superbikescentral.online'
 paths:
+  /api/provinces:
+    get:
+      summary: "Get all provinces\n\nThis endpoint retrieves all provinces."
+      operationId: getAllProvincesThisEndpointRetrievesAllProvinces
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  provinces:
+                    -
+                      id: 1
+                      name: 'Province 1'
+                      created_at: '2024-07-26T00:00:00.000000Z'
+                      updated_at: '2024-07-26T00:00:00.000000Z'
+                    -
+                      id: 2
+                      name: 'Province 2'
+                      created_at: '2024-07-26T00:00:00.000000Z'
+                      updated_at: '2024-07-26T00:00:00.000000Z'
+                properties:
+                  provinces:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Province 1'
+                        created_at: '2024-07-26T00:00:00.000000Z'
+                        updated_at: '2024-07-26T00:00:00.000000Z'
+                      -
+                        id: 2
+                        name: 'Province 2'
+                        created_at: '2024-07-26T00:00:00.000000Z'
+                        updated_at: '2024-07-26T00:00:00.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Province 1'
+                        created_at:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+      tags:
+        - Addresses
+      security: []
+  '/api/cities/{provinceId}':
+    get:
+      summary: "Get cities by province ID\n\nThis endpoint retrieves all cities belonging to a specific province."
+      operationId: getCitiesByProvinceIDThisEndpointRetrievesAllCitiesBelongingToASpecificProvince
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  cities:
+                    -
+                      id: 1
+                      province_id: 1
+                      name: 'City 1'
+                      created_at: '2024-07-26T00:00:00.000000Z'
+                      updated_at: '2024-07-26T00:00:00.000000Z'
+                    -
+                      id: 2
+                      province_id: 1
+                      name: 'City 2'
+                      created_at: '2024-07-26T00:00:00.000000Z'
+                      updated_at: '2024-07-26T00:00:00.000000Z'
+                properties:
+                  cities:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        province_id: 1
+                        name: 'City 1'
+                        created_at: '2024-07-26T00:00:00.000000Z'
+                        updated_at: '2024-07-26T00:00:00.000000Z'
+                      -
+                        id: 2
+                        province_id: 1
+                        name: 'City 2'
+                        created_at: '2024-07-26T00:00:00.000000Z'
+                        updated_at: '2024-07-26T00:00:00.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        province_id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'City 1'
+                        created_at:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Province not found.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Province not found.'
+      tags:
+        - Addresses
+      security: []
+    parameters:
+      -
+        in: path
+        name: provinceId
+        description: 'The ID of the province.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/barangays/{cityId}':
+    get:
+      summary: "Get barangays by city ID\n\nThis endpoint retrieves all barangays belonging to a specific city."
+      operationId: getBarangaysByCityIDThisEndpointRetrievesAllBarangaysBelongingToASpecificCity
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  barangays:
+                    -
+                      id: 1
+                      city_id: 1
+                      name: 'Barangay 1'
+                      created_at: '2024-07-26T00:00:00.000000Z'
+                      updated_at: '2024-07-26T00:00:00.000000Z'
+                    -
+                      id: 2
+                      city_id: 1
+                      name: 'Barangay 2'
+                      created_at: '2024-07-26T00:00:00.000000Z'
+                      updated_at: '2024-07-26T00:00:00.000000Z'
+                properties:
+                  barangays:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        city_id: 1
+                        name: 'Barangay 1'
+                        created_at: '2024-07-26T00:00:00.000000Z'
+                        updated_at: '2024-07-26T00:00:00.000000Z'
+                      -
+                        id: 2
+                        city_id: 1
+                        name: 'Barangay 2'
+                        created_at: '2024-07-26T00:00:00.000000Z'
+                        updated_at: '2024-07-26T00:00:00.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        city_id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Barangay 1'
+                        created_at:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'City not found.'
+                properties:
+                  error:
+                    type: string
+                    example: 'City not found.'
+      tags:
+        - Addresses
+      security: []
+    parameters:
+      -
+        in: path
+        name: cityId
+        description: 'The ID of the city.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/application:
+    post:
+      summary: "Submit a new application\n\nThis endpoint allows a user to submit a new application."
+      operationId: submitANewApplicationThisEndpointAllowsAUserToSubmitANewApplication
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Loan Application submitted successfully.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Loan Application submitted successfully.'
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'You already have an active loan application.'
+                properties:
+                  error:
+                    type: string
+                    example: 'You already have an active loan application.'
+      tags:
+        - Applications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customer_id:
+                  type: integer
+                  description: 'The ID of the customer.'
+                  example: 1
+                product:
+                  type: integer
+                  description: 'The ID of the product.'
+                  example: 2
+                source_of_income:
+                  type: string
+                  description: 'The source of income.'
+                  example: Employment
+                name_of_business:
+                  type: string
+                  description: 'The name of the business (if any).'
+                  example: 'My Business'
+                company_name:
+                  type: string
+                  description: 'The name of the company (if any).'
+                  example: 'My Company'
+                work_position:
+                  type: string
+                  description: 'The position at work (if any).'
+                  example: Manager
+                years_in_work:
+                  type: integer
+                  description: 'The number of years in work (if any).'
+                  example: 5
+                comaker_name:
+                  type: string
+                  description: 'The name of the comaker (if any).'
+                  example: 'John Doe'
+                comaker_work:
+                  type: string
+                  description: 'The work of the comaker (if any).'
+                  example: Engineer
+                comaker_monthly_income:
+                  type: number
+                  description: 'The monthly income of the comaker (if any).'
+                  example: 50000.0
+                months_to_pay:
+                  type: integer
+                  description: 'The number of months to pay.'
+                  example: 12
+                monthly_payment_amount:
+                  type: number
+                  description: 'The amount to be paid monthly.'
+                  example: 1000.0
+                monthly_income:
+                  type: number
+                  description: 'The monthly income.'
+                  example: 2000.0
+                downpayment:
+                  type: number
+                  description: 'The downpayment amount.'
+                  example: 500.0
+                loan_amount:
+                  type: number
+                  description: 'The loan amount.'
+                  example: 10000.0
+                name:
+                  type: string
+                  description: 'The name of the applicant.'
+                  example: 'Jane Doe'
+                email:
+                  type: string
+                  description: 'The email of the applicant.'
+                  example: jane@example.com
+              required:
+                - customer_id
+                - product
+                - source_of_income
+                - months_to_pay
+                - monthly_payment_amount
+                - monthly_income
+                - downpayment
+                - loan_amount
+                - name
+                - email
+      security: []
+  '/api/application/{id}':
+    get:
+      summary: "Get applications by customer ID\n\nThis endpoint retrieves all applications for a specific customer."
+      operationId: getApplicationsByCustomerIDThisEndpointRetrievesAllApplicationsForASpecificCustomer
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  applications:
+                    -
+                      id: 1
+                      customer_id: 1
+                      product_id: 2
+                      source_of_income: Employment
+                      name_of_business: 'My Business'
+                      company_name: 'My Company'
+                      work_position: Manager
+                      years_in_work: 5
+                      comaker_name: 'John Doe'
+                      comaker_work: Engineer
+                      comaker_monthly_income: 50000
+                      months_to_pay: 12
+                      monthly_payment_amount: 1000
+                      monthly_income: 2000
+                      downpayment: 500
+                      loan_amount: 10000
+                      date_applied: '2024-07-26T00:00:00.000000Z'
+                      date_inquired: '2024-07-26T00:00:00.000000Z'
+                      status: for-review
+                      created_at: '2024-07-26T00:00:00.000000Z'
+                      updated_at: '2024-07-26T00:00:00.000000Z'
+                properties:
+                  applications:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        customer_id: 1
+                        product_id: 2
+                        source_of_income: Employment
+                        name_of_business: 'My Business'
+                        company_name: 'My Company'
+                        work_position: Manager
+                        years_in_work: 5
+                        comaker_name: 'John Doe'
+                        comaker_work: Engineer
+                        comaker_monthly_income: 50000
+                        months_to_pay: 12
+                        monthly_payment_amount: 1000
+                        monthly_income: 2000
+                        downpayment: 500
+                        loan_amount: 10000
+                        date_applied: '2024-07-26T00:00:00.000000Z'
+                        date_inquired: '2024-07-26T00:00:00.000000Z'
+                        status: for-review
+                        created_at: '2024-07-26T00:00:00.000000Z'
+                        updated_at: '2024-07-26T00:00:00.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        customer_id:
+                          type: integer
+                          example: 1
+                        product_id:
+                          type: integer
+                          example: 2
+                        source_of_income:
+                          type: string
+                          example: Employment
+                        name_of_business:
+                          type: string
+                          example: 'My Business'
+                        company_name:
+                          type: string
+                          example: 'My Company'
+                        work_position:
+                          type: string
+                          example: Manager
+                        years_in_work:
+                          type: integer
+                          example: 5
+                        comaker_name:
+                          type: string
+                          example: 'John Doe'
+                        comaker_work:
+                          type: string
+                          example: Engineer
+                        comaker_monthly_income:
+                          type: integer
+                          example: 50000
+                        months_to_pay:
+                          type: integer
+                          example: 12
+                        monthly_payment_amount:
+                          type: integer
+                          example: 1000
+                        monthly_income:
+                          type: integer
+                          example: 2000
+                        downpayment:
+                          type: integer
+                          example: 500
+                        loan_amount:
+                          type: integer
+                          example: 10000
+                        date_applied:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+                        date_inquired:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+                        status:
+                          type: string
+                          example: for-review
+                        created_at:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-07-26T00:00:00.000000Z'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'No applications found.'
+                properties:
+                  error:
+                    type: string
+                    example: 'No applications found.'
+      tags:
+        - Applications
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the application.'
+        example: 4
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: customer_id
+        description: 'The ID of the customer.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/customer/login:
+    post:
+      summary: "Login a user\n\nThis endpoint allows a user to log in using their email and password."
+      operationId: loginAUserThisEndpointAllowsAUserToLogInUsingTheirEmailAndPassword
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Login successful'
+                  token: 'Bearer your_access_token_here'
+                properties:
+                  message:
+                    type: string
+                    example: 'Login successful'
+                  token:
+                    type: string
+                    example: 'Bearer your_access_token_here'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid credentials'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid credentials'
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: user@example.com
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: password123
+              required:
+                - email
+                - password
+      security: []
+  /api/customer/register:
+    post:
+      summary: "Register a new user\n\nThis endpoint registers a new user and their customer details."
+      operationId: registerANewUserThisEndpointRegistersANewUserAndTheirCustomerDetails
+      description: ''
+      parameters: []
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully registered!'
+                  customer:
+                    id: 1
+                    user_id: 1
+                    first_name: John
+                    middle_name: M
+                    last_name: Doe
+                    sufix_name: Jr
+                    contact_number: '09171234567'
+                    birth_date: '1990-01-01'
+                    gender: Male
+                    marital_status: Single
+                    province_id: 1
+                    city_id: 1
+                    barangay_id: 1
+                    address1: '123 Main St'
+                    address2: 'Apt 4B'
+                    created_at: '2024-07-26T00:00:00.000000Z'
+                    updated_at: '2024-07-26T00:00:00.000000Z'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully registered!'
+                  customer:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      user_id:
+                        type: integer
+                        example: 1
+                      first_name:
+                        type: string
+                        example: John
+                      middle_name:
+                        type: string
+                        example: M
+                      last_name:
+                        type: string
+                        example: Doe
+                      sufix_name:
+                        type: string
+                        example: Jr
+                      contact_number:
+                        type: string
+                        example: '09171234567'
+                      birth_date:
+                        type: string
+                        example: '1990-01-01'
+                      gender:
+                        type: string
+                        example: Male
+                      marital_status:
+                        type: string
+                        example: Single
+                      province_id:
+                        type: integer
+                        example: 1
+                      city_id:
+                        type: integer
+                        example: 1
+                      barangay_id:
+                        type: integer
+                        example: 1
+                      address1:
+                        type: string
+                        example: '123 Main St'
+                      address2:
+                        type: string
+                        example: 'Apt 4B'
+                      created_at:
+                        type: string
+                        example: '2024-07-26T00:00:00.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2024-07-26T00:00:00.000000Z'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    email:
+                      - 'The email has already been taken.'
+                    password:
+                      - 'The password confirmation does not match.'
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      email:
+                        type: array
+                        example:
+                          - 'The email has already been taken.'
+                        items:
+                          type: string
+                      password:
+                        type: array
+                        example:
+                          - 'The password confirmation does not match.'
+                        items:
+                          type: string
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: 'The first name of the user.'
+                  example: John
+                middle_name:
+                  type: string
+                  description: 'The middle name of the user.'
+                  example: M
+                last_name:
+                  type: string
+                  description: 'The last name of the user.'
+                  example: Doe
+                sufix_name:
+                  type: string
+                  description: 'The suffix of the user.'
+                  example: Jr
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: user@example.com
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: password123
+                contact_number:
+                  type: string
+                  description: 'The contact number of the user.'
+                  example: '09171234567'
+                birth_date:
+                  type: date
+                  description: 'The birth date of the user.'
+                  example: '1990-01-01'
+                gender:
+                  type: string
+                  description: 'The gender of the user.'
+                  example: Male
+                marital_status:
+                  type: string
+                  description: 'The marital status of the user.'
+                  example: Single
+                province_id:
+                  type: integer
+                  description: 'The ID of the province.'
+                  example: 1
+                city_id:
+                  type: integer
+                  description: 'The ID of the city.'
+                  example: 1
+                barangay_id:
+                  type: integer
+                  description: 'The ID of the barangay.'
+                  example: 1
+                address1:
+                  type: string
+                  description: 'The first address line.'
+                  example: '123 Main St'
+                address2:
+                  type: string
+                  description: 'The second address line.'
+                  example: 'Apt 4B'
+                password_confirmation:
+                  type: string
+                  description: 'The confirmation of the password.'
+                  example: password123
+              required:
+                - first_name
+                - last_name
+                - email
+                - password
+                - contact_number
+                - birth_date
+                - gender
+                - marital_status
+                - province_id
+                - city_id
+                - barangay_id
+                - address1
+                - password_confirmation
+      security: []
+  /api/profile:
+    get:
+      summary: "Get customer profile by user ID\n\nThis endpoint retrieves a customer's profile based on their user ID."
+      operationId: getCustomerProfileByUserIDThisEndpointRetrievesACustomersProfileBasedOnTheirUserID
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n  \"customer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"first_name\": \"John\",\n    \"middle_name\": \"M\",\n    \"last_name\": \"Doe\",\n    \"sufix_name\": \"Jr\",\n    \"contact_number\": \"1234567890\",\n    \"birth_date\": \"1990-01-01\",\n    \"gender\": \"Male\",\n    \"marital_status\": \"Single\",\n    \"is_active\": true,\n    \"province_id\": 1,\n    \"city_id\": 1,\n    \"barangay_id\": 1,\n    \"address1\": \"123 Main St\",\n    \"address2\": \"Apt 4B\",\n  }\n}"
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Customer not found.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Customer not found.'
+      tags:
+        - Customers
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/email/verify:
+    get:
+      summary: "Show the email verification notice\n\nThis endpoint shows the email verification notice."
+      operationId: showTheEmailVerificationNoticeThisEndpointShowsTheEmailVerificationNotice
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please verify your email address.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Please verify your email address.'
+      tags:
+        - 'Email Verification'
+  '/api/email/verify/{id}/{hash}':
+    get:
+      summary: "Verify email address\n\nThis endpoint verifies the user's email address."
+      operationId: verifyEmailAddressThisEndpointVerifiesTheUsersEmailAddress
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Email verified successfully.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Email verified successfully.'
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid or expired verification link.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid or expired verification link.'
+      tags:
+        - 'Email Verification'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: '1'
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: hash
+        description: 'The email verification hash.'
+        example: abc123
+        required: true
+        schema:
+          type: string
+  /api/email/verification-notification:
+    post:
+      summary: "Resend email verification notification\n\nThis endpoint resends the email verification notification."
+      operationId: resendEmailVerificationNotificationThisEndpointResendsTheEmailVerificationNotification
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Verification link sent!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Verification link sent!'
+        429:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Too many requests. Please try again later.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Too many requests. Please try again later.'
+      tags:
+        - 'Email Verification'
   /api/address/regions:
     get:
       summary: ''
@@ -78,7 +991,7 @@ paths:
         in: path
         name: regionId
         description: ''
-        example: voluptate
+        example: quod
         required: true
         schema:
           type: string
@@ -109,7 +1022,7 @@ paths:
         in: path
         name: provinceId
         description: ''
-        example: sit
+        example: non
         required: true
         schema:
           type: string
@@ -140,7 +1053,7 @@ paths:
         in: path
         name: regionId
         description: ''
-        example: doloremque
+        example: tempora
         required: true
         schema:
           type: string
@@ -148,7 +1061,7 @@ paths:
         in: path
         name: provinceId
         description: ''
-        example: facilis
+        example: eos
         required: true
         schema:
           type: string
@@ -179,7 +1092,7 @@ paths:
         in: path
         name: cityId
         description: ''
-        example: repudiandae
+        example: iure
         required: true
         schema:
           type: string
@@ -204,136 +1117,6 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
-      security: []
-  /api/customer/login:
-    post:
-      summary: ''
-      operationId: postApiCustomerLogin
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: vickie19@example.com
-                password:
-                  type: string
-                  description: ''
-                  example: earum
-              required:
-                - email
-                - password
-      security: []
-  /api/customer/register:
-    post:
-      summary: ''
-      operationId: postApiCustomerRegister
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                first_name:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: obaqnjhlprytcjbabiu
-                middle_name:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: qzqssmgcqv
-                last_name:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: dlscutatgfwhxjpxc
-                sufix_name:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: efzmlmqek
-                username:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: izjnt
-                email:
-                  type: string
-                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: xheller@example.net
-                password:
-                  type: string
-                  description: 'Must be at least 8 characters.'
-                  example: '<Z#:Vc]EbiKY<f~9'
-                contact_number:
-                  type: string
-                  description: 'Must not be greater than 20 characters.'
-                  example: zvxboc
-                birth_date:
-                  type: string
-                  description: 'Must be a valid date.'
-                  example: '2024-07-14T10:39:29'
-                gender:
-                  type: string
-                  description: ''
-                  example: Male
-                  enum:
-                    - Male
-                    - Female
-                marital_status:
-                  type: string
-                  description: ''
-                  example: Single
-                  enum:
-                    - Single
-                    - Married
-                    - Widowed
-                province_id:
-                  type: string
-                  description: ''
-                  example: voluptatem
-                city_id:
-                  type: string
-                  description: ''
-                  example: illum
-                barangay_id:
-                  type: string
-                  description: ''
-                  example: suscipit
-                address1:
-                  type: string
-                  description: ''
-                  example: corrupti
-                address2:
-                  type: string
-                  description: ''
-                  example: aliquam
-              required:
-                - first_name
-                - last_name
-                - username
-                - email
-                - password
-                - contact_number
-                - birth_date
-                - gender
-                - marital_status
-                - province_id
-                - city_id
-                - barangay_id
-                - address1
       security: []
   /api/products:
     get:
@@ -463,7 +1246,7 @@ paths:
             value: ''
           present:
             summary: 'When the value is present'
-            value: ad
+            value: in
       -
         in: path
         name: brand
@@ -561,7 +1344,7 @@ paths:
         in: path
         name: slug
         description: 'The slug of the product.'
-        example: 16
+        example: 15
         required: true
         schema:
           type: integer
@@ -603,81 +1386,6 @@ paths:
       tags:
         - Endpoints
       security: []
-  /api/provinces:
-    get:
-      summary: ''
-      operationId: getApiProvinces
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                example: []
-      tags:
-        - Endpoints
-      security: []
-  '/api/cities/{provinceId}':
-    get:
-      summary: ''
-      operationId: getApiCitiesProvinceId
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                example: []
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: provinceId
-        description: ''
-        example: ut
-        required: true
-        schema:
-          type: string
-  '/api/barangays/{cityId}':
-    get:
-      summary: ''
-      operationId: getApiBarangaysCityId
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                example: []
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: cityId
-        description: ''
-        example: officiis
-        required: true
-        schema:
-          type: string
   /api/inquiries:
     post:
       summary: 'Store a newly created Inquiry resource in storage.'
@@ -701,38 +1409,125 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xnchxmeuwhg
+                  example: vbafioeowsg
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: modesto82@example.org
+                  example: schumm.ross@example.net
                 message:
                   type: string
                   description: ''
-                  example: nesciunt
+                  example: sunt
                 contact_number:
                   type: string
                   description: 'Must not be greater than 15 characters.'
-                  example: pzc
+                  example: sazgmlxsdwrod
                 province_id:
-                  type: integer
+                  type: string
                   description: ''
-                  example: 2
+                  example: eos
                 city_id:
-                  type: integer
+                  type: string
                   description: ''
-                  example: 3
+                  example: maxime
                 barangay:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: hglfpjkvslxowmcjx
+                  example: htyzezqooafz
               required:
                 - product_id
                 - name
                 - email
                 - message
       security: []
+  /api/change-password:
+    post:
+      summary: "Change Password\n\nThis endpoint allows a user to change their password."
+      operationId: changePasswordThisEndpointAllowsAUserToChangeTheirPassword
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Password changed successfully.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Password changed successfully.'
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Current password is incorrect.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Current password is incorrect.'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'The new password confirmation does not match.'
+                properties:
+                  error:
+                    type: string
+                    example: 'The new password confirmation does not match.'
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: 'The current password of the user.'
+                  example: old_password
+                new_password:
+                  type: string
+                  description: 'The new password for the user.'
+                  example: new_password123
+                new_password_confirmation:
+                  type: string
+                  description: 'The confirmation of the new password.'
+                  example: new_password123
+              required:
+                - current_password
+                - new_password
+                - new_password_confirmation
+      security: []
 tags:
   -
+    name: Addresses
+    description: ''
+  -
+    name: Applications
+    description: ''
+  -
+    name: Authentication
+    description: ''
+  -
+    name: Customers
+    description: ''
+  -
+    name: 'Email Verification'
+    description: ''
+  -
     name: Endpoints
+    description: ''
+  -
+    name: Users
     description: ''
