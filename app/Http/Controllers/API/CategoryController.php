@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class CategoryController extends Controller
 {
     /**
-     * @group Categories
+     * @group Products
      *
      * Display a listing of the Categories resource.
      *
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      *   ]
      * }
      */
-    public function getCategories()
+    public function index()
     {
         $categories = Category::all();
 
