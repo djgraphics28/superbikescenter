@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class BrandController extends Controller
 {
     /**
-     * @group Brands
+     * @group Products
      *
      * Display a listing of the Brand resource.
      *
@@ -26,7 +26,7 @@ class BrandController extends Controller
      *   ]
      * }
      */
-    public function getBrands()
+    public function index()
     {
         $brands = Brand::all();
 

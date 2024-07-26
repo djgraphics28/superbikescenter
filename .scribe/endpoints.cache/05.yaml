@@ -248,7 +248,7 @@ endpoints:
         name: id
         description: 'The ID of the application.'
         required: true
-        example: 11
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -263,7 +263,7 @@ endpoints:
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      id: 11
+      id: 2
       customer_id: 1
     queryParameters: []
     cleanQueryParameters: []
