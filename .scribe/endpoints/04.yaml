@@ -1,0 +1,81 @@
+name: Customers
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/profile
+    metadata:
+      groupName: Customers
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Get customer profile by user ID
+
+        This endpoint retrieves a customer's profile based on their user ID.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "customer": {
+              "id": 1,
+              "user_id": 1,
+              "first_name": "John",
+              "middle_name": "M",
+              "last_name": "Doe",
+              "sufix_name": "Jr",
+              "contact_number": "1234567890",
+              "birth_date": "1990-01-01",
+              "gender": "Male",
+              "marital_status": "Single",
+              "is_active": true,
+              "province_id": 1,
+              "city_id": 1,
+              "barangay_id": 1,
+              "address1": "123 Main St",
+              "address2": "Apt 4B",
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+            "error": "Customer not found."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

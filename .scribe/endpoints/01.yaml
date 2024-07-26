@@ -1,0 +1,308 @@
+name: Authentication
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/customer/login
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Login a user
+
+        This endpoint allows a user to log in using their email and password.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'The email of the user.'
+        required: true
+        example: user@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      password:
+        name: password
+        description: 'The password of the user.'
+        required: true
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      email: user@example.com
+      password: password123
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "message": "Login successful",
+            "token": "Bearer your_access_token_here"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+            "message": "Invalid credentials"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/customer/register
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Register a new user
+
+        This endpoint registers a new user and their customer details.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: 'The first name of the user.'
+        required: true
+        example: John
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      middle_name:
+        name: middle_name
+        description: 'The middle name of the user.'
+        required: false
+        example: M
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      last_name:
+        name: last_name
+        description: 'The last name of the user.'
+        required: true
+        example: Doe
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      sufix_name:
+        name: sufix_name
+        description: 'The suffix of the user.'
+        required: false
+        example: Jr
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      email:
+        name: email
+        description: 'The email of the user.'
+        required: true
+        example: user@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      password:
+        name: password
+        description: 'The password of the user.'
+        required: true
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      contact_number:
+        name: contact_number
+        description: 'The contact number of the user.'
+        required: true
+        example: '09171234567'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      birth_date:
+        name: birth_date
+        description: 'The birth date of the user.'
+        required: true
+        example: '1990-01-01'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      gender:
+        name: gender
+        description: 'The gender of the user.'
+        required: true
+        example: Male
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      marital_status:
+        name: marital_status
+        description: 'The marital status of the user.'
+        required: true
+        example: Single
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      province_id:
+        name: province_id
+        description: 'The ID of the province.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      city_id:
+        name: city_id
+        description: 'The ID of the city.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      barangay_id:
+        name: barangay_id
+        description: 'The ID of the barangay.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      address1:
+        name: address1
+        description: 'The first address line.'
+        required: true
+        example: '123 Main St'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      address2:
+        name: address2
+        description: 'The second address line.'
+        required: false
+        example: 'Apt 4B'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      password_confirmation:
+        name: password_confirmation
+        description: 'The confirmation of the password.'
+        required: true
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      first_name: John
+      middle_name: M
+      last_name: Doe
+      sufix_name: Jr
+      email: user@example.com
+      password: password123
+      contact_number: '09171234567'
+      birth_date: '1990-01-01'
+      gender: Male
+      marital_status: Single
+      province_id: 1
+      city_id: 1
+      barangay_id: 1
+      address1: '123 Main St'
+      address2: 'Apt 4B'
+      password_confirmation: password123
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+            "message": "Successfully registered!",
+            "customer": {
+              "id": 1,
+              "user_id": 1,
+              "first_name": "John",
+              "middle_name": "M",
+              "last_name": "Doe",
+              "sufix_name": "Jr",
+              "contact_number": "09171234567",
+              "birth_date": "1990-01-01",
+              "gender": "Male",
+              "marital_status": "Single",
+              "province_id": 1,
+              "city_id": 1,
+              "barangay_id": 1,
+              "address1": "123 Main St",
+              "address2": "Apt 4B",
+              "created_at": "2024-07-26T00:00:00.000000Z",
+              "updated_at": "2024-07-26T00:00:00.000000Z"
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+            "errors": {
+              "email": ["The email has already been taken."],
+              "password": ["The password confirmation does not match."]
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

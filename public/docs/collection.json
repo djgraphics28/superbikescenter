@@ -10,11 +10,532 @@
     ],
     "info": {
         "name": "SuperBikesCenter",
-        "_postman_id": "7f3291f1-89dd-445b-af0e-3c04b5e3be8c",
+        "_postman_id": "bb226907-4d49-45d1-9eba-668514720d54",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Addresses",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get all provinces\n\nThis endpoint retrieves all provinces.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/provinces",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/provinces"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"provinces\": [\n    {\n      \"id\": 1,\n      \"name\": \"Province 1\",\n      \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n      \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Province 2\",\n      \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n      \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n    }\n  ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get cities by province ID\n\nThis endpoint retrieves all cities belonging to a specific province.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cities\/:provinceId",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cities\/:provinceId",
+                            "variable": [
+                                {
+                                    "id": "provinceId",
+                                    "key": "provinceId",
+                                    "value": "1",
+                                    "description": "The ID of the province."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"cities\": [\n    {\n      \"id\": 1,\n      \"province_id\": 1,\n      \"name\": \"City 1\",\n      \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n      \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n    },\n    {\n      \"id\": 2,\n      \"province_id\": 1,\n      \"name\": \"City 2\",\n      \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n      \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n    }\n  ]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"error\": \"Province not found.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get barangays by city ID\n\nThis endpoint retrieves all barangays belonging to a specific city.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/barangays\/:cityId",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/barangays\/:cityId",
+                            "variable": [
+                                {
+                                    "id": "cityId",
+                                    "key": "cityId",
+                                    "value": "1",
+                                    "description": "The ID of the city."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"barangays\": [\n    {\n      \"id\": 1,\n      \"city_id\": 1,\n      \"name\": \"Barangay 1\",\n      \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n      \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n    },\n    {\n      \"id\": 2,\n      \"city_id\": 1,\n      \"name\": \"Barangay 2\",\n      \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n      \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n    }\n  ]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"error\": \"City not found.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Applications",
+            "description": "",
+            "item": [
+                {
+                    "name": "Submit a new application\n\nThis endpoint allows a user to submit a new application.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/application",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/application"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"customer_id\":1,\"product\":2,\"source_of_income\":\"Employment\",\"name_of_business\":\"My Business\",\"company_name\":\"My Company\",\"work_position\":\"Manager\",\"years_in_work\":5,\"comaker_name\":\"John Doe\",\"comaker_work\":\"Engineer\",\"comaker_monthly_income\":50000,\"months_to_pay\":12,\"monthly_payment_amount\":1000,\"monthly_income\":2000,\"downpayment\":500,\"loan_amount\":10000,\"name\":\"Jane Doe\",\"email\":\"jane@example.com\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Loan Application submitted successfully.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"error\": \"You already have an active loan application.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get applications by customer ID\n\nThis endpoint retrieves all applications for a specific customer.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/application\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/application\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "4",
+                                    "description": "The ID of the application."
+                                },
+                                {
+                                    "id": "customer_id",
+                                    "key": "customer_id",
+                                    "value": "1",
+                                    "description": "The ID of the customer."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"applications\": [\n    {\n      \"id\": 1,\n      \"customer_id\": 1,\n      \"product_id\": 2,\n      \"source_of_income\": \"Employment\",\n      \"name_of_business\": \"My Business\",\n      \"company_name\": \"My Company\",\n      \"work_position\": \"Manager\",\n      \"years_in_work\": 5,\n      \"comaker_name\": \"John Doe\",\n      \"comaker_work\": \"Engineer\",\n      \"comaker_monthly_income\": 50000,\n      \"months_to_pay\": 12,\n      \"monthly_payment_amount\": 1000,\n      \"monthly_income\": 2000,\n      \"downpayment\": 500,\n      \"loan_amount\": 10000,\n      \"date_applied\": \"2024-07-26T00:00:00.000000Z\",\n      \"date_inquired\": \"2024-07-26T00:00:00.000000Z\",\n      \"status\": \"for-review\",\n      \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n      \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n    }\n  ]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"error\": \"No applications found.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Authentication",
+            "description": "",
+            "item": [
+                {
+                    "name": "Login a user\n\nThis endpoint allows a user to log in using their email and password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"user@example.com\",\"password\":\"password123\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Login successful\",\n  \"token\": \"Bearer your_access_token_here\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n  \"message\": \"Invalid credentials\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Register a new user\n\nThis endpoint registers a new user and their customer details.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"John\",\"middle_name\":\"M\",\"last_name\":\"Doe\",\"sufix_name\":\"Jr\",\"email\":\"user@example.com\",\"password\":\"password123\",\"contact_number\":\"09171234567\",\"birth_date\":\"1990-01-01\",\"gender\":\"Male\",\"marital_status\":\"Single\",\"province_id\":1,\"city_id\":1,\"barangay_id\":1,\"address1\":\"123 Main St\",\"address2\":\"Apt 4B\",\"password_confirmation\":\"password123\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n  \"message\": \"Successfully registered!\",\n  \"customer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"first_name\": \"John\",\n    \"middle_name\": \"M\",\n    \"last_name\": \"Doe\",\n    \"sufix_name\": \"Jr\",\n    \"contact_number\": \"09171234567\",\n    \"birth_date\": \"1990-01-01\",\n    \"gender\": \"Male\",\n    \"marital_status\": \"Single\",\n    \"province_id\": 1,\n    \"city_id\": 1,\n    \"barangay_id\": 1,\n    \"address1\": \"123 Main St\",\n    \"address2\": \"Apt 4B\",\n    \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n    \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n  }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n  \"errors\": {\n    \"email\": [\"The email has already been taken.\"],\n    \"password\": [\"The password confirmation does not match.\"]\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Customers",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get customer profile by user ID\n\nThis endpoint retrieves a customer's profile based on their user ID.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/profile",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"customer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"first_name\": \"John\",\n    \"middle_name\": \"M\",\n    \"last_name\": \"Doe\",\n    \"sufix_name\": \"Jr\",\n    \"contact_number\": \"1234567890\",\n    \"birth_date\": \"1990-01-01\",\n    \"gender\": \"Male\",\n    \"marital_status\": \"Single\",\n    \"is_active\": true,\n    \"province_id\": 1,\n    \"city_id\": 1,\n    \"barangay_id\": 1,\n    \"address1\": \"123 Main St\",\n    \"address2\": \"Apt 4B\",\n  }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"error\": \"Customer not found.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Email Verification",
+            "description": "",
+            "item": [
+                {
+                    "name": "Show the email verification notice\n\nThis endpoint shows the email verification notice.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/email\/verify",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/email\/verify"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Please verify your email address.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Verify email address\n\nThis endpoint verifies the user's email address.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/email\/verify\/:id\/:hash",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/email\/verify\/:id\/:hash",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                },
+                                {
+                                    "id": "hash",
+                                    "key": "hash",
+                                    "value": "abc123",
+                                    "description": "The email verification hash."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Email verified successfully.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"Invalid or expired verification link.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Resend email verification notification\n\nThis endpoint resends the email verification notification.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/email\/verification-notification",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/email\/verification-notification"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Verification link sent!\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 429,
+                            "body": "{\n  \"message\": \"Too many requests. Please try again later.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "name": "Endpoints",
             "description": "",
@@ -62,7 +583,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IkkzRnNscnk5aTJpY3V2NWVZNDFST3c9PSIsInZhbHVlIjoiUXAwN1Vock5JK21ITkR3Ui8zSzBJdjlBVkl2MUlhL2Y3TzkyREt0UHpFRUVDakF1R0V6NW1sZklpejJVQmVOdnBVaW1iTkV5b3pwMFhrRkEySkI4d0cxa0E4OVV1YkhlQVpsM2w0WlBlenB6L2VseEJqcktJQXBKeVBHVGFsZGciLCJtYWMiOiIwYWQ0MTNkZDA0OTY4ZmZhMTVjZTc4YjlhMjdiMTdjNmU5YTcxZWFlODBlZmVlMjkwNjQxYTU3Y2I1OGEyNzc0IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IktnWEphSGZLQ2g5d3FTQ1dJMjRWZHc9PSIsInZhbHVlIjoiZk45OFo4REZMOVFnVHU5ZW1TOFBHNWlzV2tyZ01jWFF5ZmN1aWRLU09rM1hBMC9Ndzk4T0sxVktkMGQrRXBwaHp1VC9hbWxuMHRBQ0Y4Z285NGJ0QUJUNDhjbWlXRU00TkNPTEFKRmZCUDBpNmpLbXgrcmtHZERKYVFLRG1hN1YiLCJtYWMiOiJjYzJjM2U5OWFiOTQyYTY1YjIyNTVkMWI2OGU0ZTNmZDgyMzAxMzM0N2NlZjNhNGUzMjFjMmUwNDhlMTVmZGIxIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6Ik40VFdFSkxVZXlrWjRJZ05wUUNPb0E9PSIsInZhbHVlIjoiR2M4TE1CVHRlbzNNaTNNWXJheGpuN1ArREFSWXlDN0h1b3RzOWJEWDRxWTF6Q00razhmdmRVKzEyZytkTDE2VEs5amQzYm9WMGJlVnVjQTZ3KzFwQkNHYjY4MGxrVzBUUTdTYkhCVkloTE5EU3FJaGpnUDhDSVp5ZjhENG5ITHoiLCJtYWMiOiIwZmI4ZGE2ZDgwNDJmZDIxNTRkMDMwZThiYWQ3ODQxY2M3Mjk2YzYxZGFlN2YzZjg3MmExMzc1NDNkNDU1OGFlIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InBrdTk0bTRRSTEwaVJGTlROZEg3YkE9PSIsInZhbHVlIjoiclpCajA4Lzd0ZlQ0OU1NbUd1UjhRM3RGOGk1VnZBK1J2YnhJOEd1dUtSQ3dBMTRURHVQZ0hqL3JLb0puMDZTcjcyOW9tWDRkSnE4ODNNbnY4YlBNU0VLR1FIbTkvY2FMTUV6N3o4MXhpbVhiVWlEU2lrQ2Y5OG0wTjR3STBVcHYiLCJtYWMiOiIwMjNjM2QzYWYyN2JkZTgxYTI3ZGJkYTUzMTdmYWNlNDUwNmY3ZWZiZDBmN2Q0MGY0NzIyMWVkMzY5OTg0MDE5IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -114,7 +635,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IjVoeUkrVG1MNXNHc1JsaHcyUkRseVE9PSIsInZhbHVlIjoiSTZjSkprbHhidi9vODJXcnV1TnRNai8zbEp5RUliRjJnZ093T3BwaTRxNlVaK1lhWnNhOEg0QVNxYTgzcXp0WkI2VkZiWmJPd1BUaThLekpCT3FNL0I1RC85UXh1NFY5V09NUkJveWxDbHlaMytFQnJtaG1GZ05pQ1U1bXVUL0siLCJtYWMiOiI3Y2EyYTczNzk4OTYwY2ZiOTVmZGZkNzVkNTM0Mzk1OTdmZGFhMDQ1MmUwOTRmMzhiYTQ2ZmU5NjdhNGE4Yjk4IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Imh6UFJuSTJHQ2YrSitxUllRdkhzR1E9PSIsInZhbHVlIjoiSi9NMTY3bTNIZlJEazJUZ0FQSWNuQnpLMUcrSWx5aFB4ZGFZdHppdGpkdC9aa1Q2WTJQdjBQY3RoZ09OVHh0ZGdaSlZ5eVphZUlHcHVMT3poQUsyWU1Sa09FR29tYnNsZ00rK2hMdmdxU25HWXo0b0FnYnpLdnYzWHdYMXUxL2siLCJtYWMiOiIwNDRmZWM4ZjIzZGZiYWI0NTk2NDMxZjkzOGVlMDk3YzNjZmE1ZGYwZmNkZGM3MTNiNmNkMzMyNmUzNjdkY2IxIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjdIM2E2TVBqa2tKakdGdWtTc3o5OHc9PSIsInZhbHVlIjoieVltMk8wZ2taczZRYlE5YTQrVDBXSEV6MGNWLzZUelg1TTNEMWhtajhsd0JiNFcrRTFFMEhjK2YwV1p2M0NheUhjWHpFOXc3am51T3RyWVJCS2U5V0tBdUpYYUdBaFVyVUVETHlYMzIvZnNzenNlR0U3TnFXQUsrSyszOFpIVFAiLCJtYWMiOiIzZTRhMDg3MTFlNjQyMzUxY2VjNjhmNmYxMjg0MmIyZTA1N2JiODRmYTI4ZDlkN2M2NGQyNmM5ODJiNTNhY2ViIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Im0vVjlEOVJ5ZTBaMTVnVjhvYkgrUHc9PSIsInZhbHVlIjoiLzhQYkFlR1MycTlrT2JUY0FyQi9XUThabFhiTFNncHdWcDVTeHRVY25YTFJtQjcrcG96WXZiM3ZPVXEvcTZhU2MrZldNcE5QQjkwcUNyZjVGMEh6NHRkZnB4bEJKa1pSNUtMZ2MvZEV4R1ROeG9kRlhsOUVzRGJMczY1VWhiWGIiLCJtYWMiOiJkNDEzNDk0YjNlMmMzN2YwNWNlOTdiNGFiYWQ1MWU0MWI0M2FkOTc3NDYzNjg0OWI4Y2EzN2Q2ZGRhYzkxYWMyIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -135,7 +656,7 @@
                                 {
                                     "id": "regionId",
                                     "key": "regionId",
-                                    "value": "voluptate",
+                                    "value": "quod",
                                     "description": ""
                                 }
                             ]
@@ -174,7 +695,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IkZiRkpMLzJsRUF5eml0cGtlRDNuQlE9PSIsInZhbHVlIjoidUxiOTk0b3pKWjkrUnBCZXhhU2VIVFVYVXQ5YnB4NnB6STlzU2xUZENPSXNIam1FUmN1WmNPU2tqb2laMStZMVlWWURPdlY2NUpVQWhLalBUd2hIN3hTNDJlb2h5S093UGVCcUY3Q3pDaEU5YjlTVytHWm5rRmhrTzJRMk1MRGMiLCJtYWMiOiI2NzdiZTdiMzJmY2E1MTA4NGE4YmFhYTc3NzA2YzFlYzcxMTVmYTBkNWU3OTUxOWQxYjBiYTg1OGY4NmE0MDFlIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IlB1SDFDZGF2bkVWSXVvRFA4UVlTS1E9PSIsInZhbHVlIjoiVlA3NEtoTzJUb0Q3SG9YbHNoUUJ1K015SW4wT3Z0b2YwdkliTWRveERNN3JqelBORVFoV2oxMVFpMG82RXdSM2lKQWxkbWowVUpJV1lBU0w1OVN5T2YvS1ZCMnRIT28zV0VpRDRPN1M4cWdMMVlmZEpUcUtPUzR3c2V0U1Q5T3AiLCJtYWMiOiIzMjMwMmQ4NjQ2MWVmNjc3MjJkYjk0Zjc3ZjI2NTFlYjM3YjQ2NDRmNGYxZmRlOWJlODA4MDIxZjE2YjQ1YjMyIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6InZKcHBseXFQa0UzWG5YTjd5eDNjbHc9PSIsInZhbHVlIjoiUStHTnpvckFjTzZJRldveUxaVkp5Ymx3TkI2ekFITWRUa3M5WW9VUFBhTTBpVVFoMFpFNlA0Qng4VUUyZm9hUW9qOU04ZU1yYmFRcmFLT2FTbFhGOG5YNXArOUJJM01UMGFiTStXSnVxTnorTnpSOTZCRnJraWZqQ0dqREJSbDkiLCJtYWMiOiI2M2I0Y2U4MDg0YzAxYjU1ZmFkY2ViOTZjMzA4ZTQ4YWEzZGFhNWEyY2JjY2MzYzAzMDRhMWVmZTA2NmZkMjg1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Ilk1NE9keDdyckxuMjh5citFOU9rZEE9PSIsInZhbHVlIjoieDZFZC9zTTh1Z0Y0dVJIZFA2Rk4xeHJ6TlpIR0dSMnRNZStVYmxZdkJ3endOdC9icDJZQlZFNUszd011eUdPM0VSRExYVU1zR3dQMy85U3B6YmRQbkJPS1JnMWV3WVNaT1F5NmVYRDRMQXJCVmdFZGQzd2lDdDllLzN1VTJxaXkiLCJtYWMiOiI5YWFhZGQ2ZWY1M2I0Yjg3MTQ2YTM2YTNmY2QxOWU3ZTBkZWFhZGFjNjllZmNjNzliNjgxZGI1NDg2NmE4MWM1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -195,7 +716,7 @@
                                 {
                                     "id": "provinceId",
                                     "key": "provinceId",
-                                    "value": "sit",
+                                    "value": "non",
                                     "description": ""
                                 }
                             ]
@@ -234,7 +755,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6Ik5XYVBEbzI4dS9FRHp2Tmw0bC9LOFE9PSIsInZhbHVlIjoiNi83NWZjUGVITEpscEJzVVF6VU56VzNWazVOdUViMjZkRjgzTGNhanN6aDh3MU4yWWhXTitkdW1NRlMxTE4wempNcGZ2ekdiNEI5UGhOODZHTlQ3MVFsRWoyVm9hWHRQUlVLaXN2cVlxbHVkVi9Xdkd1N3FPYVR5dHdKQVJFNnMiLCJtYWMiOiJlNTE0ODQxNGIxZDI2YzRkMTJjMDJjZGRmYjUyYzhmMDdmZDM5ZDVlZDRhNTY0OGE1ZTNhNjI0MDA1MGNhODEyIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImJ4U1JlZHNSdlFEaU9QWGlZc2xUR0E9PSIsInZhbHVlIjoid285QkpqU1hPdE9VQk1jalVsQldhODRsT2o1NG50R1ZyaFV3U3QvNysxV1BaZW4rZDJSM1VvbkJKUmIva01rRFAzYUEyUjgxNjI0R1RSWHNLR0tZVXBJcVlERVU5ZUI1VWFIcmM0dGd0eU5vSGdTM0NSbUJyZmRGL0dqVzUwc0MiLCJtYWMiOiJhN2RjNTcyNGQ3OTFjN2MyNTQ1OGU1NTM2Zjg1MWUwMzVlOTBiMWQyYjlmNTE3ZmE3NWU0OWU4MTkzNTYzYjgwIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IkJSTmRHcjduOUVRRUthUkg2R0xGcUE9PSIsInZhbHVlIjoiaURwOTh1aE9FZGFHU3RNbGV1VWJId2U0ZTJaZXNLS0JMSXczMFBDQ3ByUXM0endtQjFaZWdGNytnZnVyb00xWDJ6cDM4djFCbGhXRUYycWh0ODVLOFErVHFMZWRBa2JoeklkME9FOWQvbWF4RHdLRFZvZ3hscEJwdHRpeE5tZm8iLCJtYWMiOiJhMmZmNGZhZjkzNTQ3YTY4MTgxZmI1ZjU3OTg2OTNkMTQ0YzJkNmIxZDg4NzcyMzIyMGJhZWUxYjQ0MDQxMjA3IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkVuTUJEb0FMK0xGSlhRTnBpaURhN0E9PSIsInZhbHVlIjoiWURwTnZKY291MGREbHgxelBCam5QYm9UeTF3ZG9uSnpsWVVJQjdaRUhkQU5oUUhUc1J5Q1ZsVEE3Y0ZYLzh4VmJwS3EwTnp6akhaUUVJa1RyOUJZeE0vK1ZSL3R0eHhmc0pGMUZNWjRndndPTGoxWHFjWmRpd2VZYmc2QUNNZjQiLCJtYWMiOiI1Yjk1YWJjZGUzYTJkY2JmZWQyZTZiYjgyZmRhYWExMWIwM2Q0ZTA2YWM0NjVhYjE4YWZlNjNjZTQ3NzA1ZDE0IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -255,13 +776,13 @@
                                 {
                                     "id": "regionId",
                                     "key": "regionId",
-                                    "value": "doloremque",
+                                    "value": "tempora",
                                     "description": ""
                                 },
                                 {
                                     "id": "provinceId",
                                     "key": "provinceId",
-                                    "value": "facilis",
+                                    "value": "eos",
                                     "description": ""
                                 }
                             ]
@@ -300,7 +821,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IjU1MFhMWVVsZWlzSnpJZHJNSVZHMVE9PSIsInZhbHVlIjoiUjZDUnNRYktzQlB0Sjlhd3BNaENjdW53aXFteTFPSittYkdjMVdUekpCb3lJbGdxbUJSQVRnREh1YXVtWHlvM0t6OGh1RFZLcEt5aE9FQmc3azNqR3YwZjMrZkdOMitDTW1MWjRCYVB3NzFKQXFxQ2V5Uk1uU3FmQ05VdXdXalAiLCJtYWMiOiI3NjUzY2M2NDY0Yjg4MDNlOWQ3OThiMmE4ZmU0YjRhODg0ZDU1OGY0MzhlY2ZmMTViMDY0YmM4ZTZiOWU0NzkxIiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkZIL21mM0NWT1JjWnQyZFB4enFFQXc9PSIsInZhbHVlIjoibHlkclZsMUxLb2NsRVBHRVlib0tIckpzNGFGNEJvVjAxRkVLeE43eHVFRDVzbE5RZEpPdHBpQnVIcDU2RVZlVlA3cklVeUYrNTM0RDJ4TTgySytvQWRRYU9OTGZGY0hycTN2Sjl5YkJvZFNMeEZLTit1UHljTGRBZEd6R0JHLysiLCJtYWMiOiJjZWE4OTIwMzc3NDIwNWNkMjEwNjBkZDQzZDk5YmVjZGI1MzUzZjA4NDRhODdmNTA5YWU4YjJmODY4NWExM2Y2IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6Inl2YmFPTDhrTHhpYVU1VTk1NksxcFE9PSIsInZhbHVlIjoia2UvaCtGNlIyWSs1czZLT2pRMnIveHRZQVJLcHhGVkYyU2NGbHZmd29pZFFOTkFGaHVoTFJxMUMwZlpQNVB3YTVQVDZGNnhoOWpDaVpVNUdaNkZUWWlRZ0d0dTBIZkw1dXNjc090S1VORGpjb1RlK21XL3l5Q1R5NGNQR0RmRHQiLCJtYWMiOiJiODUxZmI3MGYzNWI2OTgzYmZlZDZkYWJmYWEwYjU1NDQ0NzRiZDQ3ZjliOTc4ZTJiYmI4YmE5M2EwZmI3ZGU0IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkkwakFDdjM3ZDFjNG42SFM3WDYyWEE9PSIsInZhbHVlIjoiM0k3eHZYaWtaQ1BoSXg2UjJ0S0d2NWxXOGtyemZqSUtKKzBRT0FyS0YrS2NLdzdjeUtRS1ZlaUwwRXZHMTJ1NGJ6QWtDbjZVK0xUQnpwZURnMFR5Z2xXN2o0UXJuWWt0a0dRVitRK08xSkhqcG91a1dKOVRZUlF5bzRCYzZpaysiLCJtYWMiOiJmOWU2MjdiMTdiNWY4NGYzYThkMGYyZDhkYWJjZDFhMjkyMDRlOTkxMjliZmYzNzA2MTVlNDFjNmVmMTY2M2U3IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -321,7 +842,7 @@
                                 {
                                     "id": "cityId",
                                     "key": "cityId",
-                                    "value": "repudiandae",
+                                    "value": "iure",
                                     "description": ""
                                 }
                             ]
@@ -360,7 +881,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IkZQcjZyM2xvbVJpaDIwc1piWisvMkE9PSIsInZhbHVlIjoiZnRRaG9zUHB3UVhDQlJzTU1yeG1ZZkdidGJ2cDNoWE1xZCtJMHcrcEZqZXp1ZFcxNHpGc1hZMG5ReFhhYURUdTRlY1lOSTNIL1plTTZueUpOSjdzNXc1UWNQRk5kSDFraWdBN25sbFJUb1M4Z05JSTlWa1dpUWptYW9GQjRRbmUiLCJtYWMiOiI3MmEwMWUzNTVhZTI4ZmE5MDMyZjQ4NDAyMjE3YmQ4NDc3Zjk2YTllNmJmOGE0MTgzMzhiZTRkZmVkODE2NjY3IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImYwbXRvbXhlZ2lQTThzYlN3QWVMS1E9PSIsInZhbHVlIjoiVGo1MXZiYWpEci8vb21xc3R0MmIzUkhOaUI0d21sZzljNlZqMnJSR2JyL0lUdE44RDROdVp5V3NGN2FLYWQvdWhhZTlIeWdGSndKK0d3YW9Rck9uMmVFS3g3YUkwc0lHcURnTUtCeDRrWHBmb3hsUGNJZkpQckZnVERqTW44WHAiLCJtYWMiOiJhOTc3ZmM3OWJkNzVhMGM3NDNmMmJhYmMwOTVmMzJjMDQ1NDk4ODYyY2E5MjE1OTNjMGVhNDlhZTg4ODQ2YmU2IiwidGFnIjoiIn0%3D; expires=Sun, 14 Jul 2024 12:39:29 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6InhBclhzSGwyYUhObDNUSEEyV3hKNVE9PSIsInZhbHVlIjoiLzZObFJtWGV1a2FzMmRVTVVSdDJMM0FJNFJJSnVxVUdRZmZWL09rRVFNUmk2MkNocjRDSFFnUFRERkpUZzd3a2lwOUszamhLS0NYdVdLQU5UMzdOd0wxejZEVGRaOFcyVU1sU1FuMEpFbDhuL3NPd3czbDduTzVpQVBPYkZ6RGIiLCJtYWMiOiJiYWIwYjJiN2M2ZWQ1NDA4Mzg0NjE1MDRmOTJjNGE1M2VkNWIyNmEzZWI5OGU3YWM4MDlkZmM2NmUzMTlhYmExIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkRtb2JQRjYvY1FFS09tWlpmYTQ3NHc9PSIsInZhbHVlIjoiKytXZzZVcWtpYzA1M01HN014RURJSmxScW1HUllreDF0OFNicE1OYzF0WCtpOU9xODVSbGdzendsRkkzcStGOVppUjNMaW5FUjVGVTZHMlBZZVNuM1hBbFJxSTZvb1RITEcxdzdjaTJrYmRwN09JMC9WYmx6UHpEdi9UTk0vZmciLCJtYWMiOiJjM2M3MzY4ZWNkOTc4Y2E2YzVmNzNlODZjY2EwOWFmYTZhNTVkOTc5MTJmNDgwYThlMmNhZjZhYjVkZDZlMzc5IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -418,68 +939,6 @@
                     ]
                 },
                 {
-                    "name": "POST api\/customer\/login",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/customer\/login",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/customer\/login"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"email\":\"vickie19@example.com\",\"password\":\"earum\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "POST api\/customer\/register",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/customer\/register",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/customer\/register"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"first_name\":\"obaqnjhlprytcjbabiu\",\"middle_name\":\"qzqssmgcqv\",\"last_name\":\"dlscutatgfwhxjpxc\",\"sufix_name\":\"efzmlmqek\",\"username\":\"izjnt\",\"email\":\"xheller@example.net\",\"password\":\"<Z#:Vc]EbiKY<f~9\",\"contact_number\":\"zvxboc\",\"birth_date\":\"2024-07-14T10:39:29\",\"gender\":\"Male\",\"marital_status\":\"Single\",\"province_id\":\"voluptatem\",\"city_id\":\"illum\",\"barangay_id\":\"suscipit\",\"address1\":\"corrupti\",\"address2\":\"aliquam\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
                     "name": "Display a listing of the Product resource.",
                     "request": {
                         "url": {
@@ -491,7 +950,7 @@
                                 {
                                     "id": "name",
                                     "key": "name",
-                                    "value": "ad",
+                                    "value": "in",
                                     "description": "search name."
                                 },
                                 {
@@ -577,7 +1036,7 @@
                                 {
                                     "id": "slug",
                                     "key": "slug",
-                                    "value": "16",
+                                    "value": "15",
                                     "description": "The slug of the product."
                                 }
                             ]
@@ -718,166 +1177,6 @@
                     ]
                 },
                 {
-                    "name": "GET api\/provinces",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/provinces",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/provinces"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "[]",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "GET api\/cities\/{provinceId}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/cities\/:provinceId",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/cities\/:provinceId",
-                            "variable": [
-                                {
-                                    "id": "provinceId",
-                                    "key": "provinceId",
-                                    "value": "ut",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "[]",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "GET api\/barangays\/{cityId}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/barangays\/:cityId",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/barangays\/:cityId",
-                            "variable": [
-                                {
-                                    "id": "cityId",
-                                    "key": "cityId",
-                                    "value": "officiis",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "[]",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
                     "name": "Store a newly created Inquiry resource in storage.",
                     "request": {
                         "url": {
@@ -899,7 +1198,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":12,\"name\":\"xnchxmeuwhg\",\"email\":\"modesto82@example.org\",\"message\":\"nesciunt\",\"contact_number\":\"pzc\",\"province_id\":2,\"city_id\":3,\"barangay\":\"hglfpjkvslxowmcjx\"}"
+                            "raw": "{\"product_id\":12,\"name\":\"vbafioeowsg\",\"email\":\"schumm.ross@example.net\",\"message\":\"sunt\",\"contact_number\":\"sazgmlxsdwrod\",\"province_id\":\"eos\",\"city_id\":\"maxime\",\"barangay\":\"htyzezqooafz\"}"
                         },
                         "description": "",
                         "auth": {
@@ -907,6 +1206,62 @@
                         }
                     },
                     "response": []
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "description": "",
+            "item": [
+                {
+                    "name": "Change Password\n\nThis endpoint allows a user to change their password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/change-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/change-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"current_password\":\"old_password\",\"new_password\":\"new_password123\",\"new_password_confirmation\":\"new_password123\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Password changed successfully.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"error\": \"Current password is incorrect.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n  \"error\": \"The new password confirmation does not match.\"\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         }
