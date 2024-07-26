@@ -10,44 +10,26 @@ use App\Http\Controllers\Controller;
 class CategoryController extends Controller
 {
     /**
+     * @group Categories
+     *
      * Display a listing of the Categories resource.
+     *
+     * This endpoint retrieves a list of all categories.
+     *
+     * @response {
+     *   "data": [
+     *     {
+     *       "id": 1,
+     *       "name": "Category Name",
+     *       "image": "http://example.com/storage/category-image.jpg"
+     *     }
+     *   ]
+     * }
      */
-    public function index()
+    public function getCategories()
     {
         $categories = Category::all();
 
         return response()->json(CategoryResource::collection($categories));
     }
-
-    // /**
-    //  * Store a newly created resource in storage.
-    //  */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  */
-    // public function destroy(string $id)
-    // {
-    //     //
-    // }
 }

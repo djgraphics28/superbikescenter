@@ -1,19 +1,19 @@
-name: Addresses
+name: Products
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/provinces
+    uri: api/products
     metadata:
-      groupName: Addresses
+      groupName: Products
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: |-
-        Get all provinces
+        Display a listing of the Product resource.
 
-        This endpoint retrieves all provinces.
+        This endpoint allows you to filter products by various criteria and paginate the results.
       description: ''
       authenticated: false
       custom: []
@@ -22,8 +22,68 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
+    queryParameters:
+      name:
+        name: name
+        description: 'Search name.'
+        required: false
+        example: Laptop
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      brand:
+        name: brand
+        description: 'The brand ID of the product.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      category:
+        name: category
+        description: 'The category ID of the product.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      min_price:
+        name: min_price
+        description: 'The minimum price of the product.'
+        required: false
+        example: '15000'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      max_price:
+        name: max_price
+        description: 'The maximum price of the product.'
+        required: false
+        example: '300000'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      per_page:
+        name: per_page
+        description: 'The number of items per page.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanQueryParameters:
+      name: Laptop
+      brand: 1
+      category: 1
+      min_price: '15000'
+      max_price: '300000'
+      per_page: 10
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -32,20 +92,33 @@ endpoints:
         status: 200
         content: |-
           {
-            "provinces": [
+            "data": [
               {
                 "id": 1,
-                "name": "Province 1",
-                "created_at": "2024-07-26T00:00:00.000000Z",
-                "updated_at": "2024-07-26T00:00:00.000000Z"
-              },
-              {
-                "id": 2,
-                "name": "Province 2",
+                "name": "Product Name",
+                "slug": "product-name",
+                "price": 10000,
+                "category_id": 1,
+                "brand_id": 1,
                 "created_at": "2024-07-26T00:00:00.000000Z",
                 "updated_at": "2024-07-26T00:00:00.000000Z"
               }
-            ]
+            ],
+            "links": {
+              "first": "http://example.com/api/products?page=1",
+              "last": "http://example.com/api/products?page=1",
+              "prev": null,
+              "next": null
+            },
+            "meta": {
+              "current_page": 1,
+              "from": 1,
+              "last_page": 1,
+              "path": "http://example.com/api/products",
+              "per_page": 10,
+              "to": 1,
+              "total": 1
+            }
           }
         headers: []
         description: ''
@@ -59,16 +132,16 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/cities/{provinceId}'
+    uri: 'api/product/{slug}'
     metadata:
-      groupName: Addresses
+      groupName: Products
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: |-
-        Get cities by province ID
+        Display the specified product.
 
-        This endpoint retrieves all cities belonging to a specific province.
+        This endpoint retrieves a specific product by its slug.
       description: ''
       authenticated: false
       custom: []
@@ -76,17 +149,17 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      provinceId:
-        name: provinceId
-        description: 'The ID of the province.'
+      slug:
+        name: slug
+        description: 'The slug of the product.'
         required: true
-        example: 1
-        type: integer
+        example: product-name
+        type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      provinceId: 1
+      slug: product-name
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -97,107 +170,17 @@ endpoints:
         status: 200
         content: |-
           {
-            "cities": [
-              {
-                "id": 1,
-                "province_id": 1,
-                "name": "City 1",
-                "created_at": "2024-07-26T00:00:00.000000Z",
-                "updated_at": "2024-07-26T00:00:00.000000Z"
-              },
-              {
-                "id": 2,
-                "province_id": 1,
-                "name": "City 2",
-                "created_at": "2024-07-26T00:00:00.000000Z",
-                "updated_at": "2024-07-26T00:00:00.000000Z"
-              }
-            ]
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-            "error": "Province not found."
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/barangays/{cityId}'
-    metadata:
-      groupName: Addresses
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: |-
-        Get barangays by city ID
-
-        This endpoint retrieves all barangays belonging to a specific city.
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      cityId:
-        name: cityId
-        description: 'The ID of the city.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-    cleanUrlParameters:
-      cityId: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-            "barangays": [
-              {
-                "id": 1,
-                "city_id": 1,
-                "name": "Barangay 1",
-                "created_at": "2024-07-26T00:00:00.000000Z",
-                "updated_at": "2024-07-26T00:00:00.000000Z"
-              },
-              {
-                "id": 2,
-                "city_id": 1,
-                "name": "Barangay 2",
-                "created_at": "2024-07-26T00:00:00.000000Z",
-                "updated_at": "2024-07-26T00:00:00.000000Z"
-              }
-            ]
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-            "error": "City not found."
+            "data": {
+              "id": 1,
+              "name": "Product Name",
+              "slug": "product-name",
+              "price": 10000,
+              "category_id": 1,
+              "brand_id": 1,
+              "variations": [],
+              "created_at": "2024-07-26T00:00:00.000000Z",
+              "updated_at": "2024-07-26T00:00:00.000000Z"
+            }
           }
         headers: []
         description: ''

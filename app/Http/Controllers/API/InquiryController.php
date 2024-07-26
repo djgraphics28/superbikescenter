@@ -13,21 +13,34 @@ use Illuminate\Support\Facades\Mail;
 class InquiryController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
+     * @group Inquiries
+     *
      * Store a newly created Inquiry resource in storage.
+     *
+     * This endpoint allows you to submit an inquiry about a product.
+     *
+     * @bodyParam product_id integer required The ID of the product. Example: 1
+     * @bodyParam name string required The name of the person making the inquiry. Example: John Doe
+     * @bodyParam email string required The email address of the person making the inquiry. Example: john@example.com
+     * @bodyParam message string required The message content of the inquiry. Example: I am interested in this product.
+     * @bodyParam contact_number string optional The contact number of the person making the inquiry. Example: 123-456-7890
+     * @bodyParam province_id string optional The province ID related to the inquiry. Example: 1
+     * @bodyParam city_id string optional The city ID related to the inquiry. Example: 1
+     * @bodyParam barangay string optional The barangay related to the inquiry. Example: Barangay 1
+     *
+     * @response {
+     *   "message": "Inquiry submitted successfully and response email sent."
+     * }
+     *
+     * @response 404 {
+     *   "message": "Product Not Found!"
+     * }
      */
     public function store(Request $request)
     {
         // Validate the request data
         $validatedData = $request->validate([
-            'product_id' => 'required|integer',
+            'product_id' => 'required|integer|exists:products,id',
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string',
@@ -39,7 +52,7 @@ class InquiryController extends Controller
 
         $product = Product::find($validatedData['product_id']);
 
-        if(!$product) {
+        if (!$product) {
             return response()->json(['message' => 'Product Not Found!'], 404);
         }
 
@@ -65,28 +78,4 @@ class InquiryController extends Controller
         // Return a success response
         return response()->json(['message' => 'Inquiry submitted successfully and response email sent.']);
     }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  */
-    // public function destroy(string $id)
-    // {
-    //     //
-    // }
 }

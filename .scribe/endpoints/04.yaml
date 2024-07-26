@@ -1,65 +1,118 @@
-name: Customers
+name: Inquiries
 description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/profile
+      - POST
+    uri: api/inquiries
     metadata:
-      groupName: Customers
+      groupName: Inquiries
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: |-
-        Get customer profile by user ID
+        Store a newly created Inquiry resource in storage.
 
-        This endpoint retrieves a customer's profile based on their user ID.
+        This endpoint allows you to submit an inquiry about a product.
       description: ''
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the user.'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
         required: true
         example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+      name:
+        name: name
+        description: 'The name of the person making the inquiry.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      email:
+        name: email
+        description: 'The email address of the person making the inquiry.'
+        required: true
+        example: john@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      message:
+        name: message
+        description: 'The message content of the inquiry.'
+        required: true
+        example: 'I am interested in this product.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      contact_number:
+        name: contact_number
+        description: 'optional The contact number of the person making the inquiry.'
+        required: false
+        example: 123-456-7890
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      province_id:
+        name: province_id
+        description: 'optional The province ID related to the inquiry.'
+        required: false
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      city_id:
+        name: city_id
+        description: 'optional The city ID related to the inquiry.'
+        required: false
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      barangay:
+        name: barangay
+        description: 'optional The barangay related to the inquiry.'
+        required: false
+        example: 'Barangay 1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      product_id: 1
+      name: 'John Doe'
+      email: john@example.com
+      message: 'I am interested in this product.'
+      contact_number: 123-456-7890
+      province_id: '1'
+      city_id: '1'
+      barangay: 'Barangay 1'
     fileParameters: []
     responses:
       -
         status: 200
         content: |-
           {
-            "customer": {
-              "id": 1,
-              "user_id": 1,
-              "first_name": "John",
-              "middle_name": "M",
-              "last_name": "Doe",
-              "sufix_name": "Jr",
-              "contact_number": "1234567890",
-              "birth_date": "1990-01-01",
-              "gender": "Male",
-              "marital_status": "Single",
-              "is_active": true,
-              "province_id": 1,
-              "city_id": 1,
-              "barangay_id": 1,
-              "address1": "123 Main St",
-              "address2": "Apt 4B",
-            }
+            "message": "Inquiry submitted successfully and response email sent."
           }
         headers: []
         description: ''
@@ -68,7 +121,7 @@ endpoints:
         status: 404
         content: |-
           {
-            "error": "Customer not found."
+            "message": "Product Not Found!"
           }
         headers: []
         description: ''
