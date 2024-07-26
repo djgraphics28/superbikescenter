@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SuperBikesCenter",
-        "_postman_id": "bb226907-4d49-45d1-9eba-668514720d54",
+        "_postman_id": "f641486e-7570-4491-b9dd-7b3287d38350",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -214,7 +214,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "11",
                                     "description": "The ID of the application."
                                 },
                                 {
@@ -583,7 +583,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6Ik40VFdFSkxVZXlrWjRJZ05wUUNPb0E9PSIsInZhbHVlIjoiR2M4TE1CVHRlbzNNaTNNWXJheGpuN1ArREFSWXlDN0h1b3RzOWJEWDRxWTF6Q00razhmdmRVKzEyZytkTDE2VEs5amQzYm9WMGJlVnVjQTZ3KzFwQkNHYjY4MGxrVzBUUTdTYkhCVkloTE5EU3FJaGpnUDhDSVp5ZjhENG5ITHoiLCJtYWMiOiIwZmI4ZGE2ZDgwNDJmZDIxNTRkMDMwZThiYWQ3ODQxY2M3Mjk2YzYxZGFlN2YzZjg3MmExMzc1NDNkNDU1OGFlIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InBrdTk0bTRRSTEwaVJGTlROZEg3YkE9PSIsInZhbHVlIjoiclpCajA4Lzd0ZlQ0OU1NbUd1UjhRM3RGOGk1VnZBK1J2YnhJOEd1dUtSQ3dBMTRURHVQZ0hqL3JLb0puMDZTcjcyOW9tWDRkSnE4ODNNbnY4YlBNU0VLR1FIbTkvY2FMTUV6N3o4MXhpbVhiVWlEU2lrQ2Y5OG0wTjR3STBVcHYiLCJtYWMiOiIwMjNjM2QzYWYyN2JkZTgxYTI3ZGJkYTUzMTdmYWNlNDUwNmY3ZWZiZDBmN2Q0MGY0NzIyMWVkMzY5OTg0MDE5IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6InBZRmZBYjA3V01NQ2oyR2JrMVNxT2c9PSIsInZhbHVlIjoiMTQvR0YwWjcxTVoyeGRBTE9POVU2T1EvdW9yVFNyOU5mdFN3blRvbGs1QkhrMDR5NHpjckx3UUdMZGRwN3czUkllVzZTY0dZdm1NelZqUElVMENMUzhhMC9xMXQ0RXQ0N3hwdDYxQ1Q2TTM2bGNXVXE3YTFWekZIeUxSRFhrbysiLCJtYWMiOiI3YWRhMTU0ZTljYjI1OWJkYTg3ZmY0OTlkMDY1MWY5NGM3MDQ5ZmQwYzJiZGE1ZWNiOTU0OTA3YzYyZjgyMzZlIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImZTcVpNQ0lmVHRhS0FEbU40TStuOHc9PSIsInZhbHVlIjoiR3d0MGpjU20weHFmTHFBVC9WN0Yrb0xEbWZXenlVWW5iK2J3d3hlRXRQYUdXTUxXNjRRaGxYZFBuUVhZSisvWkdOb2FNYzQrVUhURkJ6SlhGTG00WHZScHJUQThzODlJVmdJaG1pejE2OC96UW42bGZHK0FrVmRNeTRzbnR4NEoiLCJtYWMiOiJlODdkY2JkMGEzZjJiOTc4NmRkMWUwZGY1MDUwYjkwYmI0ZjQ1NjAxMGRiNDNmMTgzMWVkNDI3YzhhOWU0ZDE1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -635,7 +635,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IjdIM2E2TVBqa2tKakdGdWtTc3o5OHc9PSIsInZhbHVlIjoieVltMk8wZ2taczZRYlE5YTQrVDBXSEV6MGNWLzZUelg1TTNEMWhtajhsd0JiNFcrRTFFMEhjK2YwV1p2M0NheUhjWHpFOXc3am51T3RyWVJCS2U5V0tBdUpYYUdBaFVyVUVETHlYMzIvZnNzenNlR0U3TnFXQUsrSyszOFpIVFAiLCJtYWMiOiIzZTRhMDg3MTFlNjQyMzUxY2VjNjhmNmYxMjg0MmIyZTA1N2JiODRmYTI4ZDlkN2M2NGQyNmM5ODJiNTNhY2ViIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Im0vVjlEOVJ5ZTBaMTVnVjhvYkgrUHc9PSIsInZhbHVlIjoiLzhQYkFlR1MycTlrT2JUY0FyQi9XUThabFhiTFNncHdWcDVTeHRVY25YTFJtQjcrcG96WXZiM3ZPVXEvcTZhU2MrZldNcE5QQjkwcUNyZjVGMEh6NHRkZnB4bEJKa1pSNUtMZ2MvZEV4R1ROeG9kRlhsOUVzRGJMczY1VWhiWGIiLCJtYWMiOiJkNDEzNDk0YjNlMmMzN2YwNWNlOTdiNGFiYWQ1MWU0MWI0M2FkOTc3NDYzNjg0OWI4Y2EzN2Q2ZGRhYzkxYWMyIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6ImF1T3U3KzZJY0dyNWJvemhXc3ByZEE9PSIsInZhbHVlIjoiZkhpM2MxSzJRT3ByMG1lOUJueU1pWjFJRCtFd0laOElITDZadGI1K3VsRG1HVUF6dmtURXVrcmJqaTBPOFkrTXdncEEvMWFzNzFOQVVpVXk4S285b3pyT3oyUTRpU2dmWEhNUUJ0cEd2YVBtdm9TbEhYMmVXTDYvVS8rcS9xTzIiLCJtYWMiOiI5YzAxMGNiZDUzYmJjYWM3ZTViY2QwMjg5MWEyY2M1M2UyYjQ4MTU3YjdhMDJiNTcyZWRkYWQ4NGVlNTBmZjQ4IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InVnNXRtYmxtY3lvTWttSWt2NFhXaGc9PSIsInZhbHVlIjoibmJzOWtjc3VMRDJ6Mk9EUEdlZ25nYUp2R3ZtTVNVWGlVcG14bXpjNlpBYXNlRTQ5RkJ5N2V0aUJ6Zjk3M0ZRRFVCY21uYW5wc2l6VnVqN2dMcVBjMDhPbnZBMStlclhZclR2VyswMll0UE5kb0NncXM1U3F4dGxLUklJRFczL0EiLCJtYWMiOiIwNmU1MDUzNjIzNTdjNjZkZDZkNGU3NDAzNmJjYzljZWVhNjFjZGY0NDViOWZjNDk1OTUxYWYxODkzMzc1MDJkIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -656,7 +656,7 @@
                                 {
                                     "id": "regionId",
                                     "key": "regionId",
-                                    "value": "quod",
+                                    "value": "quis",
                                     "description": ""
                                 }
                             ]
@@ -695,7 +695,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6InZKcHBseXFQa0UzWG5YTjd5eDNjbHc9PSIsInZhbHVlIjoiUStHTnpvckFjTzZJRldveUxaVkp5Ymx3TkI2ekFITWRUa3M5WW9VUFBhTTBpVVFoMFpFNlA0Qng4VUUyZm9hUW9qOU04ZU1yYmFRcmFLT2FTbFhGOG5YNXArOUJJM01UMGFiTStXSnVxTnorTnpSOTZCRnJraWZqQ0dqREJSbDkiLCJtYWMiOiI2M2I0Y2U4MDg0YzAxYjU1ZmFkY2ViOTZjMzA4ZTQ4YWEzZGFhNWEyY2JjY2MzYzAzMDRhMWVmZTA2NmZkMjg1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Ilk1NE9keDdyckxuMjh5citFOU9rZEE9PSIsInZhbHVlIjoieDZFZC9zTTh1Z0Y0dVJIZFA2Rk4xeHJ6TlpIR0dSMnRNZStVYmxZdkJ3endOdC9icDJZQlZFNUszd011eUdPM0VSRExYVU1zR3dQMy85U3B6YmRQbkJPS1JnMWV3WVNaT1F5NmVYRDRMQXJCVmdFZGQzd2lDdDllLzN1VTJxaXkiLCJtYWMiOiI5YWFhZGQ2ZWY1M2I0Yjg3MTQ2YTM2YTNmY2QxOWU3ZTBkZWFhZGFjNjllZmNjNzliNjgxZGI1NDg2NmE4MWM1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IlJmWXMwd3JaNHpYVjRvVGlLVjQrelE9PSIsInZhbHVlIjoiM2pzVlI3VXcvQURqTW9jeGNvNlRoWjV0UTFDUzcwSFdTZW52WUsyVTZxVU8wUHNaSDRpRWxubVkxbzNKRGxhVk82N1ZKZGQwZHdmN2R2K2R1dlNXRmJjbm0wNTVwNnljRGlLZk9PQm1haFJmRGxpZ3U1MVVSTzRuTW9jRnpON3YiLCJtYWMiOiJmMTY4YzcwYWM1YTE5NTZmNjU2NzQ3NGEwYzNkOWU4YTJmYmM4ZTY1ODVlMjBjOTUzODQ3ODA4ODJlYTY4MmNmIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImxRY3lIU3NLelhNbTVod1ZOL2dOeEE9PSIsInZhbHVlIjoia0Zmci9tbVhiSENmcXpzU0UvR2Jid003ZTZjZEJ2S0RSbHJ5OE14R3VvM2l0aUJOMFpreTRvZ1ZmK1hXV1NZcW44a25hZE15bEtsWURza3ZOcnRabXdtK2twTXJRdGg3NHY2MnFkcGtjSExQR2l6NllLVE82S1FvbHl0ellKd2kiLCJtYWMiOiI3NDJmYWVhNjM0NzQ4OTIzNjc0Y2ExMTU5OTRkZjIxN2NlNjA1ZGYxNzUwYzdjNjQzMzBjMTFkYmRjNzBkNDExIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -716,6 +716,132 @@
                                 {
                                     "id": "provinceId",
                                     "key": "provinceId",
+                                    "value": "consectetur",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IklGQkVlcTJjQWJ2cGF4bDhUL2FEWnc9PSIsInZhbHVlIjoiUHpvTWtiS1pZOWZNVFR3dnlpZWVVY09BR1NvODVPempNaytTVnZFZi9yS055cnRwMkZCZkJJUmgrQjJuMm5YcGNBdmtKUnh1c1hTOUEvMzAvWUx3QWZUVXdMVGVtUzZlRVFOdjlDaThjYnY1YmNTYitRZzh0YjVMMk1oUmhsYVQiLCJtYWMiOiJiMWIwNzU4YWI3MDNjZTE1ZGFjOWI2ZGFhNmY1MDIzYWZlOGQwZGY5ZDE4YWRmMDM0ZTFjNDhiY2VhMzY1YWY1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImlXQzk5WG1rYk1ON2ZXL3ZqV3RTUVE9PSIsInZhbHVlIjoiOVo0aXFYZHRZa2JLZTRiNUd1czdZek1TU2NmZllnb1lpN1RudXQ2VTJlN2U4MTVvV0pjTWVJeTNQN0ROOEZ1aXZGeURZaHZ6NlFoVTRQQWRXNXEra0FVQjZBWTBPVzRzc2h2M2cvUWlEZ1p5Z0lIZE1OYnV6TTBDTWVIbzF4SlkiLCJtYWMiOiI4MmRiMmUyYzkyYTBhNDA2YjBhZjA2N2Y4MTZmZDAwMWJmNmQwOTRmYTdiZDFiMWVjZDVmYTVkMDhmNjFhOGVhIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/address\/cities\/{regionId}\/{provinceId}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/address\/cities\/:regionId\/:provinceId",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/address\/cities\/:regionId\/:provinceId",
+                            "variable": [
+                                {
+                                    "id": "regionId",
+                                    "key": "regionId",
+                                    "value": "inventore",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "provinceId",
+                                    "key": "provinceId",
+                                    "value": "debitis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IlI5L2YyT3VJUmRnZTZvOFoweWNNTEE9PSIsInZhbHVlIjoicVpQcFJqK2doT1JMc1NmMFVRZVdoU1hIdmVEUkNzSllPUFFGOXVhUm04cHU0MVVIb2Y5VUR2Q0dWZ2NTZUFxUzExRGFsb2xFdnpSYkJ2SzF2dGlwZTZvZk00dVQ4NmdNYldXN1JMbnZNcnRmRk4wRlpITlV2Ykl2S0tZaGxhbVoiLCJtYWMiOiJlMjViOTQ2M2VlZTM4YTMyNTUxM2I1MDI2MTg0MDAxMTk0ZDBkMTdkOTg5ZDBjMTAwNTAyMzY0NzczYzZkOTNmIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IldQR1lKOFBqMnhwbDFTcVdyUVVyYkE9PSIsInZhbHVlIjoiOVlhK2tmMnJYR0ZwQ1d1bVFCWlZ2MmhVZHJmNTZKcXMxMmd2U21RMi9Hb3krOVZkeHgrdFhaMGs1UHEvUmNjb1hOcmdoMkJGUkdjS3h6bG10UGp4T2gybmxMRkZqTjh4SWgxRHBLemZzemxPTmNUUy9NMGdJbng0RmNoOGdoR2EiLCJtYWMiOiI0MzJlMDYyMjk5ZjgzZDliYzJjYjUxYzUzZTk5YjVlNWYwYmU3NDlhNTE4ZjdkZDM1YzgyNjBkYjU1YmQ2YWM4IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/address\/barangays\/{cityId}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/address\/barangays\/:cityId",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/address\/barangays\/:cityId",
+                            "variable": [
+                                {
+                                    "id": "cityId",
+                                    "key": "cityId",
                                     "value": "non",
                                     "description": ""
                                 }
@@ -755,133 +881,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IkJSTmRHcjduOUVRRUthUkg2R0xGcUE9PSIsInZhbHVlIjoiaURwOTh1aE9FZGFHU3RNbGV1VWJId2U0ZTJaZXNLS0JMSXczMFBDQ3ByUXM0endtQjFaZWdGNytnZnVyb00xWDJ6cDM4djFCbGhXRUYycWh0ODVLOFErVHFMZWRBa2JoeklkME9FOWQvbWF4RHdLRFZvZ3hscEJwdHRpeE5tZm8iLCJtYWMiOiJhMmZmNGZhZjkzNTQ3YTY4MTgxZmI1ZjU3OTg2OTNkMTQ0YzJkNmIxZDg4NzcyMzIyMGJhZWUxYjQ0MDQxMjA3IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkVuTUJEb0FMK0xGSlhRTnBpaURhN0E9PSIsInZhbHVlIjoiWURwTnZKY291MGREbHgxelBCam5QYm9UeTF3ZG9uSnpsWVVJQjdaRUhkQU5oUUhUc1J5Q1ZsVEE3Y0ZYLzh4VmJwS3EwTnp6akhaUUVJa1RyOUJZeE0vK1ZSL3R0eHhmc0pGMUZNWjRndndPTGoxWHFjWmRpd2VZYmc2QUNNZjQiLCJtYWMiOiI1Yjk1YWJjZGUzYTJkY2JmZWQyZTZiYjgyZmRhYWExMWIwM2Q0ZTA2YWM0NjVhYjE4YWZlNjNjZTQ3NzA1ZDE0IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "GET api\/address\/cities\/{regionId}\/{provinceId}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/address\/cities\/:regionId\/:provinceId",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/address\/cities\/:regionId\/:provinceId",
-                            "variable": [
-                                {
-                                    "id": "regionId",
-                                    "key": "regionId",
-                                    "value": "tempora",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "provinceId",
-                                    "key": "provinceId",
-                                    "value": "eos",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                },
-                                {
-                                    "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6Inl2YmFPTDhrTHhpYVU1VTk1NksxcFE9PSIsInZhbHVlIjoia2UvaCtGNlIyWSs1czZLT2pRMnIveHRZQVJLcHhGVkYyU2NGbHZmd29pZFFOTkFGaHVoTFJxMUMwZlpQNVB3YTVQVDZGNnhoOWpDaVpVNUdaNkZUWWlRZ0d0dTBIZkw1dXNjc090S1VORGpjb1RlK21XL3l5Q1R5NGNQR0RmRHQiLCJtYWMiOiJiODUxZmI3MGYzNWI2OTgzYmZlZDZkYWJmYWEwYjU1NDQ0NzRiZDQ3ZjliOTc4ZTJiYmI4YmE5M2EwZmI3ZGU0IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkkwakFDdjM3ZDFjNG42SFM3WDYyWEE9PSIsInZhbHVlIjoiM0k3eHZYaWtaQ1BoSXg2UjJ0S0d2NWxXOGtyemZqSUtKKzBRT0FyS0YrS2NLdzdjeUtRS1ZlaUwwRXZHMTJ1NGJ6QWtDbjZVK0xUQnpwZURnMFR5Z2xXN2o0UXJuWWt0a0dRVitRK08xSkhqcG91a1dKOVRZUlF5bzRCYzZpaysiLCJtYWMiOiJmOWU2MjdiMTdiNWY4NGYzYThkMGYyZDhkYWJjZDFhMjkyMDRlOTkxMjliZmYzNzA2MTVlNDFjNmVmMTY2M2U3IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "GET api\/address\/barangays\/{cityId}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/address\/barangays\/:cityId",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/address\/barangays\/:cityId",
-                            "variable": [
-                                {
-                                    "id": "cityId",
-                                    "key": "cityId",
-                                    "value": "iure",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                },
-                                {
-                                    "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6InhBclhzSGwyYUhObDNUSEEyV3hKNVE9PSIsInZhbHVlIjoiLzZObFJtWGV1a2FzMmRVTVVSdDJMM0FJNFJJSnVxVUdRZmZWL09rRVFNUmk2MkNocjRDSFFnUFRERkpUZzd3a2lwOUszamhLS0NYdVdLQU5UMzdOd0wxejZEVGRaOFcyVU1sU1FuMEpFbDhuL3NPd3czbDduTzVpQVBPYkZ6RGIiLCJtYWMiOiJiYWIwYjJiN2M2ZWQ1NDA4Mzg0NjE1MDRmOTJjNGE1M2VkNWIyNmEzZWI5OGU3YWM4MDlkZmM2NmUzMTlhYmExIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkRtb2JQRjYvY1FFS09tWlpmYTQ3NHc9PSIsInZhbHVlIjoiKytXZzZVcWtpYzA1M01HN014RURJSmxScW1HUllreDF0OFNicE1OYzF0WCtpOU9xODVSbGdzendsRkkzcStGOVppUjNMaW5FUjVGVTZHMlBZZVNuM1hBbFJxSTZvb1RITEcxdzdjaTJrYmRwN09JMC9WYmx6UHpEdi9UTk0vZmciLCJtYWMiOiJjM2M3MzY4ZWNkOTc4Y2E2YzVmNzNlODZjY2EwOWFmYTZhNTVkOTc5MTJmNDgwYThlMmNhZjZhYjVkZDZlMzc5IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IkdVUEZWR3ZPMTRYUDJWcFdLOGRSMVE9PSIsInZhbHVlIjoiMVNqMlRmUmcyMkc2Q3F2RldCSjI4TmZPZGhxSFpyRW1NUC81NHhZTEUvUHFmc01SREdPaHdaVW5USWZJaWlscm5MVlpVbE9Nc0pDSlV5WE1LcGJBcW1QQzY5L1Y1NHJLL05sNGdzY0RJZkdlQkNsenJXVmxEa2dHbEJZSGY5N00iLCJtYWMiOiJlMTI0YWZkZjhjMGEwMWNkMTE3ZTYxZTY2MThiZjhmMDJkOWRiNDkxNTlhMDk0NWY1OTEyMjVlYzllMmQ3YTFhIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Imc3ZSt3WWhPamxtZ09BakdFT2s0VHc9PSIsInZhbHVlIjoiV2hVcUV6bUl3bWdSNlZwQXlzUXptaVEwbnhSQWZURUkydXQvQmlxOGlLNnNOQkVGODhLVFpMZW1hcnVtemJRbUE4aWpFNThqREJqT1pwcUVtT3FSNi9xY3AxekIzQU5lNEo4Q0I2ZEo0cVMxQ1pMSXBFQStjYStTTmk5amZEb20iLCJtYWMiOiJjYTA3M2ExYjNiNjUwNzg4ODFjOGQxMTA2ZTAyY2Y1ZGFiYWI4N2U2MWNhMDE0NTJhZDYzYjI3ZjY2ZmNmNTdiIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -937,53 +937,108 @@
                             "name": ""
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "name": "Inquiries",
+            "description": "",
+            "item": [
                 {
-                    "name": "Display a listing of the Product resource.",
+                    "name": "Store a newly created Inquiry resource in storage.\n\nThis endpoint allows you to submit an inquiry about a product.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/inquiries",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/inquiries"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"product_id\":1,\"name\":\"John Doe\",\"email\":\"john@example.com\",\"message\":\"I am interested in this product.\",\"contact_number\":\"123-456-7890\",\"province_id\":\"1\",\"city_id\":\"1\",\"barangay\":\"Barangay 1\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Inquiry submitted successfully and response email sent.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"Product Not Found!\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Products",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the Product resource.\n\nThis endpoint allows you to filter products by various criteria and paginate the results.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
                             "path": "api\/products",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/products",
-                            "variable": [
+                            "query": [
                                 {
-                                    "id": "name",
                                     "key": "name",
-                                    "value": "in",
-                                    "description": "search name."
+                                    "value": "Laptop",
+                                    "description": "Search name.",
+                                    "disabled": false
                                 },
                                 {
-                                    "id": "brand",
                                     "key": "brand",
                                     "value": "1",
-                                    "description": "The Brand of the product"
+                                    "description": "The brand ID of the product.",
+                                    "disabled": false
                                 },
                                 {
-                                    "id": "category",
                                     "key": "category",
                                     "value": "1",
-                                    "description": "The Category of the product"
+                                    "description": "The category ID of the product.",
+                                    "disabled": false
                                 },
                                 {
-                                    "id": "min_price",
                                     "key": "min_price",
                                     "value": "15000",
-                                    "description": "The Minimum Price of the product"
+                                    "description": "The minimum price of the product.",
+                                    "disabled": false
                                 },
                                 {
-                                    "id": "max_price",
                                     "key": "max_price",
                                     "value": "300000",
-                                    "description": "The Maximum  Price of the product"
+                                    "description": "The maximum price of the product.",
+                                    "disabled": false
                                 },
                                 {
-                                    "id": "per_page",
                                     "key": "per_page",
                                     "value": "10",
-                                    "description": "The Page Rows  of the product"
+                                    "description": "The number of items per page.",
+                                    "disabled": false
                                 }
-                            ]
+                            ],
+                            "raw": "{{baseUrl}}\/api\/products?name=Laptop&brand=1&category=1&min_price=15000&max_price=300000&per_page=10"
                         },
                         "method": "GET",
                         "header": [
@@ -1004,28 +1059,15 @@
                     },
                     "response": [
                         {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
+                            "header": [],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"https:\\\/\\\/superbikescentral.online\\\/api\\\/products?page=1\",\"last\":\"https:\\\/\\\/superbikescentral.online\\\/api\\\/products?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"https:\\\/\\\/superbikescentral.online\\\/api\\\/products?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"https:\\\/\\\/superbikescentral.online\\\/api\\\/products\",\"per_page\":10,\"to\":null,\"total\":0}}",
+                            "body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Product Name\",\n      \"slug\": \"product-name\",\n      \"price\": 10000,\n      \"category_id\": 1,\n      \"brand_id\": 1,\n      \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n      \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n    }\n  ],\n  \"links\": {\n    \"first\": \"http:\/\/example.com\/api\/products?page=1\",\n    \"last\": \"http:\/\/example.com\/api\/products?page=1\",\n    \"prev\": null,\n    \"next\": null\n  },\n  \"meta\": {\n    \"current_page\": 1,\n    \"from\": 1,\n    \"last_page\": 1,\n    \"path\": \"http:\/\/example.com\/api\/products\",\n    \"per_page\": 10,\n    \"to\": 1,\n    \"total\": 1\n  }\n}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "GET api\/product\/{slug}",
+                    "name": "Display the specified product.\n\nThis endpoint retrieves a specific product by its slug.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -1036,7 +1078,7 @@
                                 {
                                     "id": "slug",
                                     "key": "slug",
-                                    "value": "15",
+                                    "value": "product-name",
                                     "description": "The slug of the product."
                                 }
                             ]
@@ -1060,152 +1102,12 @@
                     },
                     "response": [
                         {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 500,
-                            "body": "{\n    \"message\": \"Server Error\"\n}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Display a listing of the Categories resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/categories",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/categories"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
+                            "header": [],
                             "code": 200,
-                            "body": "[]",
+                            "body": "{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"Product Name\",\n    \"slug\": \"product-name\",\n    \"price\": 10000,\n    \"category_id\": 1,\n    \"brand_id\": 1,\n    \"variations\": [],\n    \"created_at\": \"2024-07-26T00:00:00.000000Z\",\n    \"updated_at\": \"2024-07-26T00:00:00.000000Z\"\n  }\n}",
                             "name": ""
                         }
                     ]
-                },
-                {
-                    "name": "Display a listing of the Brand resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/brands",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/brands"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "[]",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created Inquiry resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/inquiries",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/inquiries"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"product_id\":12,\"name\":\"vbafioeowsg\",\"email\":\"schumm.ross@example.net\",\"message\":\"sunt\",\"contact_number\":\"sazgmlxsdwrod\",\"province_id\":\"eos\",\"city_id\":\"maxime\",\"barangay\":\"htyzezqooafz\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 }
             ]
         },

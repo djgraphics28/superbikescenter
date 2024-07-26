@@ -1,19 +1,19 @@
-name: Users
+name: Applications
 description: ''
 endpoints:
   -
     httpMethods:
       - POST
-    uri: api/change-password
+    uri: api/application
     metadata:
-      groupName: Users
+      groupName: Applications
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: |-
-        Change Password
+        Submit a new application
 
-        This endpoint allows a user to change their password.
+        This endpoint allows a user to submit a new application.
       description: ''
       authenticated: false
       custom: []
@@ -25,44 +25,184 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      current_password:
-        name: current_password
-        description: 'The current password of the user.'
+      customer_id:
+        name: customer_id
+        description: 'The ID of the customer.'
         required: true
-        example: old_password
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      product:
+        name: product
+        description: 'The ID of the product.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      source_of_income:
+        name: source_of_income
+        description: 'The source of income.'
+        required: true
+        example: Employment
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      new_password:
-        name: new_password
-        description: 'The new password for the user.'
-        required: true
-        example: new_password123
+      name_of_business:
+        name: name_of_business
+        description: 'The name of the business (if any).'
+        required: false
+        example: 'My Business'
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      new_password_confirmation:
-        name: new_password_confirmation
-        description: 'The confirmation of the new password.'
+      company_name:
+        name: company_name
+        description: 'The name of the company (if any).'
+        required: false
+        example: 'My Company'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      work_position:
+        name: work_position
+        description: 'The position at work (if any).'
+        required: false
+        example: Manager
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      years_in_work:
+        name: years_in_work
+        description: 'The number of years in work (if any).'
+        required: false
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      comaker_name:
+        name: comaker_name
+        description: 'The name of the comaker (if any).'
+        required: false
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      comaker_work:
+        name: comaker_work
+        description: 'The work of the comaker (if any).'
+        required: false
+        example: Engineer
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      comaker_monthly_income:
+        name: comaker_monthly_income
+        description: 'The monthly income of the comaker (if any).'
+        required: false
+        example: 50000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      months_to_pay:
+        name: months_to_pay
+        description: 'The number of months to pay.'
         required: true
-        example: new_password123
+        example: 12
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      monthly_payment_amount:
+        name: monthly_payment_amount
+        description: 'The amount to be paid monthly.'
+        required: true
+        example: 1000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      monthly_income:
+        name: monthly_income
+        description: 'The monthly income.'
+        required: true
+        example: 2000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      downpayment:
+        name: downpayment
+        description: 'The downpayment amount.'
+        required: true
+        example: 500.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      loan_amount:
+        name: loan_amount
+        description: 'The loan amount.'
+        required: true
+        example: 10000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      name:
+        name: name
+        description: 'The name of the applicant.'
+        required: true
+        example: 'Jane Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      email:
+        name: email
+        description: 'The email of the applicant.'
+        required: true
+        example: jane@example.com
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      current_password: old_password
-      new_password: new_password123
-      new_password_confirmation: new_password123
+      customer_id: 1
+      product: 2
+      source_of_income: Employment
+      name_of_business: 'My Business'
+      company_name: 'My Company'
+      work_position: Manager
+      years_in_work: 5
+      comaker_name: 'John Doe'
+      comaker_work: Engineer
+      comaker_monthly_income: 50000.0
+      months_to_pay: 12
+      monthly_payment_amount: 1000.0
+      monthly_income: 2000.0
+      downpayment: 500.0
+      loan_amount: 10000.0
+      name: 'Jane Doe'
+      email: jane@example.com
     fileParameters: []
     responses:
       -
         status: 200
         content: |-
           {
-            "message": "Password changed successfully."
+            "message": "Loan Application submitted successfully."
           }
         headers: []
         description: ''
@@ -71,16 +211,102 @@ endpoints:
         status: 400
         content: |-
           {
-            "error": "Current password is incorrect."
+            "error": "You already have an active loan application."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/application/{id}'
+    metadata:
+      groupName: Applications
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Get applications by customer ID
+
+        This endpoint retrieves all applications for a specific customer.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the application.'
+        required: true
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      customer_id:
+        name: customer_id
+        description: 'The ID of the customer.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 11
+      customer_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "applications": [
+              {
+                "id": 1,
+                "customer_id": 1,
+                "product_id": 2,
+                "source_of_income": "Employment",
+                "name_of_business": "My Business",
+                "company_name": "My Company",
+                "work_position": "Manager",
+                "years_in_work": 5,
+                "comaker_name": "John Doe",
+                "comaker_work": "Engineer",
+                "comaker_monthly_income": 50000,
+                "months_to_pay": 12,
+                "monthly_payment_amount": 1000,
+                "monthly_income": 2000,
+                "downpayment": 500,
+                "loan_amount": 10000,
+                "date_applied": "2024-07-26T00:00:00.000000Z",
+                "date_inquired": "2024-07-26T00:00:00.000000Z",
+                "status": "for-review",
+                "created_at": "2024-07-26T00:00:00.000000Z",
+                "updated_at": "2024-07-26T00:00:00.000000Z"
+              }
+            ]
           }
         headers: []
         description: ''
         custom: []
       -
-        status: 422
+        status: 404
         content: |-
           {
-            "error": "The new password confirmation does not match."
+            "error": "No applications found."
           }
         headers: []
         description: ''

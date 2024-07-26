@@ -182,20 +182,34 @@ This endpoint resends the email verification notification.</a>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-products">
-                                <a href="#endpoints-GETapi-products">Display a listing of the Product resource.</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-inquiries" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="inquiries">
+                    <a href="#inquiries">Inquiries</a>
+                </li>
+                                    <ul id="tocify-subheader-inquiries" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="inquiries-POSTapi-inquiries">
+                                <a href="#inquiries-POSTapi-inquiries">Store a newly created Inquiry resource in storage.
+
+This endpoint allows you to submit an inquiry about a product.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-product--slug-">
-                                <a href="#endpoints-GETapi-product--slug-">GET api/product/{slug}</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-products" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="products">
+                    <a href="#products">Products</a>
+                </li>
+                                    <ul id="tocify-subheader-products" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="products-GETapi-products">
+                                <a href="#products-GETapi-products">Display a listing of the Product resource.
+
+This endpoint allows you to filter products by various criteria and paginate the results.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-categories">
-                                <a href="#endpoints-GETapi-categories">Display a listing of the Categories resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-brands">
-                                <a href="#endpoints-GETapi-brands">Display a listing of the Brand resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-inquiries">
-                                <a href="#endpoints-POSTapi-inquiries">Store a newly created Inquiry resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="products-GETapi-product--slug-">
+                                <a href="#products-GETapi-product--slug-">Display the specified product.
+
+This endpoint retrieves a specific product by its slug.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -1060,14 +1074,14 @@ This endpoint retrieves all applications for a specific customer.</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/application/4" \
+    --get "https://superbikescentral.online/api/application/11" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/application/4"
+    "https://superbikescentral.online/api/application/11"
 );
 
 const headers = {
@@ -1202,10 +1216,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-application--id-"
-               value="4"
+               value="11"
                data-component="url">
     <br>
-<p>The ID of the application. Example: <code>4</code></p>
+<p>The ID of the application. Example: <code>11</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>customer_id</code></b>&nbsp;&nbsp;
@@ -2373,7 +2387,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6Ik40VFdFSkxVZXlrWjRJZ05wUUNPb0E9PSIsInZhbHVlIjoiR2M4TE1CVHRlbzNNaTNNWXJheGpuN1ArREFSWXlDN0h1b3RzOWJEWDRxWTF6Q00razhmdmRVKzEyZytkTDE2VEs5amQzYm9WMGJlVnVjQTZ3KzFwQkNHYjY4MGxrVzBUUTdTYkhCVkloTE5EU3FJaGpnUDhDSVp5ZjhENG5ITHoiLCJtYWMiOiIwZmI4ZGE2ZDgwNDJmZDIxNTRkMDMwZThiYWQ3ODQxY2M3Mjk2YzYxZGFlN2YzZjg3MmExMzc1NDNkNDU1OGFlIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InBrdTk0bTRRSTEwaVJGTlROZEg3YkE9PSIsInZhbHVlIjoiclpCajA4Lzd0ZlQ0OU1NbUd1UjhRM3RGOGk1VnZBK1J2YnhJOEd1dUtSQ3dBMTRURHVQZ0hqL3JLb0puMDZTcjcyOW9tWDRkSnE4ODNNbnY4YlBNU0VLR1FIbTkvY2FMTUV6N3o4MXhpbVhiVWlEU2lrQ2Y5OG0wTjR3STBVcHYiLCJtYWMiOiIwMjNjM2QzYWYyN2JkZTgxYTI3ZGJkYTUzMTdmYWNlNDUwNmY3ZWZiZDBmN2Q0MGY0NzIyMWVkMzY5OTg0MDE5IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6InBZRmZBYjA3V01NQ2oyR2JrMVNxT2c9PSIsInZhbHVlIjoiMTQvR0YwWjcxTVoyeGRBTE9POVU2T1EvdW9yVFNyOU5mdFN3blRvbGs1QkhrMDR5NHpjckx3UUdMZGRwN3czUkllVzZTY0dZdm1NelZqUElVMENMUzhhMC9xMXQ0RXQ0N3hwdDYxQ1Q2TTM2bGNXVXE3YTFWekZIeUxSRFhrbysiLCJtYWMiOiI3YWRhMTU0ZTljYjI1OWJkYTg3ZmY0OTlkMDY1MWY5NGM3MDQ5ZmQwYzJiZGE1ZWNiOTU0OTA3YzYyZjgyMzZlIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImZTcVpNQ0lmVHRhS0FEbU40TStuOHc9PSIsInZhbHVlIjoiR3d0MGpjU20weHFmTHFBVC9WN0Yrb0xEbWZXenlVWW5iK2J3d3hlRXRQYUdXTUxXNjRRaGxYZFBuUVhZSisvWkdOb2FNYzQrVUhURkJ6SlhGTG00WHZScHJUQThzODlJVmdJaG1pejE2OC96UW42bGZHK0FrVmRNeTRzbnR4NEoiLCJtYWMiOiJlODdkY2JkMGEzZjJiOTc4NmRkMWUwZGY1MDUwYjkwYmI0ZjQ1NjAxMGRiNDNmMTgzMWVkNDI3YzhhOWU0ZDE1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2498,7 +2512,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6IjdIM2E2TVBqa2tKakdGdWtTc3o5OHc9PSIsInZhbHVlIjoieVltMk8wZ2taczZRYlE5YTQrVDBXSEV6MGNWLzZUelg1TTNEMWhtajhsd0JiNFcrRTFFMEhjK2YwV1p2M0NheUhjWHpFOXc3am51T3RyWVJCS2U5V0tBdUpYYUdBaFVyVUVETHlYMzIvZnNzenNlR0U3TnFXQUsrSyszOFpIVFAiLCJtYWMiOiIzZTRhMDg3MTFlNjQyMzUxY2VjNjhmNmYxMjg0MmIyZTA1N2JiODRmYTI4ZDlkN2M2NGQyNmM5ODJiNTNhY2ViIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Im0vVjlEOVJ5ZTBaMTVnVjhvYkgrUHc9PSIsInZhbHVlIjoiLzhQYkFlR1MycTlrT2JUY0FyQi9XUThabFhiTFNncHdWcDVTeHRVY25YTFJtQjcrcG96WXZiM3ZPVXEvcTZhU2MrZldNcE5QQjkwcUNyZjVGMEh6NHRkZnB4bEJKa1pSNUtMZ2MvZEV4R1ROeG9kRlhsOUVzRGJMczY1VWhiWGIiLCJtYWMiOiJkNDEzNDk0YjNlMmMzN2YwNWNlOTdiNGFiYWQ1MWU0MWI0M2FkOTc3NDYzNjg0OWI4Y2EzN2Q2ZGRhYzkxYWMyIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6ImF1T3U3KzZJY0dyNWJvemhXc3ByZEE9PSIsInZhbHVlIjoiZkhpM2MxSzJRT3ByMG1lOUJueU1pWjFJRCtFd0laOElITDZadGI1K3VsRG1HVUF6dmtURXVrcmJqaTBPOFkrTXdncEEvMWFzNzFOQVVpVXk4S285b3pyT3oyUTRpU2dmWEhNUUJ0cEd2YVBtdm9TbEhYMmVXTDYvVS8rcS9xTzIiLCJtYWMiOiI5YzAxMGNiZDUzYmJjYWM3ZTViY2QwMjg5MWEyY2M1M2UyYjQ4MTU3YjdhMDJiNTcyZWRkYWQ4NGVlNTBmZjQ4IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InVnNXRtYmxtY3lvTWttSWt2NFhXaGc9PSIsInZhbHVlIjoibmJzOWtjc3VMRDJ6Mk9EUEdlZ25nYUp2R3ZtTVNVWGlVcG14bXpjNlpBYXNlRTQ5RkJ5N2V0aUJ6Zjk3M0ZRRFVCY21uYW5wc2l6VnVqN2dMcVBjMDhPbnZBMStlclhZclR2VyswMll0UE5kb0NncXM1U3F4dGxLUklJRFczL0EiLCJtYWMiOiIwNmU1MDUzNjIzNTdjNjZkZDZkNGU3NDAzNmJjYzljZWVhNjFjZGY0NDViOWZjNDk1OTUxYWYxODkzMzc1MDJkIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2590,14 +2604,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/provinces/quod" \
+    --get "https://superbikescentral.online/api/address/provinces/quis" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/provinces/quod"
+    "https://superbikescentral.online/api/address/provinces/quis"
 );
 
 const headers = {
@@ -2623,7 +2637,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6InZKcHBseXFQa0UzWG5YTjd5eDNjbHc9PSIsInZhbHVlIjoiUStHTnpvckFjTzZJRldveUxaVkp5Ymx3TkI2ekFITWRUa3M5WW9VUFBhTTBpVVFoMFpFNlA0Qng4VUUyZm9hUW9qOU04ZU1yYmFRcmFLT2FTbFhGOG5YNXArOUJJM01UMGFiTStXSnVxTnorTnpSOTZCRnJraWZqQ0dqREJSbDkiLCJtYWMiOiI2M2I0Y2U4MDg0YzAxYjU1ZmFkY2ViOTZjMzA4ZTQ4YWEzZGFhNWEyY2JjY2MzYzAzMDRhMWVmZTA2NmZkMjg1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Ilk1NE9keDdyckxuMjh5citFOU9rZEE9PSIsInZhbHVlIjoieDZFZC9zTTh1Z0Y0dVJIZFA2Rk4xeHJ6TlpIR0dSMnRNZStVYmxZdkJ3endOdC9icDJZQlZFNUszd011eUdPM0VSRExYVU1zR3dQMy85U3B6YmRQbkJPS1JnMWV3WVNaT1F5NmVYRDRMQXJCVmdFZGQzd2lDdDllLzN1VTJxaXkiLCJtYWMiOiI5YWFhZGQ2ZWY1M2I0Yjg3MTQ2YTM2YTNmY2QxOWU3ZTBkZWFhZGFjNjllZmNjNzliNjgxZGI1NDg2NmE4MWM1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IlJmWXMwd3JaNHpYVjRvVGlLVjQrelE9PSIsInZhbHVlIjoiM2pzVlI3VXcvQURqTW9jeGNvNlRoWjV0UTFDUzcwSFdTZW52WUsyVTZxVU8wUHNaSDRpRWxubVkxbzNKRGxhVk82N1ZKZGQwZHdmN2R2K2R1dlNXRmJjbm0wNTVwNnljRGlLZk9PQm1haFJmRGxpZ3U1MVVSTzRuTW9jRnpON3YiLCJtYWMiOiJmMTY4YzcwYWM1YTE5NTZmNjU2NzQ3NGEwYzNkOWU4YTJmYmM4ZTY1ODVlMjBjOTUzODQ3ODA4ODJlYTY4MmNmIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImxRY3lIU3NLelhNbTVod1ZOL2dOeEE9PSIsInZhbHVlIjoia0Zmci9tbVhiSENmcXpzU0UvR2Jid003ZTZjZEJ2S0RSbHJ5OE14R3VvM2l0aUJOMFpreTRvZ1ZmK1hXV1NZcW44a25hZE15bEtsWURza3ZOcnRabXdtK2twTXJRdGg3NHY2MnFkcGtjSExQR2l6NllLVE82S1FvbHl0ellKd2kiLCJtYWMiOiI3NDJmYWVhNjM0NzQ4OTIzNjc0Y2ExMTU5OTRkZjIxN2NlNjA1ZGYxNzUwYzdjNjQzMzBjMTFkYmRjNzBkNDExIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2707,10 +2721,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="regionId"                data-endpoint="GETapi-address-provinces--regionId-"
-               value="quod"
+               value="quis"
                data-component="url">
     <br>
-<p>Example: <code>quod</code></p>
+<p>Example: <code>quis</code></p>
             </div>
                     </form>
 
@@ -2727,14 +2741,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/cities/non" \
+    --get "https://superbikescentral.online/api/address/cities/consectetur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/cities/non"
+    "https://superbikescentral.online/api/address/cities/consectetur"
 );
 
 const headers = {
@@ -2760,7 +2774,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6IkJSTmRHcjduOUVRRUthUkg2R0xGcUE9PSIsInZhbHVlIjoiaURwOTh1aE9FZGFHU3RNbGV1VWJId2U0ZTJaZXNLS0JMSXczMFBDQ3ByUXM0endtQjFaZWdGNytnZnVyb00xWDJ6cDM4djFCbGhXRUYycWh0ODVLOFErVHFMZWRBa2JoeklkME9FOWQvbWF4RHdLRFZvZ3hscEJwdHRpeE5tZm8iLCJtYWMiOiJhMmZmNGZhZjkzNTQ3YTY4MTgxZmI1ZjU3OTg2OTNkMTQ0YzJkNmIxZDg4NzcyMzIyMGJhZWUxYjQ0MDQxMjA3IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkVuTUJEb0FMK0xGSlhRTnBpaURhN0E9PSIsInZhbHVlIjoiWURwTnZKY291MGREbHgxelBCam5QYm9UeTF3ZG9uSnpsWVVJQjdaRUhkQU5oUUhUc1J5Q1ZsVEE3Y0ZYLzh4VmJwS3EwTnp6akhaUUVJa1RyOUJZeE0vK1ZSL3R0eHhmc0pGMUZNWjRndndPTGoxWHFjWmRpd2VZYmc2QUNNZjQiLCJtYWMiOiI1Yjk1YWJjZGUzYTJkY2JmZWQyZTZiYjgyZmRhYWExMWIwM2Q0ZTA2YWM0NjVhYjE4YWZlNjNjZTQ3NzA1ZDE0IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IklGQkVlcTJjQWJ2cGF4bDhUL2FEWnc9PSIsInZhbHVlIjoiUHpvTWtiS1pZOWZNVFR3dnlpZWVVY09BR1NvODVPempNaytTVnZFZi9yS055cnRwMkZCZkJJUmgrQjJuMm5YcGNBdmtKUnh1c1hTOUEvMzAvWUx3QWZUVXdMVGVtUzZlRVFOdjlDaThjYnY1YmNTYitRZzh0YjVMMk1oUmhsYVQiLCJtYWMiOiJiMWIwNzU4YWI3MDNjZTE1ZGFjOWI2ZGFhNmY1MDIzYWZlOGQwZGY5ZDE4YWRmMDM0ZTFjNDhiY2VhMzY1YWY1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImlXQzk5WG1rYk1ON2ZXL3ZqV3RTUVE9PSIsInZhbHVlIjoiOVo0aXFYZHRZa2JLZTRiNUd1czdZek1TU2NmZllnb1lpN1RudXQ2VTJlN2U4MTVvV0pjTWVJeTNQN0ROOEZ1aXZGeURZaHZ6NlFoVTRQQWRXNXEra0FVQjZBWTBPVzRzc2h2M2cvUWlEZ1p5Z0lIZE1OYnV6TTBDTWVIbzF4SlkiLCJtYWMiOiI4MmRiMmUyYzkyYTBhNDA2YjBhZjA2N2Y4MTZmZDAwMWJmNmQwOTRmYTdiZDFiMWVjZDVmYTVkMDhmNjFhOGVhIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2844,10 +2858,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="provinceId"                data-endpoint="GETapi-address-cities--provinceId-"
-               value="non"
+               value="consectetur"
                data-component="url">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>consectetur</code></p>
             </div>
                     </form>
 
@@ -2864,14 +2878,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/cities/tempora/eos" \
+    --get "https://superbikescentral.online/api/address/cities/inventore/debitis" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/cities/tempora/eos"
+    "https://superbikescentral.online/api/address/cities/inventore/debitis"
 );
 
 const headers = {
@@ -2897,7 +2911,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6Inl2YmFPTDhrTHhpYVU1VTk1NksxcFE9PSIsInZhbHVlIjoia2UvaCtGNlIyWSs1czZLT2pRMnIveHRZQVJLcHhGVkYyU2NGbHZmd29pZFFOTkFGaHVoTFJxMUMwZlpQNVB3YTVQVDZGNnhoOWpDaVpVNUdaNkZUWWlRZ0d0dTBIZkw1dXNjc090S1VORGpjb1RlK21XL3l5Q1R5NGNQR0RmRHQiLCJtYWMiOiJiODUxZmI3MGYzNWI2OTgzYmZlZDZkYWJmYWEwYjU1NDQ0NzRiZDQ3ZjliOTc4ZTJiYmI4YmE5M2EwZmI3ZGU0IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkkwakFDdjM3ZDFjNG42SFM3WDYyWEE9PSIsInZhbHVlIjoiM0k3eHZYaWtaQ1BoSXg2UjJ0S0d2NWxXOGtyemZqSUtKKzBRT0FyS0YrS2NLdzdjeUtRS1ZlaUwwRXZHMTJ1NGJ6QWtDbjZVK0xUQnpwZURnMFR5Z2xXN2o0UXJuWWt0a0dRVitRK08xSkhqcG91a1dKOVRZUlF5bzRCYzZpaysiLCJtYWMiOiJmOWU2MjdiMTdiNWY4NGYzYThkMGYyZDhkYWJjZDFhMjkyMDRlOTkxMjliZmYzNzA2MTVlNDFjNmVmMTY2M2U3IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IlI5L2YyT3VJUmRnZTZvOFoweWNNTEE9PSIsInZhbHVlIjoicVpQcFJqK2doT1JMc1NmMFVRZVdoU1hIdmVEUkNzSllPUFFGOXVhUm04cHU0MVVIb2Y5VUR2Q0dWZ2NTZUFxUzExRGFsb2xFdnpSYkJ2SzF2dGlwZTZvZk00dVQ4NmdNYldXN1JMbnZNcnRmRk4wRlpITlV2Ykl2S0tZaGxhbVoiLCJtYWMiOiJlMjViOTQ2M2VlZTM4YTMyNTUxM2I1MDI2MTg0MDAxMTk0ZDBkMTdkOTg5ZDBjMTAwNTAyMzY0NzczYzZkOTNmIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IldQR1lKOFBqMnhwbDFTcVdyUVVyYkE9PSIsInZhbHVlIjoiOVlhK2tmMnJYR0ZwQ1d1bVFCWlZ2MmhVZHJmNTZKcXMxMmd2U21RMi9Hb3krOVZkeHgrdFhaMGs1UHEvUmNjb1hOcmdoMkJGUkdjS3h6bG10UGp4T2gybmxMRkZqTjh4SWgxRHBLemZzemxPTmNUUy9NMGdJbng0RmNoOGdoR2EiLCJtYWMiOiI0MzJlMDYyMjk5ZjgzZDliYzJjYjUxYzUzZTk5YjVlNWYwYmU3NDlhNTE4ZjdkZDM1YzgyNjBkYjU1YmQ2YWM4IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2981,10 +2995,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="regionId"                data-endpoint="GETapi-address-cities--regionId---provinceId-"
-               value="tempora"
+               value="inventore"
                data-component="url">
     <br>
-<p>Example: <code>tempora</code></p>
+<p>Example: <code>inventore</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>provinceId</code></b>&nbsp;&nbsp;
@@ -2992,10 +3006,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="provinceId"                data-endpoint="GETapi-address-cities--regionId---provinceId-"
-               value="eos"
+               value="debitis"
                data-component="url">
     <br>
-<p>Example: <code>eos</code></p>
+<p>Example: <code>debitis</code></p>
             </div>
                     </form>
 
@@ -3012,14 +3026,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/barangays/iure" \
+    --get "https://superbikescentral.online/api/address/barangays/non" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/barangays/iure"
+    "https://superbikescentral.online/api/address/barangays/non"
 );
 
 const headers = {
@@ -3045,7 +3059,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6InhBclhzSGwyYUhObDNUSEEyV3hKNVE9PSIsInZhbHVlIjoiLzZObFJtWGV1a2FzMmRVTVVSdDJMM0FJNFJJSnVxVUdRZmZWL09rRVFNUmk2MkNocjRDSFFnUFRERkpUZzd3a2lwOUszamhLS0NYdVdLQU5UMzdOd0wxejZEVGRaOFcyVU1sU1FuMEpFbDhuL3NPd3czbDduTzVpQVBPYkZ6RGIiLCJtYWMiOiJiYWIwYjJiN2M2ZWQ1NDA4Mzg0NjE1MDRmOTJjNGE1M2VkNWIyNmEzZWI5OGU3YWM4MDlkZmM2NmUzMTlhYmExIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkRtb2JQRjYvY1FFS09tWlpmYTQ3NHc9PSIsInZhbHVlIjoiKytXZzZVcWtpYzA1M01HN014RURJSmxScW1HUllreDF0OFNicE1OYzF0WCtpOU9xODVSbGdzendsRkkzcStGOVppUjNMaW5FUjVGVTZHMlBZZVNuM1hBbFJxSTZvb1RITEcxdzdjaTJrYmRwN09JMC9WYmx6UHpEdi9UTk0vZmciLCJtYWMiOiJjM2M3MzY4ZWNkOTc4Y2E2YzVmNzNlODZjY2EwOWFmYTZhNTVkOTc5MTJmNDgwYThlMmNhZjZhYjVkZDZlMzc5IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:06:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IkdVUEZWR3ZPMTRYUDJWcFdLOGRSMVE9PSIsInZhbHVlIjoiMVNqMlRmUmcyMkc2Q3F2RldCSjI4TmZPZGhxSFpyRW1NUC81NHhZTEUvUHFmc01SREdPaHdaVW5USWZJaWlscm5MVlpVbE9Nc0pDSlV5WE1LcGJBcW1QQzY5L1Y1NHJLL05sNGdzY0RJZkdlQkNsenJXVmxEa2dHbEJZSGY5N00iLCJtYWMiOiJlMTI0YWZkZjhjMGEwMWNkMTE3ZTYxZTY2MThiZjhmMDJkOWRiNDkxNTlhMDk0NWY1OTEyMjVlYzllMmQ3YTFhIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Imc3ZSt3WWhPamxtZ09BakdFT2s0VHc9PSIsInZhbHVlIjoiV2hVcUV6bUl3bWdSNlZwQXlzUXptaVEwbnhSQWZURUkydXQvQmlxOGlLNnNOQkVGODhLVFpMZW1hcnVtemJRbUE4aWpFNThqREJqT1pwcUVtT3FSNi9xY3AxekIzQU5lNEo4Q0I2ZEo0cVMxQ1pMSXBFQStjYStTTmk5amZEb20iLCJtYWMiOiJjYTA3M2ExYjNiNjUwNzg4ODFjOGQxMTA2ZTAyY2Y1ZGFiYWI4N2U2MWNhMDE0NTJhZDYzYjI3ZjY2ZmNmNTdiIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:23:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3129,10 +3143,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="cityId"                data-endpoint="GETapi-address-barangays--cityId-"
-               value="iure"
+               value="non"
                data-component="url">
     <br>
-<p>Example: <code>iure</code></p>
+<p>Example: <code>non</code></p>
             </div>
                     </form>
 
@@ -3260,610 +3274,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-products">Display a listing of the Product resource.</h2>
+                <h1 id="inquiries">Inquiries</h1>
 
-<p>
-</p>
+    
 
+                                <h2 id="inquiries-POSTapi-inquiries">Store a newly created Inquiry resource in storage.
 
-
-<span id="example-requests-GETapi-products">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/products" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/products"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-products">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;https://superbikescentral.online/api/products?page=1&quot;,
-        &quot;last&quot;: &quot;https://superbikescentral.online/api/products?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: null,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;https://superbikescentral.online/api/products?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;https://superbikescentral.online/api/products&quot;,
-        &quot;per_page&quot;: 10,
-        &quot;to&quot;: null,
-        &quot;total&quot;: 0
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-products" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-products"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-products"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-products" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-products">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-products" data-method="GET"
-      data-path="api/products"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-products', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-products"
-                    onclick="tryItOut('GETapi-products');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-products"
-                    onclick="cancelTryOut('GETapi-products');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-products"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/products</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-products"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-products"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="name"                data-endpoint="GETapi-products"
-               value="in"
-               data-component="url">
-    <br>
-<p>search name. Example: <code>in</code></p>
-            </div>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>brand</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="brand"                data-endpoint="GETapi-products"
-               value="1"
-               data-component="url">
-    <br>
-<p>The Brand of the product Example: <code>1</code></p>
-            </div>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>category</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="category"                data-endpoint="GETapi-products"
-               value="1"
-               data-component="url">
-    <br>
-<p>The Category of the product Example: <code>1</code></p>
-            </div>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>min_price</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="min_price"                data-endpoint="GETapi-products"
-               value="15000"
-               data-component="url">
-    <br>
-<p>The Minimum Price of the product Example: <code>15000</code></p>
-            </div>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>max_price</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="max_price"                data-endpoint="GETapi-products"
-               value="300000"
-               data-component="url">
-    <br>
-<p>The Maximum  Price of the product Example: <code>300000</code></p>
-            </div>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="per_page"                data-endpoint="GETapi-products"
-               value="10"
-               data-component="url">
-    <br>
-<p>The Page Rows  of the product Example: <code>10</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETapi-product--slug-">GET api/product/{slug}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-product--slug-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/product/15" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/product/15"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-product--slug-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-product--slug-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-product--slug-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-product--slug-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-product--slug-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-product--slug-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-product--slug-" data-method="GET"
-      data-path="api/product/{slug}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-product--slug-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-product--slug-"
-                    onclick="tryItOut('GETapi-product--slug-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-product--slug-"
-                    onclick="cancelTryOut('GETapi-product--slug-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-product--slug-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/product/{slug}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-product--slug-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-product--slug-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="slug"                data-endpoint="GETapi-product--slug-"
-               value="15"
-               data-component="url">
-    <br>
-<p>The slug of the product. Example: <code>15</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETapi-categories">Display a listing of the Categories resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-categories">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/categories" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/categories"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-categories">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">[]</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-categories" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-categories"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-categories"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-categories" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-categories">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-categories" data-method="GET"
-      data-path="api/categories"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-categories', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-categories"
-                    onclick="tryItOut('GETapi-categories');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-categories"
-                    onclick="cancelTryOut('GETapi-categories');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-categories"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/categories</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-categories"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-categories"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-brands">Display a listing of the Brand resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-brands">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/brands" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/brands"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-brands">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">[]</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-brands" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-brands"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-brands"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-brands" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-brands">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-brands" data-method="GET"
-      data-path="api/brands"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-brands', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-brands"
-                    onclick="tryItOut('GETapi-brands');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-brands"
-                    onclick="cancelTryOut('GETapi-brands');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-brands"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/brands</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-brands"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-brands"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-POSTapi-inquiries">Store a newly created Inquiry resource in storage.</h2>
+This endpoint allows you to submit an inquiry about a product.</h2>
 
 <p>
 </p>
@@ -3880,14 +3297,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"product_id\": 12,
-    \"name\": \"vbafioeowsg\",
-    \"email\": \"schumm.ross@example.net\",
-    \"message\": \"sunt\",
-    \"contact_number\": \"sazgmlxsdwrod\",
-    \"province_id\": \"eos\",
-    \"city_id\": \"maxime\",
-    \"barangay\": \"htyzezqooafz\"
+    \"product_id\": 1,
+    \"name\": \"John Doe\",
+    \"email\": \"john@example.com\",
+    \"message\": \"I am interested in this product.\",
+    \"contact_number\": \"123-456-7890\",
+    \"province_id\": \"1\",
+    \"city_id\": \"1\",
+    \"barangay\": \"Barangay 1\"
 }"
 </code></pre></div>
 
@@ -3903,14 +3320,14 @@ const headers = {
 };
 
 let body = {
-    "product_id": 12,
-    "name": "vbafioeowsg",
-    "email": "schumm.ross@example.net",
-    "message": "sunt",
-    "contact_number": "sazgmlxsdwrod",
-    "province_id": "eos",
-    "city_id": "maxime",
-    "barangay": "htyzezqooafz"
+    "product_id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "message": "I am interested in this product.",
+    "contact_number": "123-456-7890",
+    "province_id": "1",
+    "city_id": "1",
+    "barangay": "Barangay 1"
 };
 
 fetch(url, {
@@ -3922,7 +3339,25 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-inquiries">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Inquiry submitted successfully and response email sent.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Product Not Found!&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-inquiries" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-inquiries"></span>:
@@ -3999,10 +3434,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="product_id"                data-endpoint="POSTapi-inquiries"
-               value="12"
+               value="1"
                data-component="body">
     <br>
-<p>Example: <code>12</code></p>
+<p>The ID of the product. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -4010,10 +3445,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-inquiries"
-               value="vbafioeowsg"
+               value="John Doe"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vbafioeowsg</code></p>
+<p>The name of the person making the inquiry. Example: <code>John Doe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -4021,10 +3456,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-inquiries"
-               value="schumm.ross@example.net"
+               value="john@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>schumm.ross@example.net</code></p>
+<p>The email address of the person making the inquiry. Example: <code>john@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
@@ -4032,10 +3467,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="message"                data-endpoint="POSTapi-inquiries"
-               value="sunt"
+               value="I am interested in this product."
                data-component="body">
     <br>
-<p>Example: <code>sunt</code></p>
+<p>The message content of the inquiry. Example: <code>I am interested in this product.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>contact_number</code></b>&nbsp;&nbsp;
@@ -4043,10 +3478,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="contact_number"                data-endpoint="POSTapi-inquiries"
-               value="sazgmlxsdwrod"
+               value="123-456-7890"
                data-component="body">
     <br>
-<p>Must not be greater than 15 characters. Example: <code>sazgmlxsdwrod</code></p>
+<p>optional The contact number of the person making the inquiry. Example: <code>123-456-7890</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>province_id</code></b>&nbsp;&nbsp;
@@ -4054,10 +3489,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="province_id"                data-endpoint="POSTapi-inquiries"
-               value="eos"
+               value="1"
                data-component="body">
     <br>
-<p>Example: <code>eos</code></p>
+<p>optional The province ID related to the inquiry. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -4065,10 +3500,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="city_id"                data-endpoint="POSTapi-inquiries"
-               value="maxime"
+               value="1"
                data-component="body">
     <br>
-<p>Example: <code>maxime</code></p>
+<p>optional The city ID related to the inquiry. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>barangay</code></b>&nbsp;&nbsp;
@@ -4076,12 +3511,380 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="barangay"                data-endpoint="POSTapi-inquiries"
-               value="htyzezqooafz"
+               value="Barangay 1"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>htyzezqooafz</code></p>
+<p>optional The barangay related to the inquiry. Example: <code>Barangay 1</code></p>
         </div>
         </form>
+
+                <h1 id="products">Products</h1>
+
+    
+
+                                <h2 id="products-GETapi-products">Display a listing of the Product resource.
+
+This endpoint allows you to filter products by various criteria and paginate the results.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-products">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://superbikescentral.online/api/products?name=Laptop&amp;brand=1&amp;category=1&amp;min_price=15000&amp;max_price=300000&amp;per_page=10" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/products"
+);
+
+const params = {
+    "name": "Laptop",
+    "brand": "1",
+    "category": "1",
+    "min_price": "15000",
+    "max_price": "300000",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-products">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Product Name&quot;,
+            &quot;slug&quot;: &quot;product-name&quot;,
+            &quot;price&quot;: 10000,
+            &quot;category_id&quot;: 1,
+            &quot;brand_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2024-07-26T00:00:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-07-26T00:00:00.000000Z&quot;
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://example.com/api/products?page=1&quot;,
+        &quot;last&quot;: &quot;http://example.com/api/products?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;path&quot;: &quot;http://example.com/api/products&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;to&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-products" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-products"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-products"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-products" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-products">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-products" data-method="GET"
+      data-path="api/products"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-products', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-products"
+                    onclick="tryItOut('GETapi-products');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-products"
+                    onclick="cancelTryOut('GETapi-products');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-products"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/products</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-products"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-products"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="GETapi-products"
+               value="Laptop"
+               data-component="query">
+    <br>
+<p>Search name. Example: <code>Laptop</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>brand</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="brand"                data-endpoint="GETapi-products"
+               value="1"
+               data-component="query">
+    <br>
+<p>The brand ID of the product. Example: <code>1</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>category</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="category"                data-endpoint="GETapi-products"
+               value="1"
+               data-component="query">
+    <br>
+<p>The category ID of the product. Example: <code>1</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>min_price</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="min_price"                data-endpoint="GETapi-products"
+               value="15000"
+               data-component="query">
+    <br>
+<p>The minimum price of the product. Example: <code>15000</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>max_price</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="max_price"                data-endpoint="GETapi-products"
+               value="300000"
+               data-component="query">
+    <br>
+<p>The maximum price of the product. Example: <code>300000</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-products"
+               value="10"
+               data-component="query">
+    <br>
+<p>The number of items per page. Example: <code>10</code></p>
+            </div>
+                </form>
+
+                    <h2 id="products-GETapi-product--slug-">Display the specified product.
+
+This endpoint retrieves a specific product by its slug.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-product--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://superbikescentral.online/api/product/product-name" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/product/product-name"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-product--slug-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Product Name&quot;,
+        &quot;slug&quot;: &quot;product-name&quot;,
+        &quot;price&quot;: 10000,
+        &quot;category_id&quot;: 1,
+        &quot;brand_id&quot;: 1,
+        &quot;variations&quot;: [],
+        &quot;created_at&quot;: &quot;2024-07-26T00:00:00.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-07-26T00:00:00.000000Z&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-product--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-product--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-product--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-product--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-product--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-product--slug-" data-method="GET"
+      data-path="api/product/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-product--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-product--slug-"
+                    onclick="tryItOut('GETapi-product--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-product--slug-"
+                    onclick="cancelTryOut('GETapi-product--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-product--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/product/{slug}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-product--slug-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-product--slug-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="slug"                data-endpoint="GETapi-product--slug-"
+               value="product-name"
+               data-component="url">
+    <br>
+<p>The slug of the product. Example: <code>product-name</code></p>
+            </div>
+                    </form>
 
                 <h1 id="users">Users</h1>
 
