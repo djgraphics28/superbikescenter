@@ -104,29 +104,29 @@ class AuthController extends Controller
      */
     public function register(CustomerRegisterRequest $request)
     {
-        $data = $request->validated();
+        // $data = $request->validated();
 
         $user = User::create([
-            'name' => $data['first_name'] . ' ' . $data['last_name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'name' => $request->first_name . ' ' . $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
 
         $customer = Customer::create([
             'user_id' => $user->id,
-            'first_name' => $data['first_name'],
-            'middle_name' => $data['middle_name'],
-            'last_name' => $data['last_name'],
-            'sufix_name' => $data['sufix_name'],
-            'contact_number' => $data['contact_number'],
-            'birth_date' => $data['birth_date'],
-            'gender' => $data['gender'],
-            'marital_status' => $data['marital_status'],
-            'province_id' => $data['province_id'],
-            'city_id' => $data['city_id'],
-            'barangay_id' => $data['barangay_id'],
-            'address1' => $data['address1'],
-            'address2' => $data['address2'],
+            'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
+            'last_name' => $request->last_name,
+            'sufix_name' => $request->sufix_name,
+            'contact_number' => $request->contact_number,
+            'birth_date' => $request->birth_date,
+            'gender' => $request->gender,
+            'marital_status' => $request->marital_status,
+            'province_id' => $request->province_id,
+            'city_id' => $request->city_id,
+            'barangay_id' => $request->barangay_id,
+            'address1' => $request->address1,
+            'address2' => $request->address2,
         ]);
 
         return response()->json([

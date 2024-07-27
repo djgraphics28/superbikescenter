@@ -27,7 +27,7 @@ class CustomerRegisterRequest extends FormRequest
             'last_name' => 'required|string|max:255',
             'sufix_name' => 'nullable|string|max:255',
             // 'username' => 'required|string|max:255|unique:customers,username',
-            'email' => 'required|string|email|max:255|unique:customers,email',
+            'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:8',
             'contact_number' => 'required|string|max:20',
             'birth_date' => 'required|date',
