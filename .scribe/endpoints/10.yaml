@@ -1,0 +1,93 @@
+name: Users
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/change-password
+    metadata:
+      groupName: Users
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Change Password
+
+        This endpoint allows a user to change their password.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      current_password:
+        name: current_password
+        description: 'The current password of the user.'
+        required: true
+        example: old_password
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      new_password:
+        name: new_password
+        description: 'The new password for the user.'
+        required: true
+        example: new_password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      new_password_confirmation:
+        name: new_password_confirmation
+        description: 'The confirmation of the new password.'
+        required: true
+        example: new_password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      current_password: old_password
+      new_password: new_password123
+      new_password_confirmation: new_password123
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "message": "Password changed successfully."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 400
+        content: |-
+          {
+            "error": "Current password is incorrect."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+            "error": "The new password confirmation does not match."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

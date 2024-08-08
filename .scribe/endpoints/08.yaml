@@ -1,89 +1,34 @@
-name: 'Email Verification'
+name: 'Payment Histories'
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/email/verify
+    uri: 'api/get-payment-histories/{userId}'
     metadata:
-      groupName: 'Email Verification'
+      groupName: 'Payment Histories'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: |-
-        Show the email verification notice
-
-        This endpoint shows the email verification notice.
+      title: 'Get payment histories for a specific user.'
       description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-            "message": "Please verify your email address."
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/email/verify/{id}/{hash}'
-    metadata:
-      groupName: 'Email Verification'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: |-
-        Verify email address
-
-        This endpoint verifies the user's email address.
-      description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the user.'
+      userId:
+        name: userId
+        description: ''
         required: true
-        example: '1'
+        example: est
         type: string
         enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      hash:
-        name: hash
-        description: 'The email verification hash.'
-        required: true
-        example: abc123
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: '1'
-      hash: abc123
+      userId: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -94,67 +39,39 @@ endpoints:
         status: 200
         content: |-
           {
-            "message": "Email verified successfully."
+            "paymentHistories": [
+              {
+                "id": 1,
+                "user_id": 1,
+                "monthly_due_id": 1,
+                "amount_paid": 1000,
+                "payment_method": "credit_card",
+                "payment_gateway": "PayPal",
+                "transaction_id": "TXN123456789",
+                "created_at": "2024-08-01T12:34:56.000000Z",
+                "updated_at": "2024-08-01T12:34:56.000000Z"
+              },
+              {
+                "id": 2,
+                "user_id": 1,
+                "monthly_due_id": 2,
+                "amount_paid": 1500,
+                "payment_method": "bank_transfer",
+                "payment_gateway": "Stripe",
+                "transaction_id": "TXN987654321",
+                "created_at": "2024-08-05T14:23:45.000000Z",
+                "updated_at": "2024-08-05T14:23:45.000000Z"
+              }
+            ]
           }
         headers: []
         description: ''
         custom: []
       -
-        status: 400
+        status: 404
         content: |-
           {
-            "message": "Invalid or expired verification link."
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/email/verification-notification
-    metadata:
-      groupName: 'Email Verification'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: |-
-        Resend email verification notification
-
-        This endpoint resends the email verification notification.
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-            "message": "Verification link sent!"
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 429
-        content: |-
-          {
-            "message": "Too many requests. Please try again later."
+            "error": "No payment histories found for this user."
           }
         headers: []
         description: ''

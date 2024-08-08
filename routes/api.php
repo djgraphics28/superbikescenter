@@ -35,6 +35,9 @@ Route::post('/inquiries', [InquiryController::class, 'store'])->name('submit.inq
 //Applications
 Route::post('/application', [ApplicationController::class, 'store'])->name('application.store');
 Route::get('/application/{id}', [ApplicationController::class, 'getApplication'])->name('get-application');
+Route::post('/pay-monthly-due/{monthlyDueId}', [ApplicationController::class, 'payMonthlyDue'])->name('pay-monthly-due');
+Route::get('/get-monthly-dues/{applicationId}', [ApplicationController::class, 'getMonthlyDues'])->name('get-monthly-dues');
+Route::get('/get-payment-histories/{userId}', [ApplicationController::class, 'getPaymentHistories'])->name('get-payment-histories');
 
 //Profile
 Route::get('/profile', [ProfileController::class, 'show']);

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SuperBikesCenter",
-        "_postman_id": "fb2e7f5f-5d0f-4b89-aa65-dcc71bad7d64",
+        "_postman_id": "2e04d256-c959-4efd-87a7-456a2699b76e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -214,7 +214,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "17",
                                     "description": "The ID of the application."
                                 },
                                 {
@@ -583,7 +583,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IlVrdFlma2EvOVcwRVBHOWllemFmSVE9PSIsInZhbHVlIjoiYVlRaGwxUE5DU1ZFNCt4d3dqbXRlcGdueko4OXo0U2h0Ti9DMkMxR0k1Q2hjcHNSeXVhOTlGMzFzV2tuMU0rK2krSm10M1B2WGVGV0g3SWxqa251T3VyQUFZWks2UlNrdzVkNTRBQVJFQnlZL0d0c1l2NE9BaFlRNWEzRmFHMS8iLCJtYWMiOiJmNmY2ODY5OWQzNTA5MWI3MjU2ZDk2OWVhYjFhZDcwYzhkYTY4NGQ0ZWNkYjU3MjI3OTMwODFjY2Q0NTMwODYwIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkM5ZXBObDRPemcvUURTMlF5VGtEV2c9PSIsInZhbHVlIjoiemM3N09MdzIzK3Vham5paXh5OUJRK0xqRHFpZWxnT0dCWHRKNWRkU2JaMVFsNE11R0g2cnkzWThFM2xJdW1seFZ1eUI4M2gzeWhWYXNyYkxkT2hPdUlrZ0xJNU95MFBMYXJFWkpkUVVqMWpqOTVYd3pWQ2dpRW96MFFwdEdrVWgiLCJtYWMiOiIwNGE2ZDM3ZTEyODEzZWI4ZjJkOGUxYzRkYjI1ZmRjYjJkOWY5ODQ1NGZkYzAzNWEyODIzMTc1NjQ4YWUxOGFhIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6ImY1Ujhsdk5uQ3pCQjdJWCs1S2N6aFE9PSIsInZhbHVlIjoiRi9EckdIVkNraHdQZENBOG44eW1vbkxrL29iNncxVUtuS1B6c21WWDRyZk9ZbllmVHF4emxteExXWC9FN3ZZZmtmNFhrU09xcC96SVk0aUZxUHNxVGRPdUkwYU11dWhrNVpGQVNDTFdrSGNGdThweDJVL3pPK3BsUi8zd2Z0ZHoiLCJtYWMiOiI4YTlkNjI4NzI2YWE1ZTQwYTMwNGFjMmE5NGUwYzY2MmM4NTYyN2M3ZGQxZjYxMWQwZDlmMmRmYzIxZDZlOTVjIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IllBTnJ2VE9jVTYvZStnOG1QdnY5N3c9PSIsInZhbHVlIjoiL0s1ck93emNPUDIwZlBCWmZxSmFNL1JGWGFseEhRVXVLeFQySVRiZ01IZHhINWlVcS9VVVdqZzhmL1FTc2pmbWVDb01heS9OM1FwSS8yRVlNUDNQMTlIOU1xTW9qeGw5UkI2SlZzOGhFMUdILzc2ei9KdEE3MW9BL1ZVeGQzRkIiLCJtYWMiOiI5ODdiYTk1ODY1ZTI3NTIyNjM2Nzc0ZGY5MmM3ZDJjZjE0MjU0NmRkNzU4OGQyMzQ5NTJlZjA1MmU1ODVmZGNlIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -635,7 +635,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IkxoNk82SEFmTmdiYWc2ZDlGK2ZsQWc9PSIsInZhbHVlIjoiQlg5dFBjampwYWJRWnZQVjlTeGt4K254TWRmWHI4QlRQZTl2MWJOTmFqbTVhTS9TNngvTE1Bcm1sOUlmbWcwSjRlRGtGcGx3OWZkRERhL1o4YlJjaTVBK09RVnVPZFRvTmtGd1lxcnFQVDFHRE4wU09XdytGNHArZTlTZXk0dlciLCJtYWMiOiIyY2Q2YjhlZjE2MmZhMjlkZGM5ZTk5NjcwZTI1ZDE4OTA1ZDU3MmYzMTI3MDY3ODU4OTNkMjZkNmM2Y2Q0NjYyIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImxsU3RyUzMvRDVjYWxPRW5EeUpyMlE9PSIsInZhbHVlIjoibXIvU2dvemErOE10NXZodnIzdGNOMHFXNWhEcEp6NkpJT0lxK2RMWHFabVc2UUNvVnNLZXpESWU3dHQwTkx5Q0krZlg5NWRnWnNhR3NxdVhVS0VydVN2NXg1SU81VVpRTUp5cUxsZVAwYklMNFNXazFXM0pGSDVRdkRPWFA3ZmsiLCJtYWMiOiIwNTY5MDc2MjBmYzJkMzdjNTJlZTI2MWUyOWE5M2U5MWJkMGJjZDUwMWJjZGMyNWQxNjdlZDIzMzI4ODEyY2QwIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6InUwdkZiWlVlUXdISjdzeExkNnI3RHc9PSIsInZhbHVlIjoiYjM5ZkoyTCtRSlZGSGo1amk5Y0wyNmpSWHFYVDFOZlNraGFGM1FpbXRKWWNJUzJnV3BUR0I3b0ovY1hHcEpzdnNaZ2Vrbnh1U0k4Ykd4Z3pySHowZERuUWZtc2RpY0lWUERoSW5wV0M2ZmIwMDVmT1FuUkVzY0IzbHFUejBWaEsiLCJtYWMiOiI0NWFhNTEyODhmYTM3NjAyYTFkMWUxMTRmN2Y0YmJkYWU2YWYzMWRiYmIyNmQ0OTM3ZGY2ZDk5ZDhjYmFiOWM1IiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InFDNzJZRnFueElrSHY2M05YakRPOHc9PSIsInZhbHVlIjoiNmVkNUNoMDhwb3ZySVF3K2NQckR3RCtDM2hOcFFpQlNoQXNveXU3M3RGRUJoQUwvcUc0Z0N6VEhnQkR2TlJEblZtQ3pIdXczYXp4d3pqekVyWGZyamFqZVc2emFOT1p3WUR2bTJnRWhRZWJWUjZVOFlyWFVkaW0vSjNBSHJPa2UiLCJtYWMiOiIyYjg2MDkwMWMyMWI1ZDljYzYyNTkwNmYzMWJkNDVhYTRhOWE4ZjcxM2VjNTc3ZTllZmEzMmM3ZGQwZmRmZTMxIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -656,7 +656,7 @@
                                 {
                                     "id": "regionId",
                                     "key": "regionId",
-                                    "value": "dolor",
+                                    "value": "mollitia",
                                     "description": ""
                                 }
                             ]
@@ -695,7 +695,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IlEvajdCTkptUFEycnFiNjI1czVMWkE9PSIsInZhbHVlIjoiMVRvWVdoTFNCVTFOMUp2UktkWWQ0WjZwVXZtSmVZd3k4dC9WQzRub0g3SmYxUDJvK1ZRTlBtYk0wbjRGMWZkRnhXMXo4aTJEbTBOS3pGejJuVUdwTGlQcnYwMXBvenc1NmZlWGh6UXZERDk0TFJsNWRKaEF5TmI3RFVRRC9reEwiLCJtYWMiOiI4ZGY0MDg2ZjQ4OGE3NDExYjFlY2ZlOGRkZDJlY2FhNmE5ZTI1NDg4NWY4OGU3MjliY2Q0OTFkZWQ4YTA4ZTIxIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImxUcnVaWU1CejlKdEdvV2NOUnRRQkE9PSIsInZhbHVlIjoiTk5nMElxNGpqK3JBcHZnd3pCYkFoMHYrUDcxUGxRTXpYV2MzcFQrSHhoZDdxblJqQlM5YmJPMGgwUElTWmZTUDRHUSswdU14U0Q0OWFjb2FsMUVjazQwSTExQnJxK055WmVIcHVjR1Zsa21sdDdOQkM5ODhSVk9LZFJsQ0puTDMiLCJtYWMiOiI3NzM0ODJlM2U0Mzk2MjkxYTYwOGIzMzQ1YzM0Y2NjNmRmOTJkZDExNjU2Zjk0MWQyNzExNTg4MGZlZjAzY2Y2IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IlloRFBFYjJiRzZHZkhyMHNsYTFIclE9PSIsInZhbHVlIjoia3k2RVBObG1zdHh6N1l2UVFUMWY5ckp4ZFhmdWlxQWNobytaOGhNNGZVdTR0Skp2aE1rWUMxamNpWVlSRjEyb3hCMFRST0xzL21hL2pPVEdhL3d1d21veFM5WDRlamlFbTZya3Jpb2t0OHhSUGVESVRvSHU1Y0tjcVNQeml5L2IiLCJtYWMiOiJmZmJjYWM4ZWQ4YTI1YTA2YmQxYTQ2ZGRlMTE2NTY3YmFjYTdhNmI4YTI1YTdhMzE3NGVhODVmNWY2MmU4MjhjIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImdsWXdITm9kUDFzVWJWZUZJcnpWQ2c9PSIsInZhbHVlIjoiQ05LOEo0c2JUMEM4ZXdnS3hNUnhSR2Q0YVlsZDZzOWg2VVpXU1V3ZW41NGp2SGFBWFpXTTQvc2JsUnZWUHFlNnRXWFkwdktKcFRCczI4NUNTcmo3KytOQ1F1RExHazlBdlZjVmJwd0ViYkphaWZuUkRNb0IvdW9LU3JJSE13eXciLCJtYWMiOiI4MDEzNzNlNzJhYjk2NzAzZTMzYTYyMWU0NzE5ZWZmM2MzMDYwOGRiNzM4NmQ0OGU0NmRiZTViYWJhZTc2OGQ5IiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -716,7 +716,7 @@
                                 {
                                     "id": "provinceId",
                                     "key": "provinceId",
-                                    "value": "assumenda",
+                                    "value": "quae",
                                     "description": ""
                                 }
                             ]
@@ -755,7 +755,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6InIyQjVsSmRvVkNlL3liSThGL2tpMmc9PSIsInZhbHVlIjoiR1lLcUp3ZFJPMndoQjZGUjlpelBrbjFiajFZUWZHUHAwa3BrOVJEaEJxN2FWWW80citIQnB1bmgrWDB5dE1YVlJ6c3RnZ0s4a0krNlh4WUJPTGlja1pvMmNwU3VTN2drY1cxQVB0bjlySlAzOEhVanFyQTJvMXN2amJ3TGxWTEwiLCJtYWMiOiJlYzdiOGYwYjNjNDk1ZTQxZmZmYmZkYjQ2MmEzNGM2ZDhmM2FiMzFjMTUxNjYwZDYxYmMzYmYyN2RkMTQzYTRkIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IlZCOG50NFVVK0RaSW1QS1RjQjdoRGc9PSIsInZhbHVlIjoiQ2VwNG9Ic3g0OEN0cHRTT0dwYUJORkhsZ2ZIM2lHQzNJcUFsNVFJbU9sVmtpNHl5dzNzb1ByWXMyZm1GZmlkaHduWmxYYmZoeDRBdU02T01yQnZsa29ZektRcXZuTW1HSHlsdjQrSGRiMkZsSWVZNmcxYUJidWhqWTRPTkRpNVIiLCJtYWMiOiJiNDg2ZjNkZTMyODI2MTcwMTAyOWJhMDJmOGMxMWIxNDRiMzg3MWMwODQyMmY1YTYwOGMyZTRmZGIwYjgyZDdhIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjBGT0xOK0VSZUVDcG9abFZIVTNFK0E9PSIsInZhbHVlIjoiNUp2dWROcmNheWhnaU8vMzNPRkc4VzJmTjFHdHpUR2xNMVJsZmFTd2JubTlDTWJQdk5aRzN3TXhCR1N2TXZZQmp5VWluMHI5TDJVa3AzNWxBT002WXlKUXNMT3pFMko0bE1WbkhSQjdoVGJtYXNaR2NYc0VXQk5NWUkybFdzTUgiLCJtYWMiOiJmMmU1ZjBkZGI1OTA5YzRlZTlkMTI3Yjk5OWVhZTRhODk5YjJmNTJmMjg3MjM4NTZjYzI4N2U0ZDI1NDkzMWZjIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InhWdjVKNWdhMmxFWkdhMXRCekVHQ1E9PSIsInZhbHVlIjoiazB3dXVnSE5vZEFpSnhxWlM2Zkdqa084SVJBQStXeldCMmhTeVd6cElCYnFsd0ZscmZkN0VuOEp6MUEyRERVaXQremx3UktCbmxXZnQyTGxBa0c3S2o2LzFwVGY1NHdKakxib1F0a0wwaTRoaTI5aFFIeFh5bWFpNjdNZGx1SGQiLCJtYWMiOiI4OGExZGNhMzdjZDJkNDhkYTQ5YTk3ODI4MjcwNWRhM2EzODI5NGIwNTk5OGQ5M2Q0ODQ4MWY4OGYyMmRlOTJkIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -776,13 +776,13 @@
                                 {
                                     "id": "regionId",
                                     "key": "regionId",
-                                    "value": "voluptas",
+                                    "value": "quibusdam",
                                     "description": ""
                                 },
                                 {
                                     "id": "provinceId",
                                     "key": "provinceId",
-                                    "value": "illo",
+                                    "value": "consequatur",
                                     "description": ""
                                 }
                             ]
@@ -821,7 +821,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6ImptMXMwSWNHUkVSdmxqWWZ2bEtaQ2c9PSIsInZhbHVlIjoiOFExR0tGTEh4cEo3VHl1ZjB5RE1lQUo5S3pmZFlKWFlpdGkrTXV5QlkxL2tqZlB1amdLSEFvSHdkTW41UE5KVVNWbDlqVDI3YnNGVU5vWGoyOU9lNWg2azRrdjFWNHl5MmNldHhwb2VITjYvOVRHV1hpRUxTdEZiZkhJdmdybkciLCJtYWMiOiIwOGQ5NGVkZjA2NzYzMWZjNzNiOTg4NmE1YjNjMDQ5YWE4MTVlNGYyZTkyMzc3YTUxNGY1ODYzZmZiY2ZlNzMxIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InZtaUFzd1ZTSXJJbmtZRDZsRU90dEE9PSIsInZhbHVlIjoiU3d4ckJsK1VoeDRia3p6VU5QN2JHSDVabGpuYktoMWU3TGJ4THRoQmg4am92ekhUUktwRXpPcWExUEhTVEVFOUlCNzB3VEVLL0F6MVlvNVFvcG9aYk9HcXJZaFEwbm5UMkRybDAzRlFXaVNBakZiNnpSWWxqVy81MDY0aG14ZUoiLCJtYWMiOiI2NmZlZmNkOTdjYTVkNGVjNTYzNjEwZGVkNzI1ODg0YmY2YzMzNzhmOGY0MjMwODNhNThmZGRiNzI3ODczNTI1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IlZ1ZlVOYkdMYzJVL0w4T1p3KzBWbUE9PSIsInZhbHVlIjoiVFNwZTlUWWJNbFQ4Y2lUM1BxZk95WGZtU0p4ck5ZbW0rVUFHM3VvWHhuZlhoZ3Q0RGRKNWhkdGNMdmg4U0hxZUNackVMUmRiQUdYTXhwWGdiTjBVUHdFRmdzd05WUFA0VkFVQXpIQWNiWDl3dk9hZzdvQSs5MCtqejAycmNvblMiLCJtYWMiOiI3YTQ4Y2U2MjI4YWNhZGEyNmE4OWYxYTEwNjgwZTdkMDhlMmE1Mzg1N2Y0ZTc0ZjVhMTZkYmZmY2RlMWIxYmU3IiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InozZ1NYT1F5N3pVK3psUFIyWTZZU2c9PSIsInZhbHVlIjoiUkd4bTdUUVQ0Y0d5eVNzU21xUVh6WHk4aE1lOGdXTkN2THROdm5RUmdnRmhhOWxTV29lc2VjUnk0TEFLUHNNblh6ZjBDRkYyL2Rjd3ZXZjNVMGpnM2tjSUFmeUpwNDFJV0FialRGWm9vaEhxbFlLM0wyR3pkYlRMOWhWNXY2WGYiLCJtYWMiOiJhMzgwNjE0NGUxYzBjODQ5YTFkYzZlYzJiNzM4NTYyNTVkNmQ0ZjhlZmRiNGU3NjVjM2EwZDIyODRkYWM3YjljIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -842,7 +842,7 @@
                                 {
                                     "id": "cityId",
                                     "key": "cityId",
-                                    "value": "est",
+                                    "value": "tempore",
                                     "description": ""
                                 }
                             ]
@@ -881,7 +881,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6InVvVTY0MTlrbkE5bnhISWw2ZU8vaUE9PSIsInZhbHVlIjoiOFY2MWRzbDFsd3dzdXhTS1ltdkZGS1JlV3crY0xQSHEwalpLUVZHRXltdDBFYTIrajYzOEdjL2srREI0N1F4RHRybjdoZlp4dkhWVkRydE5NUTlSUExRRG5nNE1tS3IzU21jVGRhN2V5bFZqeWtiMG1iNW1EdkRHTEozbDlsYnAiLCJtYWMiOiJkZjA1MTExNmU0ZDlmNTcxNGEyZGRmZmFhZTQ2ZDU2OWU4MDk4OWQ1YmJkODA0YjRkN2VkYjkzMzc0MjJjNThiIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Iko3cGhCT2g1T2sxdGJsMnpxbmpOZXc9PSIsInZhbHVlIjoiUW9GTlpTblpBUW1BMjFWdEdBeW5kRlpjL1VKK3I4anZZZkpKYWp4c1EwTzlYbTNZSXFyTjlad3BuL1FQMm1SUGtmUG54VExvVzFxV0V3NC9NY2F0VHRwZG8ySWdvSjg3RVB3NUZ3WW13QU1PRUhqTGk5SjlqQkdGZEVhY01iVlIiLCJtYWMiOiJjNTE1N2M4MDY5YmIwYzFjMDg1Njg4OTQ5YmY0MDk4NDcxMDBjZDMxOTc0ZmJhNmU3YzNjNzE1ZTI5Njc5OWE2IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6Ik1hZDNFWEtiSkQrQ05GNHVsVjgwUlE9PSIsInZhbHVlIjoielRsMUcyWjREY0owZGJQMnp6d2pURzRFbTc0bzFuQlU5azZ4RFh6Vjd5Qlc2QUQ1dGNTZENwaW1JQndrSXNFL2MzbENCdlA1NUtPUUNxeFhINVYrc1BoVFVENTZmdnNWbG1yRWNNRkpqbzZVTWdUcnRXbWJKMDRtN25uWm00REMiLCJtYWMiOiIyYWQ5YTAxYzM0NzQ1OGVmMGVlNzZmNzA5Zjk1MDkxOWE3ZDBlNjM2ZTZjOWE0YThmM2M3YmQyNWU1OTkxZjhhIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IjZsNjBXWWhQUFlINk5OV1k2V3FxVmc9PSIsInZhbHVlIjoiZFdHeTlVUzdGcVhyVDdMMy9TbVIrL3dac0ZVamZQZEhFKzZUcmtNa1lYSTdzR3dWMWNRbDRnL0YvQldsb0pTVGduVzd5ZlVMQXVOWUFxckpYTGsrYi9Da0FhTFJtN3BmME4zVkpVVHJyejhNb2dCbjBWSWZDYy9VaUVwMDBIY1MiLCJtYWMiOiI3Zjc2OTlhNThiOGUxMGRlYmY2MjhkODBlMjYwODMwODM5YTEwNDllN2YxYjJkYjBkZTJlYzQwNDBmZDZkYzFhIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -984,6 +984,174 @@
                             "header": [],
                             "code": 404,
                             "body": "{\n  \"message\": \"Product Not Found!\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Monthly Dues",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get monthly dues for a specific application.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-monthly-dues\/:applicationId",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/get-monthly-dues\/:applicationId",
+                            "variable": [
+                                {
+                                    "id": "applicationId",
+                                    "key": "applicationId",
+                                    "value": "est",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"monthlyDues\": [\n    {\n      \"id\": 1,\n      \"application_id\": 1,\n      \"due_date\": \"2024-08-01\",\n      \"amount_due\": 5000,\n      \"amount_paid\": 1000,\n      \"status\": \"unpaid\"\n    },\n    {\n      \"id\": 2,\n      \"application_id\": 1,\n      \"due_date\": \"2024-09-01\",\n      \"amount_due\": 5000,\n      \"amount_paid\": 0,\n      \"status\": \"unpaid\"\n    }\n  ]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"error\": \"Not yet Approved, no monthly dues found.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Payment Histories",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get payment histories for a specific user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-payment-histories\/:userId",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/get-payment-histories\/:userId",
+                            "variable": [
+                                {
+                                    "id": "userId",
+                                    "key": "userId",
+                                    "value": "est",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"paymentHistories\": [\n    {\n      \"id\": 1,\n      \"user_id\": 1,\n      \"monthly_due_id\": 1,\n      \"amount_paid\": 1000,\n      \"payment_method\": \"credit_card\",\n      \"payment_gateway\": \"PayPal\",\n      \"transaction_id\": \"TXN123456789\",\n      \"created_at\": \"2024-08-01T12:34:56.000000Z\",\n      \"updated_at\": \"2024-08-01T12:34:56.000000Z\"\n    },\n    {\n      \"id\": 2,\n      \"user_id\": 1,\n      \"monthly_due_id\": 2,\n      \"amount_paid\": 1500,\n      \"payment_method\": \"bank_transfer\",\n      \"payment_gateway\": \"Stripe\",\n      \"transaction_id\": \"TXN987654321\",\n      \"created_at\": \"2024-08-05T14:23:45.000000Z\",\n      \"updated_at\": \"2024-08-05T14:23:45.000000Z\"\n    }\n  ]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"error\": \"No payment histories found for this user.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Payments",
+            "description": "",
+            "item": [
+                {
+                    "name": "Pay the monthly due.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pay-monthly-due\/:monthlyDueId",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pay-monthly-due\/:monthlyDueId",
+                            "variable": [
+                                {
+                                    "id": "monthlyDueId",
+                                    "key": "monthlyDueId",
+                                    "value": "voluptatem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"amount_paid\":1000,\"receipt_number\":\"REC123456789\",\"payment_method\":\"credit_card\",\"payment_gateway\":\"PayPal\",\"transaction_id\":\"TXN123456789\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Payment successful\",\n  \"monthly_due\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"amount_due\": 5000,\n    \"amount_paid\": 1000,\n    \"status\": \"paid\",\n    \"receipt_number\": \"REC123456789\",\n    \"payment_method\": \"credit_card\"\n  }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"error\": \"monthly due not found.\"\n}",
                             "name": ""
                         }
                     ]

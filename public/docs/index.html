@@ -196,6 +196,36 @@ This endpoint allows you to submit an inquiry about a product.</a>
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-monthly-dues" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="monthly-dues">
+                    <a href="#monthly-dues">Monthly Dues</a>
+                </li>
+                                    <ul id="tocify-subheader-monthly-dues" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="monthly-dues-GETapi-get-monthly-dues--applicationId-">
+                                <a href="#monthly-dues-GETapi-get-monthly-dues--applicationId-">Get monthly dues for a specific application.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-payment-histories" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="payment-histories">
+                    <a href="#payment-histories">Payment Histories</a>
+                </li>
+                                    <ul id="tocify-subheader-payment-histories" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="payment-histories-GETapi-get-payment-histories--userId-">
+                                <a href="#payment-histories-GETapi-get-payment-histories--userId-">Get payment histories for a specific user.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-payments" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="payments">
+                    <a href="#payments">Payments</a>
+                </li>
+                                    <ul id="tocify-subheader-payments" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="payments-POSTapi-pay-monthly-due--monthlyDueId-">
+                                <a href="#payments-POSTapi-pay-monthly-due--monthlyDueId-">Pay the monthly due.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-products" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="products">
                     <a href="#products">Products</a>
@@ -244,7 +274,7 @@ This endpoint allows a user to change their password.</a>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 26, 2024</li>
+        <li>Last updated: August 8, 2024</li>
     </ul>
 </div>
 
@@ -1084,14 +1114,14 @@ This endpoint retrieves all applications for a specific customer.</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/application/2" \
+    --get "https://superbikescentral.online/api/application/17" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/application/2"
+    "https://superbikescentral.online/api/application/17"
 );
 
 const headers = {
@@ -1226,10 +1256,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-application--id-"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the application. Example: <code>2</code></p>
+<p>The ID of the application. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>customer_id</code></b>&nbsp;&nbsp;
@@ -2397,7 +2427,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6IlVrdFlma2EvOVcwRVBHOWllemFmSVE9PSIsInZhbHVlIjoiYVlRaGwxUE5DU1ZFNCt4d3dqbXRlcGdueko4OXo0U2h0Ti9DMkMxR0k1Q2hjcHNSeXVhOTlGMzFzV2tuMU0rK2krSm10M1B2WGVGV0g3SWxqa251T3VyQUFZWks2UlNrdzVkNTRBQVJFQnlZL0d0c1l2NE9BaFlRNWEzRmFHMS8iLCJtYWMiOiJmNmY2ODY5OWQzNTA5MWI3MjU2ZDk2OWVhYjFhZDcwYzhkYTY4NGQ0ZWNkYjU3MjI3OTMwODFjY2Q0NTMwODYwIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IkM5ZXBObDRPemcvUURTMlF5VGtEV2c9PSIsInZhbHVlIjoiemM3N09MdzIzK3Vham5paXh5OUJRK0xqRHFpZWxnT0dCWHRKNWRkU2JaMVFsNE11R0g2cnkzWThFM2xJdW1seFZ1eUI4M2gzeWhWYXNyYkxkT2hPdUlrZ0xJNU95MFBMYXJFWkpkUVVqMWpqOTVYd3pWQ2dpRW96MFFwdEdrVWgiLCJtYWMiOiIwNGE2ZDM3ZTEyODEzZWI4ZjJkOGUxYzRkYjI1ZmRjYjJkOWY5ODQ1NGZkYzAzNWEyODIzMTc1NjQ4YWUxOGFhIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6ImY1Ujhsdk5uQ3pCQjdJWCs1S2N6aFE9PSIsInZhbHVlIjoiRi9EckdIVkNraHdQZENBOG44eW1vbkxrL29iNncxVUtuS1B6c21WWDRyZk9ZbllmVHF4emxteExXWC9FN3ZZZmtmNFhrU09xcC96SVk0aUZxUHNxVGRPdUkwYU11dWhrNVpGQVNDTFdrSGNGdThweDJVL3pPK3BsUi8zd2Z0ZHoiLCJtYWMiOiI4YTlkNjI4NzI2YWE1ZTQwYTMwNGFjMmE5NGUwYzY2MmM4NTYyN2M3ZGQxZjYxMWQwZDlmMmRmYzIxZDZlOTVjIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IllBTnJ2VE9jVTYvZStnOG1QdnY5N3c9PSIsInZhbHVlIjoiL0s1ck93emNPUDIwZlBCWmZxSmFNL1JGWGFseEhRVXVLeFQySVRiZ01IZHhINWlVcS9VVVdqZzhmL1FTc2pmbWVDb01heS9OM1FwSS8yRVlNUDNQMTlIOU1xTW9qeGw5UkI2SlZzOGhFMUdILzc2ei9KdEE3MW9BL1ZVeGQzRkIiLCJtYWMiOiI5ODdiYTk1ODY1ZTI3NTIyNjM2Nzc0ZGY5MmM3ZDJjZjE0MjU0NmRkNzU4OGQyMzQ5NTJlZjA1MmU1ODVmZGNlIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2522,7 +2552,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6IkxoNk82SEFmTmdiYWc2ZDlGK2ZsQWc9PSIsInZhbHVlIjoiQlg5dFBjampwYWJRWnZQVjlTeGt4K254TWRmWHI4QlRQZTl2MWJOTmFqbTVhTS9TNngvTE1Bcm1sOUlmbWcwSjRlRGtGcGx3OWZkRERhL1o4YlJjaTVBK09RVnVPZFRvTmtGd1lxcnFQVDFHRE4wU09XdytGNHArZTlTZXk0dlciLCJtYWMiOiIyY2Q2YjhlZjE2MmZhMjlkZGM5ZTk5NjcwZTI1ZDE4OTA1ZDU3MmYzMTI3MDY3ODU4OTNkMjZkNmM2Y2Q0NjYyIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImxsU3RyUzMvRDVjYWxPRW5EeUpyMlE9PSIsInZhbHVlIjoibXIvU2dvemErOE10NXZodnIzdGNOMHFXNWhEcEp6NkpJT0lxK2RMWHFabVc2UUNvVnNLZXpESWU3dHQwTkx5Q0krZlg5NWRnWnNhR3NxdVhVS0VydVN2NXg1SU81VVpRTUp5cUxsZVAwYklMNFNXazFXM0pGSDVRdkRPWFA3ZmsiLCJtYWMiOiIwNTY5MDc2MjBmYzJkMzdjNTJlZTI2MWUyOWE5M2U5MWJkMGJjZDUwMWJjZGMyNWQxNjdlZDIzMzI4ODEyY2QwIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6InUwdkZiWlVlUXdISjdzeExkNnI3RHc9PSIsInZhbHVlIjoiYjM5ZkoyTCtRSlZGSGo1amk5Y0wyNmpSWHFYVDFOZlNraGFGM1FpbXRKWWNJUzJnV3BUR0I3b0ovY1hHcEpzdnNaZ2Vrbnh1U0k4Ykd4Z3pySHowZERuUWZtc2RpY0lWUERoSW5wV0M2ZmIwMDVmT1FuUkVzY0IzbHFUejBWaEsiLCJtYWMiOiI0NWFhNTEyODhmYTM3NjAyYTFkMWUxMTRmN2Y0YmJkYWU2YWYzMWRiYmIyNmQ0OTM3ZGY2ZDk5ZDhjYmFiOWM1IiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InFDNzJZRnFueElrSHY2M05YakRPOHc9PSIsInZhbHVlIjoiNmVkNUNoMDhwb3ZySVF3K2NQckR3RCtDM2hOcFFpQlNoQXNveXU3M3RGRUJoQUwvcUc0Z0N6VEhnQkR2TlJEblZtQ3pIdXczYXp4d3pqekVyWGZyamFqZVc2emFOT1p3WUR2bTJnRWhRZWJWUjZVOFlyWFVkaW0vSjNBSHJPa2UiLCJtYWMiOiIyYjg2MDkwMWMyMWI1ZDljYzYyNTkwNmYzMWJkNDVhYTRhOWE4ZjcxM2VjNTc3ZTllZmEzMmM3ZGQwZmRmZTMxIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2614,14 +2644,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/provinces/dolor" \
+    --get "https://superbikescentral.online/api/address/provinces/mollitia" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/provinces/dolor"
+    "https://superbikescentral.online/api/address/provinces/mollitia"
 );
 
 const headers = {
@@ -2647,7 +2677,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6IlEvajdCTkptUFEycnFiNjI1czVMWkE9PSIsInZhbHVlIjoiMVRvWVdoTFNCVTFOMUp2UktkWWQ0WjZwVXZtSmVZd3k4dC9WQzRub0g3SmYxUDJvK1ZRTlBtYk0wbjRGMWZkRnhXMXo4aTJEbTBOS3pGejJuVUdwTGlQcnYwMXBvenc1NmZlWGh6UXZERDk0TFJsNWRKaEF5TmI3RFVRRC9reEwiLCJtYWMiOiI4ZGY0MDg2ZjQ4OGE3NDExYjFlY2ZlOGRkZDJlY2FhNmE5ZTI1NDg4NWY4OGU3MjliY2Q0OTFkZWQ4YTA4ZTIxIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImxUcnVaWU1CejlKdEdvV2NOUnRRQkE9PSIsInZhbHVlIjoiTk5nMElxNGpqK3JBcHZnd3pCYkFoMHYrUDcxUGxRTXpYV2MzcFQrSHhoZDdxblJqQlM5YmJPMGgwUElTWmZTUDRHUSswdU14U0Q0OWFjb2FsMUVjazQwSTExQnJxK055WmVIcHVjR1Zsa21sdDdOQkM5ODhSVk9LZFJsQ0puTDMiLCJtYWMiOiI3NzM0ODJlM2U0Mzk2MjkxYTYwOGIzMzQ1YzM0Y2NjNmRmOTJkZDExNjU2Zjk0MWQyNzExNTg4MGZlZjAzY2Y2IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IlloRFBFYjJiRzZHZkhyMHNsYTFIclE9PSIsInZhbHVlIjoia3k2RVBObG1zdHh6N1l2UVFUMWY5ckp4ZFhmdWlxQWNobytaOGhNNGZVdTR0Skp2aE1rWUMxamNpWVlSRjEyb3hCMFRST0xzL21hL2pPVEdhL3d1d21veFM5WDRlamlFbTZya3Jpb2t0OHhSUGVESVRvSHU1Y0tjcVNQeml5L2IiLCJtYWMiOiJmZmJjYWM4ZWQ4YTI1YTA2YmQxYTQ2ZGRlMTE2NTY3YmFjYTdhNmI4YTI1YTdhMzE3NGVhODVmNWY2MmU4MjhjIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6ImdsWXdITm9kUDFzVWJWZUZJcnpWQ2c9PSIsInZhbHVlIjoiQ05LOEo0c2JUMEM4ZXdnS3hNUnhSR2Q0YVlsZDZzOWg2VVpXU1V3ZW41NGp2SGFBWFpXTTQvc2JsUnZWUHFlNnRXWFkwdktKcFRCczI4NUNTcmo3KytOQ1F1RExHazlBdlZjVmJwd0ViYkphaWZuUkRNb0IvdW9LU3JJSE13eXciLCJtYWMiOiI4MDEzNzNlNzJhYjk2NzAzZTMzYTYyMWU0NzE5ZWZmM2MzMDYwOGRiNzM4NmQ0OGU0NmRiZTViYWJhZTc2OGQ5IiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2731,10 +2761,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="regionId"                data-endpoint="GETapi-address-provinces--regionId-"
-               value="dolor"
+               value="mollitia"
                data-component="url">
     <br>
-<p>Example: <code>dolor</code></p>
+<p>Example: <code>mollitia</code></p>
             </div>
                     </form>
 
@@ -2751,14 +2781,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/cities/assumenda" \
+    --get "https://superbikescentral.online/api/address/cities/quae" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/cities/assumenda"
+    "https://superbikescentral.online/api/address/cities/quae"
 );
 
 const headers = {
@@ -2784,7 +2814,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6InIyQjVsSmRvVkNlL3liSThGL2tpMmc9PSIsInZhbHVlIjoiR1lLcUp3ZFJPMndoQjZGUjlpelBrbjFiajFZUWZHUHAwa3BrOVJEaEJxN2FWWW80citIQnB1bmgrWDB5dE1YVlJ6c3RnZ0s4a0krNlh4WUJPTGlja1pvMmNwU3VTN2drY1cxQVB0bjlySlAzOEhVanFyQTJvMXN2amJ3TGxWTEwiLCJtYWMiOiJlYzdiOGYwYjNjNDk1ZTQxZmZmYmZkYjQ2MmEzNGM2ZDhmM2FiMzFjMTUxNjYwZDYxYmMzYmYyN2RkMTQzYTRkIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IlZCOG50NFVVK0RaSW1QS1RjQjdoRGc9PSIsInZhbHVlIjoiQ2VwNG9Ic3g0OEN0cHRTT0dwYUJORkhsZ2ZIM2lHQzNJcUFsNVFJbU9sVmtpNHl5dzNzb1ByWXMyZm1GZmlkaHduWmxYYmZoeDRBdU02T01yQnZsa29ZektRcXZuTW1HSHlsdjQrSGRiMkZsSWVZNmcxYUJidWhqWTRPTkRpNVIiLCJtYWMiOiJiNDg2ZjNkZTMyODI2MTcwMTAyOWJhMDJmOGMxMWIxNDRiMzg3MWMwODQyMmY1YTYwOGMyZTRmZGIwYjgyZDdhIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IjBGT0xOK0VSZUVDcG9abFZIVTNFK0E9PSIsInZhbHVlIjoiNUp2dWROcmNheWhnaU8vMzNPRkc4VzJmTjFHdHpUR2xNMVJsZmFTd2JubTlDTWJQdk5aRzN3TXhCR1N2TXZZQmp5VWluMHI5TDJVa3AzNWxBT002WXlKUXNMT3pFMko0bE1WbkhSQjdoVGJtYXNaR2NYc0VXQk5NWUkybFdzTUgiLCJtYWMiOiJmMmU1ZjBkZGI1OTA5YzRlZTlkMTI3Yjk5OWVhZTRhODk5YjJmNTJmMjg3MjM4NTZjYzI4N2U0ZDI1NDkzMWZjIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InhWdjVKNWdhMmxFWkdhMXRCekVHQ1E9PSIsInZhbHVlIjoiazB3dXVnSE5vZEFpSnhxWlM2Zkdqa084SVJBQStXeldCMmhTeVd6cElCYnFsd0ZscmZkN0VuOEp6MUEyRERVaXQremx3UktCbmxXZnQyTGxBa0c3S2o2LzFwVGY1NHdKakxib1F0a0wwaTRoaTI5aFFIeFh5bWFpNjdNZGx1SGQiLCJtYWMiOiI4OGExZGNhMzdjZDJkNDhkYTQ5YTk3ODI4MjcwNWRhM2EzODI5NGIwNTk5OGQ5M2Q0ODQ4MWY4OGYyMmRlOTJkIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2868,10 +2898,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="provinceId"                data-endpoint="GETapi-address-cities--provinceId-"
-               value="assumenda"
+               value="quae"
                data-component="url">
     <br>
-<p>Example: <code>assumenda</code></p>
+<p>Example: <code>quae</code></p>
             </div>
                     </form>
 
@@ -2888,14 +2918,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/cities/voluptas/illo" \
+    --get "https://superbikescentral.online/api/address/cities/quibusdam/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/cities/voluptas/illo"
+    "https://superbikescentral.online/api/address/cities/quibusdam/consequatur"
 );
 
 const headers = {
@@ -2921,7 +2951,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6ImptMXMwSWNHUkVSdmxqWWZ2bEtaQ2c9PSIsInZhbHVlIjoiOFExR0tGTEh4cEo3VHl1ZjB5RE1lQUo5S3pmZFlKWFlpdGkrTXV5QlkxL2tqZlB1amdLSEFvSHdkTW41UE5KVVNWbDlqVDI3YnNGVU5vWGoyOU9lNWg2azRrdjFWNHl5MmNldHhwb2VITjYvOVRHV1hpRUxTdEZiZkhJdmdybkciLCJtYWMiOiIwOGQ5NGVkZjA2NzYzMWZjNzNiOTg4NmE1YjNjMDQ5YWE4MTVlNGYyZTkyMzc3YTUxNGY1ODYzZmZiY2ZlNzMxIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InZtaUFzd1ZTSXJJbmtZRDZsRU90dEE9PSIsInZhbHVlIjoiU3d4ckJsK1VoeDRia3p6VU5QN2JHSDVabGpuYktoMWU3TGJ4THRoQmg4am92ekhUUktwRXpPcWExUEhTVEVFOUlCNzB3VEVLL0F6MVlvNVFvcG9aYk9HcXJZaFEwbm5UMkRybDAzRlFXaVNBakZiNnpSWWxqVy81MDY0aG14ZUoiLCJtYWMiOiI2NmZlZmNkOTdjYTVkNGVjNTYzNjEwZGVkNzI1ODg0YmY2YzMzNzhmOGY0MjMwODNhNThmZGRiNzI3ODczNTI1IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IlZ1ZlVOYkdMYzJVL0w4T1p3KzBWbUE9PSIsInZhbHVlIjoiVFNwZTlUWWJNbFQ4Y2lUM1BxZk95WGZtU0p4ck5ZbW0rVUFHM3VvWHhuZlhoZ3Q0RGRKNWhkdGNMdmg4U0hxZUNackVMUmRiQUdYTXhwWGdiTjBVUHdFRmdzd05WUFA0VkFVQXpIQWNiWDl3dk9hZzdvQSs5MCtqejAycmNvblMiLCJtYWMiOiI3YTQ4Y2U2MjI4YWNhZGEyNmE4OWYxYTEwNjgwZTdkMDhlMmE1Mzg1N2Y0ZTc0ZjVhMTZkYmZmY2RlMWIxYmU3IiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6InozZ1NYT1F5N3pVK3psUFIyWTZZU2c9PSIsInZhbHVlIjoiUkd4bTdUUVQ0Y0d5eVNzU21xUVh6WHk4aE1lOGdXTkN2THROdm5RUmdnRmhhOWxTV29lc2VjUnk0TEFLUHNNblh6ZjBDRkYyL2Rjd3ZXZjNVMGpnM2tjSUFmeUpwNDFJV0FialRGWm9vaEhxbFlLM0wyR3pkYlRMOWhWNXY2WGYiLCJtYWMiOiJhMzgwNjE0NGUxYzBjODQ5YTFkYzZlYzJiNzM4NTYyNTVkNmQ0ZjhlZmRiNGU3NjVjM2EwZDIyODRkYWM3YjljIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3005,10 +3035,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="regionId"                data-endpoint="GETapi-address-cities--regionId---provinceId-"
-               value="voluptas"
+               value="quibusdam"
                data-component="url">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>Example: <code>quibusdam</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>provinceId</code></b>&nbsp;&nbsp;
@@ -3016,10 +3046,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="provinceId"                data-endpoint="GETapi-address-cities--regionId---provinceId-"
-               value="illo"
+               value="consequatur"
                data-component="url">
     <br>
-<p>Example: <code>illo</code></p>
+<p>Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -3036,14 +3066,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://superbikescentral.online/api/address/barangays/est" \
+    --get "https://superbikescentral.online/api/address/barangays/tempore" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://superbikescentral.online/api/address/barangays/est"
+    "https://superbikescentral.online/api/address/barangays/tempore"
 );
 
 const headers = {
@@ -3069,7 +3099,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6InVvVTY0MTlrbkE5bnhISWw2ZU8vaUE9PSIsInZhbHVlIjoiOFY2MWRzbDFsd3dzdXhTS1ltdkZGS1JlV3crY0xQSHEwalpLUVZHRXltdDBFYTIrajYzOEdjL2srREI0N1F4RHRybjdoZlp4dkhWVkRydE5NUTlSUExRRG5nNE1tS3IzU21jVGRhN2V5bFZqeWtiMG1iNW1EdkRHTEozbDlsYnAiLCJtYWMiOiJkZjA1MTExNmU0ZDlmNTcxNGEyZGRmZmFhZTQ2ZDU2OWU4MDk4OWQ1YmJkODA0YjRkN2VkYjkzMzc0MjJjNThiIiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6Iko3cGhCT2g1T2sxdGJsMnpxbmpOZXc9PSIsInZhbHVlIjoiUW9GTlpTblpBUW1BMjFWdEdBeW5kRlpjL1VKK3I4anZZZkpKYWp4c1EwTzlYbTNZSXFyTjlad3BuL1FQMm1SUGtmUG54VExvVzFxV0V3NC9NY2F0VHRwZG8ySWdvSjg3RVB3NUZ3WW13QU1PRUhqTGk5SjlqQkdGZEVhY01iVlIiLCJtYWMiOiJjNTE1N2M4MDY5YmIwYzFjMDg1Njg4OTQ5YmY0MDk4NDcxMDBjZDMxOTc0ZmJhNmU3YzNjNzE1ZTI5Njc5OWE2IiwidGFnIjoiIn0%3D; expires=Fri, 26 Jul 2024 13:31:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6Ik1hZDNFWEtiSkQrQ05GNHVsVjgwUlE9PSIsInZhbHVlIjoielRsMUcyWjREY0owZGJQMnp6d2pURzRFbTc0bzFuQlU5azZ4RFh6Vjd5Qlc2QUQ1dGNTZENwaW1JQndrSXNFL2MzbENCdlA1NUtPUUNxeFhINVYrc1BoVFVENTZmdnNWbG1yRWNNRkpqbzZVTWdUcnRXbWJKMDRtN25uWm00REMiLCJtYWMiOiIyYWQ5YTAxYzM0NzQ1OGVmMGVlNzZmNzA5Zjk1MDkxOWE3ZDBlNjM2ZTZjOWE0YThmM2M3YmQyNWU1OTkxZjhhIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; secure; samesite=lax; superbikescenter_session=eyJpdiI6IjZsNjBXWWhQUFlINk5OV1k2V3FxVmc9PSIsInZhbHVlIjoiZFdHeTlVUzdGcVhyVDdMMy9TbVIrL3dac0ZVamZQZEhFKzZUcmtNa1lYSTdzR3dWMWNRbDRnL0YvQldsb0pTVGduVzd5ZlVMQXVOWUFxckpYTGsrYi9Da0FhTFJtN3BmME4zVkpVVHJyejhNb2dCbjBWSWZDYy9VaUVwMDBIY1MiLCJtYWMiOiI3Zjc2OTlhNThiOGUxMGRlYmY2MjhkODBlMjYwODMwODM5YTEwNDllN2YxYjJkYjBkZTJlYzQwNDBmZDZkYzFhIiwidGFnIjoiIn0%3D; expires=Thu, 08 Aug 2024 22:38:54 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3153,10 +3183,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="cityId"                data-endpoint="GETapi-address-barangays--cityId-"
-               value="est"
+               value="tempore"
                data-component="url">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>tempore</code></p>
             </div>
                     </form>
 
@@ -3525,6 +3555,554 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>optional The barangay related to the inquiry. Example: <code>Barangay 1</code></p>
+        </div>
+        </form>
+
+                <h1 id="monthly-dues">Monthly Dues</h1>
+
+    
+
+                                <h2 id="monthly-dues-GETapi-get-monthly-dues--applicationId-">Get monthly dues for a specific application.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-get-monthly-dues--applicationId-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://superbikescentral.online/api/get-monthly-dues/est" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/get-monthly-dues/est"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-get-monthly-dues--applicationId-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;monthlyDues&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;application_id&quot;: 1,
+            &quot;due_date&quot;: &quot;2024-08-01&quot;,
+            &quot;amount_due&quot;: 5000,
+            &quot;amount_paid&quot;: 1000,
+            &quot;status&quot;: &quot;unpaid&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;application_id&quot;: 1,
+            &quot;due_date&quot;: &quot;2024-09-01&quot;,
+            &quot;amount_due&quot;: 5000,
+            &quot;amount_paid&quot;: 0,
+            &quot;status&quot;: &quot;unpaid&quot;
+        }
+    ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;error&quot;: &quot;Not yet Approved, no monthly dues found.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-get-monthly-dues--applicationId-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-get-monthly-dues--applicationId-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-get-monthly-dues--applicationId-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-get-monthly-dues--applicationId-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-get-monthly-dues--applicationId-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-get-monthly-dues--applicationId-" data-method="GET"
+      data-path="api/get-monthly-dues/{applicationId}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-get-monthly-dues--applicationId-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-get-monthly-dues--applicationId-"
+                    onclick="tryItOut('GETapi-get-monthly-dues--applicationId-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-get-monthly-dues--applicationId-"
+                    onclick="cancelTryOut('GETapi-get-monthly-dues--applicationId-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-get-monthly-dues--applicationId-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/get-monthly-dues/{applicationId}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-get-monthly-dues--applicationId-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-get-monthly-dues--applicationId-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>applicationId</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="applicationId"                data-endpoint="GETapi-get-monthly-dues--applicationId-"
+               value="est"
+               data-component="url">
+    <br>
+<p>Example: <code>est</code></p>
+            </div>
+                    </form>
+
+                <h1 id="payment-histories">Payment Histories</h1>
+
+    
+
+                                <h2 id="payment-histories-GETapi-get-payment-histories--userId-">Get payment histories for a specific user.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-get-payment-histories--userId-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://superbikescentral.online/api/get-payment-histories/est" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/get-payment-histories/est"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-get-payment-histories--userId-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;paymentHistories&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;user_id&quot;: 1,
+            &quot;monthly_due_id&quot;: 1,
+            &quot;amount_paid&quot;: 1000,
+            &quot;payment_method&quot;: &quot;credit_card&quot;,
+            &quot;payment_gateway&quot;: &quot;PayPal&quot;,
+            &quot;transaction_id&quot;: &quot;TXN123456789&quot;,
+            &quot;created_at&quot;: &quot;2024-08-01T12:34:56.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-01T12:34:56.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;user_id&quot;: 1,
+            &quot;monthly_due_id&quot;: 2,
+            &quot;amount_paid&quot;: 1500,
+            &quot;payment_method&quot;: &quot;bank_transfer&quot;,
+            &quot;payment_gateway&quot;: &quot;Stripe&quot;,
+            &quot;transaction_id&quot;: &quot;TXN987654321&quot;,
+            &quot;created_at&quot;: &quot;2024-08-05T14:23:45.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-05T14:23:45.000000Z&quot;
+        }
+    ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;error&quot;: &quot;No payment histories found for this user.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-get-payment-histories--userId-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-get-payment-histories--userId-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-get-payment-histories--userId-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-get-payment-histories--userId-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-get-payment-histories--userId-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-get-payment-histories--userId-" data-method="GET"
+      data-path="api/get-payment-histories/{userId}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-get-payment-histories--userId-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-get-payment-histories--userId-"
+                    onclick="tryItOut('GETapi-get-payment-histories--userId-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-get-payment-histories--userId-"
+                    onclick="cancelTryOut('GETapi-get-payment-histories--userId-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-get-payment-histories--userId-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/get-payment-histories/{userId}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-get-payment-histories--userId-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-get-payment-histories--userId-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>userId</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="userId"                data-endpoint="GETapi-get-payment-histories--userId-"
+               value="est"
+               data-component="url">
+    <br>
+<p>Example: <code>est</code></p>
+            </div>
+                    </form>
+
+                <h1 id="payments">Payments</h1>
+
+    
+
+                                <h2 id="payments-POSTapi-pay-monthly-due--monthlyDueId-">Pay the monthly due.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-pay-monthly-due--monthlyDueId-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://superbikescentral.online/api/pay-monthly-due/voluptatem" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"amount_paid\": 1000,
+    \"receipt_number\": \"REC123456789\",
+    \"payment_method\": \"credit_card\",
+    \"payment_gateway\": \"PayPal\",
+    \"transaction_id\": \"TXN123456789\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://superbikescentral.online/api/pay-monthly-due/voluptatem"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "amount_paid": 1000,
+    "receipt_number": "REC123456789",
+    "payment_method": "credit_card",
+    "payment_gateway": "PayPal",
+    "transaction_id": "TXN123456789"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-pay-monthly-due--monthlyDueId-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Payment successful&quot;,
+    &quot;monthly_due&quot;: {
+        &quot;id&quot;: 1,
+        &quot;user_id&quot;: 1,
+        &quot;amount_due&quot;: 5000,
+        &quot;amount_paid&quot;: 1000,
+        &quot;status&quot;: &quot;paid&quot;,
+        &quot;receipt_number&quot;: &quot;REC123456789&quot;,
+        &quot;payment_method&quot;: &quot;credit_card&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;error&quot;: &quot;monthly due not found.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-pay-monthly-due--monthlyDueId-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-pay-monthly-due--monthlyDueId-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-pay-monthly-due--monthlyDueId-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-pay-monthly-due--monthlyDueId-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-pay-monthly-due--monthlyDueId-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-pay-monthly-due--monthlyDueId-" data-method="POST"
+      data-path="api/pay-monthly-due/{monthlyDueId}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-pay-monthly-due--monthlyDueId-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-pay-monthly-due--monthlyDueId-"
+                    onclick="tryItOut('POSTapi-pay-monthly-due--monthlyDueId-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-pay-monthly-due--monthlyDueId-"
+                    onclick="cancelTryOut('POSTapi-pay-monthly-due--monthlyDueId-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-pay-monthly-due--monthlyDueId-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/pay-monthly-due/{monthlyDueId}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-pay-monthly-due--monthlyDueId-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-pay-monthly-due--monthlyDueId-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>monthlyDueId</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="monthlyDueId"                data-endpoint="POSTapi-pay-monthly-due--monthlyDueId-"
+               value="voluptatem"
+               data-component="url">
+    <br>
+<p>Example: <code>voluptatem</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount_paid</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="amount_paid"                data-endpoint="POSTapi-pay-monthly-due--monthlyDueId-"
+               value="1000"
+               data-component="body">
+    <br>
+<p>The amount paid by the user. Example: <code>1000</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>receipt_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="receipt_number"                data-endpoint="POSTapi-pay-monthly-due--monthlyDueId-"
+               value="REC123456789"
+               data-component="body">
+    <br>
+<p>The receipt number of the payment. Example: <code>REC123456789</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>payment_method</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_method"                data-endpoint="POSTapi-pay-monthly-due--monthlyDueId-"
+               value="credit_card"
+               data-component="body">
+    <br>
+<p>The method of payment (e.g., credit card, bank transfer). Example: <code>credit_card</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>payment_gateway</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_gateway"                data-endpoint="POSTapi-pay-monthly-due--monthlyDueId-"
+               value="PayPal"
+               data-component="body">
+    <br>
+<p>The payment gateway used for the transaction. Example: <code>PayPal</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>transaction_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="transaction_id"                data-endpoint="POSTapi-pay-monthly-due--monthlyDueId-"
+               value="TXN123456789"
+               data-component="body">
+    <br>
+<p>The transaction ID from the payment gateway. Example: <code>TXN123456789</code></p>
         </div>
         </form>
 
