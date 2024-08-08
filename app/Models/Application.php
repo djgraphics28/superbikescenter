@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -30,6 +31,16 @@ class Application extends Model
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class, 'product_id', 'id');
+    }
+
+    /**
+     * Get all of the monthlyDues for the Application
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function monthlyDues(): HasMany
+    {
+        return $this->hasMany(MonthlyDue::class, 'application_id', 'id');
     }
 
 }

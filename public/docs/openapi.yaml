@@ -503,7 +503,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the application.'
-        example: 2
+        example: 17
         required: true
         schema:
           type: integer
@@ -991,7 +991,7 @@ paths:
         in: path
         name: regionId
         description: ''
-        example: dolor
+        example: mollitia
         required: true
         schema:
           type: string
@@ -1022,7 +1022,7 @@ paths:
         in: path
         name: provinceId
         description: ''
-        example: assumenda
+        example: quae
         required: true
         schema:
           type: string
@@ -1053,7 +1053,7 @@ paths:
         in: path
         name: regionId
         description: ''
-        example: voluptas
+        example: quibusdam
         required: true
         schema:
           type: string
@@ -1061,7 +1061,7 @@ paths:
         in: path
         name: provinceId
         description: ''
-        example: illo
+        example: consequatur
         required: true
         schema:
           type: string
@@ -1092,7 +1092,7 @@ paths:
         in: path
         name: cityId
         description: ''
-        example: est
+        example: tempore
         required: true
         schema:
           type: string
@@ -1196,6 +1196,317 @@ paths:
                 - email
                 - message
       security: []
+  '/api/get-monthly-dues/{applicationId}':
+    get:
+      summary: 'Get monthly dues for a specific application.'
+      operationId: getMonthlyDuesForASpecificApplication
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  monthlyDues:
+                    -
+                      id: 1
+                      application_id: 1
+                      due_date: '2024-08-01'
+                      amount_due: 5000
+                      amount_paid: 1000
+                      status: unpaid
+                    -
+                      id: 2
+                      application_id: 1
+                      due_date: '2024-09-01'
+                      amount_due: 5000
+                      amount_paid: 0
+                      status: unpaid
+                properties:
+                  monthlyDues:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        application_id: 1
+                        due_date: '2024-08-01'
+                        amount_due: 5000
+                        amount_paid: 1000
+                        status: unpaid
+                      -
+                        id: 2
+                        application_id: 1
+                        due_date: '2024-09-01'
+                        amount_due: 5000
+                        amount_paid: 0
+                        status: unpaid
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        application_id:
+                          type: integer
+                          example: 1
+                        due_date:
+                          type: string
+                          example: '2024-08-01'
+                        amount_due:
+                          type: integer
+                          example: 5000
+                        amount_paid:
+                          type: integer
+                          example: 1000
+                        status:
+                          type: string
+                          example: unpaid
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Not yet Approved, no monthly dues found.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Not yet Approved, no monthly dues found.'
+      tags:
+        - 'Monthly Dues'
+      security: []
+    parameters:
+      -
+        in: path
+        name: applicationId
+        description: ''
+        example: est
+        required: true
+        schema:
+          type: string
+  '/api/get-payment-histories/{userId}':
+    get:
+      summary: 'Get payment histories for a specific user.'
+      operationId: getPaymentHistoriesForASpecificUser
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  paymentHistories:
+                    -
+                      id: 1
+                      user_id: 1
+                      monthly_due_id: 1
+                      amount_paid: 1000
+                      payment_method: credit_card
+                      payment_gateway: PayPal
+                      transaction_id: TXN123456789
+                      created_at: '2024-08-01T12:34:56.000000Z'
+                      updated_at: '2024-08-01T12:34:56.000000Z'
+                    -
+                      id: 2
+                      user_id: 1
+                      monthly_due_id: 2
+                      amount_paid: 1500
+                      payment_method: bank_transfer
+                      payment_gateway: Stripe
+                      transaction_id: TXN987654321
+                      created_at: '2024-08-05T14:23:45.000000Z'
+                      updated_at: '2024-08-05T14:23:45.000000Z'
+                properties:
+                  paymentHistories:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        user_id: 1
+                        monthly_due_id: 1
+                        amount_paid: 1000
+                        payment_method: credit_card
+                        payment_gateway: PayPal
+                        transaction_id: TXN123456789
+                        created_at: '2024-08-01T12:34:56.000000Z'
+                        updated_at: '2024-08-01T12:34:56.000000Z'
+                      -
+                        id: 2
+                        user_id: 1
+                        monthly_due_id: 2
+                        amount_paid: 1500
+                        payment_method: bank_transfer
+                        payment_gateway: Stripe
+                        transaction_id: TXN987654321
+                        created_at: '2024-08-05T14:23:45.000000Z'
+                        updated_at: '2024-08-05T14:23:45.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        user_id:
+                          type: integer
+                          example: 1
+                        monthly_due_id:
+                          type: integer
+                          example: 1
+                        amount_paid:
+                          type: integer
+                          example: 1000
+                        payment_method:
+                          type: string
+                          example: credit_card
+                        payment_gateway:
+                          type: string
+                          example: PayPal
+                        transaction_id:
+                          type: string
+                          example: TXN123456789
+                        created_at:
+                          type: string
+                          example: '2024-08-01T12:34:56.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-08-01T12:34:56.000000Z'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'No payment histories found for this user.'
+                properties:
+                  error:
+                    type: string
+                    example: 'No payment histories found for this user.'
+      tags:
+        - 'Payment Histories'
+      security: []
+    parameters:
+      -
+        in: path
+        name: userId
+        description: ''
+        example: est
+        required: true
+        schema:
+          type: string
+  '/api/pay-monthly-due/{monthlyDueId}':
+    post:
+      summary: 'Pay the monthly due.'
+      operationId: payTheMonthlyDue
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Payment successful'
+                  monthly_due:
+                    id: 1
+                    user_id: 1
+                    amount_due: 5000
+                    amount_paid: 1000
+                    status: paid
+                    receipt_number: REC123456789
+                    payment_method: credit_card
+                properties:
+                  message:
+                    type: string
+                    example: 'Payment successful'
+                  monthly_due:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      user_id:
+                        type: integer
+                        example: 1
+                      amount_due:
+                        type: integer
+                        example: 5000
+                      amount_paid:
+                        type: integer
+                        example: 1000
+                      status:
+                        type: string
+                        example: paid
+                      receipt_number:
+                        type: string
+                        example: REC123456789
+                      payment_method:
+                        type: string
+                        example: credit_card
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'monthly due not found.'
+                properties:
+                  error:
+                    type: string
+                    example: 'monthly due not found.'
+      tags:
+        - Payments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount_paid:
+                  type: number
+                  description: 'The amount paid by the user.'
+                  example: 1000.0
+                receipt_number:
+                  type: string
+                  description: 'The receipt number of the payment.'
+                  example: REC123456789
+                payment_method:
+                  type: string
+                  description: 'The method of payment (e.g., credit card, bank transfer).'
+                  example: credit_card
+                payment_gateway:
+                  type: string
+                  description: 'The payment gateway used for the transaction.'
+                  example: PayPal
+                transaction_id:
+                  type: string
+                  description: 'The transaction ID from the payment gateway.'
+                  example: TXN123456789
+              required:
+                - amount_paid
+                - receipt_number
+                - payment_method
+      security: []
+    parameters:
+      -
+        in: path
+        name: monthlyDueId
+        description: ''
+        example: voluptatem
+        required: true
+        schema:
+          type: string
   /api/products:
     get:
       summary: "Display a listing of the Product resource.\n\nThis endpoint allows you to filter products by various criteria and paginate the results."
@@ -1616,6 +1927,15 @@ tags:
     description: ''
   -
     name: Inquiries
+    description: ''
+  -
+    name: 'Monthly Dues'
+    description: ''
+  -
+    name: 'Payment Histories'
+    description: ''
+  -
+    name: Payments
     description: ''
   -
     name: Products

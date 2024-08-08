@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Resources\MonthlyDueResource;
 use App\Models\Customer;
 use App\Models\Application;
+use App\Models\MonthlyDue;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
@@ -164,4 +166,159 @@ class ApplicationController extends Controller
 
         return response()->json(['applications' => $applications], 200);
     }
+
+    /**
+     * Get monthly dues for a specific application.
+     *
+     * @group Monthly Dues
+     *
+     * @param int $applicationId The ID of the application.
+     *
+     * @response 200 {
+     *   "monthlyDues": [
+     *     {
+     *       "id": 1,
+     *       "application_id": 1,
+     *       "due_date": "2024-08-01",
+     *       "amount_due": 5000,
+     *       "amount_paid": 1000,
+     *       "status": "unpaid"
+     *     },
+     *     {
+     *       "id": 2,
+     *       "application_id": 1,
+     *       "due_date": "2024-09-01",
+     *       "amount_due": 5000,
+     *       "amount_paid": 0,
+     *       "status": "unpaid"
+     *     }
+     *   ]
+     * }
+     * @response 404 {
+     *   "error": "Not yet Approved, no monthly dues found."
+     * }
+     */
+    public function getMonthlyDues($applicationId)
+    {
+        // Retrieve monthly dues based on the application ID.
+        $monthlyDues = MonthlyDue::where('application_id', $applicationId)->get();
+
+        if ($monthlyDues->isEmpty()) {
+            return response()->json(['error' => 'Not yet Approved, no monthly dues found.'], 404);
+        }
+
+        return response()->json(['monthlyDues' => MonthlyDueResource::collection($monthlyDues)], 200);
+    }
+
+
+    /**
+     * Pay the monthly due.
+     *
+     * @group Payments
+     *
+     * @param Request $request The request instance.
+     * @param int $monthlyDueId The ID of the monthly due.
+     *
+     * @bodyParam amount_paid float required The amount paid by the user. Example: 1000.00
+     * @bodyParam receipt_number string required The receipt number of the payment. Example: REC123456789
+     * @bodyParam payment_method string required The method of payment (e.g., credit card, bank transfer). Example: credit_card
+     * @bodyParam payment_gateway string The payment gateway used for the transaction. Example: PayPal
+     * @bodyParam transaction_id string The transaction ID from the payment gateway. Example: TXN123456789
+     *
+     * @response 200 {
+     *   "message": "Payment successful",
+     *   "monthly_due": {
+     *     "id": 1,
+     *     "user_id": 1,
+     *     "amount_due": 5000,
+     *     "amount_paid": 1000,
+     *     "status": "paid",
+     *     "receipt_number": "REC123456789",
+     *     "payment_method": "credit_card"
+     *   }
+     * }
+     * @response 404 {
+     *   "error": "monthly due not found."
+     * }
+     */
+    public function payMonthlyDue(Request $request, $monthlyDueId)
+    {
+        $monthlyDue = MonthlyDue::find($monthlyDueId);
+
+        if (!$monthlyDue) {
+            return response()->json(['error' => 'monthly due not found.'], 404);
+        }
+
+        $monthlyDue->update([
+            'amount_paid' => $request->amount_paid,
+            'status' => "paid",
+            'receipt_number' => $request->receipt_number,
+            'payment_method' => $request->payment_method
+        ]);
+
+        PaymentHistory::create([
+            'user_id' => $monthlyDue->user_id,
+            'monthly_due_id' => $monthlyDueId,
+            'amount_paid' => $request->amount_paid,
+            'payment_method' => $request->payment_method,
+            'payment_gateway' => $request->payment_gateway,
+            'transaction_id' => $request->transaction_id
+        ]);
+
+        return response()->json([
+            'message' => 'Payment successful',
+            'monthly_due' => $monthlyDue
+        ], 200);
+    }
+
+    /**
+     * Get payment histories for a specific user.
+     *
+     * @group Payment Histories
+     *
+     * @param int $userId The ID of the user.
+     *
+     * @response 200 {
+     *   "paymentHistories": [
+     *     {
+     *       "id": 1,
+     *       "user_id": 1,
+     *       "monthly_due_id": 1,
+     *       "amount_paid": 1000,
+     *       "payment_method": "credit_card",
+     *       "payment_gateway": "PayPal",
+     *       "transaction_id": "TXN123456789",
+     *       "created_at": "2024-08-01T12:34:56.000000Z",
+     *       "updated_at": "2024-08-01T12:34:56.000000Z"
+     *     },
+     *     {
+     *       "id": 2,
+     *       "user_id": 1,
+     *       "monthly_due_id": 2,
+     *       "amount_paid": 1500,
+     *       "payment_method": "bank_transfer",
+     *       "payment_gateway": "Stripe",
+     *       "transaction_id": "TXN987654321",
+     *       "created_at": "2024-08-05T14:23:45.000000Z",
+     *       "updated_at": "2024-08-05T14:23:45.000000Z"
+     *     }
+     *   ]
+     * }
+     * @response 404 {
+     *   "error": "No payment histories found for this user."
+     * }
+     */
+    public function getPaymentHistories($userId)
+    {
+        // Retrieve payment histories based on the user ID.
+        $paymentHistories = PaymentHistory::where('user_id', $userId)->get();
+
+        if ($paymentHistories->isEmpty()) {
+            return response()->json(['error' => 'No payment histories found for this user.'], 404);
+        }
+
+        return response()->json(['paymentHistories' => PaymentHistoryResource::collection($paymentHistories)], 200);
+    }
+
+
 }
