@@ -68,8 +68,10 @@ class ApplicationController extends Controller
             'email' => 'required|email',
         ]);
 
+        $customerId = Customer::where('user_id', $request->customer_id)->first()->customer_id;
+
         // Check for existing active applications
-        $checkApplication = Application::where('customer_id', $request->customer_id)
+        $checkApplication = Application::where('customer_id', $customerId)
             ->whereIn('status', ['for-review', 'for-ci', 'approved', 'in-progress'])
             ->first();
 
