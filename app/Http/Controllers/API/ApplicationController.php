@@ -78,7 +78,7 @@ class ApplicationController extends Controller
         if (!$checkApplication) {
             // Create new application
             Application::create([
-                'customer_id' => $request->customer_id,
+                'customer_id' => $customerId,
                 'product_id' => $request->product,
                 'source_of_income' => $request->source_of_income,
                 'name_of_business' => $request->name_of_business,
