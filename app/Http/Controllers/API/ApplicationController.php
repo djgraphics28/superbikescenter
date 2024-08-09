@@ -68,7 +68,7 @@ class ApplicationController extends Controller
             'email' => 'required|email',
         ]);
 
-        $customerId = Customer::where('user_id', $request->customer_id)->first()->customer_id;
+        $customerId = Customer::where('user_id', $request->customer_id)->first()->id;
 
         // Check for existing active applications
         $checkApplication = Application::where('customer_id', $customerId)
