@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Resources\MonthlyDueResource;
 use App\Models\Customer;
-use App\Models\Application;
 use App\Models\MonthlyDue;
+use App\Models\Application;
 use Illuminate\Http\Request;
+use App\Models\PaymentHistory;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Resources\MonthlyDueResource;
 use App\Mail\ApplicationSuccessResponseMail;
 
 class ApplicationController extends Controller
