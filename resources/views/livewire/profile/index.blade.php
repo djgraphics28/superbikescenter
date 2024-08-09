@@ -8,7 +8,8 @@
     }
 
     .active-tab {
-        background-color: #2b6cb0; /* Your active tab background color */
+        background-color: #2b6cb0;
+        /* Your active tab background color */
     }
 </style>
 <div x-data="{ activeTab: 'profile' }" class="flex">
@@ -16,11 +17,18 @@
     <div class="w-64 bg-gray-800 text-white min-h-screen">
         <div class="p-4">
             <ul class="mt-4 space-y-2">
-                <li><a @click="activeTab = 'dashboard'" :class="{ 'active-tab': activeTab === 'dashboard' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Dashboard</a></li>
-                <li><a @click="activeTab = 'profile'" :class="{ 'active-tab': activeTab === 'profile' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Profile</a></li>
-                <li><a @click="activeTab = 'application-status'" :class="{ 'active-tab': activeTab === 'application-status' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Application Status</a></li>
-                <li><a @click="activeTab = 'payment-histories'" :class="{ 'active-tab': activeTab === 'payment-histories' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Payment Histories</a></li>
-                <li><a @click="activeTab = 'change-password'" :class="{ 'active-tab': activeTab === 'change-password' }" href="#" class="block p-2 hover:bg-gray-600 rounded">Change Password</a></li>
+                <li><a @click="activeTab = 'dashboard'" :class="{ 'active-tab': activeTab === 'dashboard' }" href="#"
+                        class="block p-2 hover:bg-gray-600 rounded">Dashboard</a></li>
+                <li><a @click="activeTab = 'profile'" :class="{ 'active-tab': activeTab === 'profile' }" href="#"
+                        class="block p-2 hover:bg-gray-600 rounded">Profile</a></li>
+                <li><a @click="activeTab = 'application-status'"
+                        :class="{ 'active-tab': activeTab === 'application-status' }" href="#"
+                        class="block p-2 hover:bg-gray-600 rounded">Application Status</a></li>
+                <li><a @click="activeTab = 'payment-histories'"
+                        :class="{ 'active-tab': activeTab === 'payment-histories' }" href="#"
+                        class="block p-2 hover:bg-gray-600 rounded">Monthly Dues</a></li>
+                <li><a @click="activeTab = 'change-password'" :class="{ 'active-tab': activeTab === 'change-password' }"
+                        href="#" class="block p-2 hover:bg-gray-600 rounded">Change Password</a></li>
             </ul>
         </div>
     </div>
@@ -108,30 +116,44 @@
         <!-- Payment Histories Section -->
         <div id="payment-histories" x-show="activeTab === 'payment-histories'">
             <div class="bg-white shadow-md rounded-lg p-6">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Payment Histories</h2>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Monthly Dues</h2>
 
                 <!-- Example payment histories (replace with dynamic data) -->
                 <div class="overflow-x-auto">
                     <table class="min-w-full bg-gray-100 rounded-lg overflow-hidden">
                         <thead class="bg-gray-200 text-gray-700">
                             <tr>
-                                <th class="py-2 px-4 text-left">Payment Date</th>
+                                <th class="py-2 px-4 text-left">Due Date</th>
+                                <th class="py-2 px-4 text-left">Monthly Payment</th>
                                 <th class="py-2 px-4 text-left">Amount Paid</th>
                                 <th class="py-2 px-4 text-left">Payment Method</th>
                                 <th class="py-2 px-4 text-left">Status</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600">
+                            @forelse ($monthlyDues as $item)
+                                <tr class="bg-white border-b">
+                                    <td class="py-2 px-4">
+                                        {{ \Carbon\Carbon::parse($item->due_date)->format('F d, Y') }}</td>
+                                    <td class="py-2 px-4">Php {{ $item->monthly_payment }}</td>
+                                    <td class="py-2 px-4">{{ $item->payment_method ?? '' }}</td>
+                                    <td class="py-2 px-4">{{ $item->amount_paid ?? '' }}</td>
+                                    <td class="py-2 px-4">
+                                        @if ($item->status == 'paid')
+                                            <span
+                                                class="px-2 py-1 text-xs text-white bg-green-500 rounded-full">Paid</span>
+                                        @else
+                                            <span
+                                                class="px-2 py-1 text-xs text-white bg-yellow-500 rounded-full">UnPaid</span>
+                                        @endif
+
+                                    </td>
+                                </tr>
+                            @empty
+                            @endforelse
                             <!-- Replace this with a loop over payment history data -->
-                            <tr class="bg-white border-b">
-                                <td class="py-2 px-4">July 15, 2024</td>
-                                <td class="py-2 px-4">$500.00</td>
-                                <td class="py-2 px-4">Credit Card</td>
-                                <td class="py-2 px-4">
-                                    <span class="px-2 py-1 text-xs text-white bg-green-500 rounded-full">Paid</span>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-50 border-b">
+
+                            {{-- <tr class="bg-gray-50 border-b">
                                 <td class="py-2 px-4">June 30, 2024</td>
                                 <td class="py-2 px-4">$300.00</td>
                                 <td class="py-2 px-4">Bank Transfer</td>
@@ -146,7 +168,7 @@
                                 <td class="py-2 px-4">
                                     <span class="px-2 py-1 text-xs text-white bg-green-500 rounded-full">Paid</span>
                                 </td>
-                            </tr>
+                            </tr> --}}
                         </tbody>
                     </table>
                 </div>
@@ -176,7 +198,8 @@
                             class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             required>
                     </div>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Change
+                    <button type="submit"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Change
                         Password</button>
                 </form>
             </div>

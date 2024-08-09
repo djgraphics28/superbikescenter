@@ -2,13 +2,18 @@
 
 namespace App\Filament\Resources;
 
+use App\Mail\LoanApplicationApprovedResponseMail;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
+use App\Models\MonthlyDue;
 use Filament\Tables\Table;
 use App\Models\Application;
 use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ApplicationResource\Pages;
@@ -20,7 +25,7 @@ class ApplicationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-      /**
+    /**
      * Get the navigation badge for the resource.
      */
     public static function getNavigationBadge(): ?string
@@ -181,14 +186,14 @@ class ApplicationResource extends Resource
                             'email' => $record->email,
                             'name' => $record->name,
                             'status' => $data['status'],
-                            'link' => route('register'),
+                            // 'link' => route('register'),
                         ];
 
                         if ($data['status'] == "approved") {
                             // Send email
                             // InquiryApprovedResponseJob::dispatch($emailData);
                             // Mail::to($emailData['email'])->send(new InquiryApprovedResponse($emailData));
-                        } else if($data['status'] == "released") {
+                        } else if ($data['status'] == "released") {
 
                         }
 
@@ -196,6 +201,107 @@ class ApplicationResource extends Resource
 
                         // Show success notification
                         // Filament::notify('success', 'Status changed and email sent successfully.');
+                    }),
+                Tables\Actions\Action::make('status')
+                    ->label('Approve')
+                    ->color('success')
+                    ->icon('heroicon-o-check')
+                    ->requiresConfirmation()
+                    ->action(function ($record) {
+                        try {
+                            // Update the record's status to 'Approved'
+                            $record->update([
+                                'status' => 'Approved',
+                                'approved_by' => Auth::user()->id, // Set the ID of the authenticated user
+                            ]);
+
+                            $monthsToPay = $record->months_to_pay;
+                            $dayOfMonth = \Carbon\Carbon::parse($record->date_applied)->day; // Extract the day from date_applied
+
+                            for ($i = 0; $i < $monthsToPay; $i++) {
+                                // Calculate the due date for each month
+                                $dueDate = \Carbon\Carbon::parse($record->date_applied)
+                                    ->addMonthsNoOverflow($i)
+                                    ->day($dayOfMonth);
+
+                                // Ensure the day is valid (e.g., not setting February 30th)
+                                if ($dueDate->day != $dayOfMonth) {
+                                    $dueDate = $dueDate->lastOfMonth();
+                                }
+
+                                MonthlyDue::updateOrCreate(
+                                    [
+                                        'application_id' => $record->id,
+                                        'user_id' => $record->customer_id,
+                                        'due_date' => $dueDate,
+                                    ],
+                                    [
+                                        'monthly_payment' => $record->monthly_payment_amount,
+                                        // 'status' => 'Pending',
+                                    ]
+                                );
+                            }
+
+                            $emailData = [
+                                'monthlyPayment' => $record->monthly_payment_amount,
+                                'downpayment' => $record->downpayment,
+                                'loanAmount' => $record->loan_amount,
+                                'dateApplied' => $record->date_applied,
+                                'motorModel' => $record->product->name,
+                                'loanTerm' => $record->months_to_pay,
+                                'dueDay' => \Carbon\Carbon::parse($record->date_applied)->format('jS'), // Day number
+                                'link' => route('profile'),
+                            ];
+
+                            // Generate and send the PDF
+                            Mail::to($record->customer->user->email)->send(new LoanApplicationApprovedResponseMail($emailData));
+
+                            Notification::make()
+                                ->title('Loan Application Approved')
+                                ->body('Selected application has been approved and emails have been sent successfully.')
+                                ->success()
+                                ->send();
+                        } catch (\Exception $e) {
+                            // Log or handle the error
+                            Log::error('Failed to send approval email: ' . $e->getMessage());
+                            // Display an error notification
+                            Notification::make()
+                                ->title('Loan Application Approval Failed')
+                                ->body('Failed to send approval emails. Please try again.')
+                                ->danger()
+                                ->send();
+                        }
+                    }),
+                Tables\Actions\Action::make('revert')
+                    ->label('Revert')
+                    ->color('danger')
+                    ->icon('heroicon-o-receipt-refund')
+                    ->requiresConfirmation()
+                    ->action(function ($record) {
+                        try {
+                            // Update the record's status to 'Approved'
+                            $record->update([
+                                'status' => 'For-Review',
+                                'approved_by' => null, // Set the ID of the authenticated user
+                            ]);
+
+                            MonthlyDue::where('application_id', $record->id)->delete();
+
+                            Notification::make()
+                                ->title('Loan Application has been reverted')
+                                ->body('Selected application has been reverted.')
+                                ->success()
+                                ->send();
+                        } catch (\Exception $e) {
+                            // Log or handle the error
+                            Log::error('Failed to send approval email: ' . $e->getMessage());
+                            // Display an error notification
+                            Notification::make()
+                                ->title('Loan Application Revert Failed')
+                                ->body('Failed to revert. Please try again.')
+                                ->danger()
+                                ->send();
+                        }
                     }),
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
