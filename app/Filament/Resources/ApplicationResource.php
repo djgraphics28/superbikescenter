@@ -232,7 +232,7 @@ class ApplicationResource extends Resource
                                 MonthlyDue::updateOrCreate(
                                     [
                                         'application_id' => $record->id,
-                                        'user_id' => $record->customer_id,
+                                        'user_id' => $record->customer->user_id,
                                         'due_date' => $dueDate,
                                     ],
                                     [
