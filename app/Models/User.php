@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -75,5 +76,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function customer_details(): HasOne
     {
         return $this->hasOne(Customer::class, 'user_id', 'id');
+    }
+
+    /**
+     * Get all of the paymentHistories for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function paymentHistories(): HasMany
+    {
+        return $this->hasMany(PaymentHistory::class, 'user_id', 'id');
     }
 }

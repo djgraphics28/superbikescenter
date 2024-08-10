@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Resources\MonthlyDueResource;
 use App\Mail\ApplicationSuccessResponseMail;
+use App\Http\Resources\PaymentHistoryResource;
 
 class ApplicationController extends Controller
 {
