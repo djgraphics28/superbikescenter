@@ -10,7 +10,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Hash;
-use App\Filament\Resources\StudentResource\RelationManagers;
+use App\Filament\Resources\UserResource\RelationManagers;
 
 
 class UserResource extends Resource
