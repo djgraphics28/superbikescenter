@@ -10,6 +10,8 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Hash;
+use App\Filament\Resources\StudentResource\RelationManagers;
+
 
 class UserResource extends Resource
 {
@@ -119,7 +121,7 @@ class UserResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\PaymentHistoriesRelationManager::class,
         ];
     }
 
